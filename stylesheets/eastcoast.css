@@ -1,0 +1,59 @@
+indent {
+  border-left: 0px;
+  margin: 0;
+  padding: 0 0 0 130px;
+}
+
+blockquote {
+    border-left: 0px;
+    margin: 0;
+    padding: 0 0 0 130px;
+    font-style: normal;
+}
+
+
+#travel_small {
+  font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-style: none;
+  display: inline-block;
+  color: gray;
+  font-size: 12px;
+  width: 120px;
+  text-align: right;
+}
+
+#travel {
+  font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bolder;
+  font-style: none;
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  width: 200px;
+  text-align: left;
+}
+
+
+showhide a{
+  font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bolder;
+  font-style: none;
+  display: inline;
+  color: gray;
+  font-size: 14;
+}
+
+showhide a:hover {
+    color: white;
+}
+
+
+img.thumb {
+    border: solid 3px #404040;
+    border-radius: 5px;
+}
+
+img.thumb:hover {
+    border-color: #66FFFF;
+}
