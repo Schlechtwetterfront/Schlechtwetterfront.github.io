@@ -11,6 +11,14 @@ blockquote {
     font-style: normal;
 }
 
+span.note {
+  font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-style: none;
+  display: inline-block;
+  color: gray;
+  font-size: 12px;
+}
 
 #travel_small {
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -56,4 +64,11 @@ img.thumb {
 
 img.thumb:hover {
     border-color: #66FFFF;
+}
+
+hr.gradient_one {
+    border: 0;
+    height: 1px;
+    background: #63C;
+    background-image: -webkit-linear-gradient(left, gray, gray, gray);
 }
