@@ -42,7 +42,6 @@ span.note {
   text-align: left;
 }
 
-
 showhide a{
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bolder;
@@ -50,10 +49,22 @@ showhide a{
   display: inline;
   color: gray;
   font-size: 14;
+  width: 200px;
 }
 
 showhide a:hover {
     color: white;
+}
+
+.newentry {
+  font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bolder;
+  font-style: none;
+  display: inline-block;
+  color: orange;
+  font-size: 14;
+  /*width: 200px;
+  vertical-align: right;*/
 }
 
 
