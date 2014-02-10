@@ -13,38 +13,37 @@
         <script src="javascripts/eastcoast.js"></script>
         <script src="javascripts/jquery-1.10.2.min.js"></script>
         <script src="javascripts/lightbox-2.6.min.js"></script>
-        <link rel="icon" type="image/png" href="favicon.png"/>
+        <link rel="icon" type="image/png" href="favicon_aus.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     </head>
     <body>
         <div id="header">
+            <spcr></spcr>
+            <p class="headertext" id="top">
+                Australien 2014
+            </p>
+            <select onchange="window.location=this.options[this.selectedIndex].value;">
+                <option value="#top">Inhalt</option>
+                <option value="#karte">&nbsp;&nbsp;Karte</option>
+                <option value="#port_macquarie">&nbsp;&nbsp;Port Macquarie</option>
+                <option value="#coffs_harbour">&nbsp;&nbsp;Coffs Harbour</option>
+                <option value="#brisbane">&nbsp;&nbsp;Brisbane</option>
+                <option value="#noosa">&nbsp;&nbsp;Noosa</option>
+                <option value="#hervey">&nbsp;&nbsp;Hervey Bay</option>
+                <option value="#fraser">&nbsp;&nbsp;Fraser Island</option>
+                <option value="#airlie">&nbsp;&nbsp;Airlie Beach</option>
+            </select>
+            <img src="images/aus/flag.png" class="flag"></div>
             <nav>
             </nav>
         </div>
         <div class="wrapper">
             <section>
-                <div id="title">
+                <!--div id="title">
                     <h1>Australien 2014</h1>
                     <p></p>
                     <hr>
-                    <!--span class="credits left">Maintained by <a href="https://Schlechtwetterfront.github.io/">Schlechtwetterfront</a></span-->
-                    <!--span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span-->
-                </div>
-                <h2>Inhalt</h2><br>
-                <ul>
-                    <li>Karte</li>
-                    <li>Etappen
-                    <ol>
-                        <li><a href="#port_macquarie">Port Macquarie</a></li>
-                        <li><a href="#coffs_harbour">Coffs Harbour</a></li>
-                        <li><a href="#brisbane">Brisbane</a></li>
-                        <li><a href="#noosa">Noosa</a></li>
-                        <li><a href="#hervey">Hervey Bay</a></li>
-                        <li><a href="#fraser">Fraser Island</a></li>
-                        <li><a href="#airlie">Airlie Beach</a></li>
-                    </ol>
-                    </li>
-                </ul>
+                </div-->
                 <a id="karte"></a>
                 <span id="travel_small"></span>
                 <span id="travel">Karte</span>

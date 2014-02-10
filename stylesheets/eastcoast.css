@@ -83,3 +83,67 @@ hr.gradient_one {
     background: #63C;
     background-image: -webkit-linear-gradient(left, gray, gray, gray);
 }
+
+
+select {
+  -webkit-appearance: button;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  background: url(../images/down.png) no-repeat right center #252525;
+  border: 1px solid #AAA;
+  color: white;
+  font-size: inherit;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  right: 26%;
+  top: 36%;
+  vertical-align: bottom;
+  width: 160px;
+}
+
+spcr {
+  width: 100%;
+  height: 16px;
+  display: block;
+}
+
+
+.headertext {
+  font-family: 'OpenSansSemiBold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /*line-height: 1;
+  */
+  vertical-align: top;
+  position: absolute;
+  left: 35%;
+  top: 10%;
+  text-align: center;
+  font-size: 36px;
+}
+
+body {
+  background: url(../images/aus/map_bg.png) no-repeat center center fixed #252525;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  /*
+  */
+}
+
+img.flag {
+  /*
+  background: url(../favicon_aus.png) no-repeat center center;
+  */
+  position: absolute;
+  left: 27%;
+  top: 24%;
+}
