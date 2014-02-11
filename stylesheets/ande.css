@@ -75,3 +75,55 @@ green_button a:hover {
 h2 { display: inline-block; }
 
 .column { float: left; width: 33%; margin: 0;}
+
+.softcry {
+ /*margin-bottom: 10px;*/
+ height: 120px;
+ width: 120px;
+ display: inline-block;
+ background: transparent url('../images/softcry.png') center center no-repeat;
+ background-size: contain;
+}
+
+.softcry:hover {
+   background-image: url('../images/softcry_hover.png');
+}
+
+.zefrmt {
+ /*margin-bottom: 10px;*/
+ height: 120px;
+ width: 120px;
+ display: inline-block;
+ background: transparent url('../images/zefrmt.png') center center no-repeat;
+ background-size: contain;
+}
+
+.zefrmt:hover {
+   background-image: url('../images/zefrmt_hover.png');
+}
+
+.zet {
+ /*margin-bottom: 10px;*/
+ height: 120px;
+ width: 120px;
+ display: inline-block;
+ background: transparent url('../images/zet.png') center center no-repeat;
+ background-size: contain;
+}
+
+.zet:hover {
+   background-image: url('../images/zet_hover.png');
+}
+
+.modosrcr {
+ /*margin-bottom: 10px;*/
+ height: 120px;
+ width: 120px;
+ display: inline-block;
+ background: transparent url('../images/modosrcr.png') center center no-repeat;
+ background-size: contain;
+}
+
+.modosrcr:hover {
+   background-image: url('../images/modosrcr_hover.png');
+}
