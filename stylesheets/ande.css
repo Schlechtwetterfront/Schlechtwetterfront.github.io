@@ -66,6 +66,33 @@ green_button a:hover {
   color: white;
 }
 
+
+dlbutton {
+  color: white;
+  border: 5px solid gray;
+  background: #252525;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  padding: 10px 12px;
+  margin-top: 6px;
+  line-height: 14px;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+  transition: border-color 0.2s ease-in-out;
+}
+
+
+dlbutton:hover {
+  color: white;
+  border: 5px solid orange;
+}
+
+
 /*
 
     Make Headlines inline (to allow for same-line text).
@@ -83,6 +110,7 @@ h2 { display: inline-block; }
  display: inline-block;
  background: transparent url('../images/softcry.png') center center no-repeat;
  background-size: contain;
+ transition: background-image 0.3s ease-in-out;
 }
 
 .softcry:hover {
@@ -96,6 +124,7 @@ h2 { display: inline-block; }
  display: inline-block;
  background: transparent url('../images/zefrmt.png') center center no-repeat;
  background-size: contain;
+ transition: background-image 0.3s ease-in-out;
 }
 
 .zefrmt:hover {
@@ -109,6 +138,7 @@ h2 { display: inline-block; }
  display: inline-block;
  background: transparent url('../images/zet.png') center center no-repeat;
  background-size: contain;
+ transition: background-image 0.3s ease-in-out;
 }
 
 .zet:hover {
@@ -122,8 +152,80 @@ h2 { display: inline-block; }
  display: inline-block;
  background: transparent url('../images/modosrcr.png') center center no-repeat;
  background-size: contain;
+ transition: background-image 0.3s ease-in-out;
 }
 
 .modosrcr:hover {
    background-image: url('../images/modosrcr_hover.png');
+}
+
+
+.github {
+ /*margin-bottom: 10px;*/
+ height: 120px;
+ width: 120px;
+ display: inline-block;
+ background: transparent url('../images/github.png') center center no-repeat;
+ background-size: contain;
+ transition: background-image 0.3s ease-in-out;
+}
+
+.github:hover {
+   background-image: url('../images/github_hover.png');
+}
+
+
+.twitter {
+ /*margin-bottom: 10px;*/
+ height: 120px;
+ width: 120px;
+ display: inline-block;
+ background: transparent url('../images/twitter.png') center center no-repeat;
+ background-size: contain;
+ transition: background-image 0.3s ease-in-out;
+}
+
+.twitter:hover {
+   background-image: url('../images/twitter_hover.png');
+}
+
+
+.steam {
+ /*margin-bottom: 10px;*/
+ height: 120px;
+ width: 120px;
+ display: inline-block;
+ background: transparent url('../images/steam.png') center center no-repeat;
+ background-size: contain;
+ transition: background-image 0.3s ease-in-out;
+}
+
+.steam:hover {
+   background-image: url('../images/steam_hover.png');
+}
+
+.info {
+  transition: opacity 0.6s ease-in-out;
+}
+
+
+.tothesideprojects {
+  font-family: 'OpenSansBold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  left: 16%;
+  top: 23%;
+  vertical-align: middle;
+  font-size: 36px;
+  color: gray;
+}
+
+
+.tothesidesocial {
+  font-family: 'OpenSansBold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  left: 16%;
+  top: 61%;
+  vertical-align: middle;
+  font-size: 36px;
+  color: gray;
 }

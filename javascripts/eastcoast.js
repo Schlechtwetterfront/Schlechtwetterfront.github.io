@@ -64,3 +64,14 @@ function getDate() {
     }
     return '';
 }
+
+
+function initCountdown() {
+    var clock = document.getElementById('countdownclock');
+    var targetDate = new Date(2014, 02, 07);
+
+    clock.innerHTML = countdown(targetDate).toString();
+    setInterval(function() {
+        clock.innerHTML = countdown(targetDate).toString();
+    }, 1000);
+}

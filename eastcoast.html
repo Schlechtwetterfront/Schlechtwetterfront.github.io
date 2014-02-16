@@ -13,6 +13,7 @@
         <script src="javascripts/eastcoast.js"></script>
         <script src="javascripts/jquery-1.10.2.min.js"></script>
         <script src="javascripts/lightbox-2.6.min.js"></script>
+        <script src="javascripts/countdown.js"></script>
         <link rel="icon" type="image/png" href="favicon_aus.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     </head>
@@ -22,6 +23,20 @@
             <p class="headertext" id="top">
                 Australien 2014
             </p>
+            <p class="countdowntext" id="countdownclock">
+                CD
+            </p>
+            <script type="text/javascript">
+                var clock = document.getElementById('countdownclock');
+                var targetDate = new Date(2014, 02, 07);
+
+                var cd = countdown(new Date(), targetDate);
+                clock.innerHTML = cd.days + ':' + cd.minutes + '.' + cd.seconds;
+                setInterval(function() {
+                    var cd = countdown(new Date(), targetDate);
+                    clock.innerHTML = cd.days + ':' + cd.minutes + '.' + cd.seconds;
+                }, 1000);
+            </script>
             <select onchange="window.location=this.options[this.selectedIndex].value;">
                 <option value="#top">Inhalt</option>
                 <option value="#karte">&nbsp;&nbsp;Karte</option>
@@ -39,11 +54,6 @@
         </div>
         <div class="wrapper">
             <section>
-                <!--div id="title">
-                    <h1>Australien 2014</h1>
-                    <p></p>
-                    <hr>
-                </div-->
                 <a id="karte"></a>
                 <span id="travel_small"></span>
                 <span id="travel">Karte</span>
