@@ -70,6 +70,7 @@ showhide a:hover {
 
 img.thumb {
     border: solid 3px #404040;
+    transition: border-color 0.15s ease-in-out;
     border-radius: 5px;
 }
 
@@ -138,10 +139,11 @@ spcr {
   vertical-align: top;
   position: absolute;
   right: 38.5%;
-  top: 36%;
-  text-align: center;
+  top: 25%;
+  text-align: left;
   font-size: 20px;
   color: gray;
+  line-height: 0.9;
 }
 
 body {

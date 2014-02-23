@@ -31,10 +31,10 @@
                 var targetDate = new Date(2014, 02, 07);
 
                 var cd = countdown(new Date(), targetDate);
-                clock.innerHTML = cd.days + ':' + cd.minutes + '.' + cd.seconds;
+                clock.innerHTML = 'noch<br><strong>' + cd.days + '</strong> Tage';
                 setInterval(function() {
                     var cd = countdown(new Date(), targetDate);
-                    clock.innerHTML = cd.days + ':' + cd.minutes + '.' + cd.seconds;
+                    clock.innerHTML = 'noch<br><strong>' + cd.days + '</strong> Tage';
                 }, 1000);
             </script>
             <select onchange="window.location=this.options[this.selectedIndex].value;">
@@ -47,6 +47,8 @@
                 <option value="#hervey">&nbsp;&nbsp;Hervey Bay</option>
                 <option value="#fraser">&nbsp;&nbsp;Fraser Island</option>
                 <option value="#airlie">&nbsp;&nbsp;Airlie Beach</option>
+                <option value="#mission">&nbsp;&nbsp;Mission Beach</option>
+                <option value="#cairns">&nbsp;&nbsp;Cairns</option>
             </select>
             <img src="images/aus/flag.png" class="flag"></div>
             <nav>
@@ -384,39 +386,177 @@
                     <br><br>
                 </div>
                 <br>
-                <!--a id="airlie"></a><span id="travel_small">Noosa -></span>
+                <a id="airlie"></a><span id="travel_small">Hervey Bay -></span>
                 <span id="travel">Airlie Beach</span>
                 <showhide><a id="airlie_toggler" href="javascript:toggle('airlie')">Anzeigen</a><span id="travel_small"/></showhide>
                 <br>
                 <hr>
                 <div class="hidden" id="airlie_content">
                     <div align="center">
-                    <a href="images/aus/bris/bris_river.png" data-lightbox="airlie_pictures" title="Brisbane"><img class="thumb" src="images/aus/bris/bris_river_thumb.png"></a>
-                    <a href="images/aus/bris/bris_river_02.png" data-lightbox="airlie_pictures" title="Brisbane"><img class="thumb" src="images/aus/bris/bris_river_02_thumb.png"></a>
-                    <a href="images/aus/bris/bris_bot_01.png" data-lightbox="airlie_pictures" title="Botanischer Garten"><img class="thumb" src="images/aus/bris/bris_bot_01_thumb.png"></a>
-                    <a href="images/aus/bris/bris_elephant.png" data-lightbox="airlie_pictures" title="Kunst..."><img class="thumb" src="images/aus/bris/bris_elephant_thumb.png"></a>
-                    <br>
-                    <a href="images/aus/bris/bris_spiders.png" data-lightbox="airlie_pictures" title="Spinnen"><img class="thumb" src="images/aus/bris/bris_spiders_thumb.png"></a>
-                    <a href="images/aus/bris/bris_city.png" data-lightbox="airlie_pictures" title="Stadt in der Nacht"><img class="thumb" src="images/aus/bris/bris_city_thumb.png"></a>
+                    <a href="images/aus/airlie/beach1.png" data-lightbox="airlie_pictures" title="Strand im Regen"><img class="thumb" src="images/aus/airlie/beach1t.png"></a>
+                    <a href="images/aus/airlie/hill1.png" data-lightbox="airlie_pictures" title="Airlie Beach Umgebung"><img class="thumb" src="images/aus/airlie/hill1t.png"></a>
+                    <a href="images/aus/airlie/sea1.png" data-lightbox="airlie_pictures" title="Airlie Beach Umgebung"><img class="thumb" src="images/aus/airlie/sea1t.png"></a>
+                    <a href="images/aus/airlie/sea2.png" data-lightbox="airlie_pictures" title="Airlie Beach Umgebung"><img class="thumb" src="images/aus/airlie/sea2t.png"></a>
                     </div>
                     Generell
                     <hr class="gradient_one"/>
-                    4 Nächte.
+                    3 Nächte. Sehr touristisch und nicht besonders interessant. Ab jetzt auch Marine Stingers, also müsste/sollte
+                    man zum baden im Meer immer einen Anzug anhaben. Darum geht keiner mehr ins Meer sondern nur noch in die
+                    "Lagunen" dies in jeder größeren Stadt gibt.
                     <br><br>
-                    Tag 14 - 2.2.
+                    Tag 20 - 8.2.
                     <hr class="gradient_one"/>
-                    Ankunft um 17:30, also nichts mehr unternommen ausser 2 Schachspiele und ein Steak dazwischen.
+                    Ankunft um 9 Uhr morgens nach 12 Stunden Busfahrt durch die Nacht. 12 Stunden sind kein Problem, aber
+                    durch die Nacht fahren ist nicht so meins.<br>
+                    <strong>Jemand:</strong> "Was ist besser, am Pool zu sitzen oder im Bus?"<br>
+                    <strong>Ich:</strong> "Pool ist zwar besser als Bus, im Bett schlafen ist aber unglaublich viel besser als im Bus sitzen."
+                    <br>
+                    <strong>Wetter:</strong> Warm, Schauer.
+                    <br><br>
+                    Tag 21 - 9.2.
+                    <hr class="gradient_one"/>
+                    
+                    <br>
+                    <strong>Wetter:</strong> Warm, Schauer.
+                    <br><br>
+                    Tag 22 - 10.2.
+                    <hr class="gradient_one"/>
+                    
+                    <br>
+                    <strong>Wetter:</strong> Warm, Schauer.
+                    <br><br>
+                    Tag 23 - 11.2.
+                    <hr class="gradient_one"/>
+                    Abreise, diesmal nur 8 Stunden, und am Tag.
+                    <br>
+                    <strong>Wetter:</strong> Warm, Schauer.
+                    <br><br>
+                </div>
+                <br>
+                <a id="mission"></a><span id="travel_small">Airlie Beach -></span>
+                <span id="travel">Mission Beach</span>
+                <showhide><a id="mission_toggler" href="javascript:toggle('mission')">Anzeigen</a><span id="travel_small"/></showhide>
+                <br>
+                <hr>
+                <div class="hidden" id="mission_content">
+                    <div align="center">
+                    <a href="images/aus/mission/beach1.png" data-lightbox="mission_pictures" title="Brisbane"><img class="thumb" src="images/aus/mission/beach1t.png"></a>
+                    <a href="images/aus/mission/beach2.png" data-lightbox="mission_pictures" title="Brisbane"><img class="thumb" src="images/aus/mission/beach2t.png"></a>
+                    <a href="images/aus/mission/beach3.png" data-lightbox="mission_pictures" title="Botanischer Garten"><img class="thumb" src="images/aus/mission/beach3t.png"></a>
+                    <a href="images/aus/mission/beach4.png" data-lightbox="mission_pictures" title="Kunst..."><img class="thumb" src="images/aus/mission/beach4t.png"></a>
+                    <br>
+                    <a href="images/aus/mission/beach5.png" data-lightbox="mission_pictures" title="Spinnen"><img class="thumb" src="images/aus/mission/beach5t.png"></a>
+                    <a href="images/aus/mission/beach6.png" data-lightbox="mission_pictures" title="Stadt in der Nacht"><img class="thumb" src="images/aus/mission/beach6t.png"></a>
+                    </div>
+                    Generell
+                    <hr class="gradient_one"/>
+                    4 Nächte. Viel und schöne Natur, der Regenwald geht direkt bis zum Strand. Der Ort selbst ist praktisch eine
+                    Straße, darum ist auch nahezu nichts los. Ruhig und entspannend.
+                    <br><br>
+                    Tag 24 - 12.2.
+                    <hr class="gradient_one"/>
+                    Ankunf.
                     <br>
                     <strong>Wetter:</strong> Sonnig, warm.
                     <br><br>
-                    Tag 15 - 3.2.
+                    Tag 25 - 13.2.
                     <hr class="gradient_one"/>
-                    Hervey Bay hat 14km Strandpromenade. Davon vielleicht 2-3 gelaufen bis es (schon wieder) angefangen hat zu regnen.
-                    Also wieder zurück ins Hostel...
+                    
                     <br>
-                    <strong>Wetter:</strong> Wolken, Regen.
+                    <strong>Wetter:</strong> Sonnig, warm.
                     <br><br>
-                </div-->
+                    Tag 26 - 14.2.
+                    <hr class="gradient_one"/>
+                    Den Strand ein paar Stunden lang abgelaufen, auf der einen Seite Meer, auf der anderen Regenwald.
+                    Von den Kilometern, die ich gelaufen bin, konnte man vielleicht auf 500 Metern überhaupt Zivilisation sehen.
+                    Menschen waren auch praktisch keine da.
+                    <br>
+                    <strong>Wetter:</strong> Sonnig, warm.
+                    <br><br>
+                    Tag 27 - 15.2.
+                    <hr class="gradient_one"/>
+                    
+                    <br>
+                    <strong>Wetter:</strong> Sonnig, warm.
+                    <br><br>
+                    Tag 28 - 16.2.
+                    <hr class="gradient_one"/>
+                    Abreise.
+                    <br>
+                    <strong>Wetter:</strong> Sonnig, warm.
+                    <br><br>
+                </div>
+                <br>
+                <a id="cairns"></a><span id="travel_small">Mission Beach -></span>
+                <span id="travel">Cairns</span>
+                <showhide><a id="cairns_toggler" href="javascript:toggle('cairns')">Anzeigen</a><span id="travel_small"/></showhide>
+                <br>
+                <hr>
+                <div class="hidden" id="cairns_content">
+                    <div align="center">
+                    <a href="images/aus/cairns/bot1.png" data-lightbox="cairns_pictures" title="Botanischer Garten"><img class="thumb" src="images/aus/cairns/bot1t.png"></a>
+                    <a href="images/aus/cairns/bot2.png" data-lightbox="cairns_pictures" title="Botanischer Garten"><img class="thumb" src="images/aus/cairns/bot2t.png"></a>
+                    <a href="images/aus/cairns/bot3.png" data-lightbox="cairns_pictures" title="Botanischer Garten"><img class="thumb" src="images/aus/cairns/bot3t.png"></a>
+                    <a href="images/aus/cairns/bot4.png" data-lightbox="cairns_pictures" title="Botanischer Garten"><img class="thumb" src="images/aus/cairns/bot4t.png"></a>
+                    <br>
+                    <a href="images/aus/cairns/bot5.png" data-lightbox="cairns_pictures" title="Botanischer Garten"><img class="thumb" src="images/aus/cairns/bot5t.png"></a>
+                    <a href="images/aus/cairns/reef1.png" data-lightbox="cairns_pictures" title="Great Barrier Reef Tour"><img class="thumb" src="images/aus/cairns/reef1t.png"></a>
+                    <a href="images/aus/cairns/reef2.png" data-lightbox="cairns_pictures" title="Great Barrier Reef Tour"><img class="thumb" src="images/aus/cairns/reef2t.png"></a>
+                    </div>
+                    Generell
+                    <hr class="gradient_one"/>
+                    8 Nächte. Die Stadt selbst ist nicht besonders interessant. Eigentlich kommt man hierher für den Flughafen und
+                    Great Barrier Reef. Da ich aber meinen Flug nach Alice Springs erst für den 24.2. gebucht habe, hatte ich noch
+                    extra Tage übrig. Das Wetter ist jetzt wirklich tropisch, praktisch jeden Abend (oder auch mal früher)
+                    gibts auch mal einen Schauer (oder mehrere).
+                    <br><br>
+                    Tag 21 - 16.2.
+                    <hr class="gradient_one"/>
+                    Nachmittags Ankunft in Cairns.
+                    <br>
+                    <strong>Wetter:</strong> Warm, Schauer.
+                    <br><br>
+                    Tag 22 - 17.2.
+                    <hr class="gradient_one"/>
+                    Am Vormittag ein bisschen die Stadt angeschaut, was hauptsächlich die "Esplanade" ist.
+                    <br>
+                    <strong>Wetter:</strong> Warm, Schauer.
+                    <br><br>
+                    Tag 23 - 18.2.
+                    <hr class="gradient_one"/>
+                    Vormittags bis mittags botanischer Garten.
+                    <br>
+                    <strong>Wetter:</strong> Warm, Schauer.
+                    <br><br>
+                    Tag 24 - 19.2.
+                    <hr class="gradient_one"/>
+                    
+                    <br>
+                    <strong>Wetter:</strong> Warm, Schauer.
+                    <br><br>
+                    Tag 25 - 20.2.
+                    <hr class="gradient_one"/>
+                    Great Barrier Reef Tour mit Schnorcheln.<br>
+                    Schildkröte, Clownfish, Korallen, Hai,<br>
+                    alles dabei!<br>
+                    Natürlich auch viele andere Fischsorten, hauptsächlich aber Korallen.
+                    <br>
+                    <strong>Wetter:</strong> Warm, Sonne.
+                    <br><br>
+                    Tage 26 bis 28 - 21.2. bis 23.2.
+                    <hr class="gradient_one"/>
+                    Verschiedene Eis- und Pie-sorten durchprobiert. Blutorange ist nicht so meins, Haselnuss und Lychee waren sehr gut.
+                    Die Pies waren alle sehr ähnlich (aber gut), wahrscheinlich da ich keine vegetarischen ausprobiert habe.
+                    <br>
+                    <strong>Wetter:</strong> Nicht ganz so warm, Schauer.
+                    <br><br>
+                    Tag 29 - 24.2.
+                    <hr class="gradient_one"/>
+                    Flug nach Alice Springs um 11:20.
+                    <br>
+                    <strong>Wetter:</strong> ?.
+                    <br><br>
+                </div>
                 <br>
             </section>
         </div>
