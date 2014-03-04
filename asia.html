@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>Asien 2014</title>
+        <link rel="stylesheet" href="stylesheets/styles.css">
+        <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+		<link rel="stylesheet" href="stylesheets/ande.css">
+        <link rel="stylesheet" href="stylesheets/eastcoast.css">
+        <link rel="stylesheet" href="stylesheets/lightbox.css">
+        <script src="javascripts/respond.js"></script>
+        <script src="javascripts/eastcoast.js"></script>
+        <script src="javascripts/jquery-1.10.2.min.js"></script>
+        <script src="javascripts/lightbox-2.6.min.js"></script>
+        <script src="javascripts/countdown.js"></script>
+        <link rel="icon" type="image/png" href="images/asia/favicon_asia.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    </head>
+    <body>
+        <div id="header">
+            <spcr></spcr>
+            <p class="headertext" id="top">
+                Asien 2014
+            </p>
+            <p class="countdowntext" id="countdownclock">
+                CD
+            </p>
+            <script type="text/javascript">
+                var clock = document.getElementById('countdownclock');
+                var targetDate = new Date(2014, 04, 23);
+
+                var cd = countdown(new Date(), targetDate);
+                clock.innerHTML = 'noch<br><strong>' + cd.days + '</strong> Tage';
+                setInterval(function() {
+                    var cd = countdown(new Date(), targetDate);
+                    clock.innerHTML = 'noch<br><strong>' + cd.days + '</strong> Tage';
+                }, 1000);
+            </script>
+            <select onchange="window.location=this.options[this.selectedIndex].value;">
+                <option value="#top">Inhalt</option>
+                <option value="#karte">&nbsp;&nbsp;Karte</option>
+            </select>
+            <img src="images/aus/flag.png" class="flag"></div>
+            <nav>
+            </nav>
+        </div>
+        <div class="wrapper">
+            <section>
+                <a id="karte"></a>
+                <span id="travel_small"></span>
+                <span id="travel">Karte</span>
+                <showhide><a id="karte_toggler" href="javascript:toggle('karte')">Anzeigen</a><span id="travel_small"/></showhide>
+                <br>
+                <hr>
+                <div align="center" class="hidden" id="karte_content">
+                    <iframe src="https://mapsengine.google.com/map/u/0/embed?mid=zCihsJGYkxv4.kvIOyHedjb_g" width="640" height="480"></iframe>
+                </div>
+                <br>
+            </section>
+        </div>
+    </body>
+</html>
