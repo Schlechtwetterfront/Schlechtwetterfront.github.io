@@ -6,66 +6,104 @@
         <title>Ande</title>
         <link rel="stylesheet" href="stylesheets/styles.css">
         <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-		<link rel="stylesheet" href="stylesheets/ande.css">
+		<link rel="stylesheet" href="stylesheets/andesimple.css">
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
         <script src="javascripts/respond.js"></script>
         <script src="javascripts/ande.js"></script>
+        <script src="javascripts/jquery-1.11.0.min.js"></script>
         <link rel="icon" type="image/png" href="favicon.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     </head>
     <body>
-        <!-- <div id="header">
-            <nav>
-                <li class="fork"><a class="navitem" href="https://github.com/Schlechtwetterfront/">View On GitHub</a></li>
-                <li class="title">
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="2Y73N3H3VDDQW">
-                        <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-                        <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-                    </form>
-                </li>
-            </nav>
-        </div> -->
         <div align="center">
-            <!-- <section> -->
-                <!-- <div id="title">
-                    <h1>Ande | Schlechtwetterfront</h1>
-                    <p></p>
-                    <hr>
-                    <span class="credits left">Maintained by <a href="https://Schlechtwetterfront.github.io/">Schlechtwetterfront</a></span>
-                    <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-                </div> -->
-                <!-- <div>
-                    <h2><a id="projects"></a>Projects</h2>
-                </div> -->
-                <br><br><br><br><br>
-                <div>
-                    <h2 class="tothesideprojects"><a id="projects"></a>Projects</h2>
-                    <a href="/xsizetools" title="XSIZETools" class="zet" onmouseover="setProjectInfo('zet')" onmouseout="clearProjectInfo()"></a>
-                    <a href="/softcry" title="SoftCry" class="softcry" onmouseover="setProjectInfo('softcry')" onmouseout="clearProjectInfo()"></a>
-                    <!-- <a href="" title="modosourcerer" class="modosrcr" onmouseover="setProjectInfo('modosrcr')" onmouseout="clearProjectInfo()"></a> -->
-                    <a href="/ze_filetypes" title="ZeroEngine File Formats" class="zefrmt" onmouseover="setProjectInfo('zefrmt')" onmouseout="clearProjectInfo()"></a>
-                    <br><br>
-                    <h3 id="project_header" class="info">&nbsp;</h3>
-                    <p id="project_body" class="info">&nbsp;</p><br>
-                </div>
+                <br><br><br><br><br><br>
 
-                <!-- <div>
-                    <h2><a id="social"></a>Social</h2>
-                </div> -->
-                <div>
-                    <h2 class="tothesidesocial"><a id="social"></a>Social</h2>
-                    <a href="https://github.com/Schlechtwetterfront" title="GitHub" class="github" onmouseover="setSocialInfo('github')" onmouseout="clearSocialInfo()"></a>
-                    <a href="http://twitter.com/Schlechtwetterfront" title="Twitter" class="twitter" onmouseover="setSocialInfo('twitter')" onmouseout="clearSocialInfo()"></a>
-                    <a href="" title="Steam" class="steam" onmouseover="setSocialInfo('steam')" onmouseout="clearSocialInfo()"></a>
-                    <br><br>
-                    <h3 id="social_header" class="info">&nbsp;</h3>
-                    <p id="social_body" class="info">&nbsp;</p><br>
-                </div>
-                <br>
-                <!-- <dlbutton></dlbutton> -->
-            <!-- </section> -->
+                <horizontal_bar>
+                    <div class="three">
+                        <box id="zet">XSI ZETools<br>
+                            <info>
+                                <a class="download_button" href="https://github.com/Schlechtwetterfront/xsizetools/archive/master.zip"></a>
+                                <a class="link_button" href="/xsizetools"></a>
+                                <a class="github_button" href="https://github.com/Schlechtwetterfront/xsizetools"></a>
+                            </info>
+                        </box>
+                        <box id="sc">SoftCry
+                            <info>
+                                <a class="download_button" href="https://github.com/Schlechtwetterfront/softcry/archive/master.zip"></a>
+                                <a class="link_button" href="/softcry"></a>
+                                <a class="github_button" href="https://github.com/Schlechtwetterfront/softcry"></a>
+                            </info>
+                        </box>
+                        <box id="zef">ZE File Formats
+                            <info>
+                                <a class="download_button" href="https://github.com/Schlechtwetterfront/ze_filetypes/archive/gh-pages.zip"></a>
+                                <a class="link_button" href="/ze_filetypes"></a>
+                                <a class="github_button" href="https://github.com/Schlechtwetterfront/ze_filetypes"></a>
+                            </info>
+                        </box>
+                    </div>
+                </horizontal_bar>
+
+
+                <mid_spacer>
+                    <!-- <div>
+                        <info_box id="info_zet">
+                            ZeroEngine exporter for Softimage.
+                        </info_box>
+                        <info_box id="info_sc">
+                            CRYENGINE exporter for Softimage.
+                        </info_box>
+                        <info_box id="info_zef">
+                            ZeroEngine file formats information.
+                        </info_box>
+                    </div> -->
+                </mid_spacer>
+
+                <horizontal_bar>
+                    <div class="four">
+                        <a class="social" id="github" href="https://github.com/Schlechtwetterfront">
+                            <img height="120" src="images/logos/github_white.png"></img>
+                        </a>
+                        <a class="social" id="twitter" href="https://twitter.com/schlchtwtrfrnt">
+                            <img height="120" src="images/logos/twitter_white.png"></img>
+                        </a>
+                        <a class="social" id="steam" href="http://steamcommunity.com/id/andeweget/">
+                            <img height="120" src="images/logos/steam_white.png"></img>
+                        </a>
+                        <a class="social" id="youtube" href="https://youtube.com/user/andeweget">
+                            <img height="120" src="images/logos/youtube_white.png"></img>
+                        </a>
+                    </div>
+                </horizontal_bar>
         </div>
+        <script type="text/javascript">
+
+            function keepActive () {
+
+            }
+
+            function setActive (event) {
+                $('#info_' + event.data[0]).toggleClass('active');
+                // $('#' + event.data[0]).mouseover();
+            }
+
+            function unsetActive (event) {
+                $('#info_' + event.data[0]).toggleClass('active');
+                // $('#' + event.data[0]).mouseleave();
+            }
+
+            var elements = [
+                'zet', 'sc', 'zef'
+            ];
+
+            var infoBoxes = [
+                'info_zet', 'info_sc', 'info_zef'
+            ];
+
+            // for (var i = elements.length - 1; i >= 0; i--) {
+            //     $('#' + elements[i]).bind('mouseover', [elements[i]], setActive);
+            //     $('#' + elements[i]).bind('mouseleave', [elements[i]], unsetActive);
+            // };
+        </script>
     </body>
 </html>

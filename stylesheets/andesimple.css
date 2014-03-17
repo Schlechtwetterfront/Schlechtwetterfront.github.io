@@ -35,6 +35,58 @@ a.download:hover {
 }
 
 
+a.link_button, a.download_button, a.github_button {
+    width: 48px;
+    height: 48px;
+    
+    border: 2px solid #252525;
+    border-radius: 48px;
+    transition: background-color 0.5s, background-image 1s;
+    line-height: 32px;
+    display: inline-block;
+
+    margin: 5px;
+}
+
+
+a.link_button {
+    background: url(../images/logos/link.png) transparent no-repeat center center;
+    background-size: contain;
+}
+
+
+a.download_button {
+    background: url(../images/logos/download.png) transparent no-repeat center center;
+    background-size: contain;
+}
+
+
+a.github_button {
+    background: url(../images/logos/github.png) transparent no-repeat center center;
+    background-size: contain;
+}
+
+
+a.download_button:hover, a.link_button:hover, a.github_button:hover {
+    background-color: #252525;
+}
+
+
+a.link_button:hover {
+    background-image: url(../images/logos/link_hover.png);
+}
+
+
+a.download_button:hover {
+    background-image: url(../images/logos/download_hover.png);
+}
+
+
+a.github_button:hover {
+    background-image: url(../images/logos/github_hover.png);
+}
+
+
 horizontal_bar {
     width: 100%;
     height: 120px;
@@ -90,12 +142,14 @@ horizontal_bar box {
 
 horizontal_bar box:hover {
     background-color: #ffba77;
-    height: 298px;
+    /*background-image: linear-gradient(180deg, #ffba77 0px, #ffba77 120px, #252525 121px, #252525 100%);*/
+    /*height: 298px;*/
+    height: 200px;
 }
 
 
 horizontal_bar box:active {
-    background-color: #252525;
+    /*background-color: #252525;*/
 }
 
 
