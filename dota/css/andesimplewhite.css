@@ -1,0 +1,664 @@
+/* Kappastyle */
+
+/*
+    Possible background-colors:
+        #e776ff - violet
+        #ff7676 - redish
+        #8d76ff - darker blue
+        #96ff76 - green
+        #fff076 - dirty yellow
+        #ffbd76 - orangeish
+        #ff9676 - brighter red
+        #a3b2ff - brighter blue
+        #ffc39d - orange bright
+*/
+
+
+@font-face {
+  font-family: 'OpenSansLight';
+  src: url("../fonts/OpenSans-Light-webfont.eot");
+  src: url("../fonts/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Light-webfont.svg#OpenSansLight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSansLightItalic';
+  src: url("../fonts/OpenSans-LightItalic-webfont.eot");
+  src: url("../fonts/OpenSans-LightItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-LightItalic-webfont.woff") format("woff"), url("../fonts/OpenSans-LightItalic-webfont.ttf") format("truetype"), url("../fonts/OpenSans-LightItalic-webfont.svg#OpenSansLightItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSansRegular';
+  src: url("../fonts/OpenSans-Regular-webfont.eot");
+  src: url("../fonts/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Regular-webfont.woff") format("woff"), url("../fonts/OpenSans-Regular-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Regular-webfont.svg#OpenSansRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'OpenSansItalic';
+  src: url("../fonts/OpenSans-Italic-webfont.eot");
+  src: url("../fonts/OpenSans-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Italic-webfont.woff") format("woff"), url("../fonts/OpenSans-Italic-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Italic-webfont.svg#OpenSansItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'OpenSansSemibold';
+  src: url("../fonts/OpenSans-Semibold-webfont.eot");
+  src: url("../fonts/OpenSans-Semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Semibold-webfont.woff") format("woff"), url("../fonts/OpenSans-Semibold-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'OpenSansSemiboldItalic';
+  src: url("../fonts/OpenSans-SemiboldItalic-webfont.eot");
+  src: url("../fonts/OpenSans-SemiboldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-SemiboldItalic-webfont.woff") format("woff"), url("../fonts/OpenSans-SemiboldItalic-webfont.ttf") format("truetype"), url("../fonts/OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'OpenSansBold';
+  src: url("../fonts/OpenSans-Bold-webfont.eot");
+  src: url("../fonts/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Bold-webfont.woff") format("woff"), url("../fonts/OpenSans-Bold-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Bold-webfont.svg#OpenSansBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'OpenSansBoldItalic';
+  src: url("../fonts/OpenSans-BoldItalic-webfont.eot");
+  src: url("../fonts/OpenSans-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-BoldItalic-webfont.woff") format("woff"), url("../fonts/OpenSans-BoldItalic-webfont.ttf") format("truetype"), url("../fonts/OpenSans-BoldItalic-webfont.svg#OpenSansBoldItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+a.download {
+    font-size: 16px;
+    color: #222222;
+    font-weight: bold;
+    transition: color 0.3s, background-color 0.3s;
+
+    display: inline-block;
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    background-color: #e8a96b;
+    text-align: center;
+}
+
+
+a.download:hover {
+    color: #EEEEEE;
+    background-color: #252525;
+}
+
+
+a.link_button, a.download_button, a.github_button {
+    width: 48px;
+    height: 48px;
+    
+    border: 2px solid #252525;
+    border-radius: 48px;
+    transition: background-color 0.5s, background-image 1s;
+    line-height: 32px;
+    display: inline-block;
+
+    margin: 5px;
+}
+
+
+a.link_button {
+    background: url(../images/logos/link.png) transparent no-repeat center center;
+    background-size: contain;
+}
+
+
+a.download_button {
+    background: url(../images/logos/download.png) transparent no-repeat center center;
+    background-size: contain;
+}
+
+
+a.github_button {
+    background: url(../images/logos/github.png) transparent no-repeat center center;
+    background-size: contain;
+}
+
+
+a.download_button:hover, a.link_button:hover, a.github_button:hover {
+    background-color: #252525;
+}
+
+
+a.link_button:hover {
+    background-image: url(../images/logos/link_hover.png);
+}
+
+
+a.download_button:hover {
+    background-image: url(../images/logos/download_hover.png);
+}
+
+
+a.github_button:hover {
+    background-image: url(../images/logos/github_hover.png);
+}
+
+
+horizontal_bar {
+    width: 100%;
+    height: 120px;
+    background-color: #252525;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+horizontal_bar a.social {
+    background-color: #252525;
+    height: 120px;
+    width: 220px;
+    transition: background-color 1s;
+    color: #EEEEEE;
+    display: inline-block;
+    line-height: 0;
+
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+
+horizontal_bar a.social:hover {
+    background-color: #ffba77;
+}
+
+
+horizontal_bar box {
+    background-color: #252525;
+    height: 120px;
+    width: 220px;
+    transition: background-color 1s, height 0.6s;
+    color: #EEEEEE;
+    display: inline-block;
+
+    font-size: 22px;
+    vertical-align: middle;
+    line-height: 120px;
+
+    cursor: default;
+
+    margin: 0;
+    padding: 0;
+    float: left;
+
+    overflow: hidden;
+}
+
+
+horizontal_bar box:hover {
+    background-color: #ffba77;
+    /*background-image: linear-gradient(180deg, #ffba77 0px, #ffba77 120px, #252525 121px, #252525 100%);*/
+    /*height: 298px;*/
+    height: 200px;
+}
+
+
+horizontal_bar box:active {
+    /*background-color: #252525;*/
+}
+
+
+info {
+    background-color: transparent;
+    color: #222222;
+    line-height: 1.0em;
+    display: inline-block;
+
+    font-size: 16px;
+
+    text-align: justify;
+    max-width: 210px;
+}
+
+
+download_button {
+    /*border: 2px solid black;*/
+    /*border-radius: 3px;*/
+    background: transparent;
+    background-image: transparent;
+    color: #EEEEEE;
+    line-height: 32px;
+
+    height: 32px;
+
+    display: inline-block;
+
+    /*transition: background-image 1s, color 0.2s;*/
+}
+
+
+download_button:hover {
+    color: #222222;
+    /*background-image: url('/images/logos/arrow.png') center center;*/
+}
+
+
+horizontal_bar a img {
+    /*height: 120px;*/
+    padding: 0px;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    /*float: left;*/
+}
+
+
+horizontal_bar div.three {
+    width: 660px;
+}
+
+
+horizontal_bar div.four {
+    width: 880px;
+}
+
+
+body {
+    background: white;
+}
+
+p {
+    color: #606060;
+    font-weight: bold;
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+
+}
+
+
+#top_bar {
+    z-index: 100;
+    background-color: white;
+    border-bottom: solid 3px #4b9bff;
+    display: block;
+    height: 80px;
+    width: 100%;
+    text-align: center;
+
+    padding: 0px;
+    margin: 0px;
+
+    left: 0;
+    top: 0px;
+    position: fixed;
+}
+
+
+#top_bar box, a, logo {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+
+    display: inline-block;
+    width: 220px;
+    height: 80px;
+    line-height: 80px;
+
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    text-decoration: none;
+    color: #868686;
+
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    border-left: 2px solid #e0e0e0;
+    
+    cursor: default;
+
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+#top_bar logo {
+    background: url(../img/dota_logo_hover.png) center center no-repeat;
+    background-size: contain;
+    /*transition: background-image 0.3s;*/
+}
+
+
+#top_bar logo:hover {
+    /*background-image: url(../img/dota_logo_hover.png);*/
+}
+
+
+#top_bar a {
+    cursor: pointer;
+}
+
+
+#top_bar a:hover {
+    background-color: #4b9bff;
+    color: white;
+}
+
+
+#top_bar box.terminator, a.terminator {
+    width: 218px;
+    border-right: 2px solid #e0e0e0;
+}
+
+
+#top_bar div.two {
+    width: 444px;
+}
+
+
+#top_bar div.three {
+    width: 666px;
+}
+
+
+category_button {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+
+    border-radius: 3px;
+    border: 1px solid #AAAAAA;
+    border-bottom: 3px solid #4b9bff;
+
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: #868686;
+
+    cursor: pointer;
+
+    padding-left: 16px;
+
+    display: inline-block;
+    width: 200px;
+    height: 36px;
+
+    text-align: left;
+
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+
+category_button:hover {
+    border-color: #AAAAAA;
+    /*border-bottom: 3px solid #ff934b;*/
+    border-bottom: 3px solid #4b9bff;
+
+    background-color: #4b9bff;
+    color: white;
+}
+
+
+category_button:active {
+    color: #353535;
+}
+
+
+#main {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 100px;
+    position: relative;
+    /*padding: 0 20px;*/
+}
+
+
+category {
+    text-align: left;
+    vertical-align: top;
+    height: 40px;
+    width: 360px;
+    display: inline-block;
+
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+
+    padding: 10px;
+
+    overflow: hidden;
+}
+
+category.expanded {
+    height: 200px;
+}
+
+category item {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: #808080;
+
+    margin-left: 6px;
+
+    display: inline-block;
+
+    width: 354px;
+
+    border: 1px solid white;
+    border-radius: 4px;
+
+    transition: background-color 5s, border-color 1.6s, color 1.6s;
+}
+
+
+category item.imminent {
+    background-color: #ff4b4b;
+    border-color: #ff4b4b;
+    color: white;
+}
+
+
+category timer {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: #606060;
+    text-align: center;
+
+    /*width: 60px;*/
+
+    float: right;
+
+    /*border: 1px solid white;*/
+    border-radius: 4px;
+    margin-right: 4px;
+
+    transition: background-color 5s, border-color 1.6s, color 1.6s;
+
+    display: inline-block;
+}
+
+category timer.imminent {
+    /*background-color: #ff4b4b;*/
+    /*border-color: #ff4b4b;*/
+    color: white;
+}
+
+
+category_row {
+    display: inline-block;
+    width: 100%;
+    height: 226px;
+}
+
+
+category a.start {
+    width: 32px;
+    height: 32px;
+    
+    /*border: 1px solid #252525;*/
+    /*border-radius: 48px;*/
+    /*transition: background-color 0.5s, background-image 1s;*/
+    line-height: 32px;
+    display: inline-block;
+
+    /*margin: 5px;*/
+    background: url(../img/start_arrow.png) center center no-repeat;
+    background-size: contain;
+    transition: background-image 0.3s;
+}
+
+
+category a.start:hover {
+    background-image: url(../img/start_arrow_hover.png);
+}
+
+
+startstop {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+
+    width: 16px;
+    height: 16px;
+    line-height: 24px;
+    top: 1px;
+    position: relative;
+    display: inline-block;
+    background: url(../img/start_arrow.png) center center no-repeat;
+    background-size: contain;
+
+    transition: background-image 0.2s;
+
+    cursor: pointer;
+}
+
+startstop:hover {
+    background-image: url(../img/start_arrow_hover.png);
+}
+
+
+startstop.started {
+    background: url(../img/stop_icon.png) center center no-repeat;
+}
+
+startstop.started:hover {
+    background: url(../img/stop_icon_hover.png) center center no-repeat;
+}
+
+
+volume {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+
+    width: 42px;
+    height: 42px;
+    top: 20px;
+    right: 16px;
+    position: relative;
+    display: inline-block;
+    background: url(../img/volume.png) center center no-repeat;
+    background-size: contain;
+
+    transition: background-image 0.2s;
+
+    cursor: pointer;
+    float: right;
+}
+
+volume:hover {
+    background-image: url(../img/volume_hover.png);
+}
+
+
+volume.disabled {
+    background-image: url(../img/volume_disabled.png);
+}
+
+volume.disabled:hover {
+    background-image: url(../img/volume_disabled_hover.png);
+}
+
+
+question_mark {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+
+    top: -2px;
+    left: 28px;
+    position: relative;
+    display: inline-block;
+
+    transition: color 0.2s;
+
+    cursor: pointer;
+    float: left;
+
+    font-size: 46px;
+    font-weight: bold;
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    text-decoration: none;
+    color: #868686;
+}
+
+
+question_mark:hover {
+    color: #4b9bff;
+}
+
+
+#dialog {
+    display: none;
+}
+
+
+.ui-dialog-titlebar-close {
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid #CCCCCC;
+    box-shadow: none;
+
+    transition: background-color 0.3s;
+}
+
+
+.ui-dialog-titlebar-close:hover {
+    background-color: #4b9bff;
+}
+
+
+.ui-dialog-titlebar-close:focus {
+    outline: none;
+    border: 1px solid #CCCCCC;;
+}
+
+
+.ui-widget, .ui-widget button {
+    font-weight: bold;
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 16px;
+    color: #606060;
+}
