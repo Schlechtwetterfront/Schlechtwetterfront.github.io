@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/pygment_trac.css">
+        <link rel="stylesheet" href="css/andesimple.css">
+        <script src="js/respond.js"></script>
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <link rel="icon" type="image/png" href="favicon.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <title>{{ page_title }}</title>
+    </head>
+    <body>
+        <div align="center">
+                <br><br><br><br><br><br>
+
+                <horizontal_bar>
+                    <div id="projects_bar">
+                    {% for project in projects %}
+                        <box id="{{ project.id }}" extra-height="{{ project.extra_height }}" margin="{{ project.margin }}">{{ project.name }}<br>
+                            <div class="hr"></div>
+                            <info>
+                            {% for link in project.links %}
+                                <a class="rectangle_button" href="{{ link.address }}">{{ link.title }}</a> <br>
+                            {% endfor %}
+                            </info>
+                        </box>
+                    {% endfor %}
+                    </div>
+                </horizontal_bar>
+
+
+                <mid_spacer>
+                </mid_spacer>
+
+                <horizontal_bar>
+                    <div id="social_bar">
+                    {% for social in social_links %}
+                        <a class="social" href="{{ social.link }}">
+                            <img height="120" src="{{ social.image_path }}"></img>
+                        </a>
+                    {% endfor %}
+                    </div>
+                </horizontal_bar>
+        </div>
+        <script type="text/javascript">
+
+            var colors = [
+                "#ff7676", // reddish
+                "#8d76ff", // darker violet
+                "#d77f64", // brighter red
+                "#919ddb", // brighter blue
+                "#7cc67c", // green
+            ];
+
+            // Choose random hover color for all elments.
+            var box_hover_color = colors[Math.floor(Math.random() * colors.length)];
+
+            var box_normal_color = "#252525";
+
+            var info_margin = 4;
+
+            $("#projects_bar").css("width", parseInt($("horizontal_bar box").css("width")) * $("horizontal_bar box").length);
+            $("#social_bar").css("width", parseInt($("horizontal_bar a.social").css("width")) * $("horizontal_bar a.social").length);
+
+            window.onload = function () {
+                info_margin = parseInt($("horizontal_bar box").attr("margin"));
+                $("info").css({"padding-top": info_margin, "padding-bottom": info_margin});
+
+
+                // Expanding boxes and random hover color for project boxes.
+                $("horizontal_bar box").hover(
+                    function () {
+                        var box_height = parseInt($(this).attr("box-height"));
+                        if (!box_height) {
+                            box_height = parseInt($(this).css("height"));
+                        }
+                        var box_extra_height = parseInt($(this).attr("extra-height"));
+                        $(this).css({"background-color": box_hover_color, 
+                                    "height": box_height + box_extra_height});
+                        $(this).attr({"box-height": box_height, "box-extra-height": box_extra_height});
+                    },
+                    function () {
+                        var box_height = $(this).attr("box-height");
+                        $(this).css({"background-color": box_normal_color,
+                                    "height": box_height});
+                    }
+                );
+
+                // Random hover color for social boxes.
+                $("horizontal_bar a.social").hover(
+                    function () {
+                        $(this).css("background-color", box_hover_color);
+                    },
+                    function () {
+                        $(this).css("background-color", box_normal_color);
+                    }
+                );
+            }
+        </script>
+    </body>
+</html>
