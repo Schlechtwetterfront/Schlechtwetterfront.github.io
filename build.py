@@ -41,24 +41,24 @@ def build():
     pass
 
 my_projects = [
-Project('XSI ZETools', pid='zet', links=[Link('Downloads', 'https://github.com/Schlechtwetterfront/xsizetools/releases'),
-                                    Link('Overview', '/zetools'),
-                                    Link('View Source on Github', 'https://github.com/Schlechtwetterfront/xsizetools'),
-                                    Link('GameToast Forum Thread', 'http://gametoast.com/viewtopic.php?f=36&t=26664')]),
-Project('SoftCry', pid='sc', links=[Link('Downloads', 'https://github.com/Schlechtwetterfront/softcry/releases'),
-                                    Link('Overview', '/softcry'),
-                                    Link('View Source on Github', 'https://github.com/Schlechtwetterfront/softcry'),
-                                    Link('CRYDEV Forum Thread', 'http://www.cryengine.com/community/viewtopic.php?f=315&t=102978')]),
-Project('ZE File Formats', links=[Link('Overview', '/ze_filetypes'),
-                                Link('Download Source', 'https://github.com/Schlechtwetterfront/ze_filetypes/archive/gh-pages.zip'),
-                                Link('View Source on Github', 'https://github.com/Schlechtwetterfront/ze_filetypes')])
+    Project('XSI ZETools', pid='zet', links=[Link('Downloads', 'https://github.com/Schlechtwetterfront/xsizetools/releases'),
+                                             Link('Overview', '/xsizetools'),
+                                             Link('View Source on Github', 'https://github.com/Schlechtwetterfront/xsizetools'),
+                                             Link('GameToast Forum Thread', 'http://gametoast.com/viewtopic.php?f=36&t=26664')]),
+    Project('SoftCry', pid='sc', links=[Link('Downloads', 'https://github.com/Schlechtwetterfront/softcry/releases'),
+                                        Link('Overview', '/softcry'),
+                                        Link('View Source on Github', 'https://github.com/Schlechtwetterfront/softcry'),
+                                        Link('CRYDEV Forum Thread', 'http://www.cryengine.com/community/viewtopic.php?f=315&t=102978')]),
+    Project('ZE File Formats', links=[Link('Overview', '/ze_filetypes'),
+                                      Link('Download Source', 'https://github.com/Schlechtwetterfront/ze_filetypes/archive/gh-pages.zip'),
+                                      Link('View Source on Github', 'https://github.com/Schlechtwetterfront/ze_filetypes')])
 ]
 
 my_socials = [
-SocialLink('https://github.com/Schlechtwetterfront', 'img/github_white.png'),
-SocialLink('https://twitter.com/schlchtwtrfrnt', 'img/twitter_white.png'),
-SocialLink('http://steamcommunity.com/id/andeweget/', 'img/steam_white.png'),
-SocialLink('https://youtube.com/user/andeweget', 'img/youtube_white.png')
+    SocialLink('https://github.com/Schlechtwetterfront', 'img/github_white.png'),
+    SocialLink('https://twitter.com/schlchtwtrfrnt', 'img/twitter_white.png'),
+    SocialLink('http://steamcommunity.com/id/andeweget/', 'img/steam_white.png'),
+    SocialLink('https://youtube.com/user/andeweget', 'img/youtube_white.png')
 ]
 
 template = env.get_template('index_template.html')
