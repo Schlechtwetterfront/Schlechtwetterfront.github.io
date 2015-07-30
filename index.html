@@ -3,107 +3,149 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>Ande</title>
-        <link rel="stylesheet" href="stylesheets/styles.css">
-        <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-		<link rel="stylesheet" href="stylesheets/andesimple.css">
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
-        <script src="javascripts/respond.js"></script>
-        <script src="javascripts/ande.js"></script>
-        <script src="javascripts/jquery-1.11.0.min.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/pygment_trac.css">
+        <link rel="stylesheet" href="css/andesimple.css">
+        <script src="js/respond.js"></script>
+        <script src="js/jquery-1.11.0.min.js"></script>
         <link rel="icon" type="image/png" href="favicon.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <title>Schlechtwetterfront</title>
     </head>
     <body>
         <div align="center">
                 <br><br><br><br><br><br>
 
                 <horizontal_bar>
-                    <div class="three">
-                        <box id="zet">XSI ZETools<br>
+                    <div id="projects_bar">
+                    
+                        <box id="zet" extra-height="136" margin="4">XSI ZETools<br>
+                            <div class="hr"></div>
                             <info>
-                                <a class="download_button" href="https://github.com/Schlechtwetterfront/xsizetools/archive/master.zip"></a>
-                                <a class="link_button" href="/xsizetools"></a>
-                                <a class="github_button" href="https://github.com/Schlechtwetterfront/xsizetools"></a>
+                            
+                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/xsizetools/releases">Downloads</a> <br>
+                            
+                                <a class="rectangle_button" href="/zetools">Overview</a> <br>
+                            
+                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/xsizetools">View Source on Github</a> <br>
+                            
+                                <a class="rectangle_button" href="http://gametoast.com/viewtopic.php?f=36&t=26664">GameToast Forum Thread</a> <br>
+                            
                             </info>
                         </box>
-                        <box id="sc">SoftCry
+                    
+                        <box id="sc" extra-height="136" margin="4">SoftCry<br>
+                            <div class="hr"></div>
                             <info>
-                                <a class="download_button" href="https://github.com/Schlechtwetterfront/softcry/archive/master.zip"></a>
-                                <a class="link_button" href="/softcry"></a>
-                                <a class="github_button" href="https://github.com/Schlechtwetterfront/softcry"></a>
+                            
+                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/softcry/releases">Downloads</a> <br>
+                            
+                                <a class="rectangle_button" href="/softcry">Overview</a> <br>
+                            
+                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/softcry">View Source on Github</a> <br>
+                            
+                                <a class="rectangle_button" href="http://www.cryengine.com/community/viewtopic.php?f=315&t=102978">CRYDEV Forum Thread</a> <br>
+                            
                             </info>
                         </box>
-                        <box id="zef">ZE File Formats
+                    
+                        <box id="tst" extra-height="104" margin="4">ZE File Formats<br>
+                            <div class="hr"></div>
                             <info>
-                                <a class="download_button" href="https://github.com/Schlechtwetterfront/ze_filetypes/archive/gh-pages.zip"></a>
-                                <a class="link_button" href="/ze_filetypes"></a>
-                                <a class="github_button" href="https://github.com/Schlechtwetterfront/ze_filetypes"></a>
+                            
+                                <a class="rectangle_button" href="/ze_filetypes">Overview</a> <br>
+                            
+                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/ze_filetypes/archive/gh-pages.zip">Download Source</a> <br>
+                            
+                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/ze_filetypes">View Source on Github</a> <br>
+                            
                             </info>
                         </box>
+                    
                     </div>
                 </horizontal_bar>
 
 
                 <mid_spacer>
-                    <!-- <div>
-                        <info_box id="info_zet">
-                            ZeroEngine exporter for Softimage.
-                        </info_box>
-                        <info_box id="info_sc">
-                            CRYENGINE exporter for Softimage.
-                        </info_box>
-                        <info_box id="info_zef">
-                            ZeroEngine file formats information.
-                        </info_box>
-                    </div> -->
                 </mid_spacer>
 
                 <horizontal_bar>
-                    <div class="four">
-                        <a class="social" id="github" href="https://github.com/Schlechtwetterfront">
-                            <img height="120" src="images/logos/github_white.png"></img>
+                    <div id="social_bar">
+                    
+                        <a class="social" href="https://github.com/Schlechtwetterfront">
+                            <img height="120" src="img/github_white.png"></img>
                         </a>
-                        <a class="social" id="twitter" href="https://twitter.com/schlchtwtrfrnt">
-                            <img height="120" src="images/logos/twitter_white.png"></img>
+                    
+                        <a class="social" href="https://twitter.com/schlchtwtrfrnt">
+                            <img height="120" src="img/twitter_white.png"></img>
                         </a>
-                        <a class="social" id="steam" href="http://steamcommunity.com/id/andeweget/">
-                            <img height="120" src="images/logos/steam_white.png"></img>
+                    
+                        <a class="social" href="http://steamcommunity.com/id/andeweget/">
+                            <img height="120" src="img/steam_white.png"></img>
                         </a>
-                        <a class="social" id="youtube" href="https://youtube.com/user/andeweget">
-                            <img height="120" src="images/logos/youtube_white.png"></img>
+                    
+                        <a class="social" href="https://youtube.com/user/andeweget">
+                            <img height="120" src="img/youtube_white.png"></img>
                         </a>
+                    
                     </div>
                 </horizontal_bar>
         </div>
         <script type="text/javascript">
 
-            function keepActive () {
-
-            }
-
-            function setActive (event) {
-                $('#info_' + event.data[0]).toggleClass('active');
-                // $('#' + event.data[0]).mouseover();
-            }
-
-            function unsetActive (event) {
-                $('#info_' + event.data[0]).toggleClass('active');
-                // $('#' + event.data[0]).mouseleave();
-            }
-
-            var elements = [
-                'zet', 'sc', 'zef'
+            var colors = [
+                "#ff7676", // reddish
+                "#8d76ff", // darker violet
+                "#d77f64", // brighter red
+                "#919ddb", // brighter blue
+                "#7cc67c", // green
             ];
 
-            var infoBoxes = [
-                'info_zet', 'info_sc', 'info_zef'
-            ];
+            // Choose random hover color for all elments.
+            var box_hover_color = colors[Math.floor(Math.random() * colors.length)];
 
-            // for (var i = elements.length - 1; i >= 0; i--) {
-            //     $('#' + elements[i]).bind('mouseover', [elements[i]], setActive);
-            //     $('#' + elements[i]).bind('mouseleave', [elements[i]], unsetActive);
-            // };
+            var box_normal_color = "#252525";
+
+            var info_margin = 4;
+
+            $("#projects_bar").css("width", parseInt($("horizontal_bar box").css("width")) * $("horizontal_bar box").length);
+            $("#social_bar").css("width", parseInt($("horizontal_bar a.social").css("width")) * $("horizontal_bar a.social").length);
+
+            window.onload = function () {
+                info_margin = parseInt($("horizontal_bar box").attr("margin"));
+                $("info").css({"padding-top": info_margin, "padding-bottom": info_margin});
+
+
+                // Expanding boxes and random hover color for project boxes.
+                $("horizontal_bar box").hover(
+                    function () {
+                        var box_height = parseInt($(this).attr("box-height"));
+                        if (!box_height) {
+                            box_height = parseInt($(this).css("height"));
+                        }
+                        var box_extra_height = parseInt($(this).attr("extra-height"));
+                        $(this).css({"background-color": box_hover_color, 
+                                    "height": box_height + box_extra_height});
+                        $(this).attr({"box-height": box_height, "box-extra-height": box_extra_height});
+                    },
+                    function () {
+                        var box_height = $(this).attr("box-height");
+                        $(this).css({"background-color": box_normal_color,
+                                    "height": box_height});
+                    }
+                );
+
+                // Random hover color for social boxes.
+                $("horizontal_bar a.social").hover(
+                    function () {
+                        $(this).css("background-color", box_hover_color);
+                    },
+                    function () {
+                        $(this).css("background-color", box_normal_color);
+                    }
+                );
+            }
         </script>
     </body>
 </html>
