@@ -1,18 +1,18 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/pygment_trac.css">
-        <link rel="stylesheet" href="css/andesimple.css">
-        <script src="js/respond.js"></script>
-        <script src="js/jquery-1.11.0.min.js"></script>
-        <link rel="icon" type="image/png" href="favicon.png"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pygment_trac.css">
+    <link rel="stylesheet" href="css/andesimple.css">
+    <script src="js/respond.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-        <title>Schlechtwetterfront</title>
-    </head>
+    <title>Schlechtwetterfront</title>
+</head>
     <body>
         <div align="center">
                 <br><br><br><br><br><br>
@@ -24,13 +24,13 @@
                             <div class="hr"></div>
                             <info>
                             
-                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/xsizetools/releases">Downloads</a> <br>
+                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/xsizetools/releases">Downloads</a>
                             
-                                <a class="rectangle_button" href="/xsizetools">Overview</a> <br>
+                                <a class="rectangle_button" href="/xsizetools">Overview</a>
                             
-                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/xsizetools">View Source on Github</a> <br>
+                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/xsizetools">View Source on GitHub</a>
                             
-                                <a class="rectangle_button" href="http://gametoast.com/viewtopic.php?f=36&t=26664">GameToast Forum Thread</a> <br>
+                                <a class="rectangle_button" href="http://gametoast.com/viewtopic.php?f=36&t=26664">GameToast Forum Thread</a>
                             
                             </info>
                         </box>
@@ -39,13 +39,13 @@
                             <div class="hr"></div>
                             <info>
                             
-                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/softcry/releases">Downloads</a> <br>
+                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/softcry/releases">Downloads</a>
                             
-                                <a class="rectangle_button" href="/softcry">Overview</a> <br>
+                                <a class="rectangle_button" href="/softcry">Overview</a>
                             
-                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/softcry">View Source on Github</a> <br>
+                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/softcry">View Source on GitHub</a>
                             
-                                <a class="rectangle_button" href="http://www.cryengine.com/community/viewtopic.php?f=315&t=102978">CRYDEV Forum Thread</a> <br>
+                                <a class="rectangle_button" href="http://www.cryengine.com/community/viewtopic.php?f=315&t=102978">CRYDEV Forum Thread</a>
                             
                             </info>
                         </box>
@@ -54,11 +54,11 @@
                             <div class="hr"></div>
                             <info>
                             
-                                <a class="rectangle_button" href="/ze_filetypes">Overview</a> <br>
+                                <a class="rectangle_button" href="/ze_filetypes">Overview</a>
                             
-                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/ze_filetypes/archive/gh-pages.zip">Download Source</a> <br>
+                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/ze_filetypes/archive/gh-pages.zip">Download Source</a>
                             
-                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/ze_filetypes">View Source on Github</a> <br>
+                                <a class="rectangle_button" href="https://github.com/Schlechtwetterfront/ze_filetypes">View Source on GitHub</a>
                             
                             </info>
                         </box>
@@ -94,18 +94,46 @@
         </div>
         <script type="text/javascript">
 
-            var colors = [
-                "#ff7676", // reddish
-                "#8d76ff", // darker violet
-                "#d77f64", // brighter red
-                "#919ddb", // brighter blue
-                "#7cc67c", // green
-            ];
+            function shadeBlend(p,c0,c1) {
+    var n=p<0?p*-1:p,u=Math.round,w=parseInt;
+    if(c0.length>7){
+        var f=c0.split(","),t=(c1?c1:p<0?"rgb(0,0,0)":"rgb(255,255,255)").split(","),R=w(f[0].slice(4)),G=w(f[1]),B=w(f[2]);
+        return "rgb("+(u((w(t[0].slice(4))-R)*n)+R)+","+(u((w(t[1])-G)*n)+G)+","+(u((w(t[2])-B)*n)+B)+")"
+    }else{
+        var f=w(c0.slice(1),16),t=w((c1?c1:p<0?"#000000":"#FFFFFF").slice(1),16),R1=f>>16,G1=f>>8&0x00FF,B1=f&0x0000FF;
+        return "#"+(0x1000000+(u(((t>>16)-R1)*n)+R1)*0x10000+(u(((t>>8&0x00FF)-G1)*n)+G1)*0x100+(u(((t&0x0000FF)-B1)*n)+B1)).toString(16).slice(1)
+    }
+}
 
-            // Choose random hover color for all elments.
-            var box_hover_color = colors[Math.floor(Math.random() * colors.length)];
+var colors = [
+    "#ff7676", // reddish
+    "#8d76ff", // darker violet
+    "#d77f64", // brighter red
+    "#919ddb", // brighter blue
+    "#7cc67c", // green
+];
 
-            var box_normal_color = "#252525";
+// Choose random hover color for all elments.
+var box_hover_color = colors[Math.floor(Math.random() * colors.length)];
+
+var box_darkened_color = shadeBlend(-0.5, box_hover_color);
+
+var box_brightened_color = shadeBlend(0.5, box_hover_color);
+
+var box_normal_color = "#252525";
+
+$("a.normal_link").css({"color": box_hover_color, "border-bottom": "1px dotted " + box_hover_color});
+$("a.normal_link").hover(
+	function() {
+		$(this).css({"color": box_brightened_color,
+					"border-bottom": "1px solid " + box_brightened_color});
+	},
+	function() {
+		$(this).css({"color": box_hover_color,
+					"border-bottom": "1px dotted " + box_hover_color,
+					"text-decoration": "none"});
+	});
+
 
             var info_margin = 4;
 

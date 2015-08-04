@@ -18,10 +18,9 @@ a.rectangle_button {
     font-size: 16px;
     color: #EEEEEE;
 
-    display: inline-block;
-    width: 100%;
-    height: 32px;
-    line-height: 32px;
+    display: block;
+    line-height: 1.8em;
+    height: 30px;
     background-color: transparent;
     padding-left: 10px;
 }
@@ -31,9 +30,70 @@ a.rectangle_button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+a.normal_link {
+    color: #123456;
+    border-bottom: 1px dotted red;
+}
+
+a.normal_link:hover {
+    color: #555555;
+}
+
+category_label {
+    font-size: 16px;
+    color: #222222;
+
+    display: inline-block;
+    width: 100%;
+    background-color: transparent;
+    padding-left: 10px;
+}
+
+.container {
+    position: relative;
+    padding: 0 0 0 300px;
+    margin: 25px 15% 25px 15%;
+}
+
+.sidebar {
+    color: #222222;
+    background-color: #353535;
+
+    padding: 10px;
+
+    margin: 25px 15% 0 15%;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+}
+
+sidebar_title {
+    /*height: 40px;*/
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+}
+
+.content {
+    width: 100%;
+    background-color: #252525;
+    padding: 10px;
+}
+
 div .hr {
     height: 1px;
     background-color: rgba(255, 255, 255, 0.1);
+    margin-right: 20%;
+    margin-left: 10px;
+}
+
+div .hr_dark {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
     margin-right: 20%;
     margin-left: 10px;
 }
@@ -116,51 +176,35 @@ info {
 }
 
 
-download_button {
-    /*border: 2px solid black;*/
-    /*border-radius: 3px;*/
-    background: transparent;
-    background-image: transparent;
-    color: #EEEEEE;
-    line-height: 32px;
-
-    height: 32px;
-
-    display: inline-block;
-
-    /*transition: background-image 1s, color 0.2s;*/
-}
-
-
-download_button:hover {
-    color: #222222;
-    /*background-image: url('/images/logos/arrow.png') center center;*/
-}
-
-
 horizontal_bar a img {
-    /*height: 120px;*/
     padding: 0px;
     margin-bottom: 0;
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    /*float: left;*/
-}
-
-
-horizontal_bar div.three {
-    width: 660px;
-}
-
-
-horizontal_bar div.four {
-    width: 880px;
 }
 
 
 body {
     background: #353535;
+}
+
+h1, h2, h3 {
+    color: white;
+    margin-left: 10px;
+}
+
+p {
+    color: #BBB;
+    margin-left: 10px;
+}
+
+p, li {
+    color: #BBB;
+}
+
+p .section {
+    margin-left: 10px;
 }
 
 
