@@ -12,7 +12,7 @@
                             <div class="hr"></div>
                             <info>
                             {% for link in project.links %}
-                                <a class="rectangle_button" href="{{ link.address }}">{{ link.title }}</a> <br>
+                                <a class="rectangle_button" href="{{ link.address }}">{{ link.title }}</a>
                             {% endfor %}
                             </info>
                         </box>
@@ -36,18 +36,7 @@
         </div>
         <script type="text/javascript">
 
-            var colors = [
-                "#ff7676", // reddish
-                "#8d76ff", // darker violet
-                "#d77f64", // brighter red
-                "#919ddb", // brighter blue
-                "#7cc67c", // green
-            ];
-
-            // Choose random hover color for all elments.
-            var box_hover_color = colors[Math.floor(Math.random() * colors.length)];
-
-            var box_normal_color = "#252525";
+            {% include "js_color_randomizer.js" %}
 
             var info_margin = 4;
 

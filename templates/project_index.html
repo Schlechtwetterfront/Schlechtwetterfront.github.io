@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+	{% include "standard_header.html" %}
+	<body>
+		<div class="container">
+		{% include "project_sidebar.html" %}
+		{% include "project_content.html" %}
+		</div>
+		<script type="text/javascript">
+			{% include "js_color_randomizer.js" %}
+
+			$("div .sidebar").css("background-color", box_hover_color);
+		</script>
+	</body>
+</html>

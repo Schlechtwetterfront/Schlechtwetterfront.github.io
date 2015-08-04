@@ -1,0 +1,10 @@
+<div class="content">
+	{% for section in sections %}
+		<div>
+			<a name="{{ section.name }}"></a>
+			<h2>{{ section.title }}</h2>
+			<p class="section">{{ section.text }}</p>
+			<div class="hr"></div><br>
+		</div>
+	{% endfor %}
+</div>

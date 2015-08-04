@@ -1,0 +1,20 @@
+{% import "templates.html" as macros %}
+
+<div class="sidebar">
+	<sidebar_title>{{ page_title }}</sidebar_title>
+{% for category in categories %}
+    <div class="hr_dark"></div>
+    <category_label>{{ category.title }}</category_label><br>
+    {% for link in category.links %}
+        {{ macros.list_button(link.address, link.title) }}
+    {% endfor %}
+{% endfor %}
+	<script type="text/javascript">
+		var count = 0;
+
+		count =  $("a.rectangle_button").length;
+
+		var height = parseInt($("a.rectangle_button").css("height")) * count + $("category_label").length * parseInt($("category_label").css("height")) + parseInt($("sidebar_title").css("height"));
+		$("div .sidebar").css("height", height + 10);
+	</script>
+</div>
