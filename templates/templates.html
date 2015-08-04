@@ -1,3 +1,19 @@
 {% macro list_button(link, title, class="rectangle_button") -%}
 <a class="{{ class }}" href="{{ link }}">{{ title }}</a>
 {%- endmacro %}
+
+{% macro collapse_button(content_id, is_collapsable, is_collapsed) -%}
+	{% if is_collapsable %}
+		<a class="toggle_collapse" content-id="{{content_id}}" id="{{content_id}}_start" starts-collapsed="{{ is_collapsed }}">Collapse</a>
+	{% else %}
+		<div></div>
+	{% endif %}
+{%- endmacro %}
+
+{% macro collapse_button_end(content_id, is_collapsable, is_long) -%}
+	{% if is_collapsable and is_long %}
+		<a class="toggle_collapse_end" content-id="{{content_id}}" id="{{content_id}}_end">Collapse</a>
+	{% else %}
+		<div></div>
+	{% endif %}
+{%- endmacro %}

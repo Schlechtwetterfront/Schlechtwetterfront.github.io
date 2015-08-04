@@ -1,10 +1,15 @@
+{% import "templates.html" as macros %}
+
 <div class="content">
 	{% for section in sections %}
-		<div>
+		<div class="section">
 			<a name="{{ section.name }}"></a>
-			<h2>{{ section.title }}</h2>
-			<p class="section">{{ section.text }}</p>
-			<div class="hr"></div><br>
+			{{ macros.collapse_button(section.name + "_content", section.is_collapsable, section.is_collapsed) }} {{ section.title }} 
+				<div id="{{ section.name }}_content">
+				{{ section.text }}
+				{{ macros.collapse_button_end(section.name + "_content", section.is_collapsable, section.is_long) }}
+				</div>
+			<div class="hr"></div>
 		</div>
 	{% endfor %}
 </div>

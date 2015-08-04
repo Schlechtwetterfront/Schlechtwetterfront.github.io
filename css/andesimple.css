@@ -12,7 +12,22 @@
         #a3b2ff - brighter blue
         #ffc39d - orange bright
 */
+a.toggle_collapse {
+    cursor: pointer;
+    float: right;
+    margin-right: 20%;
+}
 
+a.toggle_collapse_end {
+    position: relative;
+    cursor: pointer;
+    float: right;
+    /*margin-left: 74%;*/
+    margin-right: 20%;
+    /*margin-bottom: 10px;*/
+    /*right: 0;*/
+    top: -30px;
+}
 
 a.rectangle_button {
     font-size: 16px;
@@ -30,13 +45,8 @@ a.rectangle_button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-a.normal_link {
-    color: #123456;
-    border-bottom: 1px dotted red;
-}
-
-a.normal_link:hover {
-    color: #555555;
+.bright {
+    color: #EEE;
 }
 
 category_label {
@@ -53,6 +63,11 @@ category_label {
     position: relative;
     padding: 0 0 0 300px;
     margin: 25px 15% 25px 15%;
+}
+
+.section {
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
 .sidebar {
@@ -82,6 +97,7 @@ sidebar_title {
     width: 100%;
     background-color: #252525;
     padding: 10px;
+    padding-bottom: 1px;
 }
 
 div .hr {
@@ -89,6 +105,7 @@ div .hr {
     background-color: rgba(255, 255, 255, 0.1);
     margin-right: 20%;
     margin-left: 10px;
+    /*margin-top: 20px;*/
 }
 
 div .hr_dark {
@@ -197,6 +214,7 @@ h1, h2, h3 {
 p {
     color: #BBB;
     margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 p, li {
@@ -211,4 +229,8 @@ p .section {
 mid_spacer {
     display: block;
     height: 180px;
+}
+
+blockquote {
+
 }

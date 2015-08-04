@@ -1,3 +1,5 @@
+import markdown
+
 class Link(object):
     def __init__(self, title='LinkTitle', address='google.com'):
         self.title = title
@@ -36,10 +38,22 @@ class Sidebar(object):
 
 
 class Section(object):
-    def __init__(self, title, name, text):
-        self.title = title
+    def __init__(self, title, name, is_collapsable, is_collapsed, is_long, text):
+        self.raw_title = title
         self.name = name
-        self.text = text
+        self.raw_text = text
+        self.is_collapsable = is_collapsable
+        self.is_collapsed = is_collapsed
+        self.is_long = is_long
+
+    @property
+    def text(self):
+        return markdown.markdown(self.raw_text)
+
+    @property
+    def title(self):
+        return markdown.markdown(self.raw_title)
+    
 
 
 class ListSection(object):

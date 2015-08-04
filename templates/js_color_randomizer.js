@@ -26,8 +26,8 @@ var box_brightened_color = shadeBlend(0.5, box_hover_color);
 
 var box_normal_color = "#252525";
 
-$("a.normal_link").css({"color": box_hover_color, "border-bottom": "1px dotted " + box_hover_color});
-$("a.normal_link").hover(
+$("div.content a").css({"color": box_hover_color, "border-bottom": "1px dotted " + box_hover_color});
+$("div.content a").hover(
 	function() {
 		$(this).css({"color": box_brightened_color,
 					"border-bottom": "1px solid " + box_brightened_color});
