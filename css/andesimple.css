@@ -12,6 +12,16 @@
         #a3b2ff - brighter blue
         #ffc39d - orange bright
 */
+
+
+
+/*
+    * ----------------------------------------------------- *
+    * SHARED BUTTONS
+    *
+    * ----------------------------------------------------- *
+*/
+
 a.toggle_collapse {
     cursor: pointer;
     float: right;
@@ -35,9 +45,8 @@ a.rectangle_button {
 
     display: block;
     line-height: 1.8em;
-    height: 30px;
     background-color: transparent;
-    padding-left: 10px;
+    padding: 1px 0px 1px 10px;
 }
 
 
@@ -45,8 +54,50 @@ a.rectangle_button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.bright {
-    color: #EEE;
+
+
+/*
+    * ----------------------------------------------------- *
+    * PROJECT PAGE ELEMENTS
+    *
+    * ----------------------------------------------------- *
+*/
+
+.container {
+    position: relative;
+    padding: 0 0 0 21.6em;
+    margin: 25px 15% 25px 15%;
+
+    transition: margin 0.3s;
+}
+
+.content {
+    width: 100%;
+    min-width: 400px;
+    background-color: #252525;
+    padding: 10px;
+    padding-bottom: 1px;
+}
+
+.section {
+    padding: 1em 1em 1em 0;
+}
+
+.sidebar {
+    color: #222222;
+    background-color: #353535;
+
+    padding: 0.8em;
+
+    margin: 25px 15% 25px 15%;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20em;
+    
+    transition: margin 0.3s;
 }
 
 category_label {
@@ -57,63 +108,6 @@ category_label {
     width: 100%;
     background-color: transparent;
     padding-left: 10px;
-}
-
-.container {
-    position: relative;
-    padding: 0 0 0 300px;
-    margin: 25px 15% 25px 15%;
-
-    transition: margin 0.3s;
-}
-
-@media (max-width: 1400px) {
-    .container {
-        margin: 25px 5% 25px 5%;
-        overflow-x: hidden;
-    }
-}
-
-@media (max-width: 1000px) {
-    .container {
-        margin: 0 0 0 0;
-        overflow-x: hidden;
-    }
-}
-
-.section {
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-right: 20px;
-}
-
-.sidebar {
-    color: #222222;
-    background-color: #353535;
-
-    padding: 10px;
-
-    margin: 25px 15% 25px 15%;
-
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 280px;
-    
-    transition: margin 0.3s;
-}
-
-@media (max-width: 1400px) {
-    .sidebar {
-        margin: 25px 5% 25px 5%;
-    }
-}
-
-@media (max-width: 1000px) {
-    .sidebar {
-        margin: 0 0 0 0;
-    }
 }
 
 .sidebar-content-scrollable {
@@ -129,30 +123,44 @@ sidebar_title {
     font-weight: bold;
 }
 
-.content {
-    width: 100%;
-    min-width: 400px;
-    background-color: #252525;
-    padding: 10px;
-    padding-bottom: 1px;
+@media (max-width: 1400px) {
+    .container {
+        margin: 25px 5% 25px 5%;
+        overflow-x: hidden;
+    }
+
+    .section {
+        padding: 1em 2.5em 2.5em 0;
+    }
+
+    .sidebar {
+        margin: 25px 5% 25px 5%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        margin: 0 0 0 0;
+        padding: 0 0 0 19.6em;
+    }
+
+    .section {
+    }
+
+    .sidebar {
+        margin: 0 0 0 0;
+        width: 18em;
+    }
 }
 
 
-div .hr {
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin-right: 20%;
-    margin-left: 10px;
-    /*margin-top: 20px;*/
-}
 
-div .hr_dark {
-    height: 1px;
-    background-color: rgba(0, 0, 0, 0.1);
-    margin-right: 20%;
-    margin-left: 10px;
-    display: block;
-}
+/*
+    * ----------------------------------------------------- *
+    * MAIN PAGE ELEMENTS
+    *
+    * ----------------------------------------------------- *
+*/
 
 horizontal_bar {
     width: 100%;
@@ -241,6 +249,51 @@ horizontal_bar a img {
 }
 
 
+mid_spacer {
+    display: block;
+    height: 180px;
+}
+
+
+
+/*
+    * ----------------------------------------------------- *
+    * SMALLER SHARED ELEMENTS
+    *
+    * ----------------------------------------------------- *
+*/
+
+
+div .hr {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-right: 20%;
+    margin-left: 10px;
+    /*margin-top: 20px;*/
+}
+
+div .hr_dark {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-right: 20%;
+    margin-left: 10px;
+    display: block;
+}
+
+.bright {
+    color: #EEE;
+}
+
+
+
+/*
+    * ----------------------------------------------------- *
+    * MODIFIED DEFAULT ELEMENTS
+    *
+    * ----------------------------------------------------- *
+*/
+
+
 body {
     background: #353535;
 }
@@ -264,12 +317,6 @@ p, li {
 
 p .section {
     margin-left: 10px;
-}
-
-
-mid_spacer {
-    display: block;
-    height: 180px;
 }
 
 blockquote {
