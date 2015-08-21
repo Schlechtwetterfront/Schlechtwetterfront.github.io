@@ -158,6 +158,10 @@ sidebar_title {
         padding: 0 0 0 0;
     }
 
+    .content {
+        min-width: 0;
+    }
+
     .sidebar {
         position: relative;
         height: 20em;
