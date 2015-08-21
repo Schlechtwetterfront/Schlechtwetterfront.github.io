@@ -75,7 +75,7 @@ a.rectangle_button:hover {
     width: 100%;
     min-width: 400px;
     background-color: #252525;
-    padding: 10px;
+    padding: 0.6em;
     padding-bottom: 1px;
 }
 
@@ -160,6 +160,11 @@ sidebar_title {
 
     .content {
         min-width: 0;
+        padding: 0.2em
+    }
+
+    .section {
+        padding: 1em 1em 1em 0;
     }
 
     .sidebar {
@@ -170,7 +175,7 @@ sidebar_title {
 
     .sidebar-content-scrollable {
         height: 90%;
-        margin-right: 1em;
+        margin-right: 5em;
         /* ^ So the window scrollbar doesn't cover the menu scrollbar. */
     }
 }
@@ -343,4 +348,10 @@ p .section {
 
 blockquote {
 
+}
+
+@media (max-width: 780px) {
+    ul {
+        padding-left: 2em;
+    }
 }
