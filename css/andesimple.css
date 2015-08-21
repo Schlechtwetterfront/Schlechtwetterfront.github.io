@@ -153,6 +153,24 @@ sidebar_title {
     }
 }
 
+@media (max-width: 780px) {
+    .container {
+        padding: 0 0 0 0;
+    }
+
+    .sidebar {
+        position: relative;
+        height: 20em;
+        width: 100%;
+    }
+
+    .sidebar-content-scrollable {
+        height: 90%;
+        margin-right: 1em;
+        /* ^ So the window scrollbar doesn't cover the menu scrollbar. */
+    }
+}
+
 
 
 /*
