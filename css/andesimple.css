@@ -189,96 +189,124 @@ sidebar_title {
     * ----------------------------------------------------- *
 */
 
-horizontal_bar {
-    width: 100%;
-    height: 120px;
-    background-color: #252525;
+.horizontal_bar {
     display: block;
-
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
-
-horizontal_bar a.social {
-    background-color: #252525;
-    height: 120px;
-    width: 220px;
-    transition: background-color 1s;
-    color: #EEEEEE;
+.centered {
     display: inline-block;
-    line-height: 0;
-
-    margin: 0;
-    padding: 0;
-    float: left;
+    text-align: center;
 }
 
 
-horizontal_bar a.social:hover {
-    background-color: #ffba77;
-}
-
-
-horizontal_bar box {
-    background-color: #252525;
-    height: 120px;
-    width: 220px;
-    transition: background-color 1s, height 0.6s;
-    color: #EEEEEE;
+.centered::before{
+    content: '';
     display: inline-block;
-
-    font-size: 22px;
+    height: 100%;
     vertical-align: middle;
-    line-height: 120px;
+    width: 10px;
 
-    cursor: default;
+    /*background-color: red;*/
+}
 
-    margin: 0;
+
+.box {
+    height: 120px;
+    width: 220px;
+
+    transition: background-color 0.5s, height 0.6s, width 0.6s, margin 0.6s, line-height 0.6s;
+
+    color: #EEEEEE;
+    background-color: #252525;
+    display: inline-block;
+
+    /*font-size: 22px;*/
+    /*line-height: 120px;*/
+
+    vertical-align: middle;
+    text-align: center;
+
+    margin: 12px;
     padding: 0;
-    float: left;
 
     overflow: hidden;
 }
 
-
-horizontal_bar box:hover {
+.box:hover {
     /* background color and height set in js */
 }
 
 
-horizontal_bar box:active {
-    /*background-color: #252525;*/
+.box-text {
+    color: #EEEEEE;
+    display: inline-block;
+
+    cursor: default;
+    font-size: 22px;
+    line-height: 120px;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+
+    position: relative;
+
+    transition: top 0.5s;
+}
+
+.box-text:hover {
 }
 
 
-info {
+.big-text {
+    font-size: 5em;
+
+    color: #282828;
+}
+
+
+.info {
     background-color: transparent;
     color: #222222;
-    line-height: 1.0em;
     display: inline-block;
 
     font-size: 16px;
+    line-height: 120px;
 
     text-align: justify;
     width: 100%;
+    height: 100%;
 
-    /*border-top: 1px solid rgba(0, 0, 0, 0.5);*/
+    padding: 0;
+    margin: 0;
+
+    position: relative;
+
+    transition: top 0.5s;
 }
 
 
-horizontal_bar a img {
-    padding: 0px;
-    margin-bottom: 0;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
-}
+@media (max-width: 1020px) {
+    .centered::before {
+        height: 0%;
+    }
 
+    .centered {
+        /*display: block;*/
+    }
 
-mid_spacer {
-    display: block;
-    height: 180px;
+    .box {
+        display: block;
+    }
+
+    .big-text {
+        font-size: 1.5em;
+        color: #202020;
+    }
 }
 
 
@@ -311,6 +339,18 @@ div .hr_dark {
     color: #EEE;
 }
 
+.red {
+    color: red;
+}
+
+.orange {
+    color: orange;
+}
+
+.green {
+    color: #31B404;
+}
+
 
 
 /*
@@ -321,8 +361,18 @@ div .hr_dark {
 */
 
 
+html {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
 body {
     background: #353535;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 h1, h2, h3 {
@@ -344,6 +394,22 @@ p, li {
 
 p .section {
     margin-left: 10px;
+}
+
+table {
+    margin-left: 1em;
+    margin-right: 2em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    border: 1px solid #656565;
+}
+
+td {
+    color: #BBB;
+}
+
+th {
+    color: #EEEEEE;
 }
 
 blockquote {
