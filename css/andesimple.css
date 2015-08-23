@@ -80,7 +80,7 @@ a.rectangle_button:hover {
 }
 
 .section {
-    padding: 1em 1em 1em 0;
+    padding: 1em 1em 0.5em 0;
 }
 
 .sidebar {
@@ -130,7 +130,7 @@ sidebar_title {
     }
 
     .section {
-        padding: 1em 2.5em 2.5em 0;
+        padding: 1em 2.5em 1em 0;
     }
 
     .sidebar {
