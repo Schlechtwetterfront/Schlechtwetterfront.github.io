@@ -3,8 +3,10 @@
 	{% include "standard_header.html" %}
 	<body>
 		<div class="container">
-		{% include "project_sidebar.html" %}
-		{% include "project_content.html" %}
+		{% block content %}
+			{% include "project_sidebar.html" %}
+			{% include "project_content.html" %}
+		{% endblock content %}
 		</div>
 		<script type="text/javascript">
 			{% include "js_color_randomizer.js" %}

@@ -12,6 +12,16 @@
         #a3b2ff - brighter blue
         #ffc39d - orange bright
 */
+
+
+
+/*
+    * ----------------------------------------------------- *
+    * SHARED BUTTONS
+    *
+    * ----------------------------------------------------- *
+*/
+
 a.toggle_collapse {
     cursor: pointer;
     float: right;
@@ -35,9 +45,8 @@ a.rectangle_button {
 
     display: block;
     line-height: 1.8em;
-    height: 30px;
     background-color: transparent;
-    padding-left: 10px;
+    padding: 1px 0px 1px 10px;
 }
 
 
@@ -45,8 +54,50 @@ a.rectangle_button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.bright {
-    color: #EEE;
+
+
+/*
+    * ----------------------------------------------------- *
+    * PROJECT PAGE ELEMENTS
+    *
+    * ----------------------------------------------------- *
+*/
+
+.container {
+    position: relative;
+    padding: 0 0 0 21.6em;
+    margin: 25px 15% 25px 15%;
+
+    transition: margin 0.3s;
+}
+
+.content {
+    width: 100%;
+    min-width: 400px;
+    background-color: #252525;
+    padding: 0.6em;
+    padding-bottom: 1px;
+}
+
+.section {
+    padding: 1em 1em 1em 0;
+}
+
+.sidebar {
+    color: #222222;
+    background-color: #353535;
+
+    padding: 0.8em;
+
+    margin: 25px 15% 25px 15%;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20em;
+    
+    transition: margin 0.3s;
 }
 
 category_label {
@@ -59,46 +110,214 @@ category_label {
     padding-left: 10px;
 }
 
-.container {
-    position: relative;
-    padding: 0 0 0 300px;
-    margin: 25px 15% 25px 15%;
-}
-
-.section {
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-
-.sidebar {
-    color: #222222;
-    background-color: #353535;
-
-    padding: 10px;
-
-    margin: 25px 15% 0 15%;
-
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 280px;
+.sidebar-content-scrollable {
+    height: 95%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 sidebar_title {
-    /*height: 40px;*/
     font-size: 18px;
     text-align: center;
     display: block;
     font-weight: bold;
 }
 
-.content {
-    width: 100%;
-    background-color: #252525;
-    padding: 10px;
-    padding-bottom: 1px;
+@media (max-width: 1400px) {
+    .container {
+        margin: 25px 5% 25px 5%;
+        overflow-x: hidden;
+    }
+
+    .section {
+        padding: 1em 2.5em 2.5em 0;
+    }
+
+    .sidebar {
+        margin: 25px 5% 25px 5%;
+    }
 }
+
+@media (max-width: 1000px) {
+    .container {
+        margin: 0 0 0 0;
+        padding: 0 0 0 19.6em;
+    }
+
+    .section {
+    }
+
+    .sidebar {
+        margin: 0 0 0 0;
+        width: 18em;
+    }
+}
+
+@media (max-width: 780px) {
+    .container {
+        padding: 0 0 0 0;
+    }
+
+    .content {
+        min-width: 0;
+        padding: 0.2em
+    }
+
+    .section {
+        padding: 1em 1em 1em 0;
+    }
+
+    .sidebar {
+        position: relative;
+        height: 20em;
+        width: 100%;
+    }
+
+    .sidebar-content-scrollable {
+        height: 90%;
+        margin-right: 5em;
+        /* ^ So the window scrollbar doesn't cover the menu scrollbar. */
+    }
+}
+
+
+
+/*
+    * ----------------------------------------------------- *
+    * MAIN PAGE ELEMENTS
+    *
+    * ----------------------------------------------------- *
+*/
+
+.horizontal_bar {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.centered {
+    display: inline-block;
+    text-align: center;
+}
+
+
+.centered::before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 10px;
+
+    /*background-color: red;*/
+}
+
+
+.box {
+    height: 120px;
+    width: 220px;
+
+    transition: background-color 0.5s, height 0.6s, width 0.6s, margin 0.6s, line-height 0.6s;
+
+    color: #EEEEEE;
+    background-color: #252525;
+    display: inline-block;
+
+    /*font-size: 22px;*/
+    /*line-height: 120px;*/
+
+    vertical-align: middle;
+    text-align: center;
+
+    margin: 12px;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+.box:hover {
+    /* background color and height set in js */
+}
+
+
+.box-text {
+    color: #EEEEEE;
+    display: inline-block;
+
+    cursor: default;
+    font-size: 22px;
+    line-height: 120px;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+
+    position: relative;
+
+    transition: top 0.5s;
+}
+
+.box-text:hover {
+}
+
+
+.big-text {
+    font-size: 5em;
+
+    color: #282828;
+}
+
+
+.info {
+    background-color: transparent;
+    color: #222222;
+    display: inline-block;
+
+    font-size: 16px;
+    line-height: 120px;
+
+    text-align: justify;
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+
+    position: relative;
+
+    transition: top 0.5s;
+}
+
+
+@media (max-width: 1020px) {
+    .centered::before {
+        height: 0%;
+    }
+
+    .centered {
+        /*display: block;*/
+    }
+
+    .box {
+        display: block;
+    }
+
+    .big-text {
+        font-size: 1.5em;
+        color: #202020;
+    }
+}
+
+
+
+/*
+    * ----------------------------------------------------- *
+    * SMALLER SHARED ELEMENTS
+    *
+    * ----------------------------------------------------- *
+*/
+
 
 div .hr {
     height: 1px;
@@ -113,97 +332,47 @@ div .hr_dark {
     background-color: rgba(0, 0, 0, 0.1);
     margin-right: 20%;
     margin-left: 10px;
-}
-
-horizontal_bar {
-    width: 100%;
-    height: 120px;
-    background-color: #252525;
     display: block;
+}
 
-    margin: 0;
-    padding: 0;
+.bright {
+    color: #EEE;
+}
+
+.red {
+    color: red;
+}
+
+.orange {
+    color: orange;
+}
+
+.green {
+    color: #31B404;
 }
 
 
-horizontal_bar a.social {
-    background-color: #252525;
-    height: 120px;
-    width: 220px;
-    transition: background-color 1s;
-    color: #EEEEEE;
-    display: inline-block;
-    line-height: 0;
 
-    margin: 0;
-    padding: 0;
-    float: left;
-}
+/*
+    * ----------------------------------------------------- *
+    * MODIFIED DEFAULT ELEMENTS
+    *
+    * ----------------------------------------------------- *
+*/
 
 
-horizontal_bar a.social:hover {
-    background-color: #ffba77;
-}
-
-
-horizontal_bar box {
-    background-color: #252525;
-    height: 120px;
-    width: 220px;
-    transition: background-color 1s, height 0.6s;
-    color: #EEEEEE;
-    display: inline-block;
-
-    font-size: 22px;
-    vertical-align: middle;
-    line-height: 120px;
-
-    cursor: default;
-
-    margin: 0;
-    padding: 0;
-    float: left;
-
-    overflow: hidden;
-}
-
-
-horizontal_bar box:hover {
-    /* background color and height set in js */
-}
-
-
-horizontal_bar box:active {
-    /*background-color: #252525;*/
-}
-
-
-info {
-    background-color: transparent;
-    color: #222222;
-    line-height: 1.0em;
-    display: inline-block;
-
-    font-size: 16px;
-
-    text-align: justify;
+html {
     width: 100%;
-
-    /*border-top: 1px solid rgba(0, 0, 0, 0.5);*/
-}
-
-
-horizontal_bar a img {
-    padding: 0px;
-    margin-bottom: 0;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100%;
+    display: block;
 }
 
 
 body {
     background: #353535;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 h1, h2, h3 {
@@ -215,6 +384,8 @@ p {
     color: #BBB;
     margin-left: 10px;
     margin-bottom: 10px;
+
+    text-align: justify;
 }
 
 p, li {
@@ -225,12 +396,28 @@ p .section {
     margin-left: 10px;
 }
 
+table {
+    margin-left: 1em;
+    margin-right: 2em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    border: 1px solid #656565;
+}
 
-mid_spacer {
-    display: block;
-    height: 180px;
+td {
+    color: #BBB;
+}
+
+th {
+    color: #EEEEEE;
 }
 
 blockquote {
 
+}
+
+@media (max-width: 780px) {
+    ul {
+        padding-left: 2em;
+    }
 }

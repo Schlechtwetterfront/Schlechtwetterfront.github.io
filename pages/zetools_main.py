@@ -1,36 +1,9 @@
 from page_core import *
 
-pages = [
-	{
-		'page_template': 'index_template.html',
-		'path': '',
-		'output_file': 'index.html',
-		'output_folder': '',
-		'page_title': 'Schlechtwetterfront',
-		'social_links': [
-			SocialLink('https://github.com/Schlechtwetterfront', 'img/github_white.png'),
-			SocialLink('https://twitter.com/schlchtwtrfrnt', 'img/twitter_white.png'),
-			SocialLink('http://steamcommunity.com/id/andeweget/', 'img/steam_white.png'),
-			SocialLink('https://youtube.com/user/andeweget', 'img/youtube_white.png')
-		],
-		'projects': [
-			Project('XSI ZETools', pid='zet', links=[Link('Downloads', 'https://github.com/Schlechtwetterfront/xsizetools/releases'),
-	                                                 Link('Overview', '/xsizetools'),
-	                                                 Link('View Source on GitHub', 'https://github.com/Schlechtwetterfront/xsizetools'),
-	                                                 Link('GameToast Forum Thread', 'http://gametoast.com/viewtopic.php?f=36&t=26664')]),
-	        Project('SoftCry', pid='sc', links=[Link('Downloads', 'https://github.com/Schlechtwetterfront/softcry/releases'),
-	                                            Link('Overview', '/softcry'),
-	                                            Link('View Source on GitHub', 'https://github.com/Schlechtwetterfront/softcry'),
-	                                            Link('CRYDEV Forum Thread', 'http://www.cryengine.com/community/viewtopic.php?f=315&t=102978')]),
-	        Project('ZE File Formats', links=[Link('Overview', '/ze_filetypes'),
-	                                          Link('Download Source', 'https://github.com/Schlechtwetterfront/ze_filetypes/archive/gh-pages.zip'),
-	                                          Link('View Source on GitHub', 'https://github.com/Schlechtwetterfront/ze_filetypes')])
-		]
-	},
-	{
+PAGE = {
 		'page_template': 'project_index.html',
 		'path': '../',
-		'output_file': 'project_index.html',
+		'output_file': 'index.html',
 		'output_folder': 'xsizetools',
 		'page_title': 'XSI ZETools',
 		'categories': [
@@ -61,7 +34,7 @@ pages = [
 							   Link('View Thread on GameToast', 'http://gametoast.com/viewtopic.php?f=36&t=26664')
 							   ]),
 			Category('Personal', [
-							   Link('Schlechtwetterfront', 'http://schlechtwetterfront.github.io/')])
+							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/')])
 		],
 		'sections': [
 			Section('## Main Info', 'main_info', True, False, False, '''
@@ -72,7 +45,7 @@ This began as a small collection of scripts to help setup hierarchies and the li
 '''),
 			Section('## Download & Installation', 'download_installation', True, False, False, '''
 The main chunk of the project is hosted on GitHub.
-The source for the CGeometryAccessorWrappers can be found on the sidebar (the source is outdated though as I lost the code used for the current DLLs.
+The source for the Geometry Accessor Wrappers can be found on the sidebar (the source is outdated though as I lost the code used for the current DLLs.
 Check the sidebar for a link to the releases page on GitHub.
     
 To install ZETools, unzip the downloaded archive into  
@@ -317,7 +290,7 @@ Every of the following steps will produce one .msh file.
 STEP 1. **Placeable model for ZeroEditor.** Export the model which will be called in the odf and placed in ZE. To do this move the frame cursor to the first frame of your
 animation(usually 1, it's not important what the frame range is[ie 0 to 100]).Then select your root, uncheck Export Animation and export. .MSH File: stuff_door.msh
 
-> ![Image](/to_be_placed.jpg)
+> ![Image](to_be_placed.jpg)
 > **Animation preparation.** To cut down on possible problems you can now drag'n'drop all object which are not a part of
 > the skeleton(collisions, meshes, shadows) out of your current hierarchy.
 > Best way to do this is select them all and drag'n'drop them onto Scene_Root. In my example I only move out thing_(that's the model with Stuff painted on it).
@@ -327,7 +300,7 @@ animation(usually 1, it's not important what the frame range is[ie 0 to 100]).Th
 STEP 2. **Animation Export** This will contain the actual animation. Here it's important to set the right frame range.
 It's not important where the frame cursor is, but the frame range must be correct. In my example it's 1 - 20. Check Export Animation and export button. .MSH File: ie open.msh
 
-> ![Image2](/anim_open.jpg)
+> ![Image2](anim_open.jpg)
 
 STEP 3. **Basepose of the animation.** This will be the pose the model is in when it's not animated.
 If your first frame is 1 move the frame cursor to frame 0. Check Export Animation and Current frame as Basepose.
@@ -335,59 +308,7 @@ If you check Current frame as Basepose you can ignore the last frame. If you wan
 I assume you use the Current frame as Basepose way. Now the preparation is finished. All boxes are checked and the hierarchy is set up. Do the deed and select your root and hit export.
 .MSH File: basepose.msh
 
-> ![Image3](/anim_basepose.jpg)
+> ![Image3](anim_basepose.jpg)
 			''')
 		]
-	},
-	{
-		'page_template': 'project_index.html',
-		'path': '../',
-		'output_file': 'project_index.html',
-		'output_folder': 'softcry',
-		'page_title': 'SoftCry',
-		'categories': [
-			Category('Downloads', [
-							   Link('Releases', 'https://github.com/Schlechtwetterfront/softcry/releases')
-							   ]),
-			Category('General Info', [
-							   Link('Main Info', '#main_info'),
-							   Link('Download & Installation', '#download_installation'),
-							   ]),
-			Category('Other Resources', [
-							   Link('View on GitHub', 'https://github.com/Schlechtwetterfront/softcry'),
-							   Link('View Thread on CRYDEV', 'http://www.cryengine.com/community/viewtopic.php?f=315&t=102978'),
-							   Link('Hardbody Animations (Video)', 'http://www.youtube.com/watch?v=2Rt3B8h5EvE')
-							   ]),
-			Category('Personal', [
-							   Link('Schlechtwetterfront', 'http://schlechtwetterfront.github.io/')])
-		],
-		'sections': [
-			Section('## Main Info', 'main_info', True, False, False, '''
-CryENGINE 3 exporter for Softimage.  
-
-* Intuitive workflow for exporting.
-* No special setup required for a basic export.
-* CryEngine specific material properties directly interface with Softimage materials, so there is no restriction on the type of shaders/materials you can use in XSI.
-* Batch export.
-* Support for different grid-units (1 unit = 1cm or 1m).
-* Animation export + straight forward animation clip editor.
-'''),
-			Section('## Download & Installation', 'download_installation', True, False, False, '''
-Check the sidebar for a link to the releases page on GitHub.
-    
-To install SoftCry, unzip the downloaded archive into  
-**C:/users/%user%/Autodesk/Softimage_%version%/Addons/**  
-OR  
-**C:/users/%user%/Softimage/Softimage_%version%/Addons/**.  
-Make sure you use this path and not the factory addon path.  
-
-If you have any Softimage version up to (and including) 2010 you need to install
-[python](http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi)
-and
-[pywin32](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20217/pywin32-217.win32-py2.6.exe/download).
-If python and pywin32 was installed correctly it should look something like
-[this](installed_python.jpg).  
-''')
-		]
 	}
-]

@@ -2,78 +2,54 @@
 <html>
     {% include "standard_header.html" %}
     <body>
-        <div align="center">
-                <br><br><br><br><br><br>
 
-                <horizontal_bar>
-                    <div id="projects_bar">
-                    {% for project in projects %}
-                        <box id="{{ project.id }}" extra-height="{{ project.extra_height }}" margin="{{ project.margin }}">{{ project.name }}<br>
-                            <div class="hr"></div>
-                            <info>
-                            {% for link in project.links %}
-                                <a class="rectangle_button" href="{{ link.address }}">{{ link.title }}</a>
-                            {% endfor %}
-                            </info>
-                        </box>
+        <div class="horizontal_bar centered">
+            <div class="centered" id="projects_bar">
+                <div class="big-text"> SCHLECHTWETTERFRONT </div>
+            {% for project in projects %}
+                <div class="box" id="{{ project.id }}" extra-height="{{ project.extra_height }}" extra-hover-size="{{ project.extra_hover_size }}" margin="{{ project.margin }}">
+                    <div class="box-text" id="{{ project.id }}_title">{{ project.name }}</div>
+                    <div class="info" id="{{ project.id }}_content">
+                        <!-- <div class="hr"></div> -->
+                    {% for link in project.links %}
+                        <a class="rectangle_button" href="{{ link.address }}">{{ link.title }}</a>
                     {% endfor %}
                     </div>
-                </horizontal_bar>
-
-
-                <mid_spacer>
-                </mid_spacer>
-
-                <horizontal_bar>
-                    <div id="social_bar">
-                    {% for social in social_links %}
-                        <a class="social" href="{{ social.link }}">
-                            <img height="120" src="{{ social.image_path }}"></img>
-                        </a>
-                    {% endfor %}
-                    </div>
-                </horizontal_bar>
+                </div>
+            {% endfor %}
+                <br>
+                <div class="big-text"> BENEDIKT SCHATZ </div>
+            </div>
         </div>
+
         <script type="text/javascript">
 
             {% include "js_color_randomizer.js" %}
 
             var info_margin = 4;
 
-            $("#projects_bar").css("width", parseInt($("horizontal_bar box").css("width")) * $("horizontal_bar box").length);
-            $("#social_bar").css("width", parseInt($("horizontal_bar a.social").css("width")) * $("horizontal_bar a.social").length);
-
             window.onload = function () {
-                info_margin = parseInt($("horizontal_bar box").attr("margin"));
+                info_margin = parseInt($(".box").attr("margin"));
                 $("info").css({"padding-top": info_margin, "padding-bottom": info_margin});
 
-
                 // Expanding boxes and random hover color for project boxes.
-                $("horizontal_bar box").hover(
-                    function () {
-                        var box_height = parseInt($(this).attr("box-height"));
-                        if (!box_height) {
-                            box_height = parseInt($(this).css("height"));
-                        }
-                        var box_extra_height = parseInt($(this).attr("extra-height"));
-                        $(this).css({"background-color": box_hover_color, 
-                                    "height": box_height + box_extra_height});
-                        $(this).attr({"box-height": box_height, "box-extra-height": box_extra_height});
-                    },
-                    function () {
-                        var box_height = $(this).attr("box-height");
-                        $(this).css({"background-color": box_normal_color,
-                                    "height": box_height});
-                    }
-                );
-
-                // Random hover color for social boxes.
-                $("horizontal_bar a.social").hover(
+                $(".box").hover(
                     function () {
                         $(this).css("background-color", box_hover_color);
+
+
+                        var id = $(this).attr("id");
+
+                        $("#" + id + "_title").css("top", "-120px");
+                        $("#" + id + "_content").css("top", "-120px");
                     },
                     function () {
                         $(this).css("background-color", box_normal_color);
+
+                        var id = $(this).attr("id");
+                        $("#" + id + "_title").css("top", "0px");
+                        $("#" + id + "_content").css("top", "0px");
+
                     }
                 );
             }
