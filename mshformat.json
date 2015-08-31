@@ -1,6 +1,6 @@
 {
-    "Example Chunk": {
-        "name": "Example Chunk",
+    "ExampleChunk": {
+        "name": "ExampleChunk",
         "_name": "The chunk name.",
 
         "parent": "Parent chunk name.", 

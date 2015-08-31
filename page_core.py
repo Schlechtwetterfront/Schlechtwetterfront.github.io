@@ -9,13 +9,14 @@ class Link(object):
 
 
 class Project(object):
-    def __init__(self, name='Test', download_link='google.com', github_link='github.com', directory='test', pid='tst', links=None):
+    def __init__(self, name='Test', download_link='google.com', github_link='github.com', directory='test', pid='tst', links=None, subtitle=''):
         self.name = name
         self.download_link = download_link
         self.github_link = github_link
         self.directory = directory
         self.id = pid
         self.links = links or [Link('google', 'google.com')]
+        self.subtitle = subtitle
 
         self.margin = 4
         self.height_per_link = 32

@@ -1,4 +1,27 @@
 from page_core import *
+import markdown
+
+
+CALC_TABLE = '''
+Integer Value 	| Hex Value
+----------------|----------
+1				| 01
+2				| 02
+4				| 04
+8				| 08
+16				| 10
+32				| 20
+64				| 40
+128				| 80
+'''
+
+
+def get_flag_calculator():
+	calculator = ''
+	with open('templates/fileformats_calculator.html', 'r') as fh:
+		calculator = fh.read()
+
+	return calculator
 
 PAGE = {
 		'page_template': 'project_index.html',
@@ -24,6 +47,10 @@ PAGE = {
 			Section('## Main Info', 'main_info', True, False, False, '''
 File format information for some ZeroEngine formats.
 '''),
+# 			Section('## Flag Calculator', 'flag_calculator', True, False, False, '''
+# {}
+# '''.format(get_flag_calculator()).format(markdown.markdown(CALC_TABLE, extensions=MARKDOWN_EXTENSIONS))),
+# # '''.format(get_flag_calculator())),
 			Section('## Zero CRC', 'zero-crc', True, False, False, '''
 The CRC used in .msh files is 4 bytes long and is stored in pure hex. The algorithm is proprietary (_Zero_ because it's used in Pandemic's _Zero Engine_).
 

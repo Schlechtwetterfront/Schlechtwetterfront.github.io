@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/andesimple.css">
+    <link rel="stylesheet" href="css/schlechtwetterfront_dark.css">
     <script src="js/respond.js"></script>
     <script src="js/jquery-1.11.0.min.js"></script>
     <link rel="icon" type="image/png" href="favicon.png"/>
@@ -19,7 +19,9 @@
                 <div class="big-text"> SCHLECHTWETTERFRONT </div>
             
                 <div class="box" id="zet" extra-height="136" extra-hover-size="25" margin="4">
-                    <div class="box-text" id="zet_title">XSI ZETools</div>
+                    
+                    <div class="box-text" id="zet_title">XSI ZETools<div class="sub-text">XSI <> ZeroEngine Pipeline</div> </div>
+                    
                     <div class="info" id="zet_content">
                         <!-- <div class="hr"></div> -->
                     
@@ -35,7 +37,9 @@
                 </div>
             
                 <div class="box" id="sc" extra-height="136" extra-hover-size="25" margin="4">
-                    <div class="box-text" id="sc_title">SoftCry</div>
+                    
+                    <div class="box-text" id="sc_title">SoftCry<div class="sub-text">XSI > CRYENGINE Exporter</div> </div>
+                    
                     <div class="info" id="sc_content">
                         <!-- <div class="hr"></div> -->
                     
@@ -51,7 +55,9 @@
                 </div>
             
                 <div class="box" id="zeff" extra-height="104" extra-hover-size="25" margin="4">
-                    <div class="box-text" id="zeff_title">ZE File Formats</div>
+                    
+                    <div class="box-text" id="zeff_title">ZE File Formats<div class="sub-text">ZeroEngine Format Specification</div> </div>
+                    
                     <div class="info" id="zeff_content">
                         <!-- <div class="hr"></div> -->
                     
@@ -65,7 +71,9 @@
                 </div>
             
                 <div class="box" id="personal_info" extra-height="136" extra-hover-size="25" margin="4">
-                    <div class="box-text" id="personal_info_title">Personal Info</div>
+                    
+                    <div class="box-text" id="personal_info_title">Personal Info<div class="sub-text">Contact and Social Media</div> </div>
+                    
                     <div class="info" id="personal_info_content">
                         <!-- <div class="hr"></div> -->
                     
@@ -134,6 +142,10 @@ $("div.content a").hover(
                 info_margin = parseInt($(".box").attr("margin"));
                 $("info").css({"padding-top": info_margin, "padding-bottom": info_margin});
 
+                // Set the height here for the slide functionality.
+                // If js is disabled then the box will just be twice the height so all of the content is visible.
+                $(".box").css("height", "128");
+
                 // Expanding boxes and random hover color for project boxes.
                 $(".box").hover(
                     function () {
@@ -142,8 +154,8 @@ $("div.content a").hover(
 
                         var id = $(this).attr("id");
 
-                        $("#" + id + "_title").css("top", "-120px");
-                        $("#" + id + "_content").css("top", "-120px");
+                        $("#" + id + "_title").css("top", "-128px");
+                        $("#" + id + "_content").css("top", "-128px");
                     },
                     function () {
                         $(this).css("background-color", box_normal_color);

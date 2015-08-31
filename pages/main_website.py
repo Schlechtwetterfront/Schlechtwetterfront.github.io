@@ -18,23 +18,27 @@ PAGE = {
             Link('Overview', '/xsizetools'),
             Link('View Source on GitHub', 'https://github.com/Schlechtwetterfront/xsizetools'),
             Link('GameToast Forum Thread', 'http://gametoast.com/viewtopic.php?f=36&t=26664')
-            ]),
+            ],
+            subtitle='XSI <> ZeroEngine Pipeline'),
         Project('SoftCry', pid='sc', links=[
             Link('Downloads', 'https://github.com/Schlechtwetterfront/softcry/releases'),
             Link('Overview', '/softcry'),
             Link('View Source on GitHub', 'https://github.com/Schlechtwetterfront/softcry'),
             Link('CRYDEV Forum Thread', 'http://www.cryengine.com/community/viewtopic.php?f=315&t=102978')
-            ]),
+            ],
+            subtitle='XSI > CRYENGINE Exporter'),
         Project('ZE File Formats', pid='zeff', links=[
             Link('Overview', '/ze_filetypes'),
             Link('Download Source', 'https://github.com/Schlechtwetterfront/ze_filetypes/archive/gh-pages.zip'),
             Link('View Source on GitHub', 'https://github.com/Schlechtwetterfront/ze_filetypes')
-            ]),
+            ],
+            subtitle='ZeroEngine Format Specification'),
         Project('Personal Info', pid='personal_info', links=[
             Link('E-Mail', 'mailto:schlchtwtrfrnt@gmail.com'),
             Link('GitHub', 'https://github.com/Schlechtwetterfront'),
             Link('Twitter', 'https://twitter.com/schlchtwtrfrnt'),
             Link('YouTube', 'https://youtube.com/user/andeweget'),
-            ])
+            ],
+            subtitle='Contact and Social Media')
     ]
 }

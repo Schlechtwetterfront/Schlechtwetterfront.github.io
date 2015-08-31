@@ -8,7 +8,11 @@
                 <div class="big-text"> SCHLECHTWETTERFRONT </div>
             {% for project in projects %}
                 <div class="box" id="{{ project.id }}" extra-height="{{ project.extra_height }}" extra-hover-size="{{ project.extra_hover_size }}" margin="{{ project.margin }}">
+                    {% if project.subtitle %}
+                    <div class="box-text" id="{{ project.id }}_title">{{ project.name }}<div class="sub-text">{{project.subtitle}}</div> </div>
+                    {% else %}
                     <div class="box-text" id="{{ project.id }}_title">{{ project.name }}</div>
+                    {% endif %}
                     <div class="info" id="{{ project.id }}_content">
                         <!-- <div class="hr"></div> -->
                     {% for link in project.links %}
@@ -32,6 +36,10 @@
                 info_margin = parseInt($(".box").attr("margin"));
                 $("info").css({"padding-top": info_margin, "padding-bottom": info_margin});
 
+                // Set the height here for the slide functionality.
+                // If js is disabled then the box will just be twice the height so all of the content is visible.
+                $(".box").css("height", "128");
+
                 // Expanding boxes and random hover color for project boxes.
                 $(".box").hover(
                     function () {
@@ -40,8 +48,8 @@
 
                         var id = $(this).attr("id");
 
-                        $("#" + id + "_title").css("top", "-120px");
-                        $("#" + id + "_content").css("top", "-120px");
+                        $("#" + id + "_title").css("top", "-128px");
+                        $("#" + id + "_content").css("top", "-128px");
                     },
                     function () {
                         $(this).css("background-color", box_normal_color);
