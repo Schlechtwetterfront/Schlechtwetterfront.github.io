@@ -142,10 +142,14 @@ $("div.content a").hover(
                 info_margin = parseInt($(".box").attr("margin"));
                 $("info").css({"padding-top": info_margin, "padding-bottom": info_margin});
 
+                if ($(window).width() <= 1020) {
+                    $(".info").css("background-color", box_hover_color);
+                    return;
+                }
+
                 // Set the height here for the slide functionality.
                 // If js is disabled then the box will just be twice the height so all of the content is visible.
                 $(".box").css("height", "128");
-
                 // Expanding boxes and random hover color for project boxes.
                 $(".box").hover(
                     function () {
