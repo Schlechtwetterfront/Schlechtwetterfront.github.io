@@ -207,14 +207,14 @@ sidebar_title {
     display: inline-block;
     height: 100%;
     vertical-align: middle;
-    width: 10px;
+    /*width: 10px;*/
 
     /*background-color: red;*/
 }
 
 
 .box {
-    /* Use double the size so incase the user doesn't have js */
+    /* Use double the size incase the user doesn't have js and can't slide it open that way. */
     /*height: 128px;*/
     height: 256px;
     width: 240px;

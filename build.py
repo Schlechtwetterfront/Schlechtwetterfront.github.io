@@ -3,8 +3,6 @@ env = Environment(loader=FileSystemLoader('templates'))
 
 import os, shutil
 
-FOLDERS = ['css', 'js', 'img', 'fonts']
-
 
 def build():
     import pages

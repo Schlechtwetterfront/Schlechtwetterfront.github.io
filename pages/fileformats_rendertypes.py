@@ -132,9 +132,9 @@ ID 	| Hex 	| Data0	| Data1	|
 Water.
 '''),
 			Section('## Lightmap', 'lightmap', True, True, False, '''
-ID 	| Hex 	| Data0											| Data1					|
-----|-------|-------										|-------				|
-11	| 0b	| Number of frames in the texture (Minimum: 4) 	| Animation Speed. 		| 
+ID 	| Hex 	| Data0	| Data1	|
+----|-------|-------|-------|
+11	| 0b	| -		| -		| 
 
 Basically a glow map. Requires an additional texture. The texture's alpha channel determines glow strength, rgb glow color and intensity.
 
