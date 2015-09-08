@@ -130,7 +130,7 @@
 
         ],
         "structure": [
-            ["long int", 4, "COunt of materials (MATD) in this list."]
+            ["long int", 4, "Count of materials (MATD) in this list."]
         ]
     },
     "MATD": {
@@ -173,9 +173,25 @@
         "necessity": "Once.",
         "description": "Material flags (glow and other special rendertypes).",
         "links": [
-            {"name": "Inside Edit Flags (GT)", "link": "http://www.gametoast.com/viewtopic.php?p=279620#p279620"},
             {"name": "ZeroEngine Render Types", "link": "render_types.html"},
+            {"name": "Inside Edit Flags (GT)", "link": "http://www.gametoast.com/viewtopic.php?p=279620#p279620"},
             {"name": "GameToast ATRB discussion", "link": "http://gametoast.com/viewtopic.php?t=24851&f=27&start=31"}
+        ],
+        "additional_tables": [
+            {
+                "name": "Flags",
+                "table": [
+                    ["Value", "Flag", "Description"],
+                    ["1", "Emissive", "Emissive material (unlit)."],
+                    ["2", "Glow", "Simple glow."],
+                    ["4", "Single-sided Transparency", "Can't be used with Double-sided Transparency."],
+                    ["8", "Double-sided Transparency", "Can't be used with Single-sided Transparency."],
+                    ["16", "Hard-edged Transparency", "Pixels are either opaque (>128/50%) or transparent (<129)."],
+                    ["32", "Per-Pixel Lighting", "More expensive and better looking lighting method (default is Per-Vertex Lighting)."],
+                    ["64", "Additive Transparency", "Performs an Add instead of a Blend when multiple transparent surfaces overlap."],
+                    ["128", "Specular", "Controlled by specular color and decay (gloss) in the material. Optional alpha channel in the diffuse texture acts as gloss map."]
+                ]
+            }
         ],
         "structure": [
             ["byte", 1, "Sum of all flag values."],
@@ -219,9 +235,23 @@
         "children": [
         ],
         "necessity": "Once.",
-        "description": "Model type. 0: null, 1: weighted/enveloped mesh, 2: cloth, 3: bone, 4: static mesh, 6: shadow mesh.",
+        "description": "Model type.",
         "links": [
 
+        ],
+        "additional_tables": [
+            {
+                "name": "Model Types",
+                "table": [
+                    ["Value", "Type"],
+                    ["0", "Null."],
+                    ["1", "Dynamic mesh (weighted/enveloped)."],
+                    ["2", "Cloth."],
+                    ["3", "Bone."],
+                    ["4", "Static mesh."],
+                    ["6", "Shadow mesh."]
+                ]
+            }
         ],
         "structure": [
             ["long int", 4, "Model type."]
@@ -265,8 +295,22 @@
         "links": [
 
         ],
+        "additional_tables": [
+            {
+                "name": "Render Flags",
+                "table": [
+                    ["Value", "Flag"],
+                    ["1", "Hidden."],
+                    ["2", "Dynamically lit."],
+                    ["4", "Retain normals."],
+                    ["8", "Render after shadows."],
+                    ["16", "Don't flatten geometry."],
+                    ["32", "PS2 optimize."]
+                ]
+            }
+        ],
         "structure": [
-            ["long int", 4, "Render Flags (1: hidden, 2: Dynamically Lit, 4: Retain Normals, 8: RenderAfterShadows, 16: Don't Flatten, 32: PS2 Optimize)."]
+            ["long int", 4, "Render Flags."]
         ]
     },
     "TRAN": {

@@ -9,7 +9,8 @@ with open('mshformat.json', 'r') as file_handler:
 
 
 def get_structure(chunk):
-	structure = ['Data Type | Size (bytes) | Description',
+	structure = ['### Structure',
+				 'Data Type | Size (bytes) | Description',
 				 '----------|--------------|------------']
 	if chunk.get('structure'):
 		for row in chunk.get('structure'):
@@ -30,15 +31,29 @@ def get_structure(chunk):
 
 
 def get_links(chunk):
-	links = ['See also:']
+	links = ['**See also:**']
 	if chunk.get('links'):
 		for link in chunk.get('links'):
 			links.append('[{}]({})'.format(link.get('name'), link.get('link')))
 		links.append('\n')
-		links = ' | '.join(links)
+		links = '&nbsp;&nbsp;&nbsp;'.join(links)
 	else:
 		links = ''
 	return links
+
+
+def get_additional_tables(chunk):
+	tables_data = chunk.get('additional_tables')
+	tables = []
+	for table_data in tables_data:
+		table = []
+		for index, row in enumerate(table_data.get('table')):
+			table.append(' | '.join(row))
+			if index == 0:
+				table.append('{}  '.format(' | '.join(['---'] * len(row))))
+		tables.append('### {}'.format(table_data.get('name')))
+		tables.append('\n'.join(table))
+	return '\n\n'.join(tables)
 
 
 def chunks_to_sections():
@@ -60,18 +75,27 @@ def chunks_to_sections():
 
 		structure = get_structure(chunk)
 		links = get_links(chunk)
+
+		if chunk.get('additional_tables'):
+			additional_table = get_additional_tables(chunk)
+		else:
+			additional_table = ''
 		
 
 		section = Section('## {}'.format(chunk_key), chunk_key.replace('.', '_'), True, True, False, '''
+### Description
 {description}
-{links}
 
 Parent	|	Children	|	Necessity	|
 --------|---------------|---------------|
 {parent}|	{children}	|	{necessity}	|
 
+{links}
+
 {structure}
-'''.format(parent=parent, children=children, necessity=necessity, description=description, links=links, structure=structure))
+
+{additional_table}
+'''.format(parent=parent, children=children, necessity=necessity, description=description, links=links, structure=structure, additional_table=additional_table))
 		sections.append(section)
 	
 	return sections

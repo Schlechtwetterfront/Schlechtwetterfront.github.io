@@ -57,7 +57,7 @@ The CRC used in .msh files is 4 bytes long and is stored in pure hex. The algori
 An example implementation of the _Zero_ CRC can be found [here (python)](https://github.com/Schlechtwetterfront/xsizetools/blob/master/Application/Modules/msh2_crc.py).
 '''),
 			Section('## Zero CRC Default Implementation', 'zero-crc-implementation', True, True, True, '''
-````c++
+````cpp
 // CRC table
 static unsigned table32[256] =
 {

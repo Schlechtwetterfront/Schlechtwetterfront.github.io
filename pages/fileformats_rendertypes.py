@@ -49,7 +49,8 @@ PAGE = {
 		],
 		'sections': [
 			Section('## General Info', 'general_info', True, False, False, '''
-Render Types are stored as 1-byte integers in the ATRB chunk of materials. 
+Render Types are stored as 1-byte integers in the ATRB chunk of materials.  
+**See Also:** [Inside Edit Flags (GT)](http://www.gametoast.com/viewtopic.php?p=279620#p279620)   []()
 '''),
 			Section('## Glow', 'glow', True, True, False, '''
 ID 	| Hex 	| Data0	| Data1	|
@@ -72,7 +73,7 @@ ID 	| Hex 	| Data0										| Data1								|
 ----|-------|-------									|-------							|
 3	| 03	| Scrolling along U (horizontal)			| Scrolling along V (vertical)		|
 
-Scrolls the texture.
+Scrolls the texture positively. To scroll in the other directions flip the texture coordinates.
 
 '''),
 			Section('## Specular', 'specular', True, True, False, '''
@@ -96,8 +97,8 @@ ID 	| Hex 	| Data0	| Data1	|
 ----|-------|-------|-------|
 6	| 06	| -		| -		|
 
-Environment map. Takes an optional additional texture that will be used instead of the local environment map (specified in the map settings).
-
+Environment map. Gives the illusion of reflection on a surface. If no environment map is specified as Texture1 then the game will choose one dynamically at run time.
+If the object is static or does not move you should provide an environment map.
 '''),
 			Section('## Animated', 'animated', True, True, False, '''
 ID 	| Hex 	| Data0											| Data1					|
@@ -105,6 +106,7 @@ ID 	| Hex 	| Data0											| Data1					|
 7	| 07	| Number of frames in the texture (Minimum: 4) 	| Animation Speed. 		| 
 
 Animates UVs to loop through different UV positions on the texture. UVs should be mapped to the first cell and not the whole texture. Cells have to be square and will be calculated automatically from the number of frames.  
+The number of cells always habe to be square (4, 9, 16, etc).
 
 See also: [Render Animated discussion on GT](http://www.gametoast.com/viewtopic.php?p=361010#p361010)
 
@@ -216,7 +218,8 @@ ID 	| Hex 	| Data0	| Data1	|
 ----|-------|-------|-------|
 22	| 16	| -		| -		|
 
-Models bend the light (see Bothan Spy). Model behaves as a transparent object but the transparency is distorted. Alpha channel of the diffuse is used to control the opacity. Requires an additional bump texture which controls distortion. 
+Models bend the light (see Bothan Spy). Model behaves as a transparent object but the transparency is distorted. Alpha channel of the diffuse is used to control the opacity. Requires an additional bump texture which controls amount of distortion. 
+A refraction object can have an optional environment map associated with it.
 
 See also: [Ice Refraction discussion on GT ](http://www.gametoast.com/viewtopic.php?p=397720#p397720)
 '''),
