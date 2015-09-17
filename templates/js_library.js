@@ -1,3 +1,31 @@
+function slideToggleContent(id) {
+    if (id.substr(0, 1) != "#") {
+        id = "#" + id;
+    }
+    var content = id + "_content";
+
+    $(content).slideToggle(250, function () {
+        $(content + "_start").text(function () {
+            return $(content).is(":visible") ? "Collapse" : "Expand";
+        })
+    });
+}
+
+function showContent(id) {
+    if (id.substr(0, 1) != "#") {
+        id = "#" + id;
+    }
+    var content = id + "_content";
+    if ($(content).is(":visible")) {
+        return;
+    }
+    $(content).slideToggle(250, function () {
+        $(content + "_start").text(function () {
+            return $(content).is(":visible") ? "Collapse" : "Expand";
+        })
+    });
+}
+
 $("a.toggle_collapse").click(function () {
     var header = $(this);
     var content = $("#" + $(this).attr("content-id"));
@@ -37,5 +65,20 @@ $("a.toggle_collapse").each(function () {
                 return $(content).is(":visible") ? "Collapse" : "Expand";
             });
         });
+    }
+});
+
+
+$("a.rectangle_button").click(function() {
+    var id = $(this).attr("href");
+    showContent(id);
+});
+
+
+$(document).ready(function () {
+    var parts = window.location.href.split("#");
+    if(parts.length > 1) {
+       var id = parts[ parts.length-1 ];
+       showContent(id);
     }
 });

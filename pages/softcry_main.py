@@ -23,7 +23,7 @@ PAGE = {
 							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/')])
 		],
 		'sections': [
-			Section('## Main Info', 'main_info', True, False, False, '''
+			Section('Main Info', 'main_info', True, False, False, '''
 CryENGINE 3 exporter for Softimage.  
 
 * Intuitive workflow for exporting.
@@ -33,7 +33,7 @@ CryENGINE 3 exporter for Softimage.
 * Support for different grid-units (1 unit = 1cm or 1m).
 * Animation export + straight forward animation clip editor.
 '''),
-			Section('## Download & Installation', 'download_installation', True, False, False, '''
+			Section('Download & Installation', 'download_installation', True, False, False, '''
 Check the sidebar for a link to the releases page on GitHub.
     
 To install SoftCry, unzip the downloaded archive into  

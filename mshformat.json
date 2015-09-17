@@ -953,12 +953,12 @@
     },
     "PRFX": {
         "name": "Lights - PRFX",
-        "parent": "",
+        "parent": "MATD",
         "children": [
 
         ],
         "necessity": "Once.",
-        "description": "Possibly deprecated. Some prefix.",
+        "description": "Possibly deprecated. Material prefix.",
         "links": [
 
         ],
@@ -1014,6 +1014,25 @@
             ["byte", 1, "Green."],
             ["byte", 1, "Blue."],
             ["byte", 1, "Alpha."]
+        ]
+    },
+    "FOGD": {
+        "name": "General - FOGD",
+        "parent": "",
+        "children": [
+        ],
+        "necessity": "Optional.",
+        "description": "Possibly deprecated. Fog data.",
+        "links": [
+
+        ],
+        "structure": [
+            ["float", 4, "Red."],
+            ["float", 4, "Green."],
+            ["float", 4, "Blue."],
+            ["float", 4, "Alpha."],
+            ["float", 4, "Near plane."],
+            ["float", 4, "Far plane."]
         ]
     }
 }

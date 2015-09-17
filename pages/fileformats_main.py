@@ -44,19 +44,19 @@ PAGE = {
 							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/')])
 		],
 		'sections': [
-			Section('## Main Info', 'main_info', True, False, False, '''
+			Section('Main Info', 'main_info', True, False, False, '''
 File format information for some ZeroEngine formats.
 '''),
-# 			Section('## Flag Calculator', 'flag_calculator', True, False, False, '''
+# 			Section('Flag Calculator', 'flag_calculator', True, False, False, '''
 # {}
 # '''.format(get_flag_calculator()).format(markdown.markdown(CALC_TABLE, extensions=MARKDOWN_EXTENSIONS))),
 # # '''.format(get_flag_calculator())),
-			Section('## Zero CRC', 'zero-crc', True, False, False, '''
+			Section('Zero CRC', 'zero-crc', True, False, False, '''
 The CRC used in .msh files is 4 bytes long and is stored in pure hex. The algorithm is proprietary (_Zero_ because it's used in Pandemic's _Zero Engine_).
 
 An example implementation of the _Zero_ CRC can be found [here (python)](https://github.com/Schlechtwetterfront/xsizetools/blob/master/Application/Modules/msh2_crc.py).
 '''),
-			Section('## Zero CRC Default Implementation', 'zero-crc-implementation', True, True, True, '''
+			Section('Zero CRC Default Implementation', 'zero-crc-implementation', True, True, True, '''
 ````cpp
 // CRC table
 static unsigned table32[256] =

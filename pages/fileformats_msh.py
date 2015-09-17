@@ -82,7 +82,7 @@ def chunks_to_sections():
 			additional_table = ''
 		
 
-		section = Section('## {}'.format(chunk_key), chunk_key.replace('.', '_'), True, True, False, '''
+		section = Section('{}'.format(chunk_key), chunk_key.replace('.', '_'), True, True, False, '''
 ### Description
 {description}
 

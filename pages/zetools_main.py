@@ -37,13 +37,13 @@ PAGE = {
 							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/')])
 		],
 		'sections': [
-			Section('## Main Info', 'main_info', True, False, False, '''
+			Section('Main Info', 'main_info', True, False, False, '''
 XSIZETools is an addon for Softimage (tested with ModTool 7.5, 2012 SP1 and 2014).
 The main features are full export and import of 3D .msh files for ZeroEngine (Star Wars Battlefront I and II). That includes geometry, materials with all ZeroEngine-specific flags, animations and collisions.
     
 This began as a small collection of scripts to help setup hierarchies and the like and turned into a full-fledged exporter/importer for the .msh format. As only a small amount of the .msh file format structure was known when I began writing the exporter I had to reverse-engineer (with contributions from a handful of other people) the rest (which was about 70% of the chunks).
 '''),
-			Section('## Download & Installation', 'download_installation', True, False, False, '''
+			Section('Download & Installation', 'download_installation', True, False, False, '''
 The main chunk of the project is hosted on GitHub.
 The source for the Geometry Accessor Wrappers can be found on the sidebar (the source is outdated though as I lost the code used for the current DLLs.
 Check the sidebar for a link to the releases page on GitHub.
@@ -66,7 +66,7 @@ The low-level geometry functions are written in C++, so the Visual C++ 2010 redi
 |
 [x64](http://www.microsoft.com/downloads/de-de/details.aspx?FamilyID=bd512d9e-43c8-4655-81bf-9350143d5867) (only if x86 didn't work).
 '''),
-		Section('## Contributors', 'contributors', True, True, False, '''
+		Section('Contributors', 'contributors', True, True, False, '''
 **ME (ANDEWEGET/Ande)**  
 All programming | Graphics/UI | Main .msh file research
   
@@ -83,7 +83,7 @@ Additional .msh research | MSH Info Tool greatly helped with debugging | Interes
 Provided a tool/material for some additional research
 
 '''),
-		Section('## Export Guidelines', 'export-guidelines', True, False, False, '''
+		Section('Export Guidelines', 'export-guidelines', True, False, False, '''
 * **Error Checking:** The CheckSel function in the export dialog can detect some problems.
 * **Exported Objects:** The currently selected object + all it's children will be exported.
 * **Overlapping clusters:** Might break the .msh file. Might mess up the exported .msh's UVs/Weights/Vertex Colors.
@@ -102,23 +102,23 @@ Provided a tool/material for some additional research
 			This will add all the ZeroEngine material flags to the material.
 			Afterwards inspect your material (click the "Edit" button) and change those settings in the appended options.
 			'''),
-		Section('## Import Guidelines', 'import-guidelines', True, False, False, '''
+		Section('Import Guidelines', 'import-guidelines', True, False, False, '''
 * **Animation:** Animations will be imported as linear animations on a per-frame basis.
 * **Animation:** It should be possible to re-export animations directly after import. For SWBF1 you need to have at least one material though.
 * **Geometry:** There might be some misplaced edges.
 			'''),
-		Section('## Cloth Guidelines', 'cloth-guidelines', True, False, False, '''
+		Section('Cloth Guidelines', 'cloth-guidelines', True, False, False, '''
 * **Geometry:** Try to avoid triangles in the cloth mesh. There's a high change triangles might produce artifacts in the cloth simulation.
 * **UV/Cloth Splits:** Cloth will be split along UV seams, so UV accordingly.
 * **Error Reporting:** If you have problems with cloth simulation artifacts, provide a screenshot from the debug SWBF.exe with "render_cloth_connections" enabled via the console.
 			'''),
-		Section('## Scripts', 'scripts', True, False, False, '''
+		Section('Scripts', 'scripts', True, False, False, '''
 * **Create Bone Group**  
 Creates a group of all objects which have 'bone' in their name. If you have a SWBF2 skeleton in your scene this will group all bones you need to envelope to.  
 * **Addon Mesh Setup**  
 Creates an addon mesh hierarchy, by creating a null (named like the *Addon Root* text box) and matching its position and rotation to the selected *Addon Bone*. You can then move the currently selected object(s) into the hierarchy by pressing *Set As Addon Mesh*.
 '''),
-		Section('## Export Documentation', 'export-docs', True, True, False, '''
+		Section('Export Documentation', 'export-docs', True, True, False, '''
 * **Auto-Overwrite.** Overwrites any output files if they already exist.
 * **Use root model name for .msh file name.** Will use the name of the topmost object in the currently selected hierarchy as the .msh file name. Has to be enabled when Batch Exporting.
 * **Batch Export.** Exports all children of the currently selected object as a full hierarchy.
@@ -131,7 +131,7 @@ Creates an addon mesh hierarchy, by creating a null (named like the *Addon Root*
 * **Check Sel: Unnecessary clusters.** Do not need to be fixed, just warnings.
 * **Store Flags.** Stores the current export configuration (path, check boxes etc).
 			'''),
-		Section('## Import Documentation', 'import-docs', True, True, False, '''
+		Section('Import Documentation', 'import-docs', True, True, False, '''
 * **Texture Folder.** If the textures for the to-be-imported .msh file are not located in the same folder as the .msh file.
 * **Set Frame Range.** Will set the frame range to that stored in the .msh file.
 * **Apply animation to selected hierarchy.** If you have already imported a .msh file (like a unit) then you can apply an animation stored in another .msh file to the previously imported mesh (root of that hierarchy must be selected).
@@ -145,7 +145,7 @@ Creates an addon mesh hierarchy, by creating a null (named like the *Addon Root*
 * **Triangulate.** Triangulates any quads or more-sided polygons on import.
 * **Log.** Logs the MSH unpack (can be slow).
 			'''),
-		Section('## Material Manager Documentation', 'material-docs', True, True, False, '''
+		Section('Material Manager Documentation', 'material-docs', True, True, False, '''
 * **Create.** Creates a new Phong material with the name in the box to the left of the button.
 * **Edit.** Will inspect the currently selected material for editing.
 * **ZEify.** Will add ZeroEngine specific material and shader settings to the selected material(s). This lets you add features like scrolling textures, glow, bump mapping and many more.<br>
@@ -156,7 +156,7 @@ Creates an addon mesh hierarchy, by creating a null (named like the *Addon Root*
 * **Assign.** Assigns the currently selected material to the currently selected component/object in the scene.
 * **Unassign.** Unassigns the material.
 			'''),
-		Section('## MSH2TXT', 'msh2txt', True, True, True, '''
+		Section('MSH2TXT', 'msh2txt', True, True, True, '''
 ### Model Types
 1. **null:** Dummy object without segments.
 1. **geodynamic:** Geometry with envelope and modifiers.
@@ -280,7 +280,7 @@ _name_ mtl _material_name_ .txt
 > **float[3] collision_primitive:** [value 0, value 1, value 2]  
 
 			'''),
-		Section('## Animation Export', 'animation-export', True, True, True, '''
+		Section('Animation Export', 'animation-export', True, True, True, '''
 Every of the following steps will produce one .msh file.
 
 > **SWBF 1 NOTE:** The ZenAsset.exe which comes with the SWBF1 mod tools seems to need at least one material to work. Just add a small primitive(eg: cube, you can hide it, too)
