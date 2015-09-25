@@ -1,0 +1,94 @@
+/* Overwriting schlechtwetterfront_dark.css */
+
+
+head {
+    background-color: #FFF;
+}
+
+
+/* Main Page elements */
+
+
+.box {
+	background-color: #DDD;
+	color: #555;
+}
+
+
+.box-text {
+	color: #555;
+}
+
+
+.sub-text {
+	color: #777;
+}
+
+
+.big-text {
+	color: #AAA;
+}
+
+
+/* Project Page elements */
+
+
+.content {
+	background-color: #EEE;
+}
+
+
+.section-header {
+	color: #333;
+}
+
+
+.sidebar {
+	background-color: #EEE;
+}
+
+
+category_label {
+	color: #333;
+}
+
+
+/**/
+
+
+p, li {
+	color: #555;
+}
+
+
+body {
+	background-color: white;
+}
+
+
+h1, h2, h3 {
+	color: #333;
+	font-weight: bold;
+}
+
+
+table {
+	border-color: rgba(0, 0, 0, 0.3);
+}
+
+
+td {
+    color: #555;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+
+th {
+    color: #222;
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+
+div .hr {
+	background-color: rgba(0, 0, 0, 0.1);
+}
