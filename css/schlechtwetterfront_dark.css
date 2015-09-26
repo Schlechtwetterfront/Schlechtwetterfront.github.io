@@ -106,7 +106,7 @@ a.rectangle_button:hover {
     min-width: 400px;
     background-color: #252525;
     padding: 0.6em;
-    padding-bottom: 1px;
+    padding-bottom: 20px;
 }
 
 .section {
@@ -419,12 +419,14 @@ indent-child {
     /*margin-right: 5px;*/
     border-left: 1px dotted rgba(255, 255, 255, 0.35);
     display: inline-block;
-    height: 30px;
+    height: 31px;
 
     position: relative;
-    top: 1px;
+    top: 0px;
 
     overflow: visible;
+
+    /*transition: width 0.3s;*/
 }
 
 
