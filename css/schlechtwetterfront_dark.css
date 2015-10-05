@@ -52,7 +52,7 @@ a {
     font-weight: normal;
 }
 
-a.rectangle_button {
+a.rectangle-button {
     font-size: 16px;
     font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     font-weight: normal;
@@ -61,20 +61,31 @@ a.rectangle_button {
 
     display: block;
     line-height: 1.8em;
-    /*height: 28px;*/
-    background-color: transparent;
+
     padding: 1px 0px 1px 10px;
-    margin: 2px 0px 0px 0px;
-    /*margin-bottom: 5px;*/
 
     vertical-align: text-bottom;
-    max-height: 28px;
-    width: 95%;
+    max-height: 30px;
 }
 
 
-a.rectangle_button:hover {
+a.rectangle-button:hover {
     background: rgba(0, 0, 0, 0.75);
+}
+
+
+.rectangle-button-semi {
+    width: 98%;
+    margin: 2px 0px 0px 0px;
+    /*border: 1px solid rgba(0, 0, 0, 0.05);*/
+    box-sizing: border-box;
+
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+}
+
+
+.rectangle-button-transparent {
+    background: transparent;
 }
 
 
@@ -420,7 +431,7 @@ indent-child {
     width: 15px;
     /*margin-left: 5px;*/
     /*margin-right: 5px;*/
-    border-left: 1px dotted rgba(0, 0, 0, 0.2);
+    border-left: 1px dotted rgba(255, 255, 255, 0.2);
     display: inline-block;
     height: 29px;
 
@@ -445,9 +456,23 @@ t {
 }
 
 
+t2 {
+    font-size: 14px;
+    
+    color: #BBB;
+    display: inline-block;
+
+    /*float: right;*/
+    position: absolute;
+    right: 20%;
+    /*left: 40%;*/
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
 checkbutton {
-
-
     display: inline-block;
     width: 112px;
     height: 112px;
@@ -477,6 +502,16 @@ div .hr_dark {
     background-color: rgba(0, 0, 0, 0.1);
     margin-right: 10%;
     margin-left: 10px;
+    display: block;
+}
+
+
+div .hr-sidebar-dark {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+    /*margin-right: 5px;*/
+    /*margin-left: 5px;*/
+    width: 98%;
     display: block;
 }
 

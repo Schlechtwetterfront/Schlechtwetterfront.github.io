@@ -72,7 +72,7 @@ window.addEventListener("load", function() {
     });
 
 
-    $("a.rectangle_button").click(function() {
+    $("a.rectangle-button").click(function() {
         var id = $(this).attr("href");
         showContent(id);
     });
@@ -81,7 +81,7 @@ window.addEventListener("load", function() {
     var indent_width = "2px";
     indent_width = $("indent-child").css("width");
 
-    $("a.rectangle_button").hover(
+    $("a.rectangle-button").hover(
         function() {
             $(this).children("indent-child").css({"visibility": "hidden"});
             // $(this).children("indent-child").stop().animate({"width": 0}, {

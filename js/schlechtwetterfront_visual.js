@@ -14,7 +14,9 @@ var colors = [
     // "#8d76ff", // darker violet
     // "#d77f64", // orange
     // "#919ddb", // brighter blue
-    "#6AAF6A", // green
+    "#84D284", // green
+    "#6AA9AF", // cyan
+    "#76C0FF", // blue
 ];
 
 
