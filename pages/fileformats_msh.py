@@ -57,7 +57,14 @@ def get_additional_tables(chunk):
 
 
 def chunks_to_sections():
-	sections = []
+	info_section = Section('Overview', 'overview', True, False, False, '''
+This page lists all .MSH file chunks. In the .MSH file these chunks are organized in a hierarchy with [HEDR](#HEDR) (header) being the first chunk and branching out
+from there (as visualized in the sidebar navigation).  
+
+Some of these chunks are exclusive to certain versions of the engine (_Star Wars: The Clone Wars_ and before, _Star Wars: Battlefront_ and _Star Wars: Battlefront II_) or deprecated completely.
+Most notably Cloth Simulation ([CLTH](#CLTH) and children) being limited to _Star Wars: Battlefront II_.
+		''')
+	sections = [info_section]
 	for chunk_key in MSHFORMAT.keys():
 		chunk = MSHFORMAT[chunk_key]
 
@@ -81,8 +88,11 @@ def chunks_to_sections():
 		else:
 			additional_table = ''
 		
+		collapsed = True
+		if chunk.get('name') == 'ExampleChunk':
+			collapsed = False
 
-		section = Section('{}'.format(chunk_key), chunk_key.replace('.', '_'), True, True, False, '''
+		section = Section('{}'.format(chunk_key), chunk_key.replace('.', '_'), True, collapsed, False, '''
 ### Description
 {description}
 
@@ -105,7 +115,12 @@ def get_chunk_nav_links():
 	links = []
 	for chunk_key in MSHFORMAT.keys():
 		chunk = MSHFORMAT[chunk_key]
-		link = Link(chunk.get('name'), '#{}'.format(chunk_key.replace('.', '_')))
+		link_title = chunk.get('name')
+		if chunk.get('hierarchy_level') > 0:
+			indent_string = ['<indent-child></indent-child>'] * chunk.get('hierarchy_level')
+			indent_string = ''.join(indent_string)
+			link_title = '{}<text-container>{}</text-container>'.format(indent_string, chunk.get('name'))
+		link = Link(link_title, '#{}'.format(chunk_key.replace('.', '_')))
 		links.append(link)
 	return links
 
@@ -115,10 +130,11 @@ PAGE = {
 		'output_file': 'msh.html',
 		'output_folder': 'ze_filetypes',
 		'page_title': 'ZE File Formats - .MSH',
+		'use_bright_theme': True,
 		'categories': [
 			Category('Navigation', [
+							   Link('Overview', '#overview'),
 							   Link('Back', 'index.html'),
-							   Link('Back to Top', '#'),
 							   ]),
 			Category('Chunks', get_chunk_nav_links()),
 			Category('Personal', [

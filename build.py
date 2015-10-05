@@ -1,13 +1,15 @@
 from jinja2 import Environment, FileSystemLoader
 env = Environment(loader=FileSystemLoader('templates'))
 
-import os, shutil
+import os, time
 
 
 def build():
     import pages
     for page in pages.PAGES:
         build_template(page)
+    print('\n\t> Build succesfull.')
+    time.sleep(1)
 
 def build_template(data):
     print('Building page \'{title}\'.'.format(title=data.get('page_title')))

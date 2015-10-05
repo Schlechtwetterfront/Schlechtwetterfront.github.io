@@ -13,6 +13,9 @@
         #ffc39d - orange bright
 */
 
+head {
+    background-color: #000;
+}
 
 
 /*
@@ -43,19 +46,35 @@ a.toggle_collapse_end {
     top: -30px;
 }
 
+
+a {
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-weight: normal;
+}
+
 a.rectangle_button {
     font-size: 16px;
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-weight: normal;
+
     color: #EEEEEE;
 
     display: block;
     line-height: 1.8em;
+    /*height: 28px;*/
     background-color: transparent;
     padding: 1px 0px 1px 10px;
+    margin: 2px 0px 0px 0px;
+    /*margin-bottom: 5px;*/
+
+    vertical-align: text-bottom;
+    max-height: 28px;
+    width: 95%;
 }
 
 
 a.rectangle_button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.75);
 }
 
 
@@ -89,7 +108,7 @@ a.rectangle_button:hover {
     min-width: 400px;
     background-color: #252525;
     padding: 0.6em;
-    padding-bottom: 1px;
+    padding-bottom: 20px;
 }
 
 .section {
@@ -106,11 +125,17 @@ a.rectangle_button:hover {
 }
 
 
+.section-content p {
+    margin-left: 1.3em;
+}
+
+
 .sidebar {
     color: #222222;
     background-color: #353535;
 
     padding: 0.8em;
+    padding-right: 0.6em;
 
     margin: 25px 15% 25px 15%;
 
@@ -118,13 +143,14 @@ a.rectangle_button:hover {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 20em;
+    width: 20.2em;
     
     transition: margin 0.3s;
 }
 
 category_label {
     font-size: 16px;
+    /*font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;*/
     color: #222222;
 
     display: inline-block;
@@ -141,6 +167,7 @@ category_label {
 
 .section-header {
     font-size: 24px;
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     color: white;
     height: 33px;
     width: 75%;
@@ -156,7 +183,7 @@ sidebar_title {
     font-size: 18px;
     text-align: center;
     display: block;
-    font-weight: bold;
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 @media (max-width: 1400px) {
@@ -375,11 +402,48 @@ sidebar_title {
     * ----------------------------------------------------- *
 */
 
+indent {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+
+text-container {
+    display: inline;
+    top: -8px;
+    position: relative;
+}
+
+
+indent-child {
+    width: 15px;
+    /*margin-left: 5px;*/
+    /*margin-right: 5px;*/
+    border-left: 1px dotted rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    height: 29px;
+
+    position: relative;
+    top: 0px;
+
+    overflow: visible;
+
+    /*transition: width 0.3s;*/
+}
+
+
+indent-child:hover {
+    border-left: 1px solid rgba(0, 0, 0, 0);
+}
+
+
 t {
     color: #BBB;
     display: inline-block;
     line-height: 21px;
 }
+
 
 checkbutton {
 
@@ -437,14 +501,17 @@ div .hr-inline {
 
 .red {
     color: red;
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 .orange {
     color: orange;
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 .green {
     color: #31B404;
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 .column {
@@ -517,6 +584,9 @@ body {
 h1, h2, h3 {
     color: white;
     margin-left: 10px;
+
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-weight: normal;
 }
 
 p {
@@ -532,7 +602,7 @@ p, li {
 }
 
 p .section {
-    margin-left: 10px;
+    margin-left: 1em;
 }
 
 table {
@@ -545,10 +615,13 @@ table {
 
 td {
     color: #BBB;
+    border-top: 1px solid;
 }
 
 th {
     color: #EEEEEE;
+    border-bottom: 1px solid;
+    margin-bottom: 5px;
 }
 
 blockquote {

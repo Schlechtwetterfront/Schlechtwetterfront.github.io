@@ -78,12 +78,23 @@ window.addEventListener("load", function() {
     });
 
 
+    var indent_width = "2px";
+    indent_width = $("indent-child").css("width");
+
     $("a.rectangle_button").hover(
         function() {
-            $(this).children("indent-child").css("visibility", "hidden");
+            $(this).children("indent-child").css({"visibility": "hidden"});
+            // $(this).children("indent-child").stop().animate({"width": 0}, {
+            //     duration: 300,
+            //     fail: function() { $(this).css("visibility", "visible"); }
+            // });
         },
         function() {
-            $(this).children("indent-child").css("visibility", "visible");
+            $(this).children("indent-child").css({"visibility": "visible", "width": indent_width});
+            // $(this).children("indent-child").stop().animate({"width": indent_width}, {
+            //     duration: 300,
+            //     always: function() { $(this).css("visibility", "visible"); }
+            // });
         }
     );
 });

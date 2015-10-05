@@ -3,11 +3,13 @@
         "name": "ExampleChunk",
         "_name": "The chunk name.",
 
-        "parent": "Parent chunk name.", 
+        "hierarchy_level": 0,
+
+        "parent": "Parent chunk", 
         "_parent": "The name of the parent chunk.",
 
         "children": [
-            "All children"
+            "All", "possible", "children"
         ],
         "_children": "A list of children chunk names.",
 
@@ -22,12 +24,15 @@
         "_links": "A list of links for further reading.",
 
         "structure": [
-            ["long int", "4", "Some description"]
+            ["byte[4]", "4", "Header/chunk name. Every chunk has this."],
+            ["long int", "4", "Length indicator. Stores the length in bytes _excluding_ the header and the size indicator. Every chunk has this indicator."],
+            ["", "~", "The rest of the data."]
         ],
         "_structure": "A list of lists where each sub-list is a row in a table."
     },
     "HEDR": {
-        "name": "General - HEDR",
+        "name": "HEDR",
+        "hierarchy_level": 0,
         "parent": null,
         "children": [
             "SHVO", "MSH2", "BLN2", "SKL2", "ANM2", "CL1L"
@@ -41,23 +46,9 @@
 
         ]
     },
-    "MSH2": {
-        "name": "General - MSH2",
-        "parent": "HEDR",
-        "children": [
-            "SINF", "CAMR", "MATL", "MODL"
-        ],
-        "necessity": "Once",
-        "description": ".msh file mesh header.",
-        "links": [
-
-        ],
-        "structure": [
-
-        ]
-    },
     "SHVO": {
-        "name": "General - SHVO",
+        "name": "SHVO",
+        "hierarchy_level": 1,
         "parent": "HEDR",
         "children": [
 
@@ -71,8 +62,41 @@
             ["long int", 4, "0 or 1 (if .msh has a shadow volume)."]
         ]
     },
+    "MSH2": {
+        "name": "MSH2",
+        "hierarchy_level": 1,
+        "parent": "HEDR",
+        "children": [
+            "SINF", "CAMR", "MATL", "MODL"
+        ],
+        "necessity": "Once",
+        "description": ".msh file mesh header.",
+        "links": [
+
+        ],
+        "structure": [
+
+        ]
+    },
+    "FINF": {
+        "name": "FINF",
+        "hierarchy_level": 2,
+        "parent": "MSH2",
+        "children": [
+            "PROJ", "USER", "TIME"
+        ],
+        "necessity": "Once.",
+        "description": "Possibly deprecated. File information. PROJ: project name. USER: user name. TIME: time.",
+        "links": [
+
+        ],
+        "structure": [
+            ["ASCII string", "4 * X", "File information."]
+        ]
+    },
     "SINF": {
-        "name": "General - SINF",
+        "name": "SINF",
+        "hierarchy_level": 2,
         "parent": "MSH2",
         "children": [
             "NAME", "FRAM", "BBOX"
@@ -87,7 +111,8 @@
         ]
     },
     "FRAM": {
-        "name": "Scene - FRAM",
+        "name": "FRAM",
+        "hierarchy_level": 3,
         "parent": "SINF",
         "children": [
 
@@ -104,7 +129,8 @@
         ]
     },
     "CAMR": {
-        "name": "General - CAMR",
+        "name": "CAMR",
+        "hierarchy_level": 2,
         "parent": "MSH2",
         "children": [
             "NAME", "DATA"
@@ -119,7 +145,8 @@
         ]
     },
     "MATL": {
-        "name": "Materials - MATL",
+        "name": "MATL (Materials)",
+        "hierarchy_level": 2,
         "parent": "MSH2",
         "children": [
             "MATD"
@@ -134,7 +161,8 @@
         ]
     },
     "MATD": {
-        "name": "Materials - MATD",
+        "name": "MATD (Material)",
+        "hierarchy_level": 3,
         "parent": "MATL",
         "children": [
             "NAME", "MATD.DATA", "ATRB", "TX0D"
@@ -149,7 +177,8 @@
         ]
     },
     "MATD.DATA": {
-        "name": "Materials - MATD.DATA",
+        "name": "MATD.DATA",
+        "hierarchy_level": 4,
         "parent": "MATD",
         "children": [
         ],
@@ -166,7 +195,8 @@
         ]
     },
     "ATRB": {
-        "name": "Materials - ATRB",
+        "name": "ATRB",
+        "hierarchy_level": 4,
         "parent": "MATD",
         "children": [
         ],
@@ -201,7 +231,8 @@
         ]
     },
     "TX0D": {
-        "name": "Materials - TX0D",
+        "name": "TX0D",
+        "hierarchy_level": 4,
         "parent": "MATD",
         "children": [
         ],
@@ -214,8 +245,25 @@
             ["ASCII string", "~", "Texture name."]
         ]
     },
+    "PRFX": {
+        "name": "PRFX",
+        "hierarchy_level": 4,
+        "parent": "MATD",
+        "children": [
+
+        ],
+        "necessity": "Once.",
+        "description": "Possibly deprecated. Material prefix.",
+        "links": [
+
+        ],
+        "structure": [
+            ["ASCII string", "4 * X", "Prefix."]
+        ]
+    },
     "MODL": {
-        "name": "Model - MODL",
+        "name": "MODL (Model)",
+        "hierarchy_level": 2,
         "parent": "MSH2",
         "children": [
             "NAME", "MTYP", "MNDX", "PRNT", "FLGS", "TRAN", "GEOM", "SWCI"
@@ -230,7 +278,8 @@
         ]
     },
     "MTYP": {
-        "name": "Model - MTYP",
+        "name": "MTYP",
+        "hierarchy_level": 3,
         "parent": "MODL",
         "children": [
         ],
@@ -258,7 +307,8 @@
         ]
     },
     "MNDX": {
-        "name": "Model - MNDX",
+        "name": "MNDX",
+        "hierarchy_level": 3,
         "parent": "MODL",
         "children": [
         ],
@@ -272,7 +322,8 @@
         ]
     },
     "PRNT": {
-        "name": "Model - PRNT",
+        "name": "PRNT",
+        "hierarchy_level": 3,
         "parent": "MODL",
         "children": [
         ],
@@ -286,7 +337,8 @@
         ]
     },
     "FLGS": {
-        "name": "Model - FLGS",
+        "name": "FLGS",
+        "hierarchy_level": 3,
         "parent": "MODL",
         "children": [
         ],
@@ -314,7 +366,8 @@
         ]
     },
     "TRAN": {
-        "name": "Model - TRAN",
+        "name": "TRAN",
+        "hierarchy_level": 3,
         "parent": "MODL",
         "children": [
         ],
@@ -329,8 +382,28 @@
             ["float [3]", 12, "Translation in XYZ."]
         ]
     },
+    "SWCI": {
+        "name": "SWCI",
+        "hierarchy_level": 3,
+        "parent": "MODL",
+        "children": [
+
+        ],
+        "necessity": "Optional.",
+        "description": "Collision primitive.",
+        "links": [
+
+        ],
+        "structure": [
+            ["long int", 4, "Primitive type (0: sphere, 1: sphere, 2: cylinder, 4: cube)."],
+            ["float", 4, "Data (sphere: radius, cylinder: radius, cube: x_length."],
+            ["float", 4, "Data (sphere: -, cylinder: height, cube: y_length."],
+            ["float", 4, "Data (sphere: -, cylinder: -, cube: z_length."]
+        ]
+    },
     "GEOM": {
-        "name": "Geometry - GEOM",
+        "name": "GEOM (Geometry)",
+        "hierarchy_level": 3,
         "parent": "MODL",
         "children": [
             "BBOX", "SEGM", "CLTH", "ENVL"
@@ -344,8 +417,26 @@
 
         ]
     },
+    "ENVL": {
+        "name": "ENVL (Envelope)",
+        "hierarchy_level": 4,
+        "parent": "GEOM",
+        "children": [
+
+        ],
+        "necessity": "Optional.",
+        "description": "List of indices into [MODL](#MODL). This model is enveloped to those indices' models.",
+        "links": [
+
+        ],
+        "structure": [
+            ["long int", 4, "Number of indices into [MODL](#MODL)."],
+            ["long int []", "4 each", "Index into [MODL](#MODL)."]
+        ]
+    },
     "SEGM": {
-        "name": "Geometry - SEGN",
+        "name": "SEGM",
+        "hierarchy_level": 4,
         "parent": "GEOM",
         "children": [
             "SHDW", "MATI", "POSL", "CLRL", "CLRB", "WGHT", "NRML", "UV0L", "NDXL", "NDXT", "STRP"
@@ -360,7 +451,8 @@
         ]
     },
     "SHDW": {
-        "name": "Geometry - SHDW",
+        "name": "SHDW",
+        "hierarchy_level": 5,
         "parent": "SEGM",
         "children": [
         ],
@@ -381,7 +473,8 @@
         ]
     },
     "MATI": {
-        "name": "Geometry - MATI",
+        "name": "MATI",
+        "hierarchy_level": 5,
         "parent": "SEGM",
         "children": [
 
@@ -396,7 +489,8 @@
         ]
     },
     "POSL": {
-        "name": "Geometry - POSL",
+        "name": "POSL",
+        "hierarchy_level": 5,
         "parent": "SEGM",
         "children": [
 
@@ -412,7 +506,8 @@
         ]
     },
     "NRML": {
-        "name": "Geometry - NRML",
+        "name": "NRML",
+        "hierarchy_level": 5,
         "parent": "SEGM",
         "children": [
         ],
@@ -427,7 +522,8 @@
         ]
     },
     "UV0L": {
-        "name": "Geometry - UV0L",
+        "name": "UV0L",
+        "hierarchy_level": 5,
         "parent": "SEGM",
         "children": [
         ],
@@ -442,7 +538,8 @@
         ]
     },
     "CLRL": {
-        "name": "Geometry - CLRL",
+        "name": "CLRL",
+        "hierarchy_level": 5,
         "parent": "SEGM",
         "children": [
         ],
@@ -457,7 +554,8 @@
         ]
     },
     "CLRB": {
-        "name": "Geometry - CLRB",
+        "name": "CLRB",
+        "hierarchy_level": 5,
         "parent": "SEGM",
         "children": [
         ],
@@ -471,7 +569,8 @@
         ]
     },
     "WGHT": {
-        "name": "Geometry - WGHT",
+        "name": "WGHT",
+        "hierarchy_level": 5,
         "parent": "SEGM",
         "children": [
         ],
@@ -488,7 +587,8 @@
         ]
     },
     "NDXL": {
-        "name": "Geometry - NDXL",
+        "name": "NDXL",
+        "hierarchy_level": 5,
         "parent": "SEGM",
         "children": [
         ],
@@ -502,7 +602,8 @@
         ]
     },
     "NDXT": {
-        "name": "Geometry - NDXT",
+        "name": "NDXT",
+        "hierarchy_level": 5,
         "parent": "SEGM",
         "children": [
         ],
@@ -516,7 +617,8 @@
         ]
     },
     "STRP": {
-        "name": "Geometry - STRP",
+        "name": "STRP",
+        "hierarchy_level": 5,
         "parent": "SEGM",
         "children": [
             "NAME", "FRAM", "BBOX"
@@ -531,24 +633,46 @@
             ["short int []", "2 each", "Index into [POSL](#POSL). The indices will form polygons."]
         ]
     },
-    "ENVL": {
-        "name": "Geometry - ENVL",
-        "parent": "GEOM",
+    "VLTB": {
+        "name": "VLTB",
+        "hierarchy_level": 5,
+        "parent": "SEGM",
         "children": [
-
         ],
         "necessity": "Optional.",
-        "description": "List of indices into [MODL](#MODL). This model is enveloped to those indices' models.",
+        "description": "Possibly deprecated. Baked vertex light.",
         "links": [
 
         ],
         "structure": [
-            ["long int", 4, "Number of indices into [MODL](#MODL)."],
-            ["long int []", "4 each", "Index into [MODL](#MODL)."]
+            ["byte", 1, "Red."],
+            ["byte", 1, "Green."],
+            ["byte", 1, "Blue."],
+            ["byte", 1, "Alpha."]
+        ]
+    },
+    "VLTL": {
+        "name": "VLTL",
+        "hierarchy_level": 5,
+        "parent": "SEGM",
+        "children": [
+        ],
+        "necessity": "Optional.",
+        "description": "Possibly deprecated. Unique baked vertex lights for vertices.",
+        "links": [
+
+        ],
+        "structure": [
+            ["long int", 4, "Number of colors to come."],
+            ["byte", 1, "Red."],
+            ["byte", 1, "Green."],
+            ["byte", 1, "Blue."],
+            ["byte", 1, "Alpha."]
         ]
     },
     "CLTH": {
-        "name": "Cloth - CLTH",
+        "name": "CLTH (Cloth)",
+        "hierarchy_level": 4,
         "parent": "GEOM",
         "children": [
             "CTEXT", "CPOS", "CUV0", "FIDX", "FWGT", "CMSH", "SPRS", "CPRS", "BPRS", "COLL"
@@ -562,7 +686,8 @@
         ]
     },
     "CTEX": {
-        "name": "Cloth - CTEX",
+        "name": "CTEX",
+        "hierarchy_level": 5,
         "parent": "CLTH",
         "children": [
 
@@ -577,7 +702,8 @@
         ]
     },
     "CPOS": {
-        "name": "Cloth - CPOS",
+        "name": "CPOS",
+        "hierarchy_level": 5,
         "parent": "CLTH",
         "children": [
 
@@ -593,7 +719,8 @@
         ]
     },
     "CUV0": {
-        "name": "Cloth - CUV0",
+        "name": "CUV0",
+        "hierarchy_level": 5,
         "parent": "CLTH",
         "children": [
 
@@ -609,7 +736,8 @@
         ]
     },
     "FIDX": {
-        "name": "Cloth - FIDX",
+        "name": "FIDX",
+        "hierarchy_level": 5,
         "parent": "CLTH",
         "children": [
 
@@ -625,7 +753,8 @@
         ]
     },
     "FWGT": {
-        "name": "Cloth - FWGT",
+        "name": "FWGT",
+        "hierarchy_level": 5,
         "parent": "CLTH",
         "children": [
 
@@ -641,7 +770,8 @@
         ]
     },
     "CMSH": {
-        "name": "Cloth - CMSH",
+        "name": "CMSH",
+        "hierarchy_level": 5,
         "parent": "CLTH",
         "children": [
 
@@ -657,7 +787,8 @@
         ]
     },
     "SPRS": {
-        "name": "Cloth - SPRS",
+        "name": "SPRS",
+        "hierarchy_level": 5,
         "parent": "CLTH",
         "children": [
 
@@ -673,7 +804,8 @@
         ]
     },
     "CPRS": {
-        "name": "Cloth - CPRS",
+        "name": "CPRS",
+        "hierarchy_level": 5,
         "parent": "CLTH",
         "children": [
 
@@ -689,7 +821,8 @@
         ]
     },
     "BPRS": {
-        "name": "Cloth - BPRS",
+        "name": "BPRS",
+        "hierarchy_level": 5,
         "parent": "CLTH",
         "children": [
 
@@ -705,7 +838,8 @@
         ]
     },
     "COLL": {
-        "name": "Cloth - COLL",
+        "name": "COLL",
+        "hierarchy_level": 5,
         "parent": "CLTH",
         "children": [
 
@@ -725,26 +859,9 @@
             ["float", 4, "Data (sphere: radius, cylinder: -, cube: z_length / 2)."]
         ]
     },
-    "SWCI": {
-        "name": "Model - SWCI",
-        "parent": "MODL",
-        "children": [
-
-        ],
-        "necessity": "Optional.",
-        "description": "Collision primitive.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Primitive type (0: sphere, 1: sphere, 2: cylinder, 4: cube)."],
-            ["float", 4, "Data (sphere: radius, cylinder: radius, cube: x_length."],
-            ["float", 4, "Data (sphere: -, cylinder: height, cube: y_length."],
-            ["float", 4, "Data (sphere: -, cylinder: -, cube: z_length."]
-        ]
-    },
     "SKL2": {
-        "name": "Animation - SKL2",
+        "name": "SKL2 (Skeleton)",
+        "hierarchy_level": 1,
         "parent": "HEDR",
         "children": [
 
@@ -764,7 +881,8 @@
         ]
     },
     "BLN2": {
-        "name": "Animation - BLN2",
+        "name": "BLN2",
+        "hierarchy_level": 1,
         "parent": "HEDR",
         "children": [
 
@@ -781,7 +899,8 @@
         ]
     },
     "ANM2": {
-        "name": "Animation - ANM2",
+        "name": "ANM2 (Animation)",
+        "hierarchy_level": 1,
         "parent": "HEDR",
         "children": [
             "CYCL", "KFR3"
@@ -795,7 +914,8 @@
         ]
     },
     "CYCL": {
-        "name": "Animation - CYCL",
+        "name": "CYCL",
+        "hierarchy_level": 2,
         "parent": "ANM2",
         "children": [
 
@@ -816,7 +936,8 @@
         ]
     },
     "KFR3": {
-        "name": "Animation - KFR3",
+        "name": "KFR3",
+        "hierarchy_level": 2,
         "parent": "ANM2",
         "children": [
 
@@ -842,7 +963,8 @@
         ]
     },
     "NAME": {
-        "name": "General - NAME",
+        "name": "NAME",
+        "hierarchy_level": 0,
         "parent": "",
         "children": [
 
@@ -857,7 +979,8 @@
         ]
     },
     "BBOX": {
-        "name": "General - BBOX",
+        "name": "BBOX",
+        "hierarchy_level": 0,
         "parent": "",
         "children": [
 
@@ -875,7 +998,8 @@
         ]
     },
     "LGTP": {
-        "name": "Lights - LGTP",
+        "name": "LGTP",
+        "hierarchy_level": 0,
         "parent": "",
         "children": [
             "PRFX", "NAME", "DATA"
@@ -899,7 +1023,8 @@
         ]
     },
     "LGTI": {
-        "name": "Lights - LGTI",
+        "name": "LGTI",
+        "hierarchy_level": 0,
         "parent": "",
         "children": [
             "PRFX", "NAME", "DATA"
@@ -923,7 +1048,8 @@
         ]
     },
     "LGTS": {
-        "name": "Lights - LGTS",
+        "name": "LGTS",
+        "hierarchy_level": 0,
         "parent": "",
         "children": [
             "PRFX", "NAME", "DATA"
@@ -951,73 +1077,9 @@
             ["long int", 4, "Flags (1: CastShadows)."]
         ]
     },
-    "PRFX": {
-        "name": "Lights - PRFX",
-        "parent": "MATD",
-        "children": [
-
-        ],
-        "necessity": "Once.",
-        "description": "Possibly deprecated. Material prefix.",
-        "links": [
-
-        ],
-        "structure": [
-            ["ASCII string", "4 * X", "Prefix."]
-        ]
-    },
-    "FINF": {
-        "name": "General - FINF",
-        "parent": "MSH2",
-        "children": [
-            "PROJ", "USER", "TIME"
-        ],
-        "necessity": "Once.",
-        "description": "Possibly deprecated. File information. PROJ: project name. USER: user name. TIME: time.",
-        "links": [
-
-        ],
-        "structure": [
-            ["ASCII string", "4 * X", "File information."]
-        ]
-    },
-    "VLTB": {
-        "name": "Geometry - VLTB",
-        "parent": "SEGM",
-        "children": [
-        ],
-        "necessity": "Optional.",
-        "description": "Possibly deprecated. Baked vertex light.",
-        "links": [
-
-        ],
-        "structure": [
-            ["byte", 1, "Red."],
-            ["byte", 1, "Green."],
-            ["byte", 1, "Blue."],
-            ["byte", 1, "Alpha."]
-        ]
-    },
-    "VLTL": {
-        "name": "Geometry - VLTL",
-        "parent": "SEGM",
-        "children": [
-        ],
-        "necessity": "Optional.",
-        "description": "Possibly deprecated. Unique baked vertex lights for vertices.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of colors to come."],
-            ["byte", 1, "Red."],
-            ["byte", 1, "Green."],
-            ["byte", 1, "Blue."],
-            ["byte", 1, "Alpha."]
-        ]
-    },
     "FOGD": {
-        "name": "General - FOGD",
+        "name": "FOGD",
+        "hierarchy_level": 0,
         "parent": "",
         "children": [
         ],

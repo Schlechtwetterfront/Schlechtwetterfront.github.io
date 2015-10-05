@@ -6,6 +6,7 @@ PAGE = {
     'output_file': 'index.html',
     'output_folder': '',
     'page_title': 'Schlechtwetterfront',
+    'use_bright_theme': True,
     'social_links': [
         SocialLink('https://github.com/Schlechtwetterfront', 'img/github_white.png'),
         SocialLink('https://twitter.com/schlchtwtrfrnt', 'img/twitter_white.png'),

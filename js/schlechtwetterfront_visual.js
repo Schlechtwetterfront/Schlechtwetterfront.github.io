@@ -13,7 +13,7 @@ var colors = [
     "#ff7676", // reddish
     // "#8d76ff", // darker violet
     // "#d77f64", // orange
-    "#919ddb", // brighter blue
+    // "#919ddb", // brighter blue
     "#6AAF6A", // green
 ];
 
@@ -43,6 +43,9 @@ window.addEventListener("load", function() {
         "dark": box_brightened_color,
     };
 
+
+    // General link hover color and style change.
+
     $("div.content a").css({"color": box_hover_color, "border-bottom": "1px dotted " + box_hover_color});
     $("div.content a").hover(
     	function() {
@@ -55,5 +58,49 @@ window.addEventListener("load", function() {
     					"text-decoration": "none"});
     	}
     );
+
+
+    // Main page hover color change.
+
+    var info_margin = 4;
+    info_margin = parseInt($(".box").attr("margin"));
+    $("info").css({"padding-top": info_margin, "padding-bottom": info_margin});
+
+    if ($(window).width() <= 1020) {
+        $(".info").css("background-color", box_hover_color);
+        return;
+    }
+
+    // Set the height here for the slide functionality.
+    // If js is disabled then the box will just be twice the height so all of the content is visible.
+    $(".box").css("height", "128");
+    // Expanding boxes and random hover color for project boxes.
+    $(".box").hover(
+        function () {
+            $(this).css("background-color", box_hover_color);
+
+
+            var id = $(this).attr("id");
+
+            $("#" + id + "_title").css("top", "-128px");
+            $("#" + id + "_content").css("top", "-128px");
+        },
+        function () {
+            // $(this).css("background-color", box_normal_color);
+            $(this).attr("style", "");
+            $(this).css("height", "128px");
+
+            var id = $(this).attr("id");
+            $("#" + id + "_title").css("top", "0px");
+            $("#" + id + "_content").css("top", "0px");
+
+        }
+    );
+
+
+    // Set project page side bar color.
+
+    $("div .sidebar").css("background-color", box_hover_color);
+
 });
 

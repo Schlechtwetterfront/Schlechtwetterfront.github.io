@@ -12,7 +12,7 @@ PAGE = {
 							   Link('C++ Source (deprecated)', 'http://schlechtwetterfront.github.io/xsizetools/XSIZETools_src.7z')
 							   ]),
 			Category('General Info', [
-							   Link('Main Info', '#main_info'),
+							   Link('Overview', '#overview'),
 							   Link('Download & Installation', '#download_installation'),
 							   Link('Contributors', '#contributors'),
 							   ]),
@@ -158,126 +158,177 @@ Creates an addon mesh hierarchy, by creating a null (named like the *Addon Root*
 			'''),
 		Section('MSH2TXT', 'msh2txt', True, True, True, '''
 ### Model Types
-1. **null:** Dummy object without segments.
-1. **geodynamic:** Geometry with envelope and modifiers.
-1. **cloth:** Cloth (ClothGeometry segments).
-1. **bone:**  Animated null.
-1. **geobone:** Animated geometry (only SegmentGeometry segments).
-1. **geostatic:** Standard geometry, no envelope or deformers.
-1. **geoshadow:** Shadow geometry (ShadowGeometry segments).
+
+ID 					|	Description
+------------		|----------------
+**null**			|	Dummy object without segments.
+**geodynamic**		|	Geometry with envelope and modifiers.
+**cloth**			|	Simulated cloth (ClothGeometry segments).
+**bone**			|	Animated null.
+**geobone**			|	Animated geometry (only SegmentGeometry segments).
+**geostatic**		|	Standard geometry, no envelope or deformers.
+**geoshadow**		|	Shadow geometry (ShadowGeometry segments).
 
 ### File Structure and Naming Conventions
 
 MSH Name = _name_  
 
-_name_ .txt
-> **bool has_shadowvolume:** Does this .msh have a shadowvolume (SHDW)?
+**_name_ .txt**
+
+Type 		| Name 				| Description
+---			| ---				| ---
+bool		| has_shadowvolume 	| Does this .msh have a shadowvolume (SHDW)?
   
-_name_ nfo.txt
-> **string name:** Scene Name  
-> **float[2] frame_range:** Start Frame, End Frame  
-> **float fps:** Scene FPS  
-> **float[3] scale:** Scene scale  
-> **BBox bbox:** Scene BBox  
+**_name_ nfo.txt**
+
+Type 		| Name 				| Description
+---			| ---				| ---
+string		| name 				| Scene Name.
+float[2]	| frame_range 		| Start Frame, End Frame.
+float		| fps 				| Scene FPS.
+float[3]	| scale 			| Scene scale.
+BBox		| bbox 				| Scene BBox.
 
 For every Model:  
-_name_ mdl _model_name_ .txt
-> **string name:** Model Name  
-> **string parent:** Parent Name  
-> **string model_type:** One of the available Model Types  
-> **int visible:** 1 == visible, 0 == hidden  
-> **bool collprim:** Is this model a collision primitive?  
-> **[int, float, float, float] primitive:** Primitive type, value 0, value 1, value 2  
-> **int num_deformers:** Number of deformers on save, ignored when loading  
-> **string[] deformers:** Deformer names  
-> **BBox bbox:** Model BBox  
-> **Transform transform:** Model Transform  
+**_name_ mdl _model_name_ .txt**
+
+Type 		| Name 				| Description
+---			| ---				| ---
+string		| name 				| Model name.
+string		| parent 			| Parent name.
+string		| model_type 		| One of the Model Types above.
+int 		| visible 			| 1: visible, 0: hidden.
+bool		| collprim 			| Is this model a collision primitive?
+[int, float, float, float]	| primitive 			| Primitive type, value 0, value 1, value 2.
+int		| num_deformers 				| Number of deformers on save, ignored when loading.
+string[]		| deformers 				| Deformer names.
+BBox		| bbox 				| Model BBox.
+Transform		| transform 				| Model Transform.
+
 
 For every segment (SEGM/CLTH/SHDW) in the models geometry:  
-_name_ mdl _model_name_ seg _#_of_segment_ .txt
-> **SegmentGeometry:**  
-> **string type:** SegmentGeometry | ShadowGeometry | ClothGeometry  
-> **string material:** Material name  
-> **int num_vertices:** Number of vertices on save, ignored when loading  
-> **Vertex[] vertices:** Segment vertices  
-> **int num_faces:** Number of faces on save, ignored when loading  
-> **Face[] faces:** Segment faces  
->
-> **ShadowGeometry:**  
-> **string type:** See above  
-> **int num_positions:** Number of positions on save, ignored when loading  
-> **float[3][] positions:** Positions, currently only used to store the information  
-> **int num_faces:** Number of faces on save, ignored when loading  
-> **Face[] faces:** Faces, currently only used to store the information  
->
-> **ClothGeometry:**  
-> **string type:** See above  
-> **string texture:** Cloth texture  
-> **int num_vertices:** Number of vertices on save, ignored when loading  
-> **ClothVertex[] vertices:** Cloth vertices  
-> **int num_faces:** Number of faces on save, ignored when loading  
-> **int[2][] stretch:** Stretch constraint value pairs  
-> **int[2][] cross:** Cross constraint value pairs  
-> **int[2][] bend:** Bend constraint value pairs  
-> **ClothCollision[] collisions:** Collisions  
+**_name_ mdl _model_name_ seg _#_of_segment_ .txt**
+**SegmentGeometry**
+
+Type 		| Name 				| Description
+---			| ---				| ---
+string		| type 				| SegmentGeometry / ShadowGeometry / ClothGeometry.
+string	| material 		| Material name.
+int		| num_vertices 				| Number of vertices on save, ignored when loading.
+Vertex[]	| vertices 			| Segment vertices.
+int		| num_faces 				| Number of faces on save, ignored when loading.
+Face[]		| faces 				| Segment faces.
+
+**ShadowGeometry**
+
+Type 		| Name 				| Description
+---			| ---				| ---
+string		| type 				| SegmentGeometry / ShadowGeometry / ClothGeometry.
+int		| num_vertices 				| Number of vertices on save, ignored when loading.
+float[3][]	| vertices 			| Positions, currently only used to store the information.
+int		| num_faces 				| Number of faces on save, ignored when loading.
+Face[]		| faces 				| Segment faces.
+
+**ClothGeometry**
+
+Type 		| Name 				| Description
+---			| ---				| ---
+string		| type 				| SegmentGeometry / ShadowGeometry / ClothGeometry.
+string	| texture 		| Cloth texture.
+int		| num_vertices 				| Number of vertices on save, ignored when loading.
+ClothVertex[]	| vertices 			| Segment vertices.
+int		| num_faces 				| Number of faces on save, ignored when loading.
+Face[]		| faces 				| Segment faces.
+int[2][]		| stretch 				| Stretch constraint value pairs.
+int[2][]		| cross 				| Cross constraint value pairs.
+int[2][]		| bend 				| Bend constraint value pairs.
+ClothCollision[]		| collisions 				| Collisions.
 
 For every Material:  
-_name_ mtl _material_name_ .txt
-> **string name:** Material name  
-> **int index:** Initial index on save, recalculated on load  
-> **string tex0:** Diffuse texture  
-> **string tex1:** Special texture 1  
-> **string tex2:** Special texture 2  
-> **string tex3:** Special texture 3  
-> **Flag[8] flags:** [string name, bool active, int enum_value]  
-> **int render_type:** Render type  
-> **int data0:** Shader data 0  
-> **int data1:** Shader data 1  
-> **Color diffuse:** Diffuse color  
-> **Color specular:** Specular color  
-> **Color ambient:** Ambient color  
-> **float gloss:** Gloss value  
+**_name_ mtl _material_name_ .txt**
+
+Type 		| Name 				| Description
+---			| ---				| ---
+string		| name 				| Material name.
+int	| index 		| Initial index on save, recalculated on load.
+string		| tex0 				| Diffuse texture.
+string		| tex1 				| Special texture 1.
+string		| tex2 				| Special texture 2.
+string		| tex3 				| Special texture 3.
+Flag[8]		| flags 				| [string name, bool active, int enum_value].
+int	| render_type 		| Render type.
+int	| data0 		| Shader data 0.
+int	| data1 		| Shader data 1.
+Color	| diffuse 			| Diffuse color.
+Color	| specular 			| Specular color.
+Color	| ambient 			| Ambient color.
+float		| gloss 				| Gloss value. 
 
 ### Structs
 
-**BBox**  
-> **float[3] rotation:** Rotation in degrees  
-> **float[3] extents:** BBox extents  
-> **float[3] center:** BBox center  
-> **float radius:** BBox radius  
+**BBox**
 
-**Transform**  
-> **float[3] rotation:** Rotation in degrees  
-> **float[3] position:** Position  
-> **float[3] sacle:** Scale  
+Type 		| Name 				| Description
+---			| ---				| ---
+float[3]	| rotation 			| Rotation in degrees.
+float[3]	| extents 			| BBox extents.
+float[3]	| center 			| BBox center.
+float		| radius 				| BBox radius. 
 
-**Color**  
-> **float[4] rgba:** Channel values (0.0 to 1.0)  
-> OR  
-> **int[4] rgba:** Channel values (0 to 255)  
+**Transform**
 
-**Vertex**  
-> **float[3] position:** Position in world space  
-> **float[2] uv:** UV coordinate  
-> **float[3] normal:** Vertex normal  
-> **string[4] deformers:** Deformers for this vertex  
-> **float[4] weights:** Weights for the corresponding deformer  
-> **Color color:** Vertex color  
+Type 		| Name 				| Description
+---			| ---				| ---
+float[3]	| rotation 			| Rotation in degrees.
+float[3]	| extents 			| Position.
+float[3]	| center 			| Scale.
 
-**Face**  
-> **int[] vertices:** Indices to the vertices forming this polygon  
+**Color**
 
-**ClothVertex**  
-> **float[3] position:** Position in world space  
-> **float[2] uv:** UV coordinate  
-> **string deformer:** Joint this point moves with  
-> **bool is_fixed:** If true, does not get simulated and moves with deformer (if it exists)  
+Type 		| Name 				| Description
+---			| ---				| ---
+float[4]	| rgba 			| Channel values (0.0 to 1.0).
 
-**ClothCollision**  
-> **string name:** Collision name  
-> **string parent:** Parent of the collision object  
-> **int unknown_long:** Unknown purpose  
-> **float[3] collision_primitive:** [value 0, value 1, value 2]  
+OR
+
+Type 		| Name 				| Description
+---			| ---				| ---
+int[4]	| rgba 			| Channel values (0 to 255).
+
+**Vertex**
+
+Type 		| Name 				| Description
+---			| ---				| ---
+float[3]	| position 			| Position in world space.
+float[2]	| uv 			| UV coordinate.
+float[3]	| normal 			| Vertex normal.
+string[4]	| deformers 			| Deformers for this vertex.
+float[4]	| weights 			| Weights for the corresponding deformer.
+Color	| color 			| Vertex color.
+
+**Face**
+
+Type 		| Name 				| Description
+---			| ---				| ---
+float[]	| vertices 			| Indices to the vertices forming this polygon.
+
+**ClothVertex**
+
+Type 		| Name 				| Description
+---			| ---				| ---
+float[3]	| position 			| Position in world space.
+float[3]	| uv 			| UV coordinate.
+string	| deformer 			| Joint this point moves with.
+bool	| is_fixed 			| If true, does not get simulated and moves with deformer (if it exists).
+
+**ClothCollision**
+
+Type 		| Name 				| Description
+---			| ---				| ---
+string	| name 			| Collision name.
+string	| parent 			| Parent of the collision object.
+int	| unknown_long 			| Unknown purpose.
+float[3]	| collision_primitive 			| [value 0, value 1, value 2]. 
 
 			'''),
 		Section('Animation Export', 'animation-export', True, True, True, '''

@@ -30,8 +30,8 @@ PAGE = {
 		'output_folder': 'ze_filetypes',
 		'page_title': 'ZE File Formats',
 		'categories': [
-			Category('General Info', [
-							   Link('Main Info', '#main_info'),
+			Category('Navigation', [
+							   Link('Overview', '#overview'),
 							   Link('Zero CRC', '#zero-crc'),
 							   Link('Zero CRC Default Implementation', '#zero-crc-implementation')
 							   ]),

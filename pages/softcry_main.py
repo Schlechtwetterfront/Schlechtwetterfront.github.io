@@ -11,7 +11,7 @@ PAGE = {
 							   Link('Releases', 'https://github.com/Schlechtwetterfront/softcry/releases')
 							   ]),
 			Category('General Info', [
-							   Link('Main Info', '#main_info'),
+							   Link('Overview', '#overview'),
 							   Link('Download & Installation', '#download_installation'),
 							   ]),
 			Category('Other Resources', [
@@ -23,7 +23,7 @@ PAGE = {
 							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/')])
 		],
 		'sections': [
-			Section('Main Info', 'main_info', True, False, False, '''
+			Section('Overview', 'overview', True, False, False, '''
 CryENGINE 3 exporter for Softimage.  
 
 * Intuitive workflow for exporting.

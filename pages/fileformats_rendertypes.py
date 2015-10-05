@@ -8,8 +8,8 @@ PAGE = {
 		'page_title': 'ZE File Formats - .MSH Render Types',
 		'categories': [
 			Category('Navigation', [
+							   Link('Overview', '#overview'),
 							   Link('Back', 'index.html'),
-							   Link('General Info', '#general_info'),
 							   ]),
 			Category('Render Types', [
 								Link('01 - Glow', '#glow'),
@@ -48,7 +48,7 @@ PAGE = {
 							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/')])
 		],
 		'sections': [
-			Section('General Info', 'general_info', True, False, False, '''
+			Section('Overview', 'overview', True, False, False, '''
 Render Types are stored as 1-byte integers in the ATRB chunk of materials.  
 **See Also:** [Inside Edit Flags (GT)](http://www.gametoast.com/viewtopic.php?p=279620#p279620)
 '''),
