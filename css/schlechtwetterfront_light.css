@@ -6,6 +6,15 @@ head {
 }
 
 
+
+/* Shared elements */
+
+
+a.rectangle_button {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+}
+
+
 /* Main Page elements */
 
 
@@ -44,7 +53,7 @@ head {
 
 
 .sidebar {
-	background-color: #EEE;
+	background-color: #555;
 }
 
 

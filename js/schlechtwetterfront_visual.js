@@ -13,7 +13,7 @@ var colors = [
     "#ff7676", // reddish
     // "#8d76ff", // darker violet
     // "#d77f64", // orange
-    "#919ddb", // brighter blue
+    // "#919ddb", // brighter blue
     "#6AAF6A", // green
 ];
 

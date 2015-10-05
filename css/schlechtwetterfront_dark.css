@@ -64,15 +64,17 @@ a.rectangle_button {
     /*height: 28px;*/
     background-color: transparent;
     padding: 1px 0px 1px 10px;
+    margin: 2px 0px 0px 0px;
     /*margin-bottom: 5px;*/
 
     vertical-align: text-bottom;
-    max-height: 30px;
+    max-height: 28px;
+    width: 95%;
 }
 
 
 a.rectangle_button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.75);
 }
 
 
@@ -133,6 +135,7 @@ a.rectangle_button:hover {
     background-color: #353535;
 
     padding: 0.8em;
+    padding-right: 0.6em;
 
     margin: 25px 15% 25px 15%;
 
@@ -140,7 +143,7 @@ a.rectangle_button:hover {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 20em;
+    width: 20.2em;
     
     transition: margin 0.3s;
 }
@@ -408,7 +411,7 @@ indent {
 
 text-container {
     display: inline;
-    top: -10px;
+    top: -8px;
     position: relative;
 }
 
@@ -417,9 +420,9 @@ indent-child {
     width: 15px;
     /*margin-left: 5px;*/
     /*margin-right: 5px;*/
-    border-left: 1px dotted rgba(255, 255, 255, 0.35);
+    border-left: 1px dotted rgba(0, 0, 0, 0.2);
     display: inline-block;
-    height: 31px;
+    height: 29px;
 
     position: relative;
     top: 0px;
