@@ -269,7 +269,7 @@ sidebar_title {
 /* Height queries */
 
 
-@media (max-height: 1000px) {
+/*@media (max-height: 1000px) {
     .sidebar-content-scrollable {
         max-height: 600px
     }
@@ -287,7 +287,7 @@ sidebar_title {
     .sidebar-content-scrollable {
         max-height: 200px
     }
-}
+}*/
 
 
 

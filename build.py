@@ -14,8 +14,12 @@ def build():
             print(e)
             print('\n\tBuild failed!')
             num_errors += 1
-    print('\n\t> Build finished ({num_errors} errors).'.format(num_errors=num_errors))
-    time.sleep(0.5)
+    if num_errors > 0:
+        print('\n\t> Build finished ({num_errors} errors).'.format(num_errors=num_errors))
+        input('Any key to continue.')
+    else:
+        print('\n\t> Build successful!')
+        time.sleep(0.5)
 
 def build_template(data):
     print('Building page \'{title}\'.'.format(title=data.get('page_title')))
