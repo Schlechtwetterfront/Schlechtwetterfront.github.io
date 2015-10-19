@@ -3,15 +3,19 @@
 <div class="sidebar">
 	<sidebar_title>{{ page_title }}</sidebar_title>
 	<div class="hr_dark"></div>
-	<div class="sidebar-content-scrollable">
 	{% for category in categories %}
-	    <category_label>{{ category.title }}</category_label><br>
-	    {% for link in category.links %}
+		<category_label>{{ category.title }}</category_label><br>
+		{% if category.is_scrollable %}
+		<div class="sidebar-content-scrollable">
+		{% endif %}
+		{% for link in category.links %}
 	        {{ macros.list_button(link.address, link.title) }}
 	    {% endfor %}
-	    <div class="hr_dark"></div>
+	    {% if category.is_scrollable %}
+		</div>
+		{% endif %}
+	    <!-- <div class="hr-sidebar-dark"></div> -->
 	{% endfor %}
-	</div>
 	<script type="text/javascript">
 		var count = 0;
 

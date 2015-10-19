@@ -6,10 +6,14 @@ PAGE = {
 		'output_file': 'render_types.html',
 		'output_folder': 'ze_filetypes',
 		'page_title': 'ZE File Formats - .MSH Render Types',
+		'fixed_categories': [
+
+		],
 		'categories': [
 			Category('Navigation', [
 							   Link('Overview', '#overview'),
 							   Link('Back', 'index.html'),
+							   Link('Homepage', 'http://schlechtwetterfront.github.io/')
 							   ]),
 			Category('Render Types', [
 								Link('01 - Glow', '#glow'),
@@ -43,9 +47,7 @@ PAGE = {
 								Link('29 - Teleportal', '#teleportal'),
 								Link('30 - MultiState', '#multistate'),
 								Link('31 - Shield', '#shield'),
-								]),
-			Category('Personal', [
-							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/')])
+								], True),
 		],
 		'sections': [
 			Section('Overview', 'overview', True, False, False, '''

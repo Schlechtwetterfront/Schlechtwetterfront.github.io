@@ -32,9 +32,10 @@ class SocialLink(object):
 
 
 class Category(object):
-    def __init__(self, title, links):
+    def __init__(self, title, links, is_scrollable=False):
         self.title = title
         self.links = links
+        self.is_scrollable = is_scrollable
 
 
 class Sidebar(object):

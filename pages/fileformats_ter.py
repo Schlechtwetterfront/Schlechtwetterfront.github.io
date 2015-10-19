@@ -7,6 +7,9 @@ PAGE = {
 		'output_folder': 'ze_filetypes',
 		'page_title': 'ZE File Formats - .TER',
 		'use_bright_theme': True,
+		'fixed_categories': [
+
+		],
 		'categories': [
 			Category('Navigation', [
 							   Link('Overview', '#overview'),
@@ -17,7 +20,7 @@ PAGE = {
 							   Link('Terrain Header', '#terrain_header'),
 							   Link('Terrain Blocks', '#terrain_blocks'),
 							   Link('Terrain Structs', '#terrain_structs')
-							   ]),
+							   ], True),
 		],
 		'sections': [
 			Section('Overview', 'overview', True, False, False, '''

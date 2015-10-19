@@ -14,7 +14,9 @@ var colors = [
     // "#8d76ff", // darker violet
     // "#d77f64", // orange
     // "#919ddb", // brighter blue
-    "#6AAF6A", // green
+    "#84D284", // green
+    "#6AA9AF", // cyan
+    "#76C0FF", // blue
 ];
 
 
@@ -68,34 +70,35 @@ window.addEventListener("load", function() {
 
     if ($(window).width() <= 1020) {
         $(".info").css("background-color", box_hover_color);
-        return;
     }
+    else {
 
-    // Set the height here for the slide functionality.
-    // If js is disabled then the box will just be twice the height so all of the content is visible.
-    $(".box").css("height", "128");
-    // Expanding boxes and random hover color for project boxes.
-    $(".box").hover(
-        function () {
-            $(this).css("background-color", box_hover_color);
+        // Set the height here for the slide functionality.
+        // If js is disabled then the box will just be twice the height so all of the content is visible.
+        $(".box").css("height", "128");
+        // Expanding boxes and random hover color for project boxes.
+        $(".box").hover(
+            function () {
+                $(this).css("background-color", box_hover_color);
 
 
-            var id = $(this).attr("id");
+                var id = $(this).attr("id");
 
-            $("#" + id + "_title").css("top", "-128px");
-            $("#" + id + "_content").css("top", "-128px");
-        },
-        function () {
-            // $(this).css("background-color", box_normal_color);
-            $(this).attr("style", "");
-            $(this).css("height", "128px");
+                $("#" + id + "_title").css("top", "-128px");
+                $("#" + id + "_content").css("top", "-128px");
+            },
+            function () {
+                // $(this).css("background-color", box_normal_color);
+                $(this).attr("style", "");
+                $(this).css("height", "128px");
 
-            var id = $(this).attr("id");
-            $("#" + id + "_title").css("top", "0px");
-            $("#" + id + "_content").css("top", "0px");
+                var id = $(this).attr("id");
+                $("#" + id + "_title").css("top", "0px");
+                $("#" + id + "_content").css("top", "0px");
 
-        }
-    );
+            }
+        );
+    }
 
 
     // Set project page side bar color.

@@ -92,7 +92,9 @@ Most notably Cloth Simulation ([CLTH](#CLTH) and children) being limited to _Sta
 		if chunk.get('name') == 'ExampleChunk':
 			collapsed = False
 
-		section = Section('{}'.format(chunk_key), chunk_key.replace('.', '_'), True, collapsed, False, '''
+		brief_description = chunk.get('brief_description') or ''
+
+		section = Section('{name} <t2>{brief}</t2>'.format(name=chunk_key, brief=brief_description), chunk_key.replace('.', '_'), True, collapsed, False, '''
 ### Description
 {description}
 
@@ -131,14 +133,16 @@ PAGE = {
 		'output_folder': 'ze_filetypes',
 		'page_title': 'ZE File Formats - .MSH',
 		'use_bright_theme': True,
+		'fixed_categories': [
+
+		],
 		'categories': [
 			Category('Navigation', [
 							   Link('Overview', '#overview'),
 							   Link('Back', 'index.html'),
+							   Link('Homepage', 'http://schlechtwetterfront.github.io/')
 							   ]),
-			Category('Chunks', get_chunk_nav_links()),
-			Category('Personal', [
-							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/')])
+			Category('Chunks', get_chunk_nav_links(), True),
 		],
 		'sections': chunks_to_sections()
 	}
