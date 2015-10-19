@@ -70,6 +70,17 @@ category_label {
 /**/
 
 
+pre {
+	background-color: #DDD;
+	border-color: rgba(0, 0, 0, 0.3);
+}
+
+
+pre code {
+	color: #555;
+}
+
+
 p, li {
 	color: #555;
 }

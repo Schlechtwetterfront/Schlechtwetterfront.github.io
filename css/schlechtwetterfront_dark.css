@@ -157,6 +157,8 @@ a.rectangle-button:hover {
     width: 20.2em;
     
     transition: margin 0.3s;
+
+    overflow: hidden;
 }
 
 category_label {
@@ -170,8 +172,12 @@ category_label {
     padding-left: 10px;
 }
 
+
 .sidebar-content-scrollable {
-    height: 95%;
+    max-height: 900px;
+    position: relative;
+    top: 0px;
+    bottom: 0px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -196,6 +202,8 @@ sidebar_title {
     display: block;
     font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
+
+/* Width queries */
 
 @media (max-width: 1400px) {
     .container {
@@ -257,6 +265,29 @@ sidebar_title {
         /* ^ So the window scrollbar doesn't cover the menu scrollbar. */
     }
 }
+
+/* Height queries */
+
+
+/*@media (max-height: 1000px) {
+    .sidebar-content-scrollable {
+        max-height: 600px
+    }
+}
+
+
+@media (max-height: 800px) {
+    .sidebar-content-scrollable {
+        max-height: 400px
+    }
+}
+
+
+@media (max-height: 600px) {
+    .sidebar-content-scrollable {
+        max-height: 200px
+    }
+}*/
 
 
 
@@ -511,6 +542,7 @@ div .hr-sidebar-dark {
     background-color: rgba(0, 0, 0, 0.2);
     /*margin-right: 5px;*/
     /*margin-left: 5px;*/
+    /*margin-bottom: 5px;*/
     width: 98%;
     display: block;
 }

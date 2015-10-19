@@ -1,3 +1,9 @@
+
+/*
+	* Page functionality.
+	*
+*/
+
 function slideToggleContent(id) {
     if (id.substr(0, 1) != "#") {
         id = "#" + id;
@@ -27,7 +33,24 @@ function showContent(id) {
 }
 
 
+function calculateSidebarListHeight() {
+	var total_height_children = 0;
+	var total_height_sidebar = $(".sidebar").height();
+	var sidebar_padding_bottom = parseInt($(".sidebar").css("padding-bottom"));
+
+	$(".sidebar").children().each(function() {
+		if ($(this).attr("class") == "sidebar-content-scrollable") {
+			$(this).css("height", total_height_sidebar - total_height_children - sidebar_padding_bottom + "px");
+		} else {
+			total_height_children += $(this).height();
+		}
+	});
+}
+
+
 window.addEventListener("load", function() {
+
+	calculateSidebarListHeight();
 
     $("a.toggle_collapse").click(function () {
         var header = $(this);
@@ -97,6 +120,11 @@ window.addEventListener("load", function() {
             // });
         }
     );
+});
+
+
+$(window).resize(function () {
+	calculateSidebarListHeight();
 });
 
 
