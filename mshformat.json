@@ -216,7 +216,8 @@
         "links": [
             {"name": "ZeroEngine Render Types", "link": "render_types.html"},
             {"name": "Inside Edit Flags (GT)", "link": "http://www.gametoast.com/viewtopic.php?p=279620#p279620"},
-            {"name": "GameToast ATRB discussion", "link": "http://gametoast.com/viewtopic.php?t=24851&f=27&start=31"}
+            {"name": "GameToast ATRB discussion", "link": "http://gametoast.com/viewtopic.php?t=24851&f=27&start=31"},
+            {"name": "Flag Calculator", "link": "index.html#atrb-calculator"}
         ],
         "additional_tables": [
             {
@@ -447,13 +448,13 @@
 
         ],
         "necessity": "Optional.",
-        "description": "List of indices into [MODL](#MODL). This model is enveloped to those indices' models.",
+        "description": "List of indices into [MODL](#MODL){{: .bordered}. This model is enveloped to those indices' models.",
         "links": [
 
         ],
         "structure": [
-            ["long int", 4, "Number of indices into [MODL](#MODL)."],
-            ["long int []", "4 each", "Index into [MODL](#MODL)."]
+            ["long int", 4, "Number of indices into [MODL](#MODL){{: .bordered}."],
+            ["long int []", "4 each", "Index into [MODL](#MODL){{: .bordered}."]
         ]
     },
     "SEGM": {
@@ -613,7 +614,7 @@
         "structure": [
             ["long int", 4, "Number of bone weights stored in this list."],
             ["", "", "The following appears 4 times per vertex (to allow for soft weighting)."],
-            ["long int", 4, "Index into [ENVL](#ENVL) (which then indexes into [MODL](#MODL)."],
+            ["long int", 4, "Index into [ENVL](#ENVL){{: .bordered} (which then indexes into [MODL](#MODL){{: .bordered})."],
             ["float", 4, "Weight value (0-1)."]
         ]
     },
@@ -663,8 +664,8 @@
 
         ],
         "structure": [
-            ["long int", 4, "Number of indices into [POSL](#POSL)."],
-            ["short int []", "2 each", "Index into [POSL](#POSL). The indices will form polygons."]
+            ["long int", 4, "Number of indices into [POSL](#POSL){{: .bordered}."],
+            ["short int []", "2 each", "Index into [POSL](#POSL){{: .bordered}. The indices will form polygons."]
         ]
     },
     "VLTB": {
@@ -715,7 +716,7 @@
             "CTEXT", "CPOS", "CUV0", "FIDX", "FWGT", "CMSH", "SPRS", "CPRS", "BPRS", "COLL"
         ],
         "necessity": "Optional.",
-        "description": "Cloth header. Replaces [SEGM](#SEGM).",
+        "description": "Cloth header. Replaces [SEGM](#SEGM){{: .bordered}.",
         "links": [
 
         ],
@@ -790,7 +791,7 @@
         ],
         "structure": [
             ["long int", 4, "Number of points."],
-            ["long int ]", "4 each", "Index into [CPOS](#CPOS)."]
+            ["long int ]", "4 each", "Index into [CPOS](#CPOS){{: .bordered}."]
         ]
     },
     "FWGT": {
@@ -802,13 +803,13 @@
 
         ],
         "necessity": "Optional?",
-        "description": "Index of [FIDX](#FIDX) weighted to a bone by name.",
+        "description": "Index of [FIDX](#FIDX){{: .bordered} weighted to a bone by name.",
         "links": [
 
         ],
         "structure": [
             ["long int", 4, "Number of points."],
-            ["ASCII string", "~", "Name of the bone the corresponding [FIDX](#FIDX) is moving with."]
+            ["ASCII string", "~", "Name of the bone the corresponding [FIDX](#FIDX){{: .bordered} is moving with."]
         ]
     },
     "CMSH": {
@@ -1040,7 +1041,7 @@
 
         ],
         "necessity": "Once.",
-        "description": "Bounding box. [SINF](#SINF)'s BBox will determine the blue/green selection box in ZeroEdit.",
+        "description": "Bounding box. [SINF](#SINF){{: .bordered}'s BBox will determine the blue/green selection box in ZeroEdit.",
         "links": [
 
         ],

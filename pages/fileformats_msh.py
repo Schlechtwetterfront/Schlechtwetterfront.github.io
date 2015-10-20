@@ -58,23 +58,23 @@ def get_additional_tables(chunk):
 
 def chunks_to_sections():
 	info_section = Section('Overview', 'overview', True, False, False, '''
-This page lists all .MSH file chunks. In the .MSH file these chunks are organized in a hierarchy with [HEDR](#HEDR) (header) being the first chunk and branching out
+This page lists all .MSH file chunks. In the .MSH file these chunks are organized in a hierarchy with [HEDR](#HEDR){{: .bordered} (header) being the first chunk and branching out
 from there (as visualized in the sidebar navigation).  
 
 Some of these chunks are exclusive to certain versions of the engine (_Star Wars: The Clone Wars_ and before, _Star Wars: Battlefront_ and _Star Wars: Battlefront II_) or deprecated completely.
-Most notably Cloth Simulation ([CLTH](#CLTH) and children) being limited to _Star Wars: Battlefront II_.
+Most notably Cloth Simulation ([CLTH](#CLTH){{: .bordered} and children) being limited to _Star Wars: Battlefront II_.
 		''')
 	sections = [info_section]
 	for chunk_key in MSHFORMAT.keys():
 		chunk = MSHFORMAT[chunk_key]
 
 		if chunk.get('parent'):
-			parent = '[{name}](#{name})'.format(name=chunk.get('parent'))
+			parent = '[{name}](#{name}){{: .bordered}}'.format(name=chunk.get('parent'))
 		else:
 			parent = '-'
 
 		if chunk.get('children'):
-			children = ' '.join('[{name}](#{id})'.format(name=n, id=n.replace('.', '_')) for n in chunk.get('children'))
+			children = ' '.join('[{name}](#{id}){{: .bordered}}'.format(name=n, id=n.replace('.', '_')) for n in chunk.get('children'))
 		else:
 			children = '-'
 		necessity = chunk.get('necessity')

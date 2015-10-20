@@ -33,6 +33,7 @@ PAGE = {
 			Category('Navigation', [
 							   Link('Overview', '#overview'),
 							   Link('Zero CRC', '#zero-crc'),
+							   Link('ATRB Flag Calculator', '#atrb-calculator'),
 							   Link('Zero CRC Default Implementation', '#zero-crc-implementation')
 							   ]),
 			Category('File Formats', [
@@ -44,17 +45,35 @@ PAGE = {
 							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/')])
 		],
 		'sections': [
-			Section('Main Info', 'main_info', True, False, False, '''
+			Section('Overview', 'overview', True, False, False, '''
 File format information for some ZeroEngine formats.
 '''),
-# 			Section('Flag Calculator', 'flag_calculator', True, False, False, '''
-# {}
-# '''.format(get_flag_calculator()).format(markdown.markdown(CALC_TABLE, extensions=MARKDOWN_EXTENSIONS))),
-# # '''.format(get_flag_calculator())),
 			Section('Zero CRC', 'zero-crc', True, False, False, '''
 The CRC used in .msh files is 4 bytes long and is stored in pure hex. The algorithm is proprietary (_Zero_ because it's used in Pandemic's _Zero Engine_).
 
 An example implementation of the _Zero_ CRC can be found [here (python)](https://github.com/Schlechtwetterfront/xsizetools/blob/master/Application/Modules/msh2_crc.py).
+'''),
+			Section('ATRB Flag Calculator', 'atrb-calculator', True, False, False, '''
+This can be used to calculate the ATRB flag used in _ZeroEngine_ materials. This can be used to convert a selection of flags into integer and hex representation and the other way around
+to convert an integer/hex into hex/integer and the corresponding selection of flags.
+
+Note that Single-sided and Double-sided Transparency are exclusive, so selecting both might not have the desired/any effect. Check out the [ATRB](msh.html#ATRB){{: .bordered} chunk for more information on each flag.
+
+
+<togglebox class="bordered-dark" toggled="false" value="1">Emissive</togglebox>
+<togglebox class="bordered-dark" toggled="false" value="2">Glow</togglebox>
+<togglebox class="bordered-dark" toggled="false" value="4">Single-sided</togglebox>
+<togglebox class="bordered-dark" toggled="false" value="8">Double-sided</togglebox>
+<togglebox class="bordered-dark" toggled="false" value="16">Hard-edged</togglebox>
+<togglebox class="bordered-dark" toggled="false" value="32">Per-Pixel Lighting</togglebox>
+<togglebox class="bordered-dark" toggled="false" value="64">Additive</togglebox>
+<togglebox class="bordered-dark" toggled="false" value="128">Specular</togglebox><br>
+<indented_text>Integer Value</indented_text> <input type="text" id="flag-int-value" class="bordered-dark-nohover" style="width: 26px;" value="0"> 
+<indented_text>Hex Value</indented_text> <input type="text" id="flag-hex-value" class="bordered-dark-nohover" style="width: 26px;" value="00"><br>
+<clickable class="bordered-dark" id="convert-from-flags">Convert From Flags</clickable>
+<clickable class="bordered-dark" id="convert-from-value">Convert From Value</clickable>
+<clickable class="bordered-dark" id="convert-from-hex">Convert From Hex</clickable>
+
 '''),
 			Section('Zero CRC Default Implementation', 'zero-crc-implementation', True, True, True, '''
 ````cpp

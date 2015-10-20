@@ -11,10 +11,11 @@ PAGE = {
 							   Link('Releases', 'https://github.com/Schlechtwetterfront/xsizetools/releases'),
 							   Link('C++ Source (deprecated)', 'http://schlechtwetterfront.github.io/xsizetools/XSIZETools_src.7z')
 							   ]),
-			Category('General Info', [
+			Category('Navigation', [
 							   Link('Overview', '#overview'),
 							   Link('Download & Installation', '#download_installation'),
 							   Link('Contributors', '#contributors'),
+							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/'),
 							   ]),
 			Category('Guidelines', [
 							   Link('Export', '#export-guidelines'),
@@ -32,9 +33,7 @@ PAGE = {
 			Category('Other Resources', [
 							   Link('View on GitHub', 'https://github.com/Schlechtwetterfront/xsizetools'),
 							   Link('View Thread on GameToast', 'http://gametoast.com/viewtopic.php?f=36&t=26664')
-							   ]),
-			Category('Personal', [
-							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/')])
+							   ])
 		],
 		'sections': [
 			Section('Main Info', 'main_info', True, False, False, '''

@@ -31,6 +31,8 @@ window.addEventListener("load", function() {
 
     var box_normal_color = "#252525";
 
+    var paragraph_color = $("p").css("color");
+
     // I LOVE HACKS FeelsGoodMan
     var theme_map = {
         "rgb(255, 255, 255)": "bright",
@@ -48,8 +50,8 @@ window.addEventListener("load", function() {
 
     // General link hover color and style change.
 
-    $("div.content a").css({"color": box_hover_color, "border-bottom": "1px dotted " + box_hover_color});
-    $("div.content a").hover(
+    $("div.content a").not(".bordered").css({"color": box_hover_color, "border-bottom": "1px dotted " + box_hover_color});
+    $("div.content a").not(".bordered").hover(
     	function() {
     		$(this).css({"color": link_color_map_hover[theme],
     					"border-bottom": "1px solid " + link_color_map_hover[theme]});
@@ -60,6 +62,60 @@ window.addEventListener("load", function() {
     					"text-decoration": "none"});
     	}
     );
+
+    // MSH file format page chunks
+
+    $(".bordered, .bordered-nohover").css({"color": box_hover_color, "border": "1px dotted " + box_hover_color, "padding": "0 3px"});
+    $(".bordered").not(".toggle").hover(
+        function() {
+            $(this).css({"color": link_color_map_hover[theme],
+                        "border": "1px solid " + link_color_map_hover[theme]});
+        },
+        function() {
+            $(this).css({"color": box_hover_color,
+                        "border": "1px dotted " + box_hover_color,
+                        "text-decoration": "none"});
+        }
+    );
+
+
+    $(".bordered-dark, .bordered-dark-nohover").css({"color": link_color_map_hover[theme], "border": "1px dotted " + link_color_map_hover[theme], "padding": "0 3px"});
+    $(".bordered-dark").hover(
+        function() {
+            $(this).css({"color": box_hover_color,
+                        "border": "1px solid " + box_hover_color});
+        },
+        function() {
+            if ($(this).attr("toggled") == "true") {
+                $(this).css("color", box_hover_color);
+            } else {
+                $(this).css({"color": link_color_map_hover[theme],
+                            "border": "1px dotted " + link_color_map_hover[theme],
+                            "text-decoration": "none"});
+            }
+        }
+    );
+
+
+    $("togglebox").on("toggle-state-changed", function() {
+        if ($(this).attr("toggled") == "false") {
+            $(this).css({"color": link_color_map_hover[theme], "border": "1px dotted " + link_color_map_hover[theme]});
+        } else {
+            $(this).css({"color": box_hover_color, "border": "1px solid " + box_hover_color});
+        }
+    });
+
+
+    $("togglebox").click(function() {
+        if ($(this).attr("toggled") == "false") {
+            $(this).attr("toggled", "true");
+            $(this).trigger("toggle-state-changed");
+        } else {
+            $(this).attr("toggled", "false");
+            $(this).trigger("toggle-state-changed");
+        }
+    });
+
 
 
     // Main page hover color change.
