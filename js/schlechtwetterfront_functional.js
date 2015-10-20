@@ -4,6 +4,18 @@
 	*
 */
 
+
+function pad(pad, str, padLeft) {
+  if (typeof str === 'undefined') 
+    return pad;
+  if (padLeft) {
+    return (pad + str).slice(-pad.length);
+  } else {
+    return (str + pad).substring(0, pad.length);
+  }
+}
+
+
 function slideToggleContent(id) {
     if (id.substr(0, 1) != "#") {
         id = "#" + id;
@@ -37,14 +49,35 @@ function calculateSidebarListHeight() {
 	var total_height_children = 0;
 	var total_height_sidebar = $(".sidebar").height();
 	var sidebar_padding_bottom = parseInt($(".sidebar").css("padding-bottom"));
+	var scrollable = null;
+	var scrollable_min_height = 100; // Min height for any scrollable list inside the sidebar.
+
 
 	$(".sidebar").children().each(function() {
-		if ($(this).attr("class") == "sidebar-content-scrollable") {
-			$(this).css("height", total_height_sidebar - total_height_children - sidebar_padding_bottom + "px");
-		} else {
-			total_height_children += $(this).height();
+		if ($(this).attr("id") != "sidebar-content") {
+			total_height_children += $(this).outerHeight(true);
 		}
 	});
+
+	$("#sidebar-content").css("height", total_height_sidebar - total_height_children - sidebar_padding_bottom + "px");
+
+	$("#sidebar-content").children().each(function() {
+		if ($(this).attr("class") == "sidebar-content-scrollable") {
+			$(this).css("height", total_height_sidebar - total_height_children - sidebar_padding_bottom + "px");
+			scrollable = $(this);
+		} else {
+			total_height_children += $(this).outerHeight(true);
+		}
+	});
+
+	if (total_height_children + scrollable_min_height > total_height_sidebar) {
+		$("#sidebar-content").addClass("sidebar-content-scrollable");
+		if (scrollable != null) {
+			scrollable.css("height", "auto");
+		}
+	} else {
+		$("#sidebar-content").removeClass("sidebar-content-scrollable");
+	}
 }
 
 
@@ -120,6 +153,58 @@ window.addEventListener("load", function() {
             // });
         }
     );
+
+
+    // flag calc
+    function setHex(hex) {
+    	if (hex.length < 2) {
+    		hex = pad("00", hex, true);
+    	}
+    	$("#flag-hex-value").prop("value", hex);
+    }
+
+
+    function setInt(value) {
+    	$("#flag-int-value").prop("value", value);
+    }
+
+    function setFlags(value) {
+    	$("togglebox").each(function() {
+			var box_value = parseInt($(this).attr("value"));
+			$(this).attr("toggled", (value & box_value) ? "true" : "false");
+			$(this).trigger("toggle-state-changed");
+		});
+    }
+
+	$("#convert-from-value").click(function() {
+		var value = parseInt($("#flag-int-value").prop("value"));
+		if (!isNaN(value)) {
+			setHex(value.toString(16));
+			setFlags(value);
+		}
+	});
+
+
+	$("#convert-from-hex").click(function() {
+		var value = parseInt($("#flag-hex-value").prop("value"), 16);
+		if (!isNaN(value)) {
+			setInt(value);
+			setFlags(value);
+		}
+	});
+
+
+	$("#convert-from-flags").click(function() {
+		var value = 0;
+		$("togglebox").each(function() {
+			var box_value = parseInt($(this).attr("value"));
+			if ($(this).attr("toggled") == "true") {
+				value += box_value;
+			}
+		});
+		setHex(value.toString(16));
+		setInt(value);
+	});
 });
 
 
