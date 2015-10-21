@@ -2,20 +2,6 @@ from page_core import *
 import markdown
 
 
-CALC_TABLE = '''
-Integer Value 	| Hex Value
-----------------|----------
-1				| 01
-2				| 02
-4				| 04
-8				| 08
-16				| 10
-32				| 20
-64				| 40
-128				| 80
-'''
-
-
 def get_flag_calculator():
 	calculator = ''
 	with open('templates/fileformats_calculator.html', 'r') as fh:
@@ -59,6 +45,9 @@ to convert an integer/hex into hex/integer and the corresponding selection of fl
 
 Note that Single-sided and Double-sided Transparency are exclusive, so selecting both might not have the desired/any effect. Check out the [ATRB](msh.html#ATRB){{: .bordered} chunk for more information on each flag.
 
+### Calculator
+
+**Flags**
 
 <togglebox class="bordered-dark" toggled="false" value="1">Emissive</togglebox>
 <togglebox class="bordered-dark" toggled="false" value="2">Glow</togglebox>
@@ -67,9 +56,15 @@ Note that Single-sided and Double-sided Transparency are exclusive, so selecting
 <togglebox class="bordered-dark" toggled="false" value="16">Hard-edged</togglebox>
 <togglebox class="bordered-dark" toggled="false" value="32">Per-Pixel Lighting</togglebox>
 <togglebox class="bordered-dark" toggled="false" value="64">Additive</togglebox>
-<togglebox class="bordered-dark" toggled="false" value="128">Specular</togglebox><br>
+<togglebox class="bordered-dark" toggled="false" value="128">Specular</togglebox>
+<div class="hr"></div>
+
+**Values**
 <indented_text>Integer Value</indented_text> <input type="text" id="flag-int-value" class="bordered-dark-nohover" style="width: 26px;" value="0"> 
 <indented_text>Hex Value</indented_text> <input type="text" id="flag-hex-value" class="bordered-dark-nohover" style="width: 26px;" value="00"><br>
+<div class="hr"></div>
+
+**Convert**
 <clickable class="bordered-dark" id="convert-from-flags">Convert From Flags</clickable>
 <clickable class="bordered-dark" id="convert-from-value">Convert From Value</clickable>
 <clickable class="bordered-dark" id="convert-from-hex">Convert From Hex</clickable>
