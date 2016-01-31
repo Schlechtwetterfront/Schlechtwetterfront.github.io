@@ -8,19 +8,18 @@ PAGE = {
 		'page_title': 'SoftCry',
 		'categories': [
 			Category('Downloads', [
-							   Link('Releases', 'https://github.com/Schlechtwetterfront/softcry/releases')
+							   Link('Releases', 'https://github.com/Schlechtwetterfront/softcry/releases', LINK_EXTERNAL)
 							   ]),
-			Category('General Info', [
+			Category('Navigation', [
 							   Link('Overview', '#overview'),
 							   Link('Download & Installation', '#download_installation'),
+							   Link('Homepage', 'http://schlechtwetterfront.github.io/', LINK_INTERNAL)
 							   ]),
 			Category('Other Resources', [
-							   Link('View on GitHub', 'https://github.com/Schlechtwetterfront/softcry'),
-							   Link('View Thread on CRYDEV', 'http://www.cryengine.com/community/viewtopic.php?f=315&t=102978'),
-							   Link('Hardbody Animations (Video)', 'http://www.youtube.com/watch?v=2Rt3B8h5EvE')
-							   ]),
-			Category('Personal', [
-							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/')])
+							   Link('View on GitHub', 'https://github.com/Schlechtwetterfront/softcry', LINK_EXTERNAL),
+							   Link('View Thread on CRYDEV', 'http://www.cryengine.com/community/viewtopic.php?f=315&t=102978', LINK_EXTERNAL),
+							   Link('Hardbody Animations (Video)', 'http://www.youtube.com/watch?v=2Rt3B8h5EvE', LINK_EXTERNAL)
+							   ])
 		],
 		'sections': [
 			Section('Overview', 'overview', True, False, False, '''

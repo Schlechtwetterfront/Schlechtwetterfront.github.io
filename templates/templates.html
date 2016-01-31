@@ -1,5 +1,11 @@
-{% macro list_button(link, title, class="rectangle-button rectangle-button-semi") -%}
-<a class="{{ class }}" href="{{ link }}">{{ title }}</a>
+{% macro list_button(link, title, type="LINK_NORMAL", class="rectangle-button rectangle-button-semi") -%}
+	{% if type == 'LINK_EXTERNAL' %}
+		<a class="{{ class }}" href="{{ link }}">{{ title }} <div class="external_link"></div></a>
+	{% elif type == 'LINK_INTERNAL' %}
+		<a class="{{ class }}" href="{{ link }}">{{ title }} <div class="internal_link"></div></a>
+	{% else %}
+		<a class="{{ class }}" href="{{ link }}">{{ title }}</a>
+	{% endif %}
 {%- endmacro %}
 
 {% macro collapse_button(content_id, is_collapsable, is_collapsed) -%}

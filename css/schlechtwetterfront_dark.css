@@ -74,6 +74,31 @@ a.rectangle-button:hover {
 }
 
 
+.external_link {
+    background: transparent;
+    background-image: url("../img/icon_link_external.png");
+    background-size: contain;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    margin: 4px;
+    line-height: 2em;
+    float: right;
+}
+
+.internal_link {
+    background: transparent;
+    background-image: url("../img/icon_link_internal.png");
+    background-size: contain;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    margin: 4px;
+    line-height: 2em;
+    float: right;
+}
+
+
 .rectangle-button-semi {
     width: 98%;
     margin: 2px 0px 0px 0px;
@@ -261,7 +286,7 @@ sidebar_title {
 
     .sidebar-content-scrollable {
         height: 90%;
-        margin-right: 5em;
+        margin-right: 1em;
         /* ^ So the window scrollbar doesn't cover the menu scrollbar. */
     }
 }

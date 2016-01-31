@@ -8,14 +8,14 @@ PAGE = {
 		'page_title': 'XSI ZETools',
 		'categories': [
 			Category('Downloads', [
-							   Link('Releases', 'https://github.com/Schlechtwetterfront/xsizetools/releases'),
-							   Link('C++ Source (deprecated)', 'http://schlechtwetterfront.github.io/xsizetools/XSIZETools_src.7z')
+							   Link('Releases', 'https://github.com/Schlechtwetterfront/xsizetools/releases', LINK_EXTERNAL),
+							   Link('C++ Source (deprecated)', 'http://schlechtwetterfront.github.io/xsizetools/XSIZETools_src.7z', LINK_INTERNAL)
 							   ]),
 			Category('Navigation', [
 							   Link('Overview', '#overview'),
 							   Link('Download & Installation', '#download_installation'),
 							   Link('Contributors', '#contributors'),
-							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/'),
+							   Link('Homepage', 'http://schlechtwetterfront.github.io/', LINK_INTERNAL),
 							   ]),
 			Category('Guidelines', [
 							   Link('Export', '#export-guidelines'),
@@ -31,8 +31,8 @@ PAGE = {
 							   Link('Animation Export', '#animation-export'),
 							   ]),
 			Category('Other Resources', [
-							   Link('View on GitHub', 'https://github.com/Schlechtwetterfront/xsizetools'),
-							   Link('View Thread on GameToast', 'http://gametoast.com/viewtopic.php?f=36&t=26664')
+							   Link('View on GitHub', 'https://github.com/Schlechtwetterfront/xsizetools', LINK_EXTERNAL),
+							   Link('View Thread on GameToast', 'http://gametoast.com/viewtopic.php?f=36&t=26664', LINK_EXTERNAL)
 							   ])
 		],
 		'sections': [
@@ -341,6 +341,8 @@ STEP 1. **Placeable model for ZeroEditor.** Export the model which will be calle
 animation(usually 1, it's not important what the frame range is[ie 0 to 100]).Then select your root, uncheck Export Animation and export. .MSH File: stuff_door.msh
 
 > ![Image](to_be_placed.jpg)
+
+
 > **Animation preparation.** To cut down on possible problems you can now drag'n'drop all object which are not a part of
 > the skeleton(collisions, meshes, shadows) out of your current hierarchy.
 > Best way to do this is select them all and drag'n'drop them onto Scene_Root. In my example I only move out thing_(that's the model with Stuff painted on it).

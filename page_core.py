@@ -1,11 +1,17 @@
 import markdown
 
+LINK_NORMAL = 'LINK_NORMAL'
+LINK_INTERNAL = 'LINK_INTERNAL'
+LINK_EXTERNAL = 'LINK_EXTERNAL'
+LINK_DOWNLOAD = 'LINK_DOWNLOAD'
+
 MARKDOWN_EXTENSIONS = ['markdown.extensions.extra', 'markdown.extensions.fenced_code', 'markdown.extensions.tables']
 
 class Link(object):
-    def __init__(self, title='LinkTitle', address='google.com'):
+    def __init__(self, title='LinkTitle', address='google.com', link_type=LINK_NORMAL):
         self.title = title
         self.address = address
+        self.link_type = link_type
 
 
 class Project(object):

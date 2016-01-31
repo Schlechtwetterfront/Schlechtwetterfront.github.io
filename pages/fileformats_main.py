@@ -20,15 +20,14 @@ PAGE = {
 							   Link('Overview', '#overview'),
 							   Link('Zero CRC', '#zero-crc'),
 							   Link('ATRB Flag Calculator', '#atrb-calculator'),
-							   Link('Zero CRC Default Implementation', '#zero-crc-implementation')
+							   Link('Zero CRC Default Implementation', '#zero-crc-implementation'),
+							   Link('Homepage', 'http://schlechtwetterfront.github.io/', LINK_INTERNAL)
 							   ]),
 			Category('File Formats', [
-							   Link('.MSH (Models & Animation)', 'msh.html'),
-							   Link('.TER (Terrain)', 'ter.html'),
-							   Link('.MSH Render Types', 'render_types.html')
-							   ]),
-			Category('Personal', [
-							   Link('Personal Homepage', 'http://schlechtwetterfront.github.io/')])
+							   Link('.MSH (Models & Animation)', 'msh.html', LINK_INTERNAL),
+							   Link('.TER (Terrain)', 'ter.html', LINK_INTERNAL),
+							   Link('.MSH Render Types', 'render_types.html', LINK_INTERNAL)
+							   ])
 		],
 		'sections': [
 			Section('Overview', 'overview', True, False, False, '''
