@@ -8,6 +8,7 @@ import pages.fileformats_main
 import pages.fileformats_msh
 import pages.fileformats_rendertypes
 import pages.fileformats_ter
+import pages.fileformats_ter_tcw
 
 PAGES = [
 	main_website.PAGE,
@@ -17,4 +18,5 @@ PAGES = [
 	fileformats_msh.PAGE,
 	fileformats_rendertypes.PAGE,
 	fileformats_ter.PAGE,
+	pages.fileformats_ter_tcw.PAGE,
 ]

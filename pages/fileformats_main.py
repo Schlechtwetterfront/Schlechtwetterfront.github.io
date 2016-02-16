@@ -26,6 +26,7 @@ PAGE = {
 			Category('File Formats', [
 							   Link('.MSH (Models & Animation)', 'msh.html', LINK_INTERNAL),
 							   Link('.TER (Terrain)', 'ter.html', LINK_INTERNAL),
+							   Link('.XXW (Terrain)', 'xxw.html', LINK_INTERNAL),
 							   Link('.MSH Render Types', 'render_types.html', LINK_INTERNAL)
 							   ])
 		],

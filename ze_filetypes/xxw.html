@@ -1,0 +1,392 @@
+<!doctype html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/schlechtwetterfront_dark.css">
+    <link rel="stylesheet" href="../css/schlechtwetterfront_light.css">
+    <script src="../js/respond.js"></script>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/schlechtwetterfront_visual.js"></script>
+    <script src="../js/schlechtwetterfront_functional.js"></script>
+    <link rel="icon" type="image/png" href="../favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ZE File Formats - .XXW</title>
+</head>
+	<body>
+		<div class="container">
+		
+			
+
+<div class="sidebar">
+	<sidebar_title>ZE File Formats - .XXW</sidebar_title>
+	<div class="hr_dark"></div>
+	<div id="sidebar-content">
+	
+		<category_label>Navigation</category_label><br>
+		
+		
+	        
+		<a class="rectangle-button rectangle-button-semi" href="#overview">Overview</a>
+	
+	    
+	        
+		<a class="rectangle-button rectangle-button-semi" href="index.html">Back <div class="internal_link"></div></a>
+	
+	    
+	        
+		<a class="rectangle-button rectangle-button-semi" href="http://schlechtwetterfront.github.io/">Homepage <div class="internal_link"></div></a>
+	
+	    
+	    
+	    <!-- <div class="hr-sidebar-dark"></div> -->
+	
+		<category_label>Format</category_label><br>
+		
+		<div class="sidebar-content-scrollable">
+		
+		
+	        
+		<a class="rectangle-button rectangle-button-semi" href="#terrain_header">Terrain Header</a>
+	
+	    
+	        
+		<a class="rectangle-button rectangle-button-semi" href="#terrain_blocks">Terrain Blocks</a>
+	
+	    
+	        
+		<a class="rectangle-button rectangle-button-semi" href="#terrain_structs">Terrain Structs</a>
+	
+	    
+	    
+		</div>
+		
+	    <!-- <div class="hr-sidebar-dark"></div> -->
+	
+	</div>
+</div>
+			
+
+<div class="content">
+	
+		<div class="section">
+			<a name="overview"></a>
+				<div>
+					<div class="section-header">Overview</div>
+					
+		<a class="toggle_collapse" content-id="overview_content" id="overview_content_start" starts-collapsed="False">Collapse</a>
+	
+				</div>
+				<div id="overview_content" class="section-content">
+				<p>Terrain files (*.xxw) represent a single terrain to be used by a world. This format was used in <em>Star Wars: The Clone Wars</em>.<br />
+THIS IS HEAVY WORK IN PROGRESS.</p>
+				
+		<div></div>
+	
+				</div>
+			<div class="hr"></div>
+		</div>
+	
+		<div class="section">
+			<a name="terrain_header"></a>
+				<div>
+					<div class="section-header">Terrain Header</div>
+					
+		<a class="toggle_collapse" content-id="terrain_header_content" id="terrain_header_content_start" starts-collapsed="False">Collapse</a>
+	
+				</div>
+				<div id="terrain_header_content" class="section-content">
+				<p>The Terrain Header is always ? bytes in length.</p>
+<pre><code>ad  length  type    ex          desc
+0   4       ?       1152        ?
+4           long    3           version?
+8           long    1024        terrain size?
+12          int     257         ?
+16          int     2           ?
+20          float   32          grid size?
+24          float   0.1...      ?
+28          
+32          int     128         map size?
+36
+40          int     128         extents with 8? or 6 sets of RGB colors?
+
+64-124      float               Tile-range for each texture layer
+
+
+1,668 -     514 size chunks?
+132,218
+
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Size (bytes)</th>
+<th>Offset</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="orange">byte [4]</td>
+<td>4</td>
+<td>0</td>
+<td>?</td>
+</tr>
+<tr>
+<td class="red">long int</td>
+<td>4</td>
+<td>4</td>
+<td>File format version? (03)</td>
+</tr>
+<tr>
+<td class="red">long int</td>
+<td>8</td>
+<td>8</td>
+<td>Terrain size? (1024)</td>
+</tr>
+<tr>
+<td class="red">long int</td>
+<td>4</td>
+<td>12</td>
+<td>? (257)</td>
+</tr>
+<tr>
+<td class="red">long int</td>
+<td>4</td>
+<td>16</td>
+<td>? (2)</td>
+</tr>
+<tr>
+<td class="red">float </td>
+<td>4</td>
+<td>20</td>
+<td>? (32)</td>
+</tr>
+<tr>
+<td class="red">float </td>
+<td>4</td>
+<td>24</td>
+<td>? (0.1)</td>
+</tr>
+<tr>
+<td class="red">float </td>
+<td>4</td>
+<td>28</td>
+<td>?</td>
+</tr>
+<tr>
+<td class="red">float </td>
+<td>4</td>
+<td>32</td>
+<td>map size? (128)</td>
+</tr>
+<tr>
+<td class="red">float </td>
+<td>4</td>
+<td>36</td>
+<td>?</td>
+</tr>
+<tr>
+<td class="red">float </td>
+<td>4</td>
+<td>40</td>
+<td>map size? (128)</td>
+</tr>
+<tr>
+<td>?</td>
+<td>4</td>
+<td>44+</td>
+<td>?</td>
+</tr>
+<tr>
+<td class="red">float [16] </td>
+<td>64</td>
+<td>64</td>
+<td>Tile-range for each texture layer. _0.031 (1/32): the texture spans 32 meters. This is stored as 1/X of the value in ZeroEditor.</td>
+</tr>
+</tbody>
+</table>
+				
+		<div></div>
+	
+				</div>
+			<div class="hr"></div>
+		</div>
+	
+		<div class="section">
+			<a name="terrain_blocks"></a>
+				<div>
+					<div class="section-header">Terrain Blocks</div>
+					
+		<a class="toggle_collapse" content-id="terrain_blocks_content" id="terrain_blocks_content_start" starts-collapsed="False">Collapse</a>
+	
+				</div>
+				<div id="terrain_blocks_content" class="section-content">
+				<p>The Terrain Header is always 2821 bytes in length.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Height</strong></td>
+<td class="red">signed short</td>
+<td>Full map size * Full map size * 2</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Height value for every point on the grid. This value will be multiplied with the map scale multiplier.</td>
+</tr>
+<tr>
+<td><strong>Color</strong></td>
+<td class="red">float [4]</td>
+<td>Full map size * Full map size</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Color values for every point on the grid. 4 floats (from 0.0 to 1.0) corresponding to the RGBA channels.</td>
+</tr>
+<tr>
+<td><strong>Color 2</strong></td>
+<td class="red">float [4]</td>
+<td>Full map size * Full map size</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Color values for every point on the grid. 4 floats (from 0.0 to 1.0) corresponding to the RGBA channels.</td>
+</tr>
+<tr>
+<td><strong>Texture</strong></td>
+<td class="orange">byte [16]</td>
+<td>Full map size * Full map size</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>One byte (0-255) for each texture layer indicating the transparency of its texture layer.</td>
+</tr>
+<tr>
+<td><strong>Water</strong></td>
+<td class="orange">byte</td>
+<td>Full map size * Full map size / 2</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Structure unknown.</td>
+</tr>
+<tr>
+<td><strong>Foliage</strong></td>
+<td class="orange">byte</td>
+<td>Full map size * Full map size / 2</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Structure unknown.</td>
+</tr>
+</tbody>
+</table>
+				
+		<div></div>
+	
+				</div>
+			<div class="hr"></div>
+		</div>
+	
+		<div class="section">
+			<a name="terrain_structs"></a>
+				<div>
+					<div class="section-header">Terrain Structs</div>
+					
+		<a class="toggle_collapse" content-id="terrain_structs_content" id="terrain_structs_content_start" starts-collapsed="False">Collapse</a>
+	
+				</div>
+				<div id="terrain_structs_content" class="section-content">
+				<h3>TextureLayer</h3>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Size (bytes)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="green">char [32]</td>
+<td>32</td>
+<td>Diffuse texture name.</td>
+</tr>
+<tr>
+<td class="green">char [32]</td>
+<td>32</td>
+<td>Detail texture name.</td>
+</tr>
+</tbody>
+</table>
+<h3>WaterLayer</h3>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Size (bytes)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="red">float [2]</td>
+<td>8</td>
+<td>Water height value (twice).</td>
+</tr>
+<tr>
+<td class="orange">byte [8]</td>
+<td>8</td>
+<td>Unknown, always zero.</td>
+</tr>
+<tr>
+<td class="red">float [2]</td>
+<td>8</td>
+<td>UV animation velocity.</td>
+</tr>
+<tr>
+<td class="red">float [2]</td>
+<td>8</td>
+<td>UV animation repeat.</td>
+</tr>
+<tr>
+<td class="orange">byte [4]</td>
+<td>4</td>
+<td>RGBA color values.</td>
+</tr>
+<tr>
+<td class="green">char [32]</td>
+<td>32</td>
+<td>Water texture name.</td>
+</tr>
+</tbody>
+</table>
+				
+		<div></div>
+	
+				</div>
+			<div class="hr"></div>
+		</div>
+	
+</div>
+		
+		</div>
+	</body>
+</html>
