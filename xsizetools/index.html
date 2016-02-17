@@ -29,11 +29,11 @@
 		
 		
 	        
-		<a class="rectangle-button rectangle-button-semi" href="https://github.com/Schlechtwetterfront/xsizetools/releases">Releases <div class="external_link"></div></a>
+		<a class="rectangle-button rectangle-button-semi" href="https://github.com/Schlechtwetterfront/xsizetools/releases">Releases</a>
 	
 	    
 	        
-		<a class="rectangle-button rectangle-button-semi" href="http://schlechtwetterfront.github.io/xsizetools/XSIZETools_src.7z">C++ Source (deprecated) <div class="internal_link"></div></a>
+		<a class="rectangle-button rectangle-button-semi" href="http://schlechtwetterfront.github.io/xsizetools/XSIZETools_src.7z">C++ Source (deprecated)</a>
 	
 	    
 	    
@@ -55,7 +55,7 @@
 	
 	    
 	        
-		<a class="rectangle-button rectangle-button-semi" href="http://schlechtwetterfront.github.io/">Homepage <div class="internal_link"></div></a>
+		<a class="rectangle-button rectangle-button-semi" href="http://schlechtwetterfront.github.io/">Homepage</a>
 	
 	    
 	    
@@ -113,11 +113,11 @@
 		
 		
 	        
-		<a class="rectangle-button rectangle-button-semi" href="https://github.com/Schlechtwetterfront/xsizetools">View on GitHub <div class="external_link"></div></a>
+		<a class="rectangle-button rectangle-button-semi" href="https://github.com/Schlechtwetterfront/xsizetools">View on GitHub</a>
 	
 	    
 	        
-		<a class="rectangle-button rectangle-button-semi" href="http://gametoast.com/viewtopic.php?f=36&t=26664">View Thread on GameToast <div class="external_link"></div></a>
+		<a class="rectangle-button rectangle-button-semi" href="http://gametoast.com/viewtopic.php?f=36&t=26664">View Thread on GameToast</a>
 	
 	    
 	    
@@ -225,7 +225,6 @@ Provided a tool/material for some additional research</p>
 <li><strong>Supported Model Types:</strong> The supported model types are: poly mesh, null, bone.</li>
 <li><strong>UV:</strong> Only apply one 'master' UV projection to a object. All subsequent projections should be Sub-projections.</li>
 <li><strong>Collision:</strong> Collision meshes can be created by naming the model <em>collision_*</em> or <em>*_collision</em>.</li>
-<li><strong>Collision:</strong> For XSI ZETools to recognize collision primitives the name needs to contain the type of primitive (cube, cylinder, sphere).</li>
 <li><strong>Collision:</strong> Do not freeze any primitives, freezing will remove essential information.</li>
 <li><strong>Animation:</strong> It's not important how you animate bones (FK or IK etc), the exporter will go through all frames one-by-one and get the current local transforms of every bone.</li>
 <li><strong>Always apply the envelope to ALL bones.</strong> This might slow your workflow down but it ensures the points are weighted to the correct bone after export.</li>
@@ -276,6 +275,7 @@ Provided a tool/material for some additional research</p>
 				<ul>
 <li><strong>Geometry:</strong> Try to avoid triangles in the cloth mesh. There's a high change triangles might produce artifacts in the cloth simulation.</li>
 <li><strong>UV/Cloth Splits:</strong> Cloth will be split along UV seams, so UV accordingly.</li>
+<li><strong>Collision:</strong> For ZETools to recognize cloth collision primitives the name needs to start with "c_".</li>
 <li><strong>Error Reporting:</strong> If you have problems with cloth simulation artifacts, provide a screenshot from the debug SWBF.exe with "render_cloth_connections" enabled via the console.</li>
 </ul>
 				

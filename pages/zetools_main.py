@@ -90,7 +90,6 @@ Provided a tool/material for some additional research
 * **Supported Model Types:** The supported model types are: poly mesh, null, bone.
 * **UV:** Only apply one 'master' UV projection to a object. All subsequent projections should be Sub-projections.
 * **Collision:** Collision meshes can be created by naming the model _collision\_\*_ or _\*\_collision_.
-* **Collision:** For XSI ZETools to recognize collision primitives the name needs to contain the type of primitive (cube, cylinder, sphere).
 * **Collision:** Do not freeze any primitives, freezing will remove essential information.
 * **Animation:** It's not important how you animate bones (FK or IK etc), the exporter will go through all frames one-by-one and get the current local transforms of every bone.
 * **Always apply the envelope to ALL bones.** This might slow your workflow down but it ensures the points are weighted to the correct bone after export.
@@ -109,6 +108,7 @@ Provided a tool/material for some additional research
 		Section('Cloth Guidelines', 'cloth-guidelines', True, False, False, '''
 * **Geometry:** Try to avoid triangles in the cloth mesh. There's a high change triangles might produce artifacts in the cloth simulation.
 * **UV/Cloth Splits:** Cloth will be split along UV seams, so UV accordingly.
+* **Collision:** For ZETools to recognize cloth collision primitives the name needs to start with "c_".
 * **Error Reporting:** If you have problems with cloth simulation artifacts, provide a screenshot from the debug SWBF.exe with "render_cloth_connections" enabled via the console.
 			'''),
 		Section('Scripts', 'scripts', True, False, False, '''

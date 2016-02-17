@@ -13,6 +13,8 @@ class Link(object):
         self.address = address
         self.link_type = link_type
 
+        self.link_type = LINK_NORMAL
+
 
 class Project(object):
     def __init__(self, name='Test', download_link='google.com', github_link='github.com', directory='test', pid='tst', links=None, subtitle=''):
