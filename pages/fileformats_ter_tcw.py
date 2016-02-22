@@ -28,7 +28,7 @@ Terrain files (\*.xxw) represent a single terrain to be used by a world. This fo
 THIS IS HEAVY WORK IN PROGRESS.
 '''),
         Section('Terrain Header', 'terrain_header', True, False, False, '''
-The Terrain Header is always ? bytes in length.
+The Terrain Header is always 1152 bytes in length.
 
 ```
 ad  length  type    ex          desc
@@ -58,13 +58,13 @@ xV4_ ?
 
  Offset       | Data Type           | Size (bytes)  | Description
 ------------- | ------------        |---------------| ---
- 0            | byte [4]{: .orange} | 4             | ?
+ 0            | byte [4]{: .orange} | 4             | Header size indicator (1152).
  4            | long uint{: .red}   | 4             | File format version? (03)
- 8            | long uint{: .red}   | 4             | Terrain size (unlikely)? (1024)
- 12           | long uint{: .red}   | 4             | Terrain size? (257, 513) 
+ 8            | long uint{: .red}   | 4             | ? (1024)
+ 12           | long uint{: .red}   | 4             | Terrain size. (257, 513) 
  16           | long uint{: .red}   | 4             | ? (2)
- 20           | float {: .red}      | 4             | Grid scale? (32, 16, 8)
- 24           | float {: .red}      | 4             | Height scale? (0.1, 0.03, 0.23)
+ 20           | float {: .red}      | 4             | Grid scale. (32, 16, 8)
+ 24           | float {: .red}      | 4             | Height scale. (0.1, 0.03, 0.23)
  28           | long int [4]{: .red}| 16            | Map extents (i.e. -256, 256, -256, 256 for a 512x512 map)
  44+          | ?                   | 20            | ? 
  64           | float [16] {: .red} | 64            | Tile-range for each texture layer. _0.031 (1/32): the texture spans 32 meters. This is stored as 1/X of the value in ZeroEditor._
@@ -74,12 +74,14 @@ xV4_ ?
         Section('Terrain Blocks', 'terrain_blocks', True, False, False, '''
 The Terrain Header is always 2821 bytes in length.
 
-Name            | Data Type             | Number of items
+Name            | Data Type             | Size
 ------------    |---------------        |-------------
-**Height**      | signed short{: .red}  | Terrain size * Terrain size 
+**Height**      | signed short{: .red}  | **Terrain size * Terrain size** * 2
                 | | Height value for every point on the grid. This value will be multiplied with the map scale multiplier.
 **?**           | ?                     | Size: (Terrain size - 1) * (Terrain size - 1) * 2 
                 | | 
+**?**           | ?                     | Size: 
+                | | Chunks with 38 bytes of data?
 
 '''),
         Section('Terrain Structs', 'terrain_structs', True, False, False, '''
