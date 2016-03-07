@@ -74,30 +74,6 @@ a.rectangle-button:hover {
 }
 
 
-.external_link {
-    background: transparent;
-    background-image: url("../img/icon_link_external.png");
-    background-size: contain;
-    width: 21px;
-    height: 21px;
-    display: inline-block;
-    margin: 4px;
-    line-height: 2em;
-    float: right;
-}
-
-.internal_link {
-    background: transparent;
-    background-image: url("../img/icon_link_internal.png");
-    background-size: contain;
-    width: 21px;
-    height: 21px;
-    display: inline-block;
-    margin: 4px;
-    line-height: 2em;
-    float: right;
-}
-
 
 .rectangle-button-semi {
     width: 98%;
