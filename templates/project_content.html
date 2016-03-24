@@ -4,15 +4,15 @@
 	{% for section in sections %}
 		<div class="section">
 			<a name="{{ section.name }}"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">{{ section.raw_title }}</div>
-					{{ macros.collapse_button(section.name + "_content", section.is_collapsable, section.is_collapsed) }}
-				</div>
+					<!-- {{ macros.collapse_button(section.name + "_content", section.is_collapsable, section.is_collapsed) }} -->
+				<!-- </div> -->
 				<div id="{{ section.name }}_content" class="section-content">
 				{{ section.text }}
-				{{ macros.collapse_button_end(section.name + "_content", section.is_collapsable, section.is_long) }}
+				<!-- {{ macros.collapse_button_end(section.name + "_content", section.is_collapsable, section.is_long) }} -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	{% endfor %}
 </div>

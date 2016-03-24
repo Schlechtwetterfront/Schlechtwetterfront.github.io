@@ -131,31 +131,31 @@
 	
 		<div class="section">
 			<a name="main_info"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">Main Info</div>
-					
+					<!-- 
 		<a class="toggle_collapse" content-id="main_info_content" id="main_info_content_start" starts-collapsed="False">Collapse</a>
-	
-				</div>
+	 -->
+				<!-- </div> -->
 				<div id="main_info_content" class="section-content">
 				<p>XSIZETools is an addon for Softimage (tested with ModTool 7.5, 2012 SP1 and 2014).
 The main features are full export and import of 3D .msh files for ZeroEngine (Star Wars Battlefront I and II). That includes geometry, materials with all ZeroEngine-specific flags, animations and collisions.</p>
 <p>This began as a small collection of scripts to help setup hierarchies and the like and turned into a full-fledged exporter/importer for the .msh format. As only a small amount of the .msh file format structure was known when I began writing the exporter I had to reverse-engineer (with contributions from a handful of other people) the rest (which was about 70% of the chunks).</p>
-				
+				<!-- 
 		<div></div>
-	
+	 -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	
 		<div class="section">
 			<a name="download_installation"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">Download & Installation</div>
-					
+					<!-- 
 		<a class="toggle_collapse" content-id="download_installation_content" id="download_installation_content_start" starts-collapsed="False">Collapse</a>
-	
-				</div>
+	 -->
+				<!-- </div> -->
 				<div id="download_installation_content" class="section-content">
 				<p>The main chunk of the project is hosted on GitHub.
 The source for the Geometry Accessor Wrappers can be found on the sidebar (the source is outdated though as I lost the code used for the current DLLs.
@@ -175,21 +175,21 @@ If python and pywin32 was installed correctly it should look something like
 <a href="http://www.microsoft.com/download/en/details.aspx?id=5555">x86</a>
 |
 <a href="http://www.microsoft.com/downloads/de-de/details.aspx?FamilyID=bd512d9e-43c8-4655-81bf-9350143d5867">x64</a> (only if x86 didn't work).</p>
-				
+				<!-- 
 		<div></div>
-	
+	 -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	
 		<div class="section">
 			<a name="contributors"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">Contributors</div>
-					
+					<!-- 
 		<a class="toggle_collapse" content-id="contributors_content" id="contributors_content_start" starts-collapsed="True">Collapse</a>
-	
-				</div>
+	 -->
+				<!-- </div> -->
 				<div id="contributors_content" class="section-content">
 				<p><strong>ME (ANDEWEGET/Ande)</strong><br />
 All programming | Graphics/UI | Main .msh file research</p>
@@ -201,21 +201,21 @@ Created some templates | Provided example .msh files | Additional .msh research<
 Additional .msh research | MSH Info Tool greatly helped with debugging | Interesting discussions</p>
 <p><strong>FragMe! (gametoast.com)</strong><br />
 Provided a tool/material for some additional research</p>
-				
+				<!-- 
 		<div></div>
-	
+	 -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	
 		<div class="section">
 			<a name="export-guidelines"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">Export Guidelines</div>
-					
+					<!-- 
 		<a class="toggle_collapse" content-id="export-guidelines_content" id="export-guidelines_content_start" starts-collapsed="False">Collapse</a>
-	
-				</div>
+	 -->
+				<!-- </div> -->
 				<div id="export-guidelines_content" class="section-content">
 				<ul>
 <li><strong>Error Checking:</strong> The CheckSel function in the export dialog can detect some problems.</li>
@@ -235,42 +235,42 @@ Provided a tool/material for some additional research</p>
             This will add all the ZeroEngine material flags to the material.
             Afterwards inspect your material (click the "Edit" button) and change those settings in the appended options.</li>
 </ul>
-				
+				<!-- 
 		<div></div>
-	
+	 -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	
 		<div class="section">
 			<a name="import-guidelines"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">Import Guidelines</div>
-					
+					<!-- 
 		<a class="toggle_collapse" content-id="import-guidelines_content" id="import-guidelines_content_start" starts-collapsed="False">Collapse</a>
-	
-				</div>
+	 -->
+				<!-- </div> -->
 				<div id="import-guidelines_content" class="section-content">
 				<ul>
 <li><strong>Animation:</strong> Animations will be imported as linear animations on a per-frame basis.</li>
 <li><strong>Animation:</strong> It should be possible to re-export animations directly after import. For SWBF1 you need to have at least one material though.</li>
 <li><strong>Geometry:</strong> There might be some misplaced edges.</li>
 </ul>
-				
+				<!-- 
 		<div></div>
-	
+	 -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	
 		<div class="section">
 			<a name="cloth-guidelines"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">Cloth Guidelines</div>
-					
+					<!-- 
 		<a class="toggle_collapse" content-id="cloth-guidelines_content" id="cloth-guidelines_content_start" starts-collapsed="False">Collapse</a>
-	
-				</div>
+	 -->
+				<!-- </div> -->
 				<div id="cloth-guidelines_content" class="section-content">
 				<ul>
 <li><strong>Geometry:</strong> Try to avoid triangles in the cloth mesh. There's a high change triangles might produce artifacts in the cloth simulation.</li>
@@ -278,21 +278,21 @@ Provided a tool/material for some additional research</p>
 <li><strong>Collision:</strong> For ZETools to recognize cloth collision primitives the name needs to start with "c_".</li>
 <li><strong>Error Reporting:</strong> If you have problems with cloth simulation artifacts, provide a screenshot from the debug SWBF.exe with "render_cloth_connections" enabled via the console.</li>
 </ul>
-				
+				<!-- 
 		<div></div>
-	
+	 -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	
 		<div class="section">
 			<a name="scripts"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">Scripts</div>
-					
+					<!-- 
 		<a class="toggle_collapse" content-id="scripts_content" id="scripts_content_start" starts-collapsed="False">Collapse</a>
-	
-				</div>
+	 -->
+				<!-- </div> -->
 				<div id="scripts_content" class="section-content">
 				<ul>
 <li><strong>Create Bone Group</strong><br />
@@ -300,21 +300,21 @@ Creates a group of all objects which have 'bone' in their name. If you have a SW
 <li><strong>Addon Mesh Setup</strong><br />
 Creates an addon mesh hierarchy, by creating a null (named like the <em>Addon Root</em> text box) and matching its position and rotation to the selected <em>Addon Bone</em>. You can then move the currently selected object(s) into the hierarchy by pressing <em>Set As Addon Mesh</em>.</li>
 </ul>
-				
+				<!-- 
 		<div></div>
-	
+	 -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	
 		<div class="section">
 			<a name="export-docs"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">Export Documentation</div>
-					
+					<!-- 
 		<a class="toggle_collapse" content-id="export-docs_content" id="export-docs_content_start" starts-collapsed="True">Collapse</a>
-	
-				</div>
+	 -->
+				<!-- </div> -->
 				<div id="export-docs_content" class="section-content">
 				<ul>
 <li><strong>Auto-Overwrite.</strong> Overwrites any output files if they already exist.</li>
@@ -329,21 +329,21 @@ Creates an addon mesh hierarchy, by creating a null (named like the <em>Addon Ro
 <li><strong>Check Sel: Unnecessary clusters.</strong> Do not need to be fixed, just warnings.</li>
 <li><strong>Store Flags.</strong> Stores the current export configuration (path, check boxes etc).</li>
 </ul>
-				
+				<!-- 
 		<div></div>
-	
+	 -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	
 		<div class="section">
 			<a name="import-docs"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">Import Documentation</div>
-					
+					<!-- 
 		<a class="toggle_collapse" content-id="import-docs_content" id="import-docs_content_start" starts-collapsed="True">Collapse</a>
-	
-				</div>
+	 -->
+				<!-- </div> -->
 				<div id="import-docs_content" class="section-content">
 				<ul>
 <li><strong>Texture Folder.</strong> If the textures for the to-be-imported .msh file are not located in the same folder as the .msh file.</li>
@@ -359,21 +359,21 @@ Creates an addon mesh hierarchy, by creating a null (named like the <em>Addon Ro
 <li><strong>Triangulate.</strong> Triangulates any quads or more-sided polygons on import.</li>
 <li><strong>Log.</strong> Logs the MSH unpack (can be slow).</li>
 </ul>
-				
+				<!-- 
 		<div></div>
-	
+	 -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	
 		<div class="section">
 			<a name="material-docs"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">Material Manager Documentation</div>
-					
+					<!-- 
 		<a class="toggle_collapse" content-id="material-docs_content" id="material-docs_content_start" starts-collapsed="True">Collapse</a>
-	
-				</div>
+	 -->
+				<!-- </div> -->
 				<div id="material-docs_content" class="section-content">
 				<ul>
 <li><strong>Create.</strong> Creates a new Phong material with the name in the box to the left of the button.</li>
@@ -386,21 +386,21 @@ Creates an addon mesh hierarchy, by creating a null (named like the <em>Addon Ro
 <li><strong>Assign.</strong> Assigns the currently selected material to the currently selected component/object in the scene.</li>
 <li><strong>Unassign.</strong> Unassigns the material.</li>
 </ul>
-				
+				<!-- 
 		<div></div>
-	
+	 -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	
 		<div class="section">
 			<a name="msh2txt"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">MSH2TXT</div>
-					
+					<!-- 
 		<a class="toggle_collapse" content-id="msh2txt_content" id="msh2txt_content_start" starts-collapsed="True">Collapse</a>
-	
-				</div>
+	 -->
+				<!-- </div> -->
 				<div id="msh2txt_content" class="section-content">
 				<h3>Model Types</h3>
 <table>
@@ -1003,21 +1003,21 @@ Creates an addon mesh hierarchy, by creating a null (named like the <em>Addon Ro
 </tr>
 </tbody>
 </table>
-				
+				<!-- 
 		<a class="toggle_collapse_end" content-id="msh2txt_content" id="msh2txt_content_end">Collapse</a>
-	
+	 -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	
 		<div class="section">
 			<a name="animation-export"></a>
-				<div>
+				<!-- <div> -->
 					<div class="section-header">Animation Export</div>
-					
+					<!-- 
 		<a class="toggle_collapse" content-id="animation-export_content" id="animation-export_content_start" starts-collapsed="True">Collapse</a>
-	
-				</div>
+	 -->
+				<!-- </div> -->
 				<div id="animation-export_content" class="section-content">
 				<p>Every of the following steps will produce one .msh file.</p>
 <blockquote>
@@ -1048,11 +1048,11 @@ I assume you use the Current frame as Basepose way. Now the preparation is finis
 <blockquote>
 <p><img alt="Image3" src="anim_basepose.jpg" /></p>
 </blockquote>
-				
+				<!-- 
 		<a class="toggle_collapse_end" content-id="animation-export_content" id="animation-export_content_end">Collapse</a>
-	
+	 -->
 				</div>
-			<div class="hr"></div>
+			<!-- <div class="hr"></div> -->
 		</div>
 	
 </div>

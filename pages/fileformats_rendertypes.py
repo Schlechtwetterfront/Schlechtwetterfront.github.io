@@ -52,7 +52,7 @@ PAGE = {
 		'sections': [
 			Section('Overview', 'overview', True, False, False, '''
 Render Types are stored as 1-byte integers in the ATRB chunk of materials.  
-**See Also:** [Inside Edit Flags (GT)](http://www.gametoast.com/viewtopic.php?p=279620#p279620)
+**See Also:** [Inside Edit Flags (GT)](http://www.gametoast.com/viewtopic.php?p=279620#p279620) | [Analysis of both ModTools' .msh files](mshwalker.log)
 '''),
 			Section('Glow', 'glow', True, True, False, '''
 ID 	| Hex 	| Data0	| Data1	|
@@ -67,7 +67,8 @@ ID 	| Hex 	| Data0								| Data1							|
 ----|-------|-------							|-------						|
 2	| 02	| Tiling along U (horizontal)		| Tiling along V (vertical)		|
 
-Tiles a detail texture. Requires an additional texture (detail texture).
+Tiles a detail texture. Requires an additional texture (detail texture).  
+May actually be [Lightmap](#lightmap).
 
 '''),
 			Section('Scrolling', 'scrolling', True, True, False, '''
@@ -141,6 +142,7 @@ ID 	| Hex 	| Data0	| Data1	|
 11	| 0b	| -		| -		| 
 
 Basically a glow map. Requires an additional texture. The texture's alpha channel determines glow strength, rgb glow color and intensity.
+May actually be [Detail](#detail).
 
 See also: [Lightmap discussion on GT ](http://www.gametoast.com/viewtopic.php?p=323899#p323899)
 
