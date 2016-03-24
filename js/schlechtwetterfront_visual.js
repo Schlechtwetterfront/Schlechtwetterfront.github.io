@@ -48,6 +48,11 @@ window.addEventListener("load", function() {
     };
 
 
+    // Heading color
+
+    // $("div.section-header").css({"background-color": box_darkened_color});
+
+
     // General link hover color and style change.
 
     $("div.content a").not(".bordered").css({"color": box_hover_color, "border-bottom": "1px dotted " + box_hover_color});
