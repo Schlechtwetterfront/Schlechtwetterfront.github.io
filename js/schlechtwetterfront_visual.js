@@ -48,9 +48,16 @@ window.addEventListener("load", function() {
     };
 
 
-    // Heading color
-
-    // $("div.section-header").css({"background-color": box_darkened_color});
+    $(".colored").css({"background-color": box_hover_color});
+    $(".border-colored-dark").css({"border-color": box_darkened_color});
+    $("div.content a").not(".bordered").hover(
+        function() {
+            $(this).css({"border-color": link_color_map_hover[theme]});
+        },
+        function() {
+            $(this).css({"border-color": box_hover_color});
+        }
+    );
 
 
     // General link hover color and style change.
@@ -70,7 +77,7 @@ window.addEventListener("load", function() {
 
     // MSH file format page chunks
 
-    $(".bordered, .bordered-nohover").css({"color": box_hover_color, "border": "1px dotted " + box_hover_color, "padding": "0 3px"});
+    $(".bordered, .bordered-nohover").css({"color": box_hover_color, "border": "1px dotted " + box_hover_color});
     $(".bordered").not(".toggle").hover(
         function() {
             $(this).css({"color": link_color_map_hover[theme],
@@ -84,7 +91,7 @@ window.addEventListener("load", function() {
     );
 
 
-    $(".bordered-dark, .bordered-dark-nohover").css({"color": link_color_map_hover[theme], "border": "1px dotted " + link_color_map_hover[theme], "padding": "0 3px"});
+    $(".bordered-dark, .bordered-dark-nohover").css({"color": link_color_map_hover[theme], "border": "1px dotted " + link_color_map_hover[theme]});
     $(".bordered-dark").hover(
         function() {
             $(this).css({"color": box_hover_color,
@@ -105,8 +112,10 @@ window.addEventListener("load", function() {
     $("togglebox").on("toggle-state-changed", function() {
         if ($(this).attr("toggled") == "false") {
             $(this).css({"color": link_color_map_hover[theme], "border": "1px dotted " + link_color_map_hover[theme]});
+            $(this).children("span").css({"background-color": "rgba(0, 0, 0, 0)", "border-color": box_darkened_color});
         } else {
             $(this).css({"color": box_hover_color, "border": "1px solid " + box_hover_color});
+            $(this).children("span").css({"background-color": box_hover_color, "border-color": box_hover_color});
         }
     });
 
