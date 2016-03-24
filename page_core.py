@@ -8,10 +8,11 @@ LINK_DOWNLOAD = 'LINK_DOWNLOAD'
 MARKDOWN_EXTENSIONS = ['markdown.extensions.extra', 'markdown.extensions.fenced_code', 'markdown.extensions.tables']
 
 class Link(object):
-    def __init__(self, title='LinkTitle', address='google.com', link_type=LINK_NORMAL):
+    def __init__(self, title='LinkTitle', address='google.com', link_type=LINK_NORMAL, link_class='rectangle-button rectangle-button-semi'):
         self.title = title
         self.address = address
         self.link_type = link_type
+        self.link_class = link_class
 
         self.link_type = LINK_NORMAL
 

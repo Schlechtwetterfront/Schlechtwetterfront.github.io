@@ -10,7 +10,7 @@
 		<div class="sidebar-content-scrollable">
 		{% endif %}
 		{% for link in category.links %}
-	        {{ macros.list_button(link.address, link.title, link.link_type) }}
+	        {{ macros.list_button(link.address, link.title, link.link_type, link.link_class) }}
 	    {% endfor %}
 	    {% if category.is_scrollable %}
 		</div>

@@ -156,20 +156,36 @@ window.addEventListener("load", function() {
 
 
     // flag calc
-    function setHex(hex) {
+    function setHex(hex, group) {
     	if (hex.length < 2) {
     		hex = pad("00", hex, true);
     	}
-    	$("#flag-hex-value").prop("value", hex);
+        if (group == "flag") {
+    	   $("#flag-hex-value").prop("value", hex);
+        } else if (group == "rendertype") {
+            $("#render-type-hex-value").prop("value", hex);
+        } else if (group == "data0") {
+            $("#data0-hex-value").prop("value", hex);
+        } else if (group == "data1") {
+            $("#data1-hex-value").prop("value", hex);
+        }
     }
 
 
-    function setInt(value) {
-    	$("#flag-int-value").prop("value", value);
+    function setInt(value, group) {
+        if (group == "flag") {
+           $("#flag-int-value").prop("value", value);
+        } else if (group == "rendertype") {
+            $("#render-type-int-value").prop("value", value);
+        } else if (group == "data0") {
+            $("#data0-int-value").prop("value", value);
+        } else if (group == "data1") {
+            $("#data1-int-value").prop("value", value);
+        }
     }
 
     function setFlags(value) {
-    	$("togglebox").each(function() {
+    	$(".togglebox-flags").each(function() {
 			var box_value = parseInt($(this).attr("value"));
 			$(this).attr("toggled", (value & box_value) ? "true" : "false");
 			$(this).trigger("toggle-state-changed");
@@ -179,7 +195,7 @@ window.addEventListener("load", function() {
 	$("#convert-from-value").click(function() {
 		var value = parseInt($("#flag-int-value").prop("value"));
 		if (!isNaN(value)) {
-			setHex(value.toString(16));
+			setHex(value.toString(16), "flag");
 			setFlags(value);
 		}
 	});
@@ -188,7 +204,7 @@ window.addEventListener("load", function() {
 	$("#convert-from-hex").click(function() {
 		var value = parseInt($("#flag-hex-value").prop("value"), 16);
 		if (!isNaN(value)) {
-			setInt(value);
+			setInt(value, "flag");
 			setFlags(value);
 		}
 	});
@@ -196,15 +212,84 @@ window.addEventListener("load", function() {
 
 	$("#convert-from-flags").click(function() {
 		var value = 0;
-		$("togglebox").each(function() {
+		$(".togglebox-flags").each(function() {
 			var box_value = parseInt($(this).attr("value"));
 			if ($(this).attr("toggled") == "true") {
 				value += box_value;
 			}
 		});
-		setHex(value.toString(16));
-		setInt(value);
+		setHex(value.toString(16), "flag");
+		setInt(value, "flag");
 	});
+
+
+    $("#render-type-select").change(function() {
+        var val = parseInt($("#render-type-select").prop("value"), 10).toString(16);
+        setHex(val, "rendertype");
+    });
+
+
+    $("#render-type-hex-value").change(function() {
+        var val = $("#render-type-hex-value").prop("value");
+        $("#render-type-select").prop("value", parseInt(val, 16));
+    });
+
+
+    $("#data0-int-value").change(function() {
+        var value = parseInt($("#data0-int-value").prop("value"), 10);
+        setHex(value.toString(16), "data0");
+    });
+
+
+    $("#data0-hex-value").change(function() {
+        var value = parseInt($("#data0-hex-value").prop("value"), 16);
+        setInt(value.toString(), "data0");
+    });
+
+
+    $("#data1-int-value").change(function() {
+        var value = parseInt($("#data1-int-value").prop("value"), 10);
+        setHex(value.toString(16), "data1");
+    });
+
+
+    $("#data1-hex-value").change(function() {
+        var value = parseInt($("#data1-hex-value").prop("value"), 16);
+        setInt(value.toString(), "data1");
+    });
+
+
+    $("#gather-all").click(function() {
+        var chunk = "41 54 52 42 04 00 00 00 ";
+        chunk += $("#flag-hex-value").prop("value") + " ";
+        chunk += $("#render-type-hex-value").prop("value") + " ";
+        chunk += $("#data0-hex-value").prop("value") + " ";
+        chunk += $("#data1-hex-value").prop("value");
+        if ($("#buildWithSpaces").attr("toggled") != "true") {
+            chunk = chunk.replace(/ /g, "");
+        }
+        $("#result").prop("value", chunk);
+    });
+
+
+    $("#from-all").click(function() {
+        var chunk = $("#result").prop("value");
+        if (chunk.length > 24) {
+            chunk = chunk.replace(/ /g, "");
+        }
+        var flag = chunk.substring(16, 18);
+        var renderType = chunk.substring(18, 20);
+        var data0 = chunk.substring(20, 22);
+        var data1 = chunk.substring(22, 24);
+
+        setHex(flag, "flag");
+        setHex(renderType, "rendertype");
+        setHex(data0, "data0");
+        setHex(data1, "data1");
+
+        $("#render-type-hex-value, #data0-hex-value, #data1-hex-value").change();
+        $("#convert-from-hex").click();
+    });
 });
 
 

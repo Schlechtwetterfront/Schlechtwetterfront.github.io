@@ -47,6 +47,11 @@ a.toggle_collapse_end {
 }
 
 
+.block {
+    padding: 0 3px;
+}
+
+
 a {
     font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     font-weight: normal;
@@ -65,7 +70,7 @@ a.rectangle-button {
     padding: 1px 0px 1px 10px;
 
     vertical-align: text-bottom;
-    max-height: 30px;
+    /*max-height: 30px;*/
 }
 
 
@@ -73,6 +78,10 @@ a.rectangle-button:hover {
     background: rgba(0, 0, 0, 0.75);
 }
 
+
+a.rectangle-button-msh {
+    max-height: 30px;
+}
 
 
 .rectangle-button-semi {
@@ -171,6 +180,12 @@ category_label {
     width: 100%;
     background-color: transparent;
     padding-left: 10px;
+    max-height: 30px;
+    /*height: 30px;*/
+    line-height: 1.8em;
+
+    margin-bottom: 0.1em;
+    margin-top: 0.4em;
 }
 
 
@@ -451,6 +466,32 @@ sidebar_title {
 */
 
 
+.circle {
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 6px;
+    height: 6px;
+
+    display: inline-block;
+
+    margin-right: 3px;
+    margin-bottom: 2px;
+
+    vertical-align: middle;
+}
+
+.circle-filled {
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+
+    display: inline-block;
+
+    margin-right: 3px;
+    margin-bottom: 2px;
+}
+
+
 .bordered {}
 
 
@@ -472,6 +513,7 @@ togglebox {
     cursor: pointer;
     display: inline-block;
     margin: 3px;
+    padding: 0 3px;
 }
 
 
@@ -479,6 +521,7 @@ clickable {
     cursor: pointer;
     margin: 3px;
     display: inline-block;
+    padding: 0 3px;
 }
 
 
@@ -653,6 +696,24 @@ div .hr-inline {
     *
     * ----------------------------------------------------- *
 */
+
+
+.number-box {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 18px;
+
+    padding: 6px 6px 3px 6px;
+
+    text-align: right;
+}
+
+.talign-r {
+    text-align: right;
+}
+
+.talign-c {
+    text-align: center;
+}
 
 
 html {
