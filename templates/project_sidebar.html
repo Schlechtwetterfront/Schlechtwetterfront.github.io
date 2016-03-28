@@ -1,21 +1,25 @@
 {% import "templates.html" as macros %}
 
-<div class="sidebar">
-	<sidebar_title>{{ page_title }}</sidebar_title>
-	<div class="hr_dark"></div>
-	<div id="sidebar-content">
-	{% for category in categories %}
-		<category_label>{{ category.title }}</category_label><br>
-		{% if category.is_scrollable %}
-		<div class="sidebar-content-scrollable">
-		{% endif %}
-		{% for link in category.links %}
-	        {{ macros.list_button(link.address, link.title, link.link_type, link.link_class) }}
-	    {% endfor %}
-	    {% if category.is_scrollable %}
+<div class="col-md-2" role="complementary">
+	<nav class="affix">
+		<div class="sidebar">
+			<div class="sidebar-title">{{ page_title }}</div>
+			<div class="hr"></div>
+			<div id="sidebar-content">
+			{% for category in categories %}
+				<div class="category_label">{{ category.title }}</div>
+				{% if category.is_scrollable %}
+				<div class="sidebar-content-scrollable">
+				{% endif %}
+				{% for link in category.links %}
+			        {{ macros.list_button(link.address, link.title, link.link_type, link.link_class) }}
+			    {% endfor %}
+			    {% if category.is_scrollable %}
+				</div>
+				{% endif %}
+			    <!-- <div class="hr-sidebar-dark"></div> -->
+			{% endfor %}
+			</div>
 		</div>
-		{% endif %}
-	    <!-- <div class="hr-sidebar-dark"></div> -->
-	{% endfor %}
-	</div>
+	</nav>
 </div>

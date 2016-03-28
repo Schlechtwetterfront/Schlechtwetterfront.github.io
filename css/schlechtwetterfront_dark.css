@@ -116,7 +116,7 @@ a.rectangle-button-msh {
     * ----------------------------------------------------- *
 */
 
-.container {
+.my-container {
     position: relative;
     padding: 0 0 0 21.6em;
     margin: 25px 15% 25px 15%;
@@ -227,7 +227,7 @@ sidebar_title {
 /* Width queries */
 
 @media (max-width: 1400px) {
-    .container {
+    .my-container {
         margin: 25px 5% 25px 5%;
         overflow-x: hidden;
     }
@@ -246,7 +246,7 @@ sidebar_title {
 }
 
 @media (max-width: 1000px) {
-    .container {
+    .my-container {
         margin: 0 0 0 0;
         padding: 0 0 0 19.6em;
     }
@@ -261,7 +261,7 @@ sidebar_title {
 }
 
 @media (max-width: 780px) {
-    .container {
+    .my-container {
         padding: 0 0 0 0;
     }
 
@@ -589,23 +589,6 @@ t2 {
 
     margin-left: 10px;
     margin-right: 10px;
-}
-
-
-checkbutton {
-    display: inline-block;
-    width: 112px;
-    height: 112px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 112px;
-    background-color: rgba(255, 255, 255, 0.2);
-
-    margin: 5px;
-}
-
-checkbutton.enabled {
-    border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 

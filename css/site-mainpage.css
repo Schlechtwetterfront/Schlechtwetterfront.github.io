@@ -1,0 +1,113 @@
+.box {
+    /* Use double the size incase the user doesn't have js and can't slide it open that way. */
+    /*height: 128px;*/
+    height: 256px;
+    width: 240px;
+
+    transition: background-color 0.5s;
+
+    color: #EEEEEE;
+    background-color: #252525;
+    display: inline-block;
+
+    /*font-size: 22px;*/
+    /*line-height: 120px;*/
+
+    vertical-align: middle;
+    text-align: center;
+
+    margin: 12px;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+.box:hover {
+    /* background color and height set in js */
+}
+
+
+.box-text {
+    color: #EEEEEE;
+    display: table-cell;
+
+    vertical-align: middle;
+    text-align: center;
+
+    cursor: default;
+    font-size: 22px;
+    line-height: 22px;
+
+    width: 100%;
+    height: 128px;
+
+    padding: 0;
+    margin: 0;
+
+    position: relative;
+
+    transition: top 0.5s, font-size 0.5s;
+}
+
+.box-text:hover {
+
+}
+
+
+.sub-text {
+    color: #BBB;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline-block;
+}
+
+
+.big-text {
+    font-size: 5em;
+
+    color: #282828;
+
+    cursor: default;
+}
+
+
+.info {
+    background-color: transparent;
+    color: #222222;
+    display: inline-block;
+
+    font-size: 16px;
+    line-height: 128px;
+
+    text-align: justify;
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    margin-top: 4px;
+    margin-bottom: 4px;
+
+    position: relative;
+
+    transition: top 0.5s;
+}
+
+
+@media (max-width: 1020px) {
+    .centered::before {
+        height: 0%;
+    }
+
+    .centered {
+        /*display: block;*/
+    }
+
+    .box {
+        display: block;
+    }
+
+    .big-text {
+        font-size: 1.5em;
+        color: #202020;
+    }
+}

@@ -5,11 +5,11 @@
 
         "hierarchy_level": 0,
 
-        "parent": "Parent chunk", 
+        "parent": "PARENT CHUNK", 
         "_parent": "The name of the parent chunk.",
 
         "children": [
-            "All", "possible", "children"
+            "ALL", "POSSIBLE", "CHILDREN"
         ],
         "_children": "A list of children chunk names.",
 

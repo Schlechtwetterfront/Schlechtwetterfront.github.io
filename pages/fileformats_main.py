@@ -1,5 +1,7 @@
 from page_core import *
 import markdown
+from jinja2 import Environment, FileSystemLoader
+env = Environment(loader=FileSystemLoader('templates'))
 
 
 RENDER_TYPES = [
@@ -46,11 +48,23 @@ def get_flag_calculator():
     return calculator
 
 
-def get_render_type_options():
+def render_calculator(data):
+    template = env.get_template('fileformats_calculator_alt.html')
+    return template.render(render_types=data)
+
+
+def get_render_type_options_string():
     options = []
     for index, render_type in enumerate(RENDER_TYPES):
         options.append('\t<option value="{0}">{0:0>2} - {1}</option>'.format(index, render_type))
     return '\n'.join(options)
+
+
+def get_render_type_options():
+    options = []
+    for index, render_type in enumerate(RENDER_TYPES):
+        options.append((index, '{:0>2}'.format(index), render_type))
+    return options
 
 PAGE = {
     'page_template': 'project_index.html',
@@ -89,53 +103,8 @@ Note that Single-sided and Double-sided Transparency are exclusive, so selecting
 
 ### Calculator
 
-**Flags**
-
-<togglebox class="bordered-dark togglebox-flags" toggled="false" value="1"><span class="circle border-colored-dark"></span>Emissive</togglebox>
-<togglebox class="bordered-dark togglebox-flags" toggled="false" value="2"><span class="circle border-colored-dark"></span>Glow</togglebox>
-<togglebox class="bordered-dark togglebox-flags" toggled="false" value="4"><span class="circle border-colored-dark"></span>Single-sided</togglebox>
-<togglebox class="bordered-dark togglebox-flags" toggled="false" value="8"><span class="circle border-colored-dark"></span>Double-sided</togglebox>
-<togglebox class="bordered-dark togglebox-flags" toggled="false" value="16"><span class="circle border-colored-dark"></span>Hard-edged</togglebox>
-<togglebox class="bordered-dark togglebox-flags" toggled="false" value="32"><span class="circle border-colored-dark"></span>Per-Pixel Lighting</togglebox>
-<togglebox class="bordered-dark togglebox-flags" toggled="false" value="64"><span class="circle border-colored-dark"></span>Additive</togglebox>
-<togglebox class="bordered-dark togglebox-flags" toggled="false" value="128"><span class="circle border-colored-dark"></span>Specular</togglebox>
-<div class="hr"></div>
-
-**Values**
-<indented_text>Integer Value</indented_text> <input type="text" size="3" maxlength="3" id="flag-int-value" class="bordered-dark-nohover number-box talign-r" value="0"> 
-<indented_text>Hex Value</indented_text> <input type="text" size="2" maxlength="2" id="flag-hex-value" class="bordered-dark-nohover number-box talign-c" value="00"><br>
-<div class="hr"></div>
-
-**Convert**
-<clickable class="bordered-dark" id="convert-from-flags">Convert From Flags</clickable>
-<clickable class="bordered-dark" id="convert-from-value">Convert From Value</clickable>
-<clickable class="bordered-dark" id="convert-from-hex">Convert From Hex</clickable>
-<div class="hr"></div>
-
-**Render Type**  
-<indented_text>Type</indented_text>
-<select class="bordered-dark-nohover" id="render-type-select">
 {}
-</select>
-<indented_text>Hex</indented_text> <input type="text" size="2" maxlength="2" id="render-type-hex-value" class="bordered-dark-nohover number-box talign-c" value="00"><br>
-<div class="hr"></div>
-
-**Data Values**  
-<indented_text>Data0 Integer</indented_text> <input type="text" size="3" maxlength="3" id="data0-int-value" class="bordered-dark-nohover number-box talign-r" value="0"> 
-<indented_text>Data0 Hex</indented_text> <input type="text" size="2" maxlength="2" id="data0-hex-value" class="bordered-dark-nohover number-box talign-c" value="00"><br>
-
-<indented_text>Data1 Integer</indented_text> <input type="text" size="3" maxlength="3" id="data1-int-value" class="bordered-dark-nohover number-box talign-r" value="0"> 
-<indented_text>Data1 Hex</indented_text> <input type="text" size="2" maxlength="2" id="data1-hex-value" class="bordered-dark-nohover number-box talign-c" value="00"><br>
-<div class="hr"></div>
-
-**Chunk**
-<input type="text" size="37" maxlength="35" id="result" class="bordered-dark-nohover number-box talign-c" value="415452420400000000000000">
-
-**Build**  
-<togglebox class="bordered-dark" id="buildWithSpaces" toggled="false" value="0"><span class="circle border-colored-dark"></span>Build with spaces</togglebox>
-<clickable class="bordered-dark" id="gather-all">Build ATRB Chunk</clickable>
-<clickable class="bordered-dark" id="from-all">Calculate from ATRB Chunk</clickable>
-'''.format(get_render_type_options())
+'''.format(render_calculator(get_render_type_options()))
                ),
         Section('Zero CRC Default Implementation', 'zero-crc-implementation', True, True, True, '''
 ````cpp

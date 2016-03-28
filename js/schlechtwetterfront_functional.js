@@ -46,6 +46,9 @@ function showContent(id) {
 
 
 function calculateSidebarListHeight() {
+
+    return;
+
 	var total_height_children = 0;
 	var total_height_sidebar = $(".sidebar").height();
 	var sidebar_padding_bottom = parseInt($(".sidebar").css("padding-bottom"));

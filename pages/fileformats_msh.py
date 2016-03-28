@@ -58,11 +58,11 @@ def get_additional_tables(chunk):
 
 def chunks_to_sections():
     info_section = Section('Overview', 'overview', True, False, False, '''
-This page lists all .MSH file chunks. In the .MSH file these chunks are organized in a hierarchy with [HEDR](#HEDR){{: .bordered} (header) being the first chunk and branching out
+This page lists all .MSH file chunks. In the .MSH file these chunks are organized in a hierarchy with [HEDR](#HEDR){: .bordered .block} (header) being the first chunk and branching out
 from there (as visualized in the sidebar navigation).  
 
 Some of these chunks are exclusive to certain versions of the engine (_Star Wars: The Clone Wars_ and before, _Star Wars: Battlefront_ and _Star Wars: Battlefront II_) or deprecated completely.
-Most notably Cloth Simulation ([CLTH](#CLTH){{: .bordered} and children) being limited to _Star Wars: Battlefront II_.
+Most notably Cloth Simulation ([CLTH](#CLTH){: .bordered .block} and children) being limited to _Star Wars: Battlefront II_.
         ''')
     sections = [info_section]
     for chunk_key in MSHFORMAT.keys():
@@ -94,7 +94,7 @@ Most notably Cloth Simulation ([CLTH](#CLTH){{: .bordered} and children) being l
 
         brief_description = chunk.get('brief_description') or ''
 
-        section = Section('{name} <t2>{brief}</t2>'.format(name=chunk_key, brief=brief_description), chunk_key.replace('.', '_'), True, collapsed, False, '''
+        section = Section('{name}'.format(name=chunk_key, brief=brief_description), chunk_key.replace('.', '_'), True, collapsed, False, '''
 ### Description
 {description}
 

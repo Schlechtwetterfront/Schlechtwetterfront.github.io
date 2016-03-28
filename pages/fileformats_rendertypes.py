@@ -17,7 +17,7 @@ PAGE = {
 							   ]),
 			Category('Render Types', [
 								Link('01 - Glow', '#glow'),
-								Link('02 - Detail', '#detail'),
+								Link('02 - Lightmap', '#lightmap'),
 								Link('03 - Scrolling', '#scrolling'),
 								Link('04 - Specular', '#specular'),
 								Link('05 - Glossmap', '#glossmap'),
@@ -26,7 +26,7 @@ PAGE = {
 								Link('08 - Ice', '#ice'),
 								Link('09 - Sky', '#sky'),
 								Link('10 - Water', '#water'),
-								Link('11 - Lightmap', '#lightmap'),
+								Link('11 - Detail', '#detail'),
 								Link('12 - 2 Scroll', '#2scroll'),
 								Link('13 - Rotate', '#rotate'),
 								Link('14 - Glow Rotate', '#glow_rotate'),
@@ -62,84 +62,10 @@ ID 	| Hex 	| Data0	| Data1	|
 Glow amount is defined by material color and diffuse texture.
 
 '''),
-			Section('Detail', 'detail', True, True, False, '''
-ID 	| Hex 	| Data0								| Data1							|
-----|-------|-------							|-------						|
-2	| 02	| Tiling along U (horizontal)		| Tiling along V (vertical)		|
-
-Tiles a detail texture. Requires an additional texture (detail texture).  
-May actually be [Lightmap](#lightmap).
-
-'''),
-			Section('Scrolling', 'scrolling', True, True, False, '''
-ID 	| Hex 	| Data0										| Data1								|
-----|-------|-------									|-------							|
-3	| 03	| Scrolling along U (horizontal)			| Scrolling along V (vertical)		|
-
-Scrolls the texture positively. To scroll in the other directions flip the texture coordinates.
-
-'''),
-			Section('Specular', 'specular', True, True, False, '''
-ID 	| Hex 	| Data0		| Data1	|
-----|-------|-------	|-------|
-4	| 04	| -			| -		|
-
-Enables Specular. Specular Flag doesn't seem to be needed for it to work. Specular power is affected by material color and Specular Decay (gloss).
-
-'''),
-			Section('Glossmap', 'glossmap', True, True, False, '''
-ID 	| Hex 	| Data0	| Data1	|
+            Section('Lightmap', 'lightmap', True, True, False, '''
+ID  | Hex   | Data0 | Data1 |
 ----|-------|-------|-------|
-5	| 05	| -		| -		|
-
-This uses the diffuse texture's alpha channel for specular intensity. Specular Color and Decay are used to determine specularity. Make sure the values are valid. If they are too low the specular might not appear. If the diffuse texture doesn't have an alpha channel specular will be turned off.
-
-'''),
-			Section('Chrome', 'chrome', True, True, False, '''
-ID 	| Hex 	| Data0	| Data1	|
-----|-------|-------|-------|
-6	| 06	| -		| -		|
-
-Environment map. Gives the illusion of reflection on a surface. If no environment map is specified as Texture1 then the game will choose one dynamically at run time.
-If the object is static or does not move you should provide an environment map.
-'''),
-			Section('Animated', 'animated', True, True, False, '''
-ID 	| Hex 	| Data0											| Data1					|
-----|-------|-------										|-------				|
-7	| 07	| Number of frames in the texture (Minimum: 4) 	| Animation Speed. 		| 
-
-Animates UVs to loop through different UV positions on the texture. UVs should be mapped to the first cell and not the whole texture. Cells have to be square and will be calculated automatically from the number of frames.  
-The number of cells always habe to be square (4, 9, 16, etc).
-
-See also: [Render Animated discussion on GT](http://www.gametoast.com/viewtopic.php?p=361010#p361010)
-
-'''),
-			Section('Ice', 'ice', True, True, False, '''
-ID 	| Hex 	| Data0	| Data1	|
-----|-------|-------|-------|
-8	| 08	| -		| -		|
-
-Ice.
-
-'''),
-			Section('Sky', 'sky', True, True, False, '''
-ID 	| Hex 	| Data0	| Data1	|
-----|-------|-------|-------|
-9	| 09	| -		| -		|
-
-Sky.
-'''),
-			Section('Water', 'water', True, True, False, '''
-ID 	| Hex 	| Data0	| Data1	|
-----|-------|-------|-------|
-10	| 0a	| -		| -		|
-
-Water.
-'''),
-			Section('Lightmap', 'lightmap', True, True, False, '''
-ID 	| Hex 	| Data0	| Data1	|
-----|-------|-------|-------|
-11	| 0b	| -		| -		| 
+2  | 02    | -     | -     | 
 
 Basically a glow map. Requires an additional texture. The texture's alpha channel determines glow strength, rgb glow color and intensity.
 May actually be [Detail](#detail).
@@ -147,8 +73,82 @@ May actually be [Detail](#detail).
 See also: [Lightmap discussion on GT ](http://www.gametoast.com/viewtopic.php?p=323899#p323899)
 
 '''),
-			Section('2 Scroll', '2scroll', True, True, False, '''
-ID 	| Hex 	| Data0	| Data1	|
+            Section('Scrolling', 'scrolling', True, True, False, '''
+ID  | Hex   | Data0                                     | Data1                             |
+----|-------|-------                                    |-------                            |
+3   | 03    | Scrolling along U (horizontal)            | Scrolling along V (vertical)      |
+
+Scrolls the texture positively. To scroll in the other directions flip the texture coordinates.
+
+'''),
+            Section('Specular', 'specular', True, True, False, '''
+ID  | Hex   | Data0     | Data1 |
+----|-------|-------    |-------|
+4   | 04    | -         | -     |
+
+Enables Specular. Specular Flag doesn't seem to be needed for it to work. Specular power is affected by material color and Specular Decay (gloss).
+
+'''),
+            Section('Glossmap', 'glossmap', True, True, False, '''
+ID  | Hex   | Data0 | Data1 |
+----|-------|-------|-------|
+5   | 05    | -     | -     |
+
+This uses the diffuse texture's alpha channel for specular intensity. Specular Color and Decay are used to determine specularity. Make sure the values are valid. If they are too low the specular might not appear. If the diffuse texture doesn't have an alpha channel specular will be turned off.
+
+'''),
+            Section('Chrome', 'chrome', True, True, False, '''
+ID  | Hex   | Data0 | Data1 |
+----|-------|-------|-------|
+6   | 06    | -     | -     |
+
+Environment map. Gives the illusion of reflection on a surface. If no environment map is specified as Texture1 then the game will choose one dynamically at run time.
+If the object is static or does not move you should provide an environment map.
+'''),
+            Section('Animated', 'animated', True, True, False, '''
+ID  | Hex   | Data0                                         | Data1                 |
+----|-------|-------                                        |-------                |
+7   | 07    | Number of frames in the texture (Minimum: 4)  | Animation Speed.      | 
+
+Animates UVs to loop through different UV positions on the texture. UVs should be mapped to the first cell and not the whole texture. Cells have to be square and will be calculated automatically from the number of frames.  
+The number of cells always habe to be square (4, 9, 16, etc).
+
+See also: [Render Animated discussion on GT](http://www.gametoast.com/viewtopic.php?p=361010#p361010)
+
+'''),
+            Section('Ice', 'ice', True, True, False, '''
+ID  | Hex   | Data0 | Data1 |
+----|-------|-------|-------|
+8   | 08    | -     | -     |
+
+Ice.
+
+'''),
+            Section('Sky', 'sky', True, True, False, '''
+ID  | Hex   | Data0 | Data1 |
+----|-------|-------|-------|
+9   | 09    | -     | -     |
+
+Sky.
+'''),
+            Section('Water', 'water', True, True, False, '''
+ID  | Hex   | Data0 | Data1 |
+----|-------|-------|-------|
+10  | 0a    | -     | -     |
+
+Water.
+'''),
+			Section('Detail', 'detail', True, True, False, '''
+ID 	| Hex 	| Data0								| Data1							|
+----|-------|-------							|-------						|
+11	| 0b	| Tiling along U (horizontal)		| Tiling along V (vertical)		|
+
+Tiles a detail texture. Requires an additional texture (detail texture). The detail map should have an average intensity of about 0.5, which insures that the overall brightness of the object will not be affected.  
+May actually be [Lightmap](#lightmap).
+
+'''),
+            Section('2 Scroll', '2scroll', True, True, False, '''
+ID  | Hex   | Data0 | Data1 |
 ----|-------|-------|-------|
 12	| 0c	| -		| -		|
 
@@ -244,7 +244,7 @@ Wireframe.
 			Section('Energy', 'energy', True, True, False, '''
 ID 	| Hex 	| Data0	| Data1	|
 ----|-------|-------|-------|
-25	| 19	| -		| Throbbing frequency.		|
+25	| 19	| Minimum intensity		| Throbbing frequency.		|
 
 Makes the texture/material throb.
 '''),

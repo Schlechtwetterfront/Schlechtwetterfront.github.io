@@ -1,0 +1,51 @@
+.circle {
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 6px;
+    height: 6px;
+
+    display: inline-block;
+
+    margin-right: 3px;
+    margin-bottom: 2px;
+
+    vertical-align: middle;
+}
+
+.circle-filled {
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+
+    display: inline-block;
+
+    margin-right: 3px;
+    margin-bottom: 2px;
+}
+
+
+div .hr {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-right: 10%;
+    margin-left: 10px;
+    display: block;
+}
+
+
+.red {
+    color: red;
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.orange {
+    color: orange;
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.green {
+    color: #31B404;
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+

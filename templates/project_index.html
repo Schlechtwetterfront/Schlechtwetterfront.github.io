@@ -2,11 +2,13 @@
 <html>
 	{% include "standard_header.html" %}
 	<body>
-		<div class="container">
-		{% block content %}
-			{% include "project_sidebar.html" %}
-			{% include "project_content.html" %}
-		{% endblock content %}
+		<div class="container-fluid container-main">
+            <div class="row">
+    		{% block content %}
+    			{% include "project_sidebar.html" %}
+    			{% include "project_content.html" %}
+    		{% endblock content %}
+            </div>
 		</div>
 	</body>
 </html>
