@@ -41,10 +41,13 @@ class SocialLink(object):
 
 
 class Category(object):
-    def __init__(self, title, links, is_scrollable=False):
+    def __init__(self, title, links=None, is_scrollable=False, is_navbar_category=True, is_sidebar_category=True):
         self.title = title
-        self.links = links
+        self.links = links or []
         self.is_scrollable = is_scrollable
+
+        self.is_navbar_category = is_navbar_category
+        self.is_sidebar_category = is_sidebar_category
 
 
 class Sidebar(object):

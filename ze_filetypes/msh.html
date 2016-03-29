@@ -21,13 +21,159 @@
     <title>ZE File Formats - .MSH</title>
 </head>
 	<body>
+        <div class="container-fluid hidden-lg hidden-md">
+    <nav class="navbar" id="s-navbar">
+        <ul class="nav navbar-nav">
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">General Chunks</a>
+                <ul class="dropdown-menu">
+                
+                    <li><a href="#HEDR" class="rectangle-button rectangle-button-semi">HEDR</a></li>
+                
+                    <li><a href="#SHVO" class="rectangle-button rectangle-button-semi">SHVO</a></li>
+                
+                    <li><a href="#MSH2" class="rectangle-button rectangle-button-semi">MSH2</a></li>
+                
+                    <li><a href="#SINF" class="rectangle-button rectangle-button-semi">SINF</a></li>
+                
+                    <li><a href="#FRAM" class="rectangle-button rectangle-button-semi">FRAM</a></li>
+                
+                    <li><a href="#CAMR" class="rectangle-button rectangle-button-semi">CAMR</a></li>
+                
+                    <li><a href="#NAME" class="rectangle-button rectangle-button-semi">NAME</a></li>
+                
+                    <li><a href="#BBOX" class="rectangle-button rectangle-button-semi">BBOX</a></li>
+                
+                </ul>
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Material Chunks</a>
+                <ul class="dropdown-menu">
+                
+                    <li><a href="#MATD_DATA" class="rectangle-button rectangle-button-semi">MATD.DATA</a></li>
+                
+                    <li><a href="#ATRB" class="rectangle-button rectangle-button-semi">ATRB</a></li>
+                
+                    <li><a href="#TX0D" class="rectangle-button rectangle-button-semi">TX0D</a></li>
+                
+                    <li><a href="#PRFX" class="rectangle-button rectangle-button-semi">PRFX</a></li>
+                
+                </ul>
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Model Chunks</a>
+                <ul class="dropdown-menu">
+                
+                    <li><a href="#MTYP" class="rectangle-button rectangle-button-semi">MTYP</a></li>
+                
+                    <li><a href="#MNDX" class="rectangle-button rectangle-button-semi">MNDX</a></li>
+                
+                    <li><a href="#PRNT" class="rectangle-button rectangle-button-semi">PRNT</a></li>
+                
+                    <li><a href="#FLGS" class="rectangle-button rectangle-button-semi">FLGS</a></li>
+                
+                    <li><a href="#TRAN" class="rectangle-button rectangle-button-semi">TRAN</a></li>
+                
+                    <li><a href="#SWCI" class="rectangle-button rectangle-button-semi">SWCI</a></li>
+                
+                </ul>
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Geometry Chunks</a>
+                <ul class="dropdown-menu">
+                
+                    <li><a href="#SEGM" class="rectangle-button rectangle-button-semi">SEGM</a></li>
+                
+                    <li><a href="#SHDW" class="rectangle-button rectangle-button-semi">SHDW</a></li>
+                
+                    <li><a href="#MATI" class="rectangle-button rectangle-button-semi">MATI</a></li>
+                
+                    <li><a href="#POSL" class="rectangle-button rectangle-button-semi">POSL</a></li>
+                
+                    <li><a href="#NRML" class="rectangle-button rectangle-button-semi">NRML</a></li>
+                
+                    <li><a href="#UV0L" class="rectangle-button rectangle-button-semi">UV0L</a></li>
+                
+                    <li><a href="#CLRL" class="rectangle-button rectangle-button-semi">CLRL</a></li>
+                
+                    <li><a href="#CLRB" class="rectangle-button rectangle-button-semi">CLRB</a></li>
+                
+                    <li><a href="#NDXT" class="rectangle-button rectangle-button-semi">NDXT</a></li>
+                
+                    <li><a href="#STRP" class="rectangle-button rectangle-button-semi">STRP</a></li>
+                
+                    <li><a href="#VLTB" class="rectangle-button rectangle-button-semi">VLTB</a></li>
+                
+                    <li><a href="#VLTL" class="rectangle-button rectangle-button-semi">VLTL</a></li>
+                
+                </ul>
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cloth Chunks</a>
+                <ul class="dropdown-menu">
+                
+                    <li><a href="#CTEX" class="rectangle-button rectangle-button-semi">CTEX</a></li>
+                
+                    <li><a href="#CPOS" class="rectangle-button rectangle-button-semi">CPOS</a></li>
+                
+                    <li><a href="#CUV0" class="rectangle-button rectangle-button-semi">CUV0</a></li>
+                
+                    <li><a href="#FIDX" class="rectangle-button rectangle-button-semi">FIDX</a></li>
+                
+                    <li><a href="#FWGT" class="rectangle-button rectangle-button-semi">FWGT</a></li>
+                
+                    <li><a href="#CMSH" class="rectangle-button rectangle-button-semi">CMSH</a></li>
+                
+                    <li><a href="#SPRS" class="rectangle-button rectangle-button-semi">SPRS</a></li>
+                
+                    <li><a href="#CPRS" class="rectangle-button rectangle-button-semi">CPRS</a></li>
+                
+                    <li><a href="#BPRS" class="rectangle-button rectangle-button-semi">BPRS</a></li>
+                
+                    <li><a href="#COLL" class="rectangle-button rectangle-button-semi">COLL</a></li>
+                
+                </ul>
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Animation Chunks</a>
+                <ul class="dropdown-menu">
+                
+                    <li><a href="#BLN2" class="rectangle-button rectangle-button-semi">BLN2</a></li>
+                
+                    <li><a href="#CYCL" class="rectangle-button rectangle-button-semi">CYCL</a></li>
+                
+                    <li><a href="#KFR3" class="rectangle-button rectangle-button-semi">KFR3</a></li>
+                
+                </ul>
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Deprecated Chunks</a>
+                <ul class="dropdown-menu">
+                
+                    <li><a href="#FINF" class="rectangle-button rectangle-button-semi">FINF</a></li>
+                
+                    <li><a href="#LGTP" class="rectangle-button rectangle-button-semi">LGTP</a></li>
+                
+                    <li><a href="#LGTI" class="rectangle-button rectangle-button-semi">LGTI</a></li>
+                
+                    <li><a href="#LGTS" class="rectangle-button rectangle-button-semi">LGTS</a></li>
+                
+                    <li><a href="#FOGD" class="rectangle-button rectangle-button-semi">FOGD</a></li>
+                
+                </ul>
+            
+            </li>
+        </ul>
+    </nav>
+</div>
 		<div class="container-fluid container-main">
             <div class="row">
     		
     			
 
 <div class="col-md-2" role="complementary">
-	<nav class="affix">
+	<nav class="affix hidden-xs hidden-sm">
 		<div class="sidebar">
 			<div class="sidebar-title">ZE File Formats - .MSH</div>
 			<div class="hr"></div>
@@ -49,7 +195,6 @@
 	
 			    
 			    
-			    <!-- <div class="hr-sidebar-dark"></div> -->
 			
 				<div class="category_label">Chunks</div>
 				
@@ -295,7 +440,6 @@
 			    
 				</div>
 				
-			    <!-- <div class="hr-sidebar-dark"></div> -->
 			
 			</div>
 		</div>
@@ -304,7 +448,7 @@
     			
 
 <!-- <div class="content"> -->
-<div class="col-md-10" role="main">
+<div class="col-md-10 section-container" role="main">
 	
 		<div class="section">
 			<a name="overview"></a>

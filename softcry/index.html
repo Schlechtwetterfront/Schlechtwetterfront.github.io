@@ -21,27 +21,57 @@
     <title>SoftCry</title>
 </head>
 	<body>
+        <div class="container-fluid hidden-lg hidden-md">
+    <nav class="navbar" id="s-navbar">
+        <ul class="nav navbar-nav">
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Navigation</a>
+                <ul class="dropdown-menu">
+                
+                    <li><a href="#overview" class="rectangle-button rectangle-button-semi">Overview</a></li>
+                
+                    <li><a href="#download_installation" class="rectangle-button rectangle-button-semi">Download & Installation</a></li>
+                
+                    <li><a href="http://schlechtwetterfront.github.io/" class="rectangle-button rectangle-button-semi">Homepage</a></li>
+                
+                </ul>
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Downloads</a>
+                <ul class="dropdown-menu">
+                
+                    <li><a href="https://github.com/Schlechtwetterfront/softcry/releases" class="rectangle-button rectangle-button-semi">Releases</a></li>
+                
+                </ul>
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Resources</a>
+                <ul class="dropdown-menu">
+                
+                    <li><a href="https://github.com/Schlechtwetterfront/softcry" class="rectangle-button rectangle-button-semi">View on GitHub</a></li>
+                
+                    <li><a href="http://www.cryengine.com/community/viewtopic.php?f=315&t=102978" class="rectangle-button rectangle-button-semi">View Thread on CRYDEV</a></li>
+                
+                    <li><a href="http://www.youtube.com/watch?v=2Rt3B8h5EvE" class="rectangle-button rectangle-button-semi">Hardbody Animations (Video)</a></li>
+                
+                </ul>
+            
+            </li>
+        </ul>
+    </nav>
+</div>
 		<div class="container-fluid container-main">
             <div class="row">
     		
     			
 
 <div class="col-md-2" role="complementary">
-	<nav class="affix">
+	<nav class="affix hidden-xs hidden-sm">
 		<div class="sidebar">
 			<div class="sidebar-title">SoftCry</div>
 			<div class="hr"></div>
 			<div id="sidebar-content">
-			
-				<div class="category_label">Downloads</div>
-				
-				
-			        
-		<a class="rectangle-button rectangle-button-semi" href="https://github.com/Schlechtwetterfront/softcry/releases">Releases</a>
-	
-			    
-			    
-			    <!-- <div class="hr-sidebar-dark"></div> -->
 			
 				<div class="category_label">Navigation</div>
 				
@@ -59,7 +89,15 @@
 	
 			    
 			    
-			    <!-- <div class="hr-sidebar-dark"></div> -->
+			
+				<div class="category_label">Downloads</div>
+				
+				
+			        
+		<a class="rectangle-button rectangle-button-semi" href="https://github.com/Schlechtwetterfront/softcry/releases">Releases</a>
+	
+			    
+			    
 			
 				<div class="category_label">Other Resources</div>
 				
@@ -77,7 +115,6 @@
 	
 			    
 			    
-			    <!-- <div class="hr-sidebar-dark"></div> -->
 			
 			</div>
 		</div>
@@ -86,7 +123,7 @@
     			
 
 <!-- <div class="content"> -->
-<div class="col-md-10" role="main">
+<div class="col-md-10 section-container" role="main">
 	
 		<div class="section">
 			<a name="overview"></a>
@@ -123,10 +160,10 @@
 				<!-- </div> -->
 				<div id="download_installation_content" class="section-content">
 				<p>Check the sidebar for a link to the releases page on GitHub.</p>
-<p>To install SoftCry, unzip the downloaded archive into<br />
-<strong>C:/users/%user%/Autodesk/Softimage_%version%/Addons/</strong><br />
-OR<br />
-<strong>C:/users/%user%/Softimage/Softimage_%version%/Addons/</strong>.<br />
+<p>To install SoftCry, unzip the downloaded archive into
+<code>C:/users/%user%/Autodesk/Softimage_%version%/Addons/</code>
+OR
+<code>C:/users/%user%/Softimage/Softimage_%version%/Addons/</code>.
 Make sure you use this path and not the factory addon path.  </p>
 <p>If you have any Softimage version up to (and including) 2010 you need to install
 <a href="http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi">python</a>

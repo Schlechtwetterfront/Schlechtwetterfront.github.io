@@ -1,12 +1,12 @@
 {% import "templates.html" as macros %}
 
 <div class="col-md-2" role="complementary">
-	<nav class="affix">
+	<nav class="affix hidden-xs hidden-sm">
 		<div class="sidebar">
 			<div class="sidebar-title">{{ page_title }}</div>
 			<div class="hr"></div>
 			<div id="sidebar-content">
-			{% for category in categories %}
+			{% for category in categories if category.is_sidebar_category %}
 				<div class="category_label">{{ category.title }}</div>
 				{% if category.is_scrollable %}
 				<div class="sidebar-content-scrollable">
@@ -17,7 +17,6 @@
 			    {% if category.is_scrollable %}
 				</div>
 				{% endif %}
-			    <!-- <div class="hr-sidebar-dark"></div> -->
 			{% endfor %}
 			</div>
 		</div>

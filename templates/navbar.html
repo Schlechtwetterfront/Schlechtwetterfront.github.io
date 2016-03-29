@@ -1,0 +1,16 @@
+<div class="container-fluid hidden-lg hidden-md">
+    <nav class="navbar" id="s-navbar">
+        <ul class="nav navbar-nav">
+            {% for category in categories if category.is_navbar_category %}
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ category.title }}</a>
+                <ul class="dropdown-menu">
+                {% for link in category.links %}
+                    <li><a href="{{ link.address }}" class="{{ link.link_class }}">{{ link.title }}</a></li>
+                {% endfor %}
+                </ul>
+            {% endfor %}
+            </li>
+        </ul>
+    </nav>
+</div>

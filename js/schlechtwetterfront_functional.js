@@ -47,11 +47,11 @@ function showContent(id) {
 
 function calculateSidebarListHeight() {
 
-    return;
+    // return;
 
 	var total_height_children = 0;
-	var total_height_sidebar = $(".sidebar").height();
-	var sidebar_padding_bottom = parseInt($(".sidebar").css("padding-bottom"));
+	var total_height_sidebar = $(".affix").height();
+	var sidebar_padding_bottom = parseInt($(".sidebar").css("padding"));
 	var scrollable = null;
 	var scrollable_min_height = 100; // Min height for any scrollable list inside the sidebar.
 
@@ -62,11 +62,13 @@ function calculateSidebarListHeight() {
 		}
 	});
 
-	$("#sidebar-content").css("height", total_height_sidebar - total_height_children - sidebar_padding_bottom + "px");
+    // alert(total_height_children + " " + total_height_sidebar + " " + sidebar_padding_bottom);
+
+	$("#sidebar-content").css("height", total_height_sidebar - total_height_children - sidebar_padding_bottom*2 + "px");
 
 	$("#sidebar-content").children().each(function() {
 		if ($(this).attr("class") == "sidebar-content-scrollable") {
-			$(this).css("height", total_height_sidebar - total_height_children - sidebar_padding_bottom + "px");
+			$(this).css("height", total_height_sidebar - total_height_children - sidebar_padding_bottom*2 + "px");
 			scrollable = $(this);
 		} else {
 			total_height_children += $(this).outerHeight(true);

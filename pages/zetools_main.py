@@ -7,15 +7,15 @@ PAGE = {
 		'output_folder': 'xsizetools',
 		'page_title': 'XSI ZETools',
 		'categories': [
-			Category('Downloads', [
-							   Link('Releases', 'https://github.com/Schlechtwetterfront/xsizetools/releases', LINK_EXTERNAL),
-							   Link('C++ Source (deprecated)', 'http://schlechtwetterfront.github.io/xsizetools/XSIZETools_src.7z', LINK_INTERNAL)
-							   ]),
 			Category('Navigation', [
 							   Link('Overview', '#overview'),
 							   Link('Download & Installation', '#download_installation'),
 							   Link('Contributors', '#contributors'),
 							   Link('Homepage', 'http://schlechtwetterfront.github.io/', LINK_INTERNAL),
+							   ]),
+			Category('Downloads', [
+							   Link('Releases', 'https://github.com/Schlechtwetterfront/xsizetools/releases', LINK_EXTERNAL),
+							   Link('C++ Source (deprecated)', 'http://schlechtwetterfront.github.io/xsizetools/XSIZETools_src.7z', LINK_INTERNAL)
 							   ]),
 			Category('Guidelines', [
 							   Link('Export', '#export-guidelines'),
@@ -37,20 +37,27 @@ PAGE = {
 		],
 		'sections': [
 			Section('Main Info', 'main_info', True, False, False, '''
-XSIZETools is an addon for Softimage (tested with ModTool 7.5, 2012 SP1 and 2014).
-The main features are full export and import of 3D .msh files for ZeroEngine (Star Wars Battlefront I and II). That includes geometry, materials with all ZeroEngine-specific flags, animations and collisions.
-    
-This began as a small collection of scripts to help setup hierarchies and the like and turned into a full-fledged exporter/importer for the .msh format. As only a small amount of the .msh file format structure was known when I began writing the exporter I had to reverse-engineer (with contributions from a handful of other people) the rest (which was about 70% of the chunks).
+XSIZETools is an addon for Softimage with full export and import of 3D .msh files for ZeroEngine (Star Wars Battlefront I and II). That includes geometry, materials with all ZeroEngine-specific flags, animations, collisions and simulated cloth.
+
+In general, important updates will be gathered into a [release][releases], so choosing the latest release should give you the latest working features. Alternatively you can download the most recent commit directly with the "Download ZIP" button.
+
+For more information on usage go to the [XSIZETools homepage][homepage].
+
+If you encounter bugs or have problems, feel free to post on the [Gametoast forums][gametoast] (you might need to use a proxy) or send me a mail via Github.
+
+[homepage]: http://schlechtwetterfront.github.io/xsizetools/ "XSIZETools Homepage"
+[gametoast]: http://gametoast.com/viewtopic.php?f=36&t=26664 "Gametoast Thread"
+[releases]: https://github.com/Schlechtwetterfront/xsizetools/releases "Releases"
 '''),
 			Section('Download & Installation', 'download_installation', True, False, False, '''
 The main chunk of the project is hosted on GitHub.
 The source for the Geometry Accessor Wrappers can be found on the sidebar (the source is outdated though as I lost the code used for the current DLLs.
 Check the sidebar for a link to the releases page on GitHub.
     
-To install ZETools, unzip the downloaded archive into  
-**C:/users/%user%/Autodesk/Softimage_%version%/Addons/**  
-OR  
-**C:/users/%user%/Softimage/Softimage_%version%/Addons/**.  
+To install ZETools, unzip the downloaded archive into
+```C:/users/%user%/Autodesk/Softimage_%version%/Addons/```
+OR
+```C:/users/%user%/Softimage/Softimage_%version%/Addons/```.
 Make sure you use this path and not the factory addon path.  
 
 If you have any Softimage version up to (and including) 2010 you need to install
@@ -206,7 +213,7 @@ Transform		| transform 				| Model Transform.
 
 
 For every segment (SEGM/CLTH/SHDW) in the models geometry:  
-**_name_ mdl _model_name_ seg _#_of_segment_ .txt**
+**_name_ mdl _model_name_ seg _#_of_segment_ .txt**  
 **SegmentGeometry**
 
 Type 		| Name 				| Description
@@ -333,34 +340,42 @@ float[3]	| collision_primitive 			| [value 0, value 1, value 2].
 		Section('Animation Export', 'animation-export', True, True, True, '''
 Every of the following steps will produce one .msh file.
 
-> **SWBF 1 NOTE:** The ZenAsset.exe which comes with the SWBF1 mod tools seems to need at least one material to work. Just add a small primitive(eg: cube, you can hide it, too)
-> to the scene. It needs to be in the exported hierarchy for animations so don't move it out when you do the HALFSTEP. To minimize filesize you could replace one of the needed nulls
-> with the primitive(maybe dummyroot). Sereja got his animation into SWBF1 by using a textured primitive as DummyRoot. It's not important what type of model the other models are.
+**SWBF 1 NOTE:** The ZenAsset.exe which comes with the SWBF1 mod tools seems to need at least one material to work. Just add a small primitive(eg: cube, you can hide it, too)
+to the scene. It needs to be in the exported hierarchy for animations so don't move it out when you do the HALFSTEP. To minimize filesize you could replace one of the needed nulls
+with the primitive(maybe dummyroot). Sereja got his animation into SWBF1 by using a textured primitive as DummyRoot. It's not important what type of model the other models are.
 
-STEP 1. **Placeable model for ZeroEditor.** Export the model which will be called in the odf and placed in ZE. To do this move the frame cursor to the first frame of your
+### Step 1
+
+**Placeable model for ZeroEditor.** Export the model which will be called in the odf and placed in ZE. To do this move the frame cursor to the first frame of your
 animation(usually 1, it's not important what the frame range is[ie 0 to 100]).Then select your root, uncheck Export Animation and export. .MSH File: stuff_door.msh
 
-> ![Image](to_be_placed.jpg)
+![Image](to_be_placed.jpg)
 
 
-> **Animation preparation.** To cut down on possible problems you can now drag'n'drop all object which are not a part of
-> the skeleton(collisions, meshes, shadows) out of your current hierarchy.
-> Best way to do this is select them all and drag'n'drop them onto Scene_Root. In my example I only move out thing_(that's the model with Stuff painted on it).
-> You can move out hard points, too. Animations don't need this as basepose and open/whatever you called your animation will end up in .zafbin/.zaabin
-> files which don't hold geometry etc. Note: I forgot to move out thing_ for the main animation in the screenshot at step 2. It should be not be a (direct or indirect) children of the root you're exporting though.
+**Animation preparation.** To cut down on possible problems you can now drag'n'drop all object which are not a part of
+the skeleton(collisions, meshes, shadows) out of your current hierarchy.
+Best way to do this is select them all and drag'n'drop them onto Scene_Root. In my example I only move out thing_(that's the model with Stuff painted on it).
+You can move out hard points, too. Animations don't need this as basepose and open/whatever you called your animation will end up in .zafbin/.zaabin
+files which don't hold geometry etc. Note: I forgot to move out thing_ for the main animation in the screenshot at step 2. It should be not be a (direct or indirect) children of the root you're exporting though.
 
-STEP 2. **Animation Export** This will contain the actual animation. Here it's important to set the right frame range.
+
+### Step 2
+
+**Animation Export** This will contain the actual animation. Here it's important to set the right frame range.
 It's not important where the frame cursor is, but the frame range must be correct. In my example it's 1 - 20. Check Export Animation and export button. .MSH File: ie open.msh
 
-> ![Image2](anim_open.jpg)
+![Image2](anim_open.jpg)
 
-STEP 3. **Basepose of the animation.** This will be the pose the model is in when it's not animated.
+
+### Step 3
+
+**Basepose of the animation.** This will be the pose the model is in when it's not animated.
 If your first frame is 1 move the frame cursor to frame 0. Check Export Animation and Current frame as Basepose.
 If you check Current frame as Basepose you can ignore the last frame. If you want to do it 'old-fashioned' set your frame range to 0 - 1 and uncheck Current frame as Basepose.
 I assume you use the Current frame as Basepose way. Now the preparation is finished. All boxes are checked and the hierarchy is set up. Do the deed and select your root and hit export.
 .MSH File: basepose.msh
 
-> ![Image3](anim_basepose.jpg)
+![Image3](anim_basepose.jpg)
 			''')
 		]
 	}

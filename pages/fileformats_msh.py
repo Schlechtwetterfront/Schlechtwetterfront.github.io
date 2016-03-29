@@ -2,6 +2,26 @@ from page_core import *
 import json
 from collections import OrderedDict
 
+
+CHUNKS_GENERAL = ('HEDR', 'SHVO', 'MSH2', 'SINF', 'FRAM', 'CAMR', 'NAME', 'BBOX')
+CHUNKS_MATERIALS = ('MATL', 'MATD', 'MATD.DATA', 'ATRB', 'TX0D', 'PRFX')
+CHUNKS_MODELS = ('MODL', 'MTYP', 'MNDX', 'PRNT', 'FLGS', 'TRAN', 'SWCI', 'GEOM', 'ENVL')
+CHUNKS_SEGMENTS = ('SEGM', 'SHDW', 'MATI', 'POSL', 'NRML', 'UV0L', 'CLRL', 'CLRB', 'WGHT' 'NDXL', 'NDXT', 'STRP', 'VLTB', 'VLTL')
+CHUNKS_CLOTH = ('CLTH', 'CTEX', 'CPOS', 'CUV0', 'FIDX', 'FWGT', 'CMSH', 'SPRS', 'CPRS', 'BPRS', 'COLL')
+CHUNKS_ANIMATION = ('SKL2', 'BLN2', 'ANM2', 'CYCL', 'KFR3')
+CHUNKS_DEPRECATED = ('FINF', 'LGTP', 'LGTI', 'LGTS', 'FOGD')
+
+CHUNK_CATEGORIES = (
+    CHUNKS_GENERAL,
+    CHUNKS_MATERIALS,
+    CHUNKS_MODELS,
+    CHUNKS_SEGMENTS,
+    CHUNKS_CLOTH,
+    CHUNKS_ANIMATION,
+    CHUNKS_DEPRECATED
+)
+
+
 MSHFORMAT = None
 with open('mshformat.json', 'r') as file_handler:
     MSHFORMAT = json.load(file_handler, object_pairs_hook=OrderedDict)
@@ -127,6 +147,40 @@ def get_chunk_nav_links():
     return links
 
 
+def get_navbar_links():
+    categories = [
+        Category('General Chunks', is_sidebar_category=False),
+        Category('Material Chunks', is_sidebar_category=False),
+        Category('Model Chunks', is_sidebar_category=False),
+        Category('Geometry Chunks', is_sidebar_category=False),
+        Category('Cloth Chunks', is_sidebar_category=False),
+        Category('Animation Chunks', is_sidebar_category=False),
+        Category('Deprecated Chunks', is_sidebar_category=False),
+    ]
+    for chunk_key in MSHFORMAT.keys():
+        chunk = MSHFORMAT[chunk_key]
+        link_title = chunk.get('name')
+        link = Link(link_title, '#{}'.format(chunk_key.replace('.', '_')))
+        for index, category in enumerate(CHUNK_CATEGORIES):
+            if link_title in category:
+                categories[index].links.append(link)
+                break
+    return categories
+
+
+def get_categories():
+    categories = [
+        Category('Navigation', [
+            Link('Overview', '#overview'),
+            Link('Back', 'index.html', LINK_INTERNAL),
+            Link('Homepage', 'http://schlechtwetterfront.github.io/', LINK_INTERNAL)
+            ], is_navbar_category=False),
+        Category('Chunks', get_chunk_nav_links(), True, is_navbar_category=False)
+    ]
+    categories.extend(get_navbar_links())
+    return categories
+
+
 PAGE = {
     'page_template': 'project_index.html',
     'path': '../',
@@ -137,13 +191,6 @@ PAGE = {
     'fixed_categories': [
 
     ],
-    'categories': [
-        Category('Navigation', [
-            Link('Overview', '#overview'),
-            Link('Back', 'index.html', LINK_INTERNAL),
-            Link('Homepage', 'http://schlechtwetterfront.github.io/', LINK_INTERNAL)
-            ]),
-        Category('Chunks', get_chunk_nav_links(), True),
-    ],
+    'categories': get_categories(),
     'sections': chunks_to_sections()
 }

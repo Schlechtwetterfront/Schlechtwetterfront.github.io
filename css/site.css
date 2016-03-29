@@ -4,28 +4,33 @@
 
 .affix {
     width: inherit;
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: auto;
-    margin-right: 15%;
-    margin-left: 15%;
-  }
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
 }
 
 
 /* Large site block */
 
 
+body {
+    min-height: 400px;
+}
+
+
 .container-main {
-    /*max-width: 1600px;*/
+    min-height: 400px;
+}
+
+
+.section-container {
+    min-height: 380px;
 }
 
 .section {
     background-color: #FBFBFB;
 
-    padding: 0.3em 0 0.3em 0;
+    padding: 0 0 0.6em 0;
     display: block;
 }
 
@@ -38,13 +43,20 @@
 
 .sidebar {
     color: #222222;
-    background-color: #FBFBFB;
+    /*background-color: #FBFBFB;*/
 
     padding: 10px;
+    /*margin-bottom: 25px;*/
+    /*bottom: 0;*/
+
+    /*overflow: hidden;*/
 }
 
 
-/* Links/Clickables */
+/* 
+    Links/Clickables
+
+*/
 
 
 a {
@@ -55,6 +67,36 @@ a {
 
 a:hover {
     text-decoration: none;
+}
+
+
+.dropdown-menu>li>a,
+.navbar-nav>li>a {
+    color: #EEE;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+
+.dropdown-menu>li>a:hover,
+.navbar-nav>li>a:hover {
+    color: #EEE;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+
+.navbar-nav>li>a:active {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/*.nav>li>a:focus,*/
+/*.nav>li>a:hover,*/
+.navbar-nav>li>a:focus {
+    background: initial;
+}
+
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background: rgba(0, 0, 0, 0.4);
 }
 
 
@@ -94,6 +136,11 @@ a.rectangle-button-msh {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.1));
 }
 
+.sidebar-content-scrollable>.rectangle-button-semi {
+    /*margin-right: 10px;*/
+    width: 98%;
+}
+
 
 a.rectangle-button-semi:hover {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4));
@@ -129,12 +176,17 @@ a.rectangle-button-semi:hover {
 }
 
 
+.sidebar-content {
+
+}
+
+
 .sidebar-content-scrollable {
-    /*position: relative;
+    position: relative;
     top: 0px;
     bottom: 0px;
     overflow-y: auto;
-    overflow-x: hidden;*/
+    overflow-x: hidden;
 }
 
 

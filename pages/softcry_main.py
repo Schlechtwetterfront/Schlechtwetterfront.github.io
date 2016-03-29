@@ -7,13 +7,13 @@ PAGE = {
 		'output_folder': 'softcry',
 		'page_title': 'SoftCry',
 		'categories': [
-			Category('Downloads', [
-							   Link('Releases', 'https://github.com/Schlechtwetterfront/softcry/releases', LINK_EXTERNAL)
-							   ]),
 			Category('Navigation', [
 							   Link('Overview', '#overview'),
 							   Link('Download & Installation', '#download_installation'),
 							   Link('Homepage', 'http://schlechtwetterfront.github.io/', LINK_INTERNAL)
+							   ]),
+			Category('Downloads', [
+							   Link('Releases', 'https://github.com/Schlechtwetterfront/softcry/releases', LINK_EXTERNAL)
 							   ]),
 			Category('Other Resources', [
 							   Link('View on GitHub', 'https://github.com/Schlechtwetterfront/softcry', LINK_EXTERNAL),
@@ -35,10 +35,10 @@ CryENGINE 3 exporter for Softimage.
 			Section('Download & Installation', 'download_installation', True, False, False, '''
 Check the sidebar for a link to the releases page on GitHub.
     
-To install SoftCry, unzip the downloaded archive into  
-**C:/users/%user%/Autodesk/Softimage_%version%/Addons/**  
-OR  
-**C:/users/%user%/Softimage/Softimage_%version%/Addons/**.  
+To install SoftCry, unzip the downloaded archive into
+```C:/users/%user%/Autodesk/Softimage_%version%/Addons/```
+OR
+```C:/users/%user%/Softimage/Softimage_%version%/Addons/```.
 Make sure you use this path and not the factory addon path.  
 
 If you have any Softimage version up to (and including) 2010 you need to install

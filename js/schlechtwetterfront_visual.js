@@ -49,6 +49,7 @@ window.addEventListener("load", function() {
         "dark": box_brightened_color,
     };
 
+    $("ul.dropdown-menu").css("background-color", box_hover_color);
 
     $(".colored").css({"background-color": box_hover_color});
     $(".border-colored-dark").css({"border-color": box_darkened_color});
@@ -63,21 +64,26 @@ window.addEventListener("load", function() {
 
 
     // rectange button gradient color
-    $(".rectangle-button-semi").css({
-        "background": "linear-gradient(to right, " + box_darkened_color2 + ", " + box_hover_color +")"
-    });
-    $(".rectangle-button-semi").hover(
-        function() {
-            $(this).css({
-                "background": "linear-gradient(to right, " + box_darkened_color3 + ", " + box_darkened_color +")"
-            });
-        },
-        function() {
-            $(this).css({
-                "background": "linear-gradient(to right, " + box_darkened_color2 + ", " + box_hover_color +")"
-            });
-        }
-    );
+    var colorButtons = false;
+    if (colorButtons) {
+        $(".rectangle-button-semi").css({
+            "background": "linear-gradient(to right, " + box_darkened_color2 + ", " + box_hover_color +")"
+        });
+        $(".rectangle-button-semi").hover(
+            function() {
+                $(this).css({
+                    "background": "linear-gradient(to right, " + box_darkened_color3 + ", " + box_darkened_color +")"
+                });
+            },
+            function() {
+                $(this).css({
+                    "background": "linear-gradient(to right, " + box_darkened_color2 + ", " + box_hover_color +")"
+                });
+            }
+        );
+    } else {
+        $(".container-fluid, .container-main").css({"background": box_hover_color});
+    }
 
 
     // General link hover color and style change.
