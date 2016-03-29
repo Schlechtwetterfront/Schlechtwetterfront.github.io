@@ -21,6 +21,7 @@ def build():
         print('\n\t> Build successful!')
         time.sleep(0.5)
 
+
 def build_template(data):
     print('Building page \'{title}\'.'.format(title=data.get('page_title')))
     template = env.get_template(data.get('page_template'))

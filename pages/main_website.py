@@ -34,6 +34,14 @@ PAGE = {
             Link('View Source on GitHub', 'https://github.com/Schlechtwetterfront/ze_filetypes')
             ],
             subtitle='ZeroEngine Format Specification'),
+        Project('ter22', pid='ter22', links=[
+            Link('Download', 'https://github.com/Schlechtwetterfront/ter22/releases'),
+            Link('Overview', '#'),
+            Link('View Source on GitHub', 'https://github.com/Schlechtwetterfront/ter22')
+            ],
+            subtitle='ZeroEngine Terrain parser')
+    ],
+    'others': [
         Project('Personal Info', pid='personal_info', links=[
             Link('E-Mail', 'mailto:schlchtwtrfrnt@gmail.com'),
             Link('GitHub', 'https://github.com/Schlechtwetterfront'),
@@ -41,5 +49,6 @@ PAGE = {
             Link('YouTube', 'https://youtube.com/user/andeweget'),
             ],
             subtitle='Contact and Social Media')
-    ]
+
+    ],
 }

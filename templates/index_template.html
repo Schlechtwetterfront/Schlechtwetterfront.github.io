@@ -3,26 +3,25 @@
     {% include "standard_header.html" %}
     <body>
 
-        <div class="horizontal_bar centered">
-            <div class="centered" id="projects_bar">
-                <div class="big-text"> SCHLECHTWETTERFRONT </div>
-            {% for project in projects %}
-                <div class="box" id="{{ project.id }}" extra-height="{{ project.extra_height }}" extra-hover-size="{{ project.extra_hover_size }}" margin="{{ project.margin }}">
-                    {% if project.subtitle %}
-                    <div class="box-text" id="{{ project.id }}_title">{{ project.name }}<div class="sub-text">{{project.subtitle}}</div> </div>
-                    {% else %}
-                    <div class="box-text" id="{{ project.id }}_title">{{ project.name }}</div>
-                    {% endif %}
-                    <div class="info" id="{{ project.id }}_content">
-                        <!-- <div class="hr"></div> -->
-                    {% for link in project.links %}
-                        <a class="rectangle-button-transparent rectangle-button" href="{{ link.address }}">{{ link.title }}</a>
-                    {% endfor %}
+        <!-- <div class="horizontal_bar centered"> -->
+        <div class="container">
+            <div class="row">
+                {% for project in projects %}
+                <div class="col-md-3">
+                    <div class="box colored" id="{{ project.id }}" extra-height="{{ project.extra_height }}" extra-hover-size="{{ project.extra_hover_size }}" margin="{{ project.margin }}">
+                        <div class="box-text">
+                            <h4>{{ project.name }}</h4>
+                            {{ project.subtitle }}
+                        </div>
+                        <div class="info" id="{{ project.id }}_content">
+                            <!-- <div class="hr"></div> -->
+                        {% for link in project.links %}
+                            <a class="rectangle-button-semi rectangle-button" href="{{ link.address }}">{{ link.title }}</a>
+                        {% endfor %}
+                        </div>
                     </div>
                 </div>
-            {% endfor %}
-                <br>
-                <div class="big-text"> BENEDIKT SCHATZ </div>
+                {% endfor %}
             </div>
         </div>
     </body>
