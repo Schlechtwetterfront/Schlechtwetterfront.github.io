@@ -173,7 +173,6 @@ def get_categories():
         Category('Navigation', [
             Link('Overview', '#overview'),
             Link('Back', 'index.html', LINK_INTERNAL),
-            Link('Homepage', 'http://schlechtwetterfront.github.io/', LINK_INTERNAL)
             ], is_navbar_category=False),
         Category('Chunks', get_chunk_nav_links(), True, is_navbar_category=False)
     ]

@@ -3,7 +3,11 @@
 <div class="col-md-2" role="complementary">
 	<nav class="affix hidden-xs hidden-sm">
 		<div class="sidebar">
-			<div class="sidebar-title">{{ page_title }}</div>
+			<a href="http://schlechtwetterfront.github.io/" class="sidebar-homepage"></a>
+            <div class="sidebar-title">
+
+            {{ page_title }}
+            </div>
 			<div class="hr"></div>
 			<div id="sidebar-content">
 			{% for category in categories if category.is_sidebar_category %}

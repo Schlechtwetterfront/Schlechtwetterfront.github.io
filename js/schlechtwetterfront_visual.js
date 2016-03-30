@@ -73,6 +73,16 @@ window.addEventListener("load", function() {
     );
 
 
+    $(".background-hover-white-colored").hover(
+        function() {
+            $(this).css({"background-color": box_hover_color});
+        },
+        function() {
+            $(this).css({"background-color": "white"});
+        }
+    );
+
+
     $(".text-hover-normal-darker").hover(
         function() {
             $(this).css("color", box_darkened_color3);

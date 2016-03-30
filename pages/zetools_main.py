@@ -11,7 +11,6 @@ PAGE = {
 							   Link('Overview', '#overview'),
 							   Link('Download & Installation', '#download_installation'),
 							   Link('Contributors', '#contributors'),
-							   Link('Homepage', 'http://schlechtwetterfront.github.io/', LINK_INTERNAL),
 							   ]),
 			Category('Downloads', [
 							   Link('Releases', 'https://github.com/Schlechtwetterfront/xsizetools/releases', LINK_EXTERNAL),

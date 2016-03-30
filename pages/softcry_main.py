@@ -10,7 +10,6 @@ PAGE = {
 			Category('Navigation', [
 							   Link('Overview', '#overview'),
 							   Link('Download & Installation', '#download_installation'),
-							   Link('Homepage', 'http://schlechtwetterfront.github.io/', LINK_INTERNAL)
 							   ]),
 			Category('Downloads', [
 							   Link('Releases', 'https://github.com/Schlechtwetterfront/softcry/releases', LINK_EXTERNAL)

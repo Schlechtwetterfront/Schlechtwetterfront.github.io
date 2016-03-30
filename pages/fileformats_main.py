@@ -78,7 +78,6 @@ PAGE = {
             Link('Zero CRC', '#zero-crc'),
             Link('ATRB Calculator', '#atrb-calculator'),
             Link('Zero CRC Default Implementation', '#zero-crc-implementation'),
-            Link('Homepage', 'http://schlechtwetterfront.github.io/', LINK_INTERNAL)
             ]),
         Category('File Formats', [
             Link('.MSH (Models & Animation)', 'msh.html', LINK_INTERNAL),

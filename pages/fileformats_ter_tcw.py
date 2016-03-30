@@ -14,7 +14,6 @@ PAGE = {
         Category('Navigation', [
             Link('Overview', '#overview'),
             Link('Back', 'index.html', LINK_INTERNAL),
-            Link('Homepage', 'http://schlechtwetterfront.github.io/', LINK_INTERNAL)
             ]),
         Category('Format', [
             Link('Terrain Header', '#terrain_header'),
