@@ -100,50 +100,13 @@ a:hover {
 }
 
 
-a.rectangle-button {
-    font-size: 16px;
-    /*font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;*/
-    font-weight: normal;
-
-    color: #EEEEEE;
-    /*color: #333;*/
-
-    display: block;
-    line-height: 1.8em;
-
-    padding: 1px 0px 1px 10px;
-
-    vertical-align: text-bottom;
-}
-
-
-a.rectangle-button:hover {
-    background: rgba(0, 0, 0, 0.75);
-}
-
-
 a.rectangle-button-msh {
     max-height: 30px;
-}
-
-
-.rectangle-button-semi {
-    width: 100%;
-    margin-top: 2px;
-
-    box-sizing: border-box;
-
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.1));
 }
 
 .sidebar-content-scrollable>.rectangle-button-semi {
     /*margin-right: 10px;*/
     width: 98%;
-}
-
-
-a.rectangle-button-semi:hover {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4));
 }
 
 

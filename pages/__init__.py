@@ -1,5 +1,11 @@
 import pages.main_website
 
+import pages.portfolio_index
+import pages.portfolio_projects
+import pages.portfolio_snippets
+import pages.portfolio_about
+import pages.portfolio_art
+
 import pages.zetools_main
 
 import pages.softcry_main
@@ -18,5 +24,10 @@ PAGES = [
 	fileformats_msh.PAGE,
 	fileformats_rendertypes.PAGE,
 	fileformats_ter.PAGE,
-	pages.fileformats_ter_tcw.PAGE,
+	fileformats_ter_tcw.PAGE,
+    portfolio_index.PAGE,
+    portfolio_projects.PAGE,
+    portfolio_snippets.PAGE,
+    portfolio_about.PAGE,
+    portfolio_art.PAGE,
 ]

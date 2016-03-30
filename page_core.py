@@ -56,7 +56,7 @@ class Sidebar(object):
 
 
 class Section(object):
-    def __init__(self, title, name, is_collapsable, is_collapsed, is_long, text):
+    def __init__(self, title='', name='', is_collapsable=False, is_collapsed=False, is_long=False, text=''):
         self.raw_title = title
         self.name = name
         self.raw_text = text
@@ -71,6 +71,28 @@ class Section(object):
     @property
     def title(self):
         return markdown.markdown(self.raw_title, extensions=MARKDOWN_EXTENSIONS)
+
+
+class ProjectBrief:
+    def __init__(self, title='', text='', tags=None, images=None, links=None):
+        self.title = title
+        self.text = text
+        self.tags = tags or []
+        self.images = images or []
+        self.links = links or []
+
+    def markdown(self, attribute):
+        return markdown.markdown(getattr(self, attribute), extensions=MARKDOWN_EXTENSIONS)
+
+    def has_links(self):
+        if len(self.links):
+            return True
+        return False 
+
+    def has_images(self):
+        if len(self.images):
+            return True
+        return False
     
 
 

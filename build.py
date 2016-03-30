@@ -8,12 +8,12 @@ def build():
     import pages
     num_errors = 0
     for page in pages.PAGES:
-        try:
-            build_template(page)
-        except Exception as e:
-            print(e)
-            print('\n\tBuild failed!')
-            num_errors += 1
+        # try:
+        build_template(page)
+        # except Exception as e:
+        # print(e)
+        # print('\n\tBuild failed!')
+        # num_errors += 1
     if num_errors > 0:
         print('\n\t> Build finished ({num_errors} errors).'.format(num_errors=num_errors))
         input('Any key to continue.')

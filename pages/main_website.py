@@ -3,7 +3,7 @@ from page_core import *
 PAGE = {
     'page_template': 'index_template.html',
     'path': '',
-    'output_file': 'index.html',
+    'output_file': 'old_index.html',
     'output_folder': '',
     'page_title': 'Schlechtwetterfront',
     'use_bright_theme': True,

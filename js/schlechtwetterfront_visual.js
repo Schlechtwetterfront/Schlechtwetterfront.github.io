@@ -51,8 +51,70 @@ window.addEventListener("load", function() {
 
     $("ul.dropdown-menu").css("background-color", box_hover_color);
 
+    $(".background-colored-dark-hover").hover(
+        function() {
+            $(this).css({"background-color": box_darkened_color,
+                         "color": box_hover_color});
+        },
+        function() {
+            $(this).css({"background-color": "transparent",
+                         "color": box_darkened_color});
+        }
+    );
+
+
+    $(".background-colored-hover").hover(
+        function() {
+            $(this).css({"background-color": box_hover_color});
+        },
+        function() {
+            $(this).css({"background-color": "transparent"});
+        }
+    );
+
+
+    $(".text-hover-normal-darker").hover(
+        function() {
+            $(this).css("color", box_darkened_color3);
+        },
+        function() {
+            $(this).css("color", box_hover_color);
+        }
+    );
+
+
+    $(".text-hover-normal-white").hover(
+        function() {
+            $(this).css("color", "white");
+        },
+        function() {
+            $(this).css("color", box_hover_color);
+        }
+    );
+
+
+    $(".text-hover-white-darker").hover(
+        function() {
+            $(this).css("color", box_darkened_color3);
+        },
+        function() {
+            $(this).css("color", "white");
+        }
+    );
+
+
     $(".colored").css({"background-color": box_hover_color});
+    $(".colored-dark").css({"background-color": box_darkened_color});
+    $(".colored-darker").css({"background-color": box_darkened_color3});
+
+    $(".text-colored-light").css("color", box_brightened_color);
+    $(".text-colored").css("color", box_hover_color);
+    $(".text-colored-dark").css("color", box_darkened_color);
+    $(".text-colored-darker").css("color", box_darkened_color3)
+
     $(".border-colored-dark").css({"border-color": box_darkened_color});
+    $(".border-colored").css("border-color", box_hover_color);
+
     $("div.section a").not(".bordered").hover(
         function() {
             $(this).css({"border-color": link_color_map_hover[theme]});
@@ -88,8 +150,8 @@ window.addEventListener("load", function() {
 
     // General link hover color and style change.
 
-    $("div.section a").not(".bordered").css({"color": box_hover_color, "border-bottom": "1px dotted " + box_hover_color});
-    $("div.section a").not(".bordered").hover(
+    $("div.section a, .page-content a").not(".bordered, .rectangle-button").css({"color": box_hover_color, "border-bottom": "1px dotted " + box_hover_color});
+    $("div.section a, .page-content a").not(".bordered, .rectangle-button").hover(
     	function() {
     		$(this).css({"color": link_color_map_hover[theme],
     					"border-bottom": "1px solid " + link_color_map_hover[theme]});

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    {% include "portfolio_header.html" %}
+    <body>
+    {% include "portfolio_navbar.html" %}
+        <div class="container page-content">
+            {{ home_text.text }}
+        {% for section in sections %}
+        <div class="page-content-section">
+            <div class="page-content-section-header border-colored">
+                <div class="section-header-title colored text-white">{{ section.title }}</div>
+                <div class="pull-right section-header-tags">
+                {% for tag in section.tags %}
+                    <span class="label colored text-white">{{ tag }}</span>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9">
+                    {{ section.markdown('text') }}
+                    {% if section.has_images() %}
+                    <h4>Images</h4>
+                    {% endif %}
+                </div>
+                {% if section.has_links() %}
+                <div class="col-md-3 section-links colored">
+                {% for link in section.links %}
+                    <a href="{{ link.address }}" class="rectangle-button rectangle-button-semi">{{ link.title }}</a>
+                {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% if section.has_images() %}
+            {% for row in section.images %}
+            <div class="row">
+                {% for image in row %}
+                <div class="col-md-2">
+                    <a href="{{ image }}" class="thumbnail bordered thumbnail-cut">
+                        <img src="{{ image }}" class="img-responsive center-block">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    {% include "portfolio_footer.html" %}
+    </body>
+</html>

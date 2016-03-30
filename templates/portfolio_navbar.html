@@ -1,0 +1,19 @@
+<div class="container">
+    <nav class="navbar border-colored navbar-portfolio" id="portfolio-navbar-main">
+        <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="home.html" class="navbar-brand colored text-white text-hover-white-darker">Schlechtwetterfront</a>
+            {% if not page_title == 'Schlechtwetterfront' %}
+            <p class="navbar-text text-colored-dark">{{ page_title }}</p>
+            {% endif %}
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            {% for link in navbar_links %}
+            <li>
+                <a href="{{ link.address }}" class="text-colored text-hover-normal-white background-colored-hover">{{ link.title }}</a>
+            {% endfor %}
+            </li>
+        </ul>
+        </div>
+    </nav>
+</div>
