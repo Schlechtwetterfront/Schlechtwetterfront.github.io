@@ -1,0 +1,83 @@
+.page-content-section-header,
+.navbar-portfolio {
+    border: none;
+    border-bottom: 2px solid #EEE;
+    border-radius: 0px;
+}
+
+
+.page-content {
+
+}
+
+
+.page-content-section-header {
+    margin: 15px 0px;
+}
+
+
+.section-header-title {
+    padding: 15px;
+    line-height: 20px;
+
+    min-width: 100px;
+    display: inline-block;
+}
+
+
+.portfolio-footer {
+    position: relative;
+    padding: 50px 20px 30px;
+    margin-top: 50px;
+    bottom: 0;
+    top: 0;
+    /*width: 100%;*/
+}
+
+
+.portfolio-footer-block {
+    display: inline-block;
+}
+
+
+.section-header-tags {
+    padding: 15px;
+    display: inline-block;
+}
+
+
+.section-links {
+    padding: 3px 5px 5px;
+}
+
+
+.page-content p {
+    margin-left: 10px;
+}
+
+
+a.rectangle-button {
+    font-size: 14px;
+}
+
+
+.thumbnail-cut {
+    overflow-y: hidden;
+    max-height: 120px;
+    border-radius: 0;
+}
+
+
+a:hover {
+    text-decoration: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+
+p, li {
+    color: #555;
+}

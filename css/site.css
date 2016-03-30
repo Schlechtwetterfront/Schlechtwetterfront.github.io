@@ -1,0 +1,315 @@
+
+/* Bootstrap adjustments */
+
+
+.affix {
+    width: inherit;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+
+/* Large site block */
+
+
+body {
+    min-height: 400px;
+}
+
+
+.container-main {
+    min-height: 400px;
+}
+
+
+.section-container {
+    min-height: 380px;
+}
+
+.section {
+    background-color: #FBFBFB;
+
+    padding: 0 0 0.6em 0;
+    display: block;
+}
+
+
+.section-content {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+.sidebar {
+    color: #222222;
+    /*background-color: #FBFBFB;*/
+
+    padding: 10px;
+    /*margin-bottom: 25px;*/
+    /*bottom: 0;*/
+
+    /*overflow: hidden;*/
+}
+
+
+/* 
+    Links/Clickables
+
+*/
+
+
+a {
+    /*font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;*/
+    /*font-weight: bold;*/
+}
+
+
+a:hover {
+    text-decoration: none;
+}
+
+
+.dropdown-menu>li>a,
+.navbar-nav>li>a {
+    color: #EEE;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+
+.dropdown-menu>li>a:hover,
+.navbar-nav>li>a:hover {
+    color: #EEE;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+
+.navbar-nav>li>a:active {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/*.nav>li>a:focus,*/
+/*.nav>li>a:hover,*/
+.navbar-nav>li>a:focus {
+    background: initial;
+}
+
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+
+a.rectangle-button-msh {
+    max-height: 30px;
+}
+
+.sidebar-content-scrollable>.rectangle-button-semi {
+    /*margin-right: 10px;*/
+    width: 98%;
+}
+
+
+.rectangle-button-transparent {
+    background: transparent;
+}
+
+
+/* For clickables to have some padding between border and text. */
+.block {
+    padding: 0 3px;
+}
+
+
+/* Sidebar items */
+
+.category_label {
+    font-size: 16px;
+    color: #333;
+
+    display: inline-block;
+    width: 100%;
+    background-color: transparent;
+    padding-left: 10px;
+    max-height: 30px;
+    line-height: 1.8em;
+
+    margin-bottom: 0.1em;
+    margin-top: 0.4em;
+}
+
+
+.sidebar-content {
+
+}
+
+
+.sidebar-content-scrollable {
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.sidebar-title {
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    /*font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;*/
+}
+
+
+/* Section items */
+
+.section-header {
+    font-size: 24px;
+    /*font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;*/
+    font-weight: normal;
+
+    color: #333;
+    width: 100%;
+    line-height: 1.1em;
+    display: inline-block;
+    padding: 0.3em 0.3em 0.3em 0.7em;
+    margin-bottom: 0.2em;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/*
+    JQuery clases.
+
+*/
+
+
+.bordered {}
+
+
+.bordered-nohover {}
+
+
+.bordered-dark {}
+
+
+.bordered-dark-nohover {}
+
+
+/*
+    Calculator items
+
+*/
+
+
+togglebox {
+    cursor: pointer;
+    display: inline-block;
+    margin: 3px;
+    padding: 0 6px;
+    width: 134px;
+}
+
+
+clickable {
+    cursor: pointer;
+    margin: 3px;
+    display: inline-block;
+    padding: 0 3px;
+}
+
+
+.number-box {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14px;
+
+    padding: 3px 6px 0px 6px;
+    margin: 2px;
+
+    text-align: right;
+}
+
+.talign-r {
+    text-align: right;
+}
+
+.talign-c {
+    text-align: center;
+}
+
+
+/*
+    Msh page items
+
+*/
+
+
+text-container {
+    display: inline;
+    top: -8px;
+    position: relative;
+}
+
+
+indent-child {
+    width: 15px;
+    /*margin-left: 5px;*/
+    /*margin-right: 5px;*/
+    border-left: 1px dotted rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    height: 29px;
+
+    position: relative;
+    top: 0px;
+
+    overflow: visible;
+
+    /*transition: width 0.3s;*/
+}
+
+
+indent-child:hover {
+    border-left: 1px solid rgba(0, 0, 0, 0);
+}
+
+
+/*
+    General items
+
+*/
+
+.section-content p {
+    margin-left: 10px;
+}
+
+p, li {
+    color: #555;
+}
+
+
+table {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.section-content table {
+    margin-left: 10px;
+    /*margin-right: 10px;*/
+    /*right: -10px;*/
+    margin-bottom: 10px;
+    width: 80%;
+    min-width: 50%;
+}
+
+
+td {
+    color: #555;
+    padding: 5px 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+th {
+    color: #222;
+    padding: 5px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}

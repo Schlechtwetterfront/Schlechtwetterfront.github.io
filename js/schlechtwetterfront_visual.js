@@ -10,13 +10,13 @@ function shadeBlend(p,c0,c1) {
 }
 
 var colors = [
-    "#ff7676", // reddish
+    "rgb(255,118,118)", // reddish
     // "#8d76ff", // darker violet
     // "#d77f64", // orange
     // "#919ddb", // brighter blue
-    "#84D284", // green
+    "rgb(132,210,132)", // green
     // "#6AA9AF", // cyan
-    "#76C0FF", // blue
+    "rgb(118,192,255)", // blue
 ];
 
 
@@ -26,6 +26,8 @@ window.addEventListener("load", function() {
     var box_hover_color = colors[Math.floor(Math.random() * colors.length)];
 
     var box_darkened_color = shadeBlend(-0.3, box_hover_color);
+    var box_darkened_color2 = shadeBlend(-0.1, box_hover_color);
+    var box_darkened_color3 = shadeBlend(-0.5, box_hover_color);
 
     var box_brightened_color = shadeBlend(0.5, box_hover_color);
 
@@ -40,17 +42,80 @@ window.addEventListener("load", function() {
     };
 
     var bg_color = $("head").css("background-color");
-    var theme = theme_map[bg_color];
+    var theme = "bright";
 
     var link_color_map_hover = {
         "bright": box_darkened_color,
         "dark": box_brightened_color,
     };
 
+    $("ul.dropdown-menu").css("background-color", box_hover_color);
+
+    $(".background-colored-dark-hover").hover(
+        function() {
+            $(this).css({"background-color": box_darkened_color,
+                         "color": box_hover_color});
+        },
+        function() {
+            $(this).css({"background-color": "transparent",
+                         "color": box_darkened_color});
+        }
+    );
+
+
+    $(".background-colored-hover").hover(
+        function() {
+            $(this).css({"background-color": box_hover_color});
+        },
+        function() {
+            $(this).css({"background-color": "transparent"});
+        }
+    );
+
+
+    $(".text-hover-normal-darker").hover(
+        function() {
+            $(this).css("color", box_darkened_color3);
+        },
+        function() {
+            $(this).css("color", box_hover_color);
+        }
+    );
+
+
+    $(".text-hover-normal-white").hover(
+        function() {
+            $(this).css("color", "white");
+        },
+        function() {
+            $(this).css("color", box_hover_color);
+        }
+    );
+
+
+    $(".text-hover-white-darker").hover(
+        function() {
+            $(this).css("color", box_darkened_color3);
+        },
+        function() {
+            $(this).css("color", "white");
+        }
+    );
+
 
     $(".colored").css({"background-color": box_hover_color});
+    $(".colored-dark").css({"background-color": box_darkened_color});
+    $(".colored-darker").css({"background-color": box_darkened_color3});
+
+    $(".text-colored-light").css("color", box_brightened_color);
+    $(".text-colored").css("color", box_hover_color);
+    $(".text-colored-dark").css("color", box_darkened_color);
+    $(".text-colored-darker").css("color", box_darkened_color3)
+
     $(".border-colored-dark").css({"border-color": box_darkened_color});
-    $("div.content a").not(".bordered").hover(
+    $(".border-colored").css("border-color", box_hover_color);
+
+    $("div.section a").not(".bordered").hover(
         function() {
             $(this).css({"border-color": link_color_map_hover[theme]});
         },
@@ -60,10 +125,33 @@ window.addEventListener("load", function() {
     );
 
 
+    // rectange button gradient color
+    var colorButtons = false;
+    if (colorButtons) {
+        $(".rectangle-button-semi").css({
+            "background": "linear-gradient(to right, " + box_darkened_color2 + ", " + box_hover_color +")"
+        });
+        $(".rectangle-button-semi").hover(
+            function() {
+                $(this).css({
+                    "background": "linear-gradient(to right, " + box_darkened_color3 + ", " + box_darkened_color +")"
+                });
+            },
+            function() {
+                $(this).css({
+                    "background": "linear-gradient(to right, " + box_darkened_color2 + ", " + box_hover_color +")"
+                });
+            }
+        );
+    } else {
+        $(".container-main").css({"background": box_hover_color});
+    }
+
+
     // General link hover color and style change.
 
-    $("div.content a").not(".bordered").css({"color": box_hover_color, "border-bottom": "1px dotted " + box_hover_color});
-    $("div.content a").not(".bordered").hover(
+    $("div.section a, .page-content a").not(".bordered, .rectangle-button").css({"color": box_hover_color, "border-bottom": "1px dotted " + box_hover_color});
+    $("div.section a, .page-content a").not(".bordered, .rectangle-button").hover(
     	function() {
     		$(this).css({"color": link_color_map_hover[theme],
     					"border-bottom": "1px solid " + link_color_map_hover[theme]});
@@ -135,45 +223,45 @@ window.addEventListener("load", function() {
     // Main page hover color change.
 
     var info_margin = 4;
-    info_margin = parseInt($(".box").attr("margin"));
-    $("info").css({"padding-top": info_margin, "padding-bottom": info_margin});
+    // info_margin = parseInt($(".box").attr("margin"));
+    // $("info").css({"padding-top": info_margin, "padding-bottom": info_margin});
 
-    if ($(window).width() <= 1020) {
-        $(".info").css("background-color", box_hover_color);
-    }
-    else {
+    // if ($(window).width() <= 1020) {
+    //     // $(".info").css("background-color", box_hover_color);
+    // }
+    // else {
 
-        // Set the height here for the slide functionality.
-        // If js is disabled then the box will just be twice the height so all of the content is visible.
-        $(".box").css("height", "128");
-        // Expanding boxes and random hover color for project boxes.
-        $(".box").hover(
-            function () {
-                $(this).css("background-color", box_hover_color);
+    //     // Set the height here for the slide functionality.
+    //     // If js is disabled then the box will just be twice the height so all of the content is visible.
+    //     $(".box").css("height", "136px");
+    //     // Expanding boxes and random hover color for project boxes.
+    //     $(".box").hover(
+    //         function () {
+    //             $(this).css("background-color", box_hover_color);
 
 
-                var id = $(this).attr("id");
+    //             var id = $(this).attr("id");
 
-                $("#" + id + "_title").css("top", "-128px");
-                $("#" + id + "_content").css("top", "-128px");
-            },
-            function () {
-                // $(this).css("background-color", box_normal_color);
-                $(this).attr("style", "");
-                $(this).css("height", "128px");
+    //             $("#" + id + "_title").css("top", "-136px");
+    //             $("#" + id + "_content").css("top", "-136px");
+    //         },
+    //         function () {
+    //             // $(this).css("background-color", box_normal_color);
+    //             $(this).attr("style", "");
+    //             $(this).css("height", "136px");
 
-                var id = $(this).attr("id");
-                $("#" + id + "_title").css("top", "0px");
-                $("#" + id + "_content").css("top", "0px");
+    //             var id = $(this).attr("id");
+    //             $("#" + id + "_title").css("top", "0px");
+    //             $("#" + id + "_content").css("top", "0px");
 
-            }
-        );
-    }
+    //         }
+    //     );
+    // }
 
 
     // Set project page side bar color.
 
-    $("div .sidebar").css("background-color", box_hover_color);
+    // $(".sidebar").css("background-color", box_hover_color);
 
 });
 

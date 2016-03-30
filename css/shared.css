@@ -1,0 +1,109 @@
+/*
+    Bootstrap adjustments
+
+*/
+
+
+.label-lg {
+    font-size: 100%;
+}
+
+
+.circle {
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 6px;
+    height: 6px;
+
+    display: inline-block;
+
+    margin-right: 3px;
+    margin-bottom: 2px;
+
+    vertical-align: middle;
+}
+
+.circle-filled {
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+
+    display: inline-block;
+
+    margin-right: 3px;
+    margin-bottom: 2px;
+}
+
+
+div .hr {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-right: 10%;
+    margin-left: 10px;
+    display: block;
+}
+
+
+p {
+    text-align: justify;
+}
+
+
+.red {
+    color: red;
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.orange {
+    color: orange;
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.green {
+    color: #31B404;
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+
+.text-white {
+    color: white;
+}
+
+
+
+a.rectangle-button {
+    font-size: 16px;
+    /*font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;*/
+    font-weight: normal;
+
+    color: #EEEEEE;
+    /*color: #333;*/
+
+    display: block;
+    line-height: 1.8em;
+
+    padding: 1px 0px 1px 10px;
+
+    vertical-align: text-bottom;
+}
+
+
+a.rectangle-button:hover {
+    background: rgba(0, 0, 0, 0.75);
+    text-decoration: none;
+}
+
+
+.rectangle-button-semi {
+    width: 100%;
+    margin-top: 2px;
+
+    box-sizing: border-box;
+
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.1));
+}
+
+
+a.rectangle-button-semi:hover {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4));
+}
