@@ -68,6 +68,18 @@ a.rectangle-button {
 }
 
 
+.thumbnail-img {
+    max-height: 120px;
+}
+
+
+.thumbnail .caption-center {
+    padding: 0px 4px 2px;
+    text-align: center;
+    font-size: 12px;
+}
+
+
 a:hover {
     text-decoration: none;
     color: white;
