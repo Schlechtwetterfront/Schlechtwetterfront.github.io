@@ -79,9 +79,6 @@ this very basic script for a friend who needed to eliminate baked AO from the ve
 <h4>Usage</h4>
 <p>This adds a sub menu to Animate &gt; Get &gt; Property called "Edit Vertex Colors". Choose "Set Vertex Colors" from there and adjust
 settings in the UI as you like.</p>
-                    
-                    <h4>Images</h4>
-                    
                 </div>
                 
                 <div class="col-md-3 section-links colored">
@@ -92,12 +89,29 @@ settings in the UI as you like.</p>
                 
             </div>
             
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Images</h4>
+                </div>
+            </div>
             
             <div class="row">
                 
                 <div class="col-md-2">
                     <a href="img/gist_vertcolchanger.png" class="thumbnail bordered thumbnail-cut">
+                        <div class="caption caption-center">
+                            Dialog
+                        </div>
                         <img src="img/gist_vertcolchanger.png" class="img-responsive center-block">
+                    </a>
+                </div>
+                
+                <div class="col-md-2">
+                    <a href="img/vertcol_anim.gif" class="thumbnail bordered thumbnail-cut">
+                        <div class="caption caption-center">
+                            Process
+                        </div>
+                        <img src="img/vertcol_anim.gif" class="img-responsive center-block">
                     </a>
                 </div>
                 
@@ -127,15 +141,13 @@ settings in the UI as you like.</p>
 <h4>Usage</h4>
 <p>This command needs to be executed from script.</p>
 <p>Open the script editor ("Scroll" button in the bottom panel of the Softimage UI or <kbd>Alt + 4</kbd>) and call</p>
-<blockquote>
-<p><code>SelectPointsByEnvelopeWeight(enveloped_mesh, deformer, weight_threshold)</code>.</p>
-</blockquote>
+<p><code>Application.SelectPointsByEnvelopeWeight(enveloped_mesh, deformer, weight_threshold)</code></p>
+<p>For python, VB/JS don't need the <code>Application.</code>.</p>
 <ul>
 <li><code>enveloped_mesh</code>: The object's SI name (i.e. 'character_torso').</li>
 <li><code>deformer</code>: The deformer object's SI name (i.e. 'bone_spine_a').</li>
 <li><code>weight_threshold</code>: Weight percentage threshold (0-100).</li>
 </ul>
-                    
                 </div>
                 
                 <div class="col-md-3 section-links colored">
@@ -145,6 +157,26 @@ settings in the UI as you like.</p>
                 </div>
                 
             </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Images</h4>
+                </div>
+            </div>
+            
+            <div class="row">
+                
+                <div class="col-md-2">
+                    <a href="img/select_env_weights.gif" class="thumbnail bordered thumbnail-cut">
+                        <div class="caption caption-center">
+                            Process
+                        </div>
+                        <img src="img/select_env_weights.gif" class="img-responsive center-block">
+                    </a>
+                </div>
+                
+            </div>
+            
             
             </div>
         </div>

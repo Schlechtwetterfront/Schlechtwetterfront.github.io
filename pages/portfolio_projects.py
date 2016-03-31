@@ -26,11 +26,11 @@ This page contains all my (public) notable projects from my [Github](https://git
                          Link('Gametoast Thread', 'http://gametoast.com/viewtopic.php?f=36&t=26664'),
                      ],
                      images=[
-                         ('img/zet_export.png',
-                         'img/zet_import.png',
-                         'img/zet_import_settings.png',
-                         'img/zet_cloth.png',
-                         'img/zet_matman.png',),
+                         (Link('Export Dialog', 'img/zet_export.png'),
+                         Link('Import Dialog', 'img/zet_import.png'),
+                         Link('Import Settings', 'img/zet_import_settings.png'),
+                         Link('Cloth Edit', 'img/zet_cloth.png'),
+                         Link('Material Manager', 'img/zet_matman.png'),),
                      ],
                      text='''
 XSIZETools is an addon for Autodesk Softimage. It adds support to export & import ZeroEngine (Star Wars: Battlefront I & II) .msh model/animation files.
@@ -51,6 +51,15 @@ XSIZETools is an addon for Autodesk Softimage. It adds support to export & impor
                          Link('Releases', 'https://github.com/Schlechtwetterfront/softcry/releases'),
                          Link('Github', 'https://github.com/Schlechtwetterfront/softcry/'),
                          Link('CryDev Thread', 'http://www.cryengine.com/community/viewtopic.php?f=315&t=102978'),
+                     ],
+                     images=[
+                        (Link('Export Dialog', 'img/sc_export.png'),
+                         Link('Export Settings', 'img/sc_export_settings.png'),
+                         Link('Anim Clip Editor', 'img/sc_animclips.png'),
+                         Link('Material Library Editor', 'img/sc_matlib.png'),
+                         Link('Misc Tools', 'img/sc_misctools.png'),
+                         Link('Settings Dialog', 'img/sc_settings.png'),
+                         ),
                      ],
                      text='''
 SoftCry is an addon for Autodesk Softimage. It modifies and adds to the output of the Crosswalk Collada (.dae) exporter to add special functionality for
@@ -77,6 +86,7 @@ This is a parser and converter for ZeroEngine terrain file formats (.ter and .xx
 #### Tasks
 
 * Reverse-engineering of big parts of the .ter and .xxw file formats.
+* Parser code.
         '''),
         ProjectBrief(title='ZeroEngine File Formats',
                      tags=['2011-', p.T_PY, p.T_ZE],

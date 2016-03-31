@@ -3,7 +3,6 @@ import pages.main_website
 import pages.portfolio_index
 import pages.portfolio_projects
 import pages.portfolio_snippets
-import pages.portfolio_about
 import pages.portfolio_art
 
 import pages.zetools_main
@@ -28,6 +27,5 @@ PAGES = [
     portfolio_index.PAGE,
     portfolio_projects.PAGE,
     portfolio_snippets.PAGE,
-    portfolio_about.PAGE,
     portfolio_art.PAGE,
 ]
