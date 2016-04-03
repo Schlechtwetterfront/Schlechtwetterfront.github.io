@@ -31,10 +31,14 @@
             <a href="home.html" class="navbar-brand colored text-white">
                 Schlechtwetterfront
             </a>
-            
-            <p class="navbar-text text-colored-dark">Code Snippets</p>
-            
         </div>
+        
+        <ul class="nav navbar-nav center-block">
+            <li>
+            <p class="navbar-text text-colored-dark">Code Snippets
+            </li>
+        </ul>
+        
         <ul class="nav navbar-nav navbar-right">
             
             <li>
@@ -145,7 +149,7 @@ settings in the UI as you like.</p>
 <h4>Usage</h4>
 <p>This command needs to be executed from script.</p>
 <p>Open the script editor ("Scroll" button in the bottom panel of the Softimage UI or <kbd>Alt + 4</kbd>) and call</p>
-<p><code>Application.SelectPointsByEnvelopeWeight(enveloped_mesh, deformer, weight_threshold)</code></p>
+<p><code>Application.SelectPointsByEnvelopeWeight( enveloped_mesh, deformer, weight_threshold )</code></p>
 <p>For python, VB/JS don't need the <code>Application.</code>.</p>
 <ul>
 <li><code>enveloped_mesh</code>: The object's SI name (i.e. 'character_torso').</li>
