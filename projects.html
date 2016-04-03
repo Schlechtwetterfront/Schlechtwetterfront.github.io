@@ -7,14 +7,14 @@
     <!-- <link rel="stylesheet" href="css/schlechtwetterfront_dark.css"> -->
     <!-- <link rel="stylesheet" href="css/schlechtwetterfront_light.css"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/shared.css">
     <!-- <link rel="stylesheet" href="css/site.css"> -->
-    <link rel="stylesheet" href="css/site-mainpage.css">
     <script src="js/respond.js"></script>
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/schlechtwetterfront_functional.js"></script>
     <script src="js/schlechtwetterfront_visual.js"></script>
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/site-mainpage.css">
     <link rel="icon" type="image/png" href="favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -66,6 +66,8 @@
                 
                     <span class="label colored text-white">Python</span>
                 
+                    <span class="label colored text-white">C++</span>
+                
                     <span class="label colored text-white">Autodesk Softimage</span>
                 
                     <span class="label colored text-white">Plug-in</span>
@@ -75,9 +77,9 @@
                 </div>
             </div>
             <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-9">
-                    <p>XSIZETools is an addon for Autodesk Softimage. It adds support to export &amp; import ZeroEngine (Star Wars: Battlefront I &amp; II) .msh model/animation files.</p>
+                <div class="row">
+                    <div class="col-md-9">
+                        <p>XSIZETools is an addon for Autodesk Softimage. It adds support to export &amp; import ZeroEngine (Star Wars: Battlefront I &amp; II) .msh model/animation files.</p>
 <h4>Tasks</h4>
 <ul>
 <li>Gathering geometry, material and animation data for export to .msh with Softimage's scripting interface and C++ SDK.</li>
@@ -86,78 +88,99 @@
 <li>UI design for all dialogs with Softimage's scripting UI system.</li>
 <li>Reverse-engineering of big parts of the .msh file format structure.</li>
 </ul>
+                    </div>
+                    
+                    <div class="col-md-3 section-links colored">
+                    
+                        <a href="/xsizetools/" class="rectangle-button rectangle-button-semi">Project Homepage</a>
+                    
+                        <a href="https://github.com/Schlechtwetterfront/xsizetools/releases" class="rectangle-button rectangle-button-semi">Releases</a>
+                    
+                        <a href="https://github.com/Schlechtwetterfront/xsizetools/" class="rectangle-button rectangle-button-semi">Github</a>
+                    
+                        <a href="http://gametoast.com/viewtopic.php?f=36&t=26664" class="rectangle-button rectangle-button-semi">Gametoast Thread</a>
+                    
+                    </div>
+                    
                 </div>
                 
-                <div class="col-md-3 section-links colored">
-                
-                    <a href="/xsizetools/" class="rectangle-button rectangle-button-semi">Project Homepage</a>
-                
-                    <a href="https://github.com/Schlechtwetterfront/xsizetools/releases" class="rectangle-button rectangle-button-semi">Releases</a>
-                
-                    <a href="https://github.com/Schlechtwetterfront/xsizetools/" class="rectangle-button rectangle-button-semi">Github</a>
-                
-                    <a href="http://gametoast.com/viewtopic.php?f=36&t=26664" class="rectangle-button rectangle-button-semi">Gametoast Thread</a>
-                
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Images</h4>
+                    </div>
                 </div>
                 
-            </div>
-            
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>Images</h4>
+                <div class="row">
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/zet_export.png" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Export Dialog
+                            </div>
+                            <img src="img/zet_export.png" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/zet_import.png" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Import Dialog
+                            </div>
+                            <img src="img/zet_import.png" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/zet_cloth.png" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Cloth Edit
+                            </div>
+                            <img src="img/zet_cloth.png" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/zet_matman.png" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Material Manager
+                            </div>
+                            <img src="img/zet_matman.png" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="https://www.youtube.com/watch?v=puqIf-8vSRc" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> Animation Import
+                            </div>
+                            <img src="http://img.youtube.com/vi/puqIf-8vSRc/default.jpg" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="https://www.youtube.com/watch?v=eLMz37D-dFA" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> Exported Cloth
+                            </div>
+                            <img src="http://img.youtube.com/vi/eLMz37D-dFA/default.jpg" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
                 </div>
-            </div>
-            
-            <div class="row">
                 
-                <div class="col-md-2">
-                    <a href="img/zet_export.png" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Export Dialog
-                        </div>
-                        <img src="img/zet_export.png" class="img-responsive center-block">
-                    </a>
-                </div>
                 
-                <div class="col-md-2">
-                    <a href="img/zet_import.png" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Import Dialog
-                        </div>
-                        <img src="img/zet_import.png" class="img-responsive center-block">
-                    </a>
-                </div>
-                
-                <div class="col-md-2">
-                    <a href="img/zet_import_settings.png" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Import Settings
-                        </div>
-                        <img src="img/zet_import_settings.png" class="img-responsive center-block">
-                    </a>
-                </div>
-                
-                <div class="col-md-2">
-                    <a href="img/zet_cloth.png" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Cloth Edit
-                        </div>
-                        <img src="img/zet_cloth.png" class="img-responsive center-block">
-                    </a>
-                </div>
-                
-                <div class="col-md-2">
-                    <a href="img/zet_matman.png" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Material Manager
-                        </div>
-                        <img src="img/zet_matman.png" class="img-responsive center-block">
-                    </a>
-                </div>
-                
-            </div>
-            
-            
             </div>
         </div>
         
@@ -179,9 +202,9 @@
                 </div>
             </div>
             <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-9">
-                    <p>SoftCry is an addon for Autodesk Softimage. It modifies and adds to the output of the Crosswalk Collada (.dae) exporter to add special functionality for
+                <div class="row">
+                    <div class="col-md-9">
+                        <p>SoftCry is an addon for Autodesk Softimage. It modifies and adds to the output of the Crosswalk Collada (.dae) exporter to add special functionality for
 the CRYENGINE resource compiler.</p>
 <h4>Tasks</h4>
 <ul>
@@ -191,87 +214,99 @@ the CRYENGINE resource compiler.</p>
 <li>Creating, editing and exporting animation clips.</li>
 <li>UI design for all dialogs with Softimage's scripting UI system.</li>
 </ul>
+                    </div>
+                    
+                    <div class="col-md-3 section-links colored">
+                    
+                        <a href="/softcry/" class="rectangle-button rectangle-button-semi">Project Homepage</a>
+                    
+                        <a href="https://github.com/Schlechtwetterfront/softcry/releases" class="rectangle-button rectangle-button-semi">Releases</a>
+                    
+                        <a href="https://github.com/Schlechtwetterfront/softcry/" class="rectangle-button rectangle-button-semi">Github</a>
+                    
+                        <a href="http://www.cryengine.com/community/viewtopic.php?f=315&t=102978" class="rectangle-button rectangle-button-semi">CryDev Thread</a>
+                    
+                    </div>
+                    
                 </div>
                 
-                <div class="col-md-3 section-links colored">
-                
-                    <a href="/softcry/" class="rectangle-button rectangle-button-semi">Project Homepage</a>
-                
-                    <a href="https://github.com/Schlechtwetterfront/softcry/releases" class="rectangle-button rectangle-button-semi">Releases</a>
-                
-                    <a href="https://github.com/Schlechtwetterfront/softcry/" class="rectangle-button rectangle-button-semi">Github</a>
-                
-                    <a href="http://www.cryengine.com/community/viewtopic.php?f=315&t=102978" class="rectangle-button rectangle-button-semi">CryDev Thread</a>
-                
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Images</h4>
+                    </div>
                 </div>
                 
-            </div>
-            
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>Images</h4>
+                <div class="row">
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/sc_export.png" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Export Dialog
+                            </div>
+                            <img src="img/sc_export.png" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/sc_export_settings.png" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Export Settings
+                            </div>
+                            <img src="img/sc_export_settings.png" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/sc_animclips.png" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Anim Clip Editor
+                            </div>
+                            <img src="img/sc_animclips.png" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/sc_matlib.png" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Material Library Editor
+                            </div>
+                            <img src="img/sc_matlib.png" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/sc_misctools.png" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Misc Tools
+                            </div>
+                            <img src="img/sc_misctools.png" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/sc_settings.png" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Settings Dialog
+                            </div>
+                            <img src="img/sc_settings.png" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
                 </div>
-            </div>
-            
-            <div class="row">
                 
-                <div class="col-md-2">
-                    <a href="img/sc_export.png" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Export Dialog
-                        </div>
-                        <img src="img/sc_export.png" class="img-responsive center-block">
-                    </a>
-                </div>
                 
-                <div class="col-md-2">
-                    <a href="img/sc_export_settings.png" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Export Settings
-                        </div>
-                        <img src="img/sc_export_settings.png" class="img-responsive center-block">
-                    </a>
-                </div>
-                
-                <div class="col-md-2">
-                    <a href="img/sc_animclips.png" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Anim Clip Editor
-                        </div>
-                        <img src="img/sc_animclips.png" class="img-responsive center-block">
-                    </a>
-                </div>
-                
-                <div class="col-md-2">
-                    <a href="img/sc_matlib.png" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Material Library Editor
-                        </div>
-                        <img src="img/sc_matlib.png" class="img-responsive center-block">
-                    </a>
-                </div>
-                
-                <div class="col-md-2">
-                    <a href="img/sc_misctools.png" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Misc Tools
-                        </div>
-                        <img src="img/sc_misctools.png" class="img-responsive center-block">
-                    </a>
-                </div>
-                
-                <div class="col-md-2">
-                    <a href="img/sc_settings.png" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Settings Dialog
-                        </div>
-                        <img src="img/sc_settings.png" class="img-responsive center-block">
-                    </a>
-                </div>
-                
-            </div>
-            
-            
             </div>
         </div>
         
@@ -289,24 +324,24 @@ the CRYENGINE resource compiler.</p>
                 </div>
             </div>
             <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-9">
-                    <p>This is a parser and converter for ZeroEngine terrain file formats (.ter and .xxw).</p>
+                <div class="row">
+                    <div class="col-md-9">
+                        <p>This is a parser and converter for ZeroEngine terrain file formats (.ter and .xxw).</p>
 <h4>Tasks</h4>
 <ul>
 <li>Reverse-engineering of big parts of the .ter and .xxw file formats.</li>
 <li>Parser code.</li>
 </ul>
+                    </div>
+                    
+                    <div class="col-md-3 section-links colored">
+                    
+                        <a href="https://github.com/Schlechtwetterfront/ter22/" class="rectangle-button rectangle-button-semi">Github</a>
+                    
+                    </div>
+                    
                 </div>
                 
-                <div class="col-md-3 section-links colored">
-                
-                    <a href="https://github.com/Schlechtwetterfront/ter22/" class="rectangle-button rectangle-button-semi">Github</a>
-                
-                </div>
-                
-            </div>
-            
             </div>
         </div>
         
@@ -324,22 +359,66 @@ the CRYENGINE resource compiler.</p>
                 </div>
             </div>
             <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-9">
-                    <p>This is a collection of documentation on some of ZeroEngine's proprietary file formats. It contains documentation for the .msh, .ter and .xxw file formats, all 
+                <div class="row">
+                    <div class="col-md-9">
+                        <p>This is a collection of documentation on some of ZeroEngine's proprietary file formats. It contains documentation for the .msh, .ter and .xxw file formats, all 
 used in ZeroEngine.</p>
-                </div>
-                
-                <div class="col-md-3 section-links colored">
-                
-                    <a href="/ze_filetypes/" class="rectangle-button rectangle-button-semi">Project Homepage</a>
-                
-                    <a href="https://github.com/Schlechtwetterfront/ze_filetypes/" class="rectangle-button rectangle-button-semi">Github</a>
-                
+<p>Most of the groundwork was laid by <em>riley-man</em> on Gametoast. I corrected and fleshed out a lof of his work and added some yet unresearched
+chunks (usually from later version of the engine coming with SWBFII).</p>
+                    </div>
+                    
+                    <div class="col-md-3 section-links colored">
+                    
+                        <a href="/ze_filetypes/" class="rectangle-button rectangle-button-semi">Project Homepage</a>
+                    
+                        <a href="https://github.com/Schlechtwetterfront/ze_filetypes/" class="rectangle-button rectangle-button-semi">Github</a>
+                    
+                    </div>
+                    
                 </div>
                 
             </div>
-            
+        </div>
+        
+        <div class="page-content-section">
+            <div class="page-content-section-header border-colored">
+                <div class="section-header-title colored text-white">Star Wars: Battlecry</div>
+                <div class="pull-right section-header-tags">
+                
+                    <span class="label colored text-white">2012-2015</span>
+                
+                    <span class="label colored text-white">C++</span>
+                
+                    <span class="label colored text-white">Autodesk Softimage</span>
+                
+                    <span class="label colored text-white">Adobe Photoshop</span>
+                
+                    <span class="label colored text-white">ZBrush</span>
+                
+                    <span class="label colored text-white">UnrealEngine 4</span>
+                
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-9">
+                        <p><strong>Star Wars: Battlecry</strong> is a fan project that aims to create an authentic Star Wars shooter.</p>
+<h4>Tasks</h4>
+<ul>
+<li>Modelled and textured most of the characters.</li>
+<li>Designed, modelled and textured some environments.</li>
+<li>Implementation of game modes, items and various other smaller game code features.</li>
+</ul>
+                    </div>
+                    
+                    <div class="col-md-3 section-links colored">
+                    
+                        <a href="http://www.swbattlecry.com" class="rectangle-button rectangle-button-semi">Project Homepage</a>
+                    
+                    </div>
+                    
+                </div>
+                
             </div>
         </div>
         
