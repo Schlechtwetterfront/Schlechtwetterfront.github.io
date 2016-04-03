@@ -8,9 +8,11 @@
     <!-- <link rel="stylesheet" href="css/schlechtwetterfront_light.css"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="css/site.css"> -->
+    <!-- <link href="css/ekko-lightbox.min.css" rel="stylesheet"> -->
+    <link href="css/lightbox.min.css" rel="stylesheet">
     <script src="js/respond.js"></script>
     <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    
     <script src="js/schlechtwetterfront_functional.js"></script>
     <script src="js/schlechtwetterfront_visual.js"></script>
     <link rel="stylesheet" href="css/shared.css">
@@ -103,22 +105,22 @@ settings in the UI as you like.</p>
                     
                     
                     <div class="col-md-2">
-                        <a href="img/gist_vertcolchanger.png" class="thumbnail bordered thumbnail-cut">
+                        <a href="img/gist_vertcolchanger.png" class="thumbnail bordered thumbnail-cut" data-toggle="lightbox" data-title="Dialog" data-gallery="vertcolchanger" data-lightbox="vertcolchanger">
                             <div class="caption caption-center">
                                 Dialog
                             </div>
-                            <img src="img/gist_vertcolchanger.png" class="img-responsive center-block">
+                            <img src="img/gist_vertcolchanger.png" class="img-responsive">
                         </a>
                     </div>
                     
                     
                     
                     <div class="col-md-2">
-                        <a href="img/vertcol_anim.gif" class="thumbnail bordered thumbnail-cut">
+                        <a href="img/vertcol_anim.gif" class="thumbnail bordered thumbnail-cut" data-toggle="lightbox" data-title="Process" data-gallery="vertcolchanger" data-lightbox="vertcolchanger">
                             <div class="caption caption-center">
                                 Process
                             </div>
-                            <img src="img/vertcol_anim.gif" class="img-responsive center-block">
+                            <img src="img/vertcol_anim.gif" class="img-responsive">
                         </a>
                     </div>
                     
@@ -176,11 +178,11 @@ settings in the UI as you like.</p>
                     
                     
                     <div class="col-md-2">
-                        <a href="img/select_env_weights.gif" class="thumbnail bordered thumbnail-cut">
+                        <a href="img/select_env_weights.gif" class="thumbnail bordered thumbnail-cut" data-toggle="lightbox" data-title="Process" data-gallery="selpointsbyweight" data-lightbox="selpointsbyweight">
                             <div class="caption caption-center">
                                 Process
                             </div>
-                            <img src="img/select_env_weights.gif" class="img-responsive center-block">
+                            <img src="img/select_env_weights.gif" class="img-responsive">
                         </a>
                     </div>
                     
@@ -192,6 +194,9 @@ settings in the UI as you like.</p>
         </div>
         
         </div>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/ekko-lightbox.min.js"></script> -->
+    <script src="js/lightbox.min.js"></script>
     <footer class="portfolio-footer">
 <div class="container">
 <p class="text-colored-darker text-center">
@@ -199,5 +204,11 @@ Benedikt "Schlechtwetterfront" Schatz
 </p>
 </div>
 </footer>
+    <script>
+        lightbox.option({
+            "resizeDuration": 100,
+            "fadeDuration": 250,
+        });
+    </script>
     </body>
 </html>

@@ -8,9 +8,11 @@
     <!-- <link rel="stylesheet" href="css/schlechtwetterfront_light.css"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="css/site.css"> -->
+    <!-- <link href="css/ekko-lightbox.min.css" rel="stylesheet"> -->
+    <link href="css/lightbox.min.css" rel="stylesheet">
     <script src="js/respond.js"></script>
     <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    
     <script src="js/schlechtwetterfront_functional.js"></script>
     <script src="js/schlechtwetterfront_visual.js"></script>
     <link rel="stylesheet" href="css/shared.css">
@@ -111,44 +113,44 @@ for that project over the years.</p>
                     
                     
                     <div class="col-md-2">
-                        <a href="img/art/bc_scout.png" class="thumbnail bordered thumbnail-cut">
+                        <a href="img/art/bc_scout.png" class="thumbnail bordered thumbnail-cut" data-toggle="lightbox" data-title="Imperial Scout" data-gallery="swbc" data-lightbox="swbc">
                             <div class="caption caption-center">
                                 Imperial Scout
                             </div>
-                            <img src="img/art/bc_scout.png" class="img-responsive center-block">
+                            <img src="img/art/bc_scout.png" class="img-responsive">
                         </a>
                     </div>
                     
                     
                     
                     <div class="col-md-2">
-                        <a href="img/art/bc_pilot.png" class="thumbnail bordered thumbnail-cut">
+                        <a href="img/art/bc_pilot.png" class="thumbnail bordered thumbnail-cut" data-toggle="lightbox" data-title="Rebel Pilot" data-gallery="swbc" data-lightbox="swbc">
                             <div class="caption caption-center">
                                 Rebel Pilot
                             </div>
-                            <img src="img/art/bc_pilot.png" class="img-responsive center-block">
+                            <img src="img/art/bc_pilot.png" class="img-responsive">
                         </a>
                     </div>
                     
                     
                     
                     <div class="col-md-2">
-                        <a href="img/art/jawa.png" class="thumbnail bordered thumbnail-cut">
+                        <a href="img/art/jawa.png" class="thumbnail bordered thumbnail-cut" data-toggle="lightbox" data-title="Jawa" data-gallery="swbc" data-lightbox="swbc">
                             <div class="caption caption-center">
                                 Jawa
                             </div>
-                            <img src="img/art/jawa.png" class="img-responsive center-block">
+                            <img src="img/art/jawa.png" class="img-responsive">
                         </a>
                     </div>
                     
                     
                     
                     <div class="col-md-2">
-                        <a href="img/art/bc_snowtrooper.png" class="thumbnail bordered thumbnail-cut">
+                        <a href="img/art/bc_snowtrooper.png" class="thumbnail bordered thumbnail-cut" data-toggle="lightbox" data-title="Snowtrooper" data-gallery="swbc" data-lightbox="swbc">
                             <div class="caption caption-center">
                                 Snowtrooper
                             </div>
-                            <img src="img/art/bc_snowtrooper.png" class="img-responsive center-block">
+                            <img src="img/art/bc_snowtrooper.png" class="img-responsive">
                         </a>
                     </div>
                     
@@ -160,6 +162,9 @@ for that project over the years.</p>
         </div>
         
         </div>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/ekko-lightbox.min.js"></script> -->
+    <script src="js/lightbox.min.js"></script>
     <footer class="portfolio-footer">
 <div class="container">
 <p class="text-colored-darker text-center">
@@ -167,5 +172,11 @@ Benedikt "Schlechtwetterfront" Schatz
 </p>
 </div>
 </footer>
+    <script>
+        lightbox.option({
+            "resizeDuration": 100,
+            "fadeDuration": 250,
+        });
+    </script>
     </body>
 </html>
