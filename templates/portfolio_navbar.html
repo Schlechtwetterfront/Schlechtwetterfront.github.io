@@ -8,10 +8,14 @@
             <a href="home.html" class="navbar-brand colored text-white">
                 Schlechtwetterfront
             </a>
-            {% if not page_title == 'Schlechtwetterfront' %}
-            <p class="navbar-text text-colored-dark">{{ page_title }}</p>
-            {% endif %}
         </div>
+        {% if not page_title == 'Schlechtwetterfront' %}
+        <ul class="nav navbar-nav center-block">
+            <li>
+            <p class="navbar-text text-colored-dark">{{ page_title }}
+            </li>
+        </ul>
+        {% endif %}
         <ul class="nav navbar-nav navbar-right">
             {% for link in navbar_links %}
             <li>

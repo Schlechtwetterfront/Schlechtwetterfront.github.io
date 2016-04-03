@@ -1,0 +1,805 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"LINK",
+				"LINK_VIDEO"
+			],
+			[
+				"pos",
+				"positions_and_normals"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"msh2",
+				"msh2_unpack"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"n",
+				"currentColor"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"Proj",
+				"ProjectBrief"
+			],
+			[
+				"max-",
+				"max-height"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"por",
+				"portfolio_index"
+			],
+			[
+				"box",
+				"box_darkened_color3"
+			],
+			[
+				"box_d",
+				"box_darkened_color3"
+			],
+			[
+				"box_",
+				"box_hover_color"
+			],
+			[
+				"boxdar",
+				"box_darkened_color3"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"paddin",
+				"padding-left"
+			],
+			[
+				"is",
+				"is_sidebar_category"
+			],
+			[
+				"is_",
+				"is_navbar_category"
+			],
+			[
+				"cate",
+				"categories"
+			],
+			[
+				"CHUN",
+				"CHUNK_CATEGORIES"
+			],
+			[
+				"CHU",
+				"CHUNKS_ANIMATION"
+			],
+			[
+				"CHUn",
+				"CHUNKS_CLOTH"
+			],
+			[
+				"CH",
+				"CHUNKS_SEGMENTS"
+			],
+			[
+				"CHUNKS",
+				"CHUNKS_GENERAL"
+			],
+			[
+				"link",
+				"link_title"
+			],
+			[
+				"hier",
+				"hierarchy_level"
+			],
+			[
+				"get_",
+				"get_navbar_links"
+			],
+			[
+				"get",
+				"get_categories"
+			],
+			[
+				"chunk",
+				"chunk_key"
+			],
+			[
+				"MS",
+				"MSHFORMAT"
+			],
+			[
+				"index",
+				"index1"
+			],
+			[
+				"sidebar",
+				"sidebar_padding_bottom"
+			],
+			[
+				"total",
+				"total_height_sidebar"
+			],
+			[
+				"render",
+				"render_type"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"rec",
+				"rectangle-button-semi"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"colli",
+				"collision_name"
+			],
+			[
+				"bo",
+				"box_darkened_color"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"convert",
+				"convert-from-hex"
+			],
+			[
+				"data1",
+				"data1-hex-value"
+			],
+			[
+				"data",
+				"data1-hex-value"
+			],
+			[
+				"rende",
+				"renderType"
+			],
+			[
+				"reder",
+				"render-type-hex-value"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"tex",
+				"textures"
+			],
+			[
+				"flags",
+				"flags_and_stuff"
+			],
+			[
+				"used",
+				"used_by"
+			],
+			[
+				"log",
+				"logging"
+			],
+			[
+				"end",
+				"end_time"
+			],
+			[
+				"ony",
+				"only_materials"
+			],
+			[
+				"PATHS",
+				"PATHS_MODTOOLS"
+			],
+			[
+				"PAS",
+				"PATHS_MODTOOLS"
+			],
+			[
+				"file",
+				"file_name"
+			],
+			[
+				"mater",
+				"material_name"
+			],
+			[
+				"Sw",
+				"SWBF2_ModTools"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"backgr",
+				"background-image"
+			],
+			[
+				"scr",
+				"scrollable"
+			],
+			[
+				"scrol",
+				"scrollable_min_height"
+			],
+			[
+				"tota",
+				"total_height_children"
+			],
+			[
+				"side",
+				"sidebar_padding_bottom"
+			],
+			[
+				"sideb",
+				"sidebar-content"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"toggle",
+				"toggle-state-changed"
+			],
+			[
+				"id",
+				"id"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"b",
+				"bottom"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "build.py",
+			"settings":
+			{
+				"buffer_size": 941,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "pages/portfolio_snippets.py",
+			"settings":
+			{
+				"buffer_size": 2486,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 342.0,
+		"last_filter": "mar",
+		"selected_items":
+		[
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"list",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 398.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/L/Users/Benedikt/Documents/Code/github-page/dev",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages"
+	],
+	"file_history":
+	[
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/page_dev.sublime-project",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/portfolio_projects.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/css/bootstrap.css",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/portfolio_header.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/css/shared.css",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/css/site.css",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/css/site-mainpage.css",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/dev/Application/Modules/msh2.py",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/dev/Application/Core/andezetexport.py",
+		"/L/Users/Benedikt/Google Drive/Documents/Uni/Algorithmen & Datenstrukturen/alg.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/page_core.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/portfolio_projects.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/build.py",
+		"/L/Users/Benedikt/Google Drive/Documents/Stories/Exorcist/test_stories.tex",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/dev/.gitignore",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/ZeroEngine/XSI2MSHExporter/XSI3/Scene2MSH.cpp",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/dev/Source/README.md",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/ZeroEngine/XSI2MSHExporter/XSI3/XSI2MSHExporter.cpp",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/portfolio_footer.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/portfolio_navbar.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/portfolio_index.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/portfolio_art.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/portfolio_snippets.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/portfolio_index.py",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Application/Core/andezetexport.py",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/dev/xsizet.ver",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/setup_64.bat",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/x32/ZETools_CppHelpers.cpp",
+		"/D/Softimage/Softimage_Mod_Tool_7.5/XSISDK/include/sicppsdk.h",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/setup_86.bat",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/.gitignore",
+		"/D/Softimage/Softimage_Mod_Tool_7.5/Application/bin/setenv.bat",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/README.md",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/XSISDK/include/sicppsdk.h",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/x64/XSIZETools_CppHelpers.vcxproj",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/x32/ZETools_CppHelpers.vcxproj",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/XSISDK/mkfiles/cl-x86.props",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/XSISDK/mkfiles/cl-x64.props",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/XSISDK/mkfiles/cl-release.props",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/XSISDK/mkfiles/cl-debug.props",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/XSISDK/mkfiles/allcfg.props",
+		"/D/Program Files/Autodesk/Softimage 2015/XSISDK/mkfiles/Release-x64.props",
+		"/D/Program Files/Autodesk/Softimage 2015/XSISDK/mkfiles/Debug-x64.props",
+		"/D/Program Files/Autodesk/Softimage 2015/XSISDK/mkfiles/Debug-x64.vsprops",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/XSISDK/mkfiles/Debug-x64.props",
+		"/D/Program Files/Autodesk/Softimage 2015/XSISDK/mkfiles/Debug-x86.props",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/XSISDK/mkfiles/Debug-x64.vsprops",
+		"/D/Program Files/Autodesk/Softimage 2015/XSISDK/mkfiles/Debug-x86.vsprops",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/x64/XSIZETools_CppHelpers.sln",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/README.md",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/x64/setup_64.bat",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/XSIZETools_src/CGeoAccessorWrappers/x64/XSIZETools_CppHelpers.cpp",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/XSIZETools_src/CGeoAccessorWrappers/x32/ZETools_CppHelpers.cpp",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/XSIZETools_src/CGeoAccessorWrappers/XSIZETools_CppHelpers.txt",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Source/XSISDK/examples/drivers/MouseDriver/StdAfx.cpp",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/XSIZETools_src/XSIZETUtils/zetutils.py",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/ZeroEngine/mshwalker.log",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/ZeroEngine/msh2_unpack.py",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/ZeroEngine/msh_walker.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/portfolio_about.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/__init__.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/css/ande.css",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/project_sidebar.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/fileformats_rendertypes.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/fileformats_ter.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/fileformats_ter_tcw.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/softcry_main.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/fileformats_main.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/zetools_main.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/fileformats_msh.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/js/schlechtwetterfront_visual.js",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/css/schlechtwetterfront_dark.css",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/pages/main_website.py",
+		"/C/Users/Benedikt/Autodesk/Softimage_2015/Application/Plugins/pointaligner.py",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/index_template.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/navbar.html",
+		"/C/Users/Benedikt/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Benedikt/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/css/styles.css",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/js/schlechtwetterfront_functional.js",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/project_content.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/project_index.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/standard_header.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/fileformats_calculator_alt.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/css/schlechtwetterfront_light.css",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/fileformats_calculator.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/templates/templates.html",
+		"/L/Users/Benedikt/Documents/Code/github-page/dev/mshformat.json",
+		"/C/Users/Benedikt/Autodesk/Softimage_2015/Addons/master/import_log.log",
+		"/C/Users/Benedikt/Autodesk/Softimage_2015/Addons/master/export_log.log",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Application/Modules/msh2.py",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Application/Modules/msh2_unpack.py",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Application/Core/andezetimport.py",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Application/Core/andezetcore.py",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Application/Plugins/XSIZETools.py",
+		"/C/Users/Benedikt/Desktop/ctrl_f10.ahk",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/xsizet.ver",
+		"/C/Users/Benedikt/AppData/Local/Temp/B3E5.tmp.txt",
+		"/L/Users/Benedikt/Documents/Code/xsizetools/master/Application/Logic/exporter.py",
+		"/D/Program Files (x86)/Steam/userdata/51387491/570/remote/user_keys.vcfg",
+		"/D/Program Files (x86)/Steam/userdata/51387491/570/remote/cfg/dotakeys_personal.lst",
+		"/D/Program Files (x86)/Steam/userdata/51387491/570/remote/user.vcfg",
+		"/D/Program Files (x86)/Steam/userdata/51387491/570/remote/voice_ban.dt",
+		"/D/Program Files (x86)/Steam/userdata/51387491/570/remote/cfg/config.cfg",
+		"/D/Program Files (x86)/Steam/userdata/51387491/570/remote/cfg/chat.cfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/latest_conduct_scorecard.51387491.txt",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/game_convars_vr.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/game_convars.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/configschema.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/configdefaults.pc.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/configdefaults.osx.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/configdefaults.linux.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/configdefaults.360.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/video.txt",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/video.raptr_1456846874.txt",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/user_keys_slot3.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/user_keys_slot2.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/user_keys_slot1.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/machine_convars.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/machine_convars_default.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/user_keys_dev_default.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/user_keys_default.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/cfg/autoexec.cfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/core/scripts/vscripts/animationsystem/animationsysteminit.lua",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/core/cfg/configdefaults.pc.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/core/cfg/configdefaults.linux.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/core/cfg/configdefaults.360.vcfg",
+		"/D/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/core/cfg/user_keys_default.vcfg"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 92.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"font-fam",
+			"uv",
+			"cga_",
+			"sicpp",
+			"getweights0",
+			"getdeformers",
+			"cga_",
+			"tab",
+			"<indented_text>",
+			"def get_render_type_options():\n    options = []\n    for index, render_type in enumerate(RENDER_TYPES):\n        options.append('\\t<option value=\"{0}\">{0:0>2} - {1}</option>'.format(index, render_type))\n    return '\\n'.join(options)",
+			"td",
+			"bold",
+			"container",
+			"vis",
+			"pack_tris",
+			"c_l_calf",
+			"logmessage",
+			"print",
+			"logmessage",
+			"print",
+			"logmessage",
+			"log",
+			"print",
+			"root",
+			"<span class=\"circle border-colored-dark\">",
+			"section-header",
+			"{:>64}",
+			"74",
+			"72",
+			"data",
+			"reflection",
+			"rotate",
+			"split",
+			"strip",
+			"xrange",
+			"itertools.izip",
+			"xrange",
+			" 2",
+			"log",
+			"cloth",
+			"geometry",
+			"tab",
+			"xrange",
+			"fov",
+			"smooth",
+			"acc",
+			"smooth",
+			"atrb",
+			">\n",
+			"](#",
+			"MODL",
+			"a ",
+			"code"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": true,
+		"replace_history":
+		[
+			"",
+			"my-container",
+			"<span class=\"circle border-colored-dark\"></span>",
+			"",
+			"64",
+			"74",
+			"range",
+			"zip",
+			"range",
+			"\\n2",
+			"\\n",
+			"range"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "build.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 941,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								941,
+								941
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "pages/portfolio_snippets.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2486,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								214,
+								214
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 141.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 98.0
+	},
+	"pinned_build_system": "",
+	"project": "page_dev.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 256.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

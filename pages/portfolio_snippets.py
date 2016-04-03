@@ -46,7 +46,7 @@ This command needs to be executed from script.
 
 Open the script editor ("Scroll" button in the bottom panel of the Softimage UI or <kbd>Alt + 4</kbd>) and call
 
-```Application.SelectPointsByEnvelopeWeight(enveloped_mesh, deformer, weight_threshold)```
+```Application.SelectPointsByEnvelopeWeight( enveloped_mesh, deformer, weight_threshold )```
 
 For python, VB/JS don't need the ```Application.```.
 
