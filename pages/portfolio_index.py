@@ -26,9 +26,16 @@ OTHER_SKILLS = '''
 '''
 
 T_PY = 'Python'
+T_CPP = 'C++'
+
 T_SI = 'Autodesk Softimage'
+T_PS = 'Adobe Photoshop'
+T_ZB = 'ZBrush'
+
 T_ZE = 'ZeroEngine'
+T_UE = 'UnrealEngine 4'
 T_CE = 'CRYENGINE'
+
 T_PI = 'Plug-in'
 
 
@@ -56,14 +63,16 @@ Welcome to my page! I'm a hobby software developer and artist.
 
 Here you can find some of my bigger software projects, smaller code pieces and some art I created.
 
+This is still under construction.
+
     '''),
     'sections': [
         ProjectBrief(title='Skills & Contact',
                      links=[
-                        Link(MAIL, 'mailto:schlchtwtrfrnt@gmail.com'),
+                        Link('Mail', 'mailto:schlchtwtrfrnt@gmail.com'),
                         Link('Github', 'https://github.com/Schlechtwetterfront'),
                         Link('Twitter', 'https://twitter.com/schlchtwtrfrnt'),
-                        Link('YouTube', 'https://youtube.com/user/andeweget'),
+                        # Link('YouTube', 'https://youtube.com/user/andeweget'),
                         Link('ArtStation', 'https://www.artstation.com/artist/schlechtwetterfront'),
                      ],
                      text='''
@@ -79,7 +88,7 @@ Here you can find some of my bigger software projects, smaller code pieces and s
 #### Software Development
 
 <span class="label label-success label-lg">Python</span>
-<span class="label label-info label-lg">JavaScript / JQuery</span>
+<span class="label label-info label-lg">HTML / CSS / JS/JQuery</span>
 <span class="label label-info label-lg">C#</span>
 <span class="label label-info label-lg">Lua</span>
 <span class="label label-warning label-lg">C++</span>

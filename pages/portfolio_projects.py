@@ -2,6 +2,7 @@ from page_core import *
 from pages import portfolio_index as p
 import markdown
 
+GLYPH_PLAY = '<span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>'
 
 PAGE = {
     'page_template': 'portfolio_projects.html',
@@ -18,7 +19,7 @@ This page contains all my (public) notable projects from my [Github](https://git
     '''),
     'sections': [
         ProjectBrief(title='XSIZETools',
-                     tags=['2011-', p.T_PY, p.T_SI, p.T_PI, p.T_ZE],
+                     tags=['2011-', p.T_PY, p.T_CPP, p.T_SI, p.T_PI, p.T_ZE],
                      links=[
                          Link('Project Homepage', '/xsizetools/'),
                          Link('Releases', 'https://github.com/Schlechtwetterfront/xsizetools/releases'),
@@ -28,9 +29,12 @@ This page contains all my (public) notable projects from my [Github](https://git
                      images=[
                          (Link('Export Dialog', 'img/zet_export.png'),
                          Link('Import Dialog', 'img/zet_import.png'),
-                         Link('Import Settings', 'img/zet_import_settings.png'),
+                         # Link('Import Settings', 'img/zet_import_settings.png'),
                          Link('Cloth Edit', 'img/zet_cloth.png'),
-                         Link('Material Manager', 'img/zet_matman.png'),),
+                         Link('Material Manager', 'img/zet_matman.png'),
+                         Link(GLYPH_PLAY + ' Animation Import', address='puqIf-8vSRc', link_type='LINK_VIDEO'),
+                         Link(GLYPH_PLAY + ' Exported Cloth', address='eLMz37D-dFA', link_type='LINK_VIDEO'),
+                         ),
                      ],
                      text='''
 XSIZETools is an addon for Autodesk Softimage. It adds support to export & import ZeroEngine (Star Wars: Battlefront I & II) .msh model/animation files.
@@ -97,6 +101,24 @@ This is a parser and converter for ZeroEngine terrain file formats (.ter and .xx
                      text='''
 This is a collection of documentation on some of ZeroEngine's proprietary file formats. It contains documentation for the .msh, .ter and .xxw file formats, all 
 used in ZeroEngine.
+
+Most of the groundwork was laid by _riley-man_ on Gametoast. I corrected and fleshed out a lof of his work and added some yet unresearched
+chunks (usually from later version of the engine coming with SWBFII).
         '''),
+        ProjectBrief(title='Star Wars: Battlecry',
+                     tags=['2012-2015', p.T_CPP, p.T_SI, p.T_PS, p.T_ZB, p.T_UE],
+                     links=[
+                         Link('Project Homepage', 'http://www.swbattlecry.com'),
+                     ],
+                     text='''
+**Star Wars: Battlecry** is a fan project that aims to create an authentic Star Wars shooter.
+
+#### Tasks
+
+* Modelled and textured most of the characters.
+* Designed, modelled and textured some environments.
+* Implementation of game modes, items and various other smaller game code features.
+        '''),
+
     ],
 }

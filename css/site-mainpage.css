@@ -1,8 +1,17 @@
 .page-content-section-header,
 .navbar-portfolio {
     border: none;
-    border-bottom: 2px solid #EEE;
+    border-bottom: 2px solid #333;
     border-radius: 0px;
+}
+
+
+.navbar-brand {
+    background-color: #333;
+}
+
+.navbar-brand:hover {
+    color: white;
 }
 
 
@@ -22,6 +31,11 @@
 
     min-width: 100px;
     display: inline-block;
+
+    background: #333;
+
+    font-size: 16px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 
@@ -48,6 +62,8 @@
 
 .section-links {
     padding: 3px 5px 5px;
+
+    background: #999;
 }
 
 
@@ -80,9 +96,15 @@ a.rectangle-button {
 }
 
 
+.background-colored-hover:hover {
+    background: #333;
+    color:;
+}
+
+
 a:hover {
     text-decoration: none;
-    color: white;
+    /*color: white;*/
 }
 
 html,
@@ -93,4 +115,8 @@ body {
 
 p, li {
     color: #555;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }

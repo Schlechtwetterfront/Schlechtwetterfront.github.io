@@ -16,39 +16,50 @@
                 </div>
             </div>
             <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-9">
-                    {{ section.markdown('text') }}
+                <div class="row">
+                    <div class="col-md-9">
+                        {{ section.markdown('text') }}
+                    </div>
+                    {% if section.has_links() %}
+                    <div class="col-md-3 section-links colored">
+                    {% for link in section.links %}
+                        <a href="{{ link.address }}" class="rectangle-button rectangle-button-semi">{{ link.title }}</a>
+                    {% endfor %}
+                    </div>
+                    {% endif %}
                 </div>
-                {% if section.has_links() %}
-                <div class="col-md-3 section-links colored">
-                {% for link in section.links %}
-                    <a href="{{ link.address }}" class="rectangle-button rectangle-button-semi">{{ link.title }}</a>
+                {% if section.has_images() %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Images</h4>
+                    </div>
+                </div>
+                {% for row in section.images %}
+                <div class="row">
+                    {% for image in row %}
+                    {% if image.is_video %}
+                    <div class="col-md-2">
+                        <a href="https://www.youtube.com/watch?v={{ image.address }}" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                {{ image.title }}
+                            </div>
+                            <img src="http://img.youtube.com/vi/{{ image.address }}/default.jpg" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    {% else %}
+                    <div class="col-md-2">
+                        <a href="{{ image.address }}" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                {{ image.title }}
+                            </div>
+                            <img src="{{ image.address }}" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
                 {% endfor %}
-                </div>
                 {% endif %}
-            </div>
-            {% if section.has_images() %}
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>Images</h4>
-                </div>
-            </div>
-            {% for row in section.images %}
-            <div class="row">
-                {% for image in row %}
-                <div class="col-md-2">
-                    <a href="{{ image.address }}" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            {{ image.title }}
-                        </div>
-                        <img src="{{ image.address }}" class="img-responsive center-block">
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
-            {% endfor %}
-            {% endif %}
             </div>
         </div>
         {% endfor %}

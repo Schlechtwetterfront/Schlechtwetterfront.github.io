@@ -7,14 +7,14 @@
     <!-- <link rel="stylesheet" href="css/schlechtwetterfront_dark.css"> -->
     <!-- <link rel="stylesheet" href="css/schlechtwetterfront_light.css"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/shared.css">
     <!-- <link rel="stylesheet" href="css/site.css"> -->
-    <link rel="stylesheet" href="css/site-mainpage.css">
     <script src="js/respond.js"></script>
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/schlechtwetterfront_functional.js"></script>
     <script src="js/schlechtwetterfront_visual.js"></script>
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/site-mainpage.css">
     <link rel="icon" type="image/png" href="favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -71,53 +71,57 @@
                 </div>
             </div>
             <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-9">
-                    <p>A small python plug-in for (X)SI. Let's you set RGB or HSV colors. This applies the colors to the first vertex color cluster it finds for
+                <div class="row">
+                    <div class="col-md-9">
+                        <p>A small python plug-in for (X)SI. Let's you set RGB or HSV colors. This applies the colors to the first vertex color cluster it finds for
 every model in the current selection. If it doesn't find a cluster it can create one if you check the Create Cluster option. I created
 this very basic script for a friend who needed to eliminate baked AO from the vertex colors but wanted to keep the light colors in.</p>
 <h4>Usage</h4>
 <p>This adds a sub menu to Animate &gt; Get &gt; Property called "Edit Vertex Colors". Choose "Set Vertex Colors" from there and adjust
 settings in the UI as you like.</p>
+                    </div>
+                    
+                    <div class="col-md-3 section-links colored">
+                    
+                        <a href="https://gist.github.com/Schlechtwetterfront/6896743" class="rectangle-button rectangle-button-semi">Github Gist</a>
+                    
+                    </div>
+                    
                 </div>
                 
-                <div class="col-md-3 section-links colored">
-                
-                    <a href="https://gist.github.com/Schlechtwetterfront/6896743" class="rectangle-button rectangle-button-semi">Github Gist</a>
-                
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Images</h4>
+                    </div>
                 </div>
                 
-            </div>
-            
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>Images</h4>
-                </div>
-            </div>
-            
-            <div class="row">
-                
-                <div class="col-md-2">
-                    <a href="img/gist_vertcolchanger.png" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Dialog
-                        </div>
-                        <img src="img/gist_vertcolchanger.png" class="img-responsive center-block">
-                    </a>
-                </div>
-                
-                <div class="col-md-2">
-                    <a href="img/vertcol_anim.gif" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Process
-                        </div>
-                        <img src="img/vertcol_anim.gif" class="img-responsive center-block">
-                    </a>
+                <div class="row">
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/gist_vertcolchanger.png" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Dialog
+                            </div>
+                            <img src="img/gist_vertcolchanger.png" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/vertcol_anim.gif" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Process
+                            </div>
+                            <img src="img/vertcol_anim.gif" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
                 </div>
                 
-            </div>
-            
-            
+                
             </div>
         </div>
         
@@ -135,9 +139,9 @@ settings in the UI as you like.</p>
                 </div>
             </div>
             <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-9">
-                    <p>Selects all points on object <code>enveloped_mesh</code> which have a weight value for <code>deformer</code> bigger than <code>weight_threshold</code>.</p>
+                <div class="row">
+                    <div class="col-md-9">
+                        <p>Selects all points on object <code>enveloped_mesh</code> which have a weight value for <code>deformer</code> bigger than <code>weight_threshold</code>.</p>
 <h4>Usage</h4>
 <p>This command needs to be executed from script.</p>
 <p>Open the script editor ("Scroll" button in the bottom panel of the Softimage UI or <kbd>Alt + 4</kbd>) and call</p>
@@ -148,36 +152,38 @@ settings in the UI as you like.</p>
 <li><code>deformer</code>: The deformer object's SI name (i.e. 'bone_spine_a').</li>
 <li><code>weight_threshold</code>: Weight percentage threshold (0-100).</li>
 </ul>
+                    </div>
+                    
+                    <div class="col-md-3 section-links colored">
+                    
+                        <a href="https://gist.github.com/Schlechtwetterfront/73124aa70db53398383c" class="rectangle-button rectangle-button-semi">Github Gist</a>
+                    
+                    </div>
+                    
                 </div>
                 
-                <div class="col-md-3 section-links colored">
-                
-                    <a href="https://gist.github.com/Schlechtwetterfront/73124aa70db53398383c" class="rectangle-button rectangle-button-semi">Github Gist</a>
-                
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Images</h4>
+                    </div>
                 </div>
                 
-            </div>
-            
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>Images</h4>
-                </div>
-            </div>
-            
-            <div class="row">
-                
-                <div class="col-md-2">
-                    <a href="img/select_env_weights.gif" class="thumbnail bordered thumbnail-cut">
-                        <div class="caption caption-center">
-                            Process
-                        </div>
-                        <img src="img/select_env_weights.gif" class="img-responsive center-block">
-                    </a>
+                <div class="row">
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="img/select_env_weights.gif" class="thumbnail bordered thumbnail-cut">
+                            <div class="caption caption-center">
+                                Process
+                            </div>
+                            <img src="img/select_env_weights.gif" class="img-responsive center-block">
+                        </a>
+                    </div>
+                    
+                    
                 </div>
                 
-            </div>
-            
-            
+                
             </div>
         </div>
         

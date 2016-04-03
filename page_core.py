@@ -4,6 +4,7 @@ LINK_NORMAL = 'LINK_NORMAL'
 LINK_INTERNAL = 'LINK_INTERNAL'
 LINK_EXTERNAL = 'LINK_EXTERNAL'
 LINK_DOWNLOAD = 'LINK_DOWNLOAD'
+LINK_VIDEO = 'LINK_VIDEO'
 
 MARKDOWN_EXTENSIONS = ['markdown.extensions.extra', 'markdown.extensions.fenced_code', 'markdown.extensions.tables']
 
@@ -15,6 +16,8 @@ class Link(object):
         self.link_class = link_class
 
         self.link_type = LINK_NORMAL
+
+        self.is_video = link_type == LINK_VIDEO
 
 
 class Project(object):
