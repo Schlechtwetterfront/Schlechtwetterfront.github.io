@@ -43,16 +43,16 @@
                             <div class="caption caption-center">
                                 {{ image.title }}
                             </div>
-                            <img src="http://img.youtube.com/vi/{{ image.address }}/default.jpg" class="img-responsive center-block">
+                            <img src="http://img.youtube.com/vi/{{ image.address }}/default.jpg" class="img-responsive">
                         </a>
                     </div>
                     {% else %}
                     <div class="col-md-2">
-                        <a href="{{ image.address }}" class="thumbnail bordered thumbnail-cut">
+                        <a href="{{ image.address }}" class="thumbnail bordered thumbnail-cut" data-toggle="lightbox" data-title="{{ image.title }}" data-gallery="{{ image.link_name }}" data-lightbox="{{ image.link_name }}">
                             <div class="caption caption-center">
                                 {{ image.title }}
                             </div>
-                            <img src="{{ image.address }}" class="img-responsive center-block">
+                            <img src="{{ image.address }}" class="img-responsive">
                         </a>
                     </div>
                     {% endif %}
@@ -64,6 +64,15 @@
         </div>
         {% endfor %}
         </div>
+    <script src="{{ path }}js/bootstrap.min.js"></script>
+    <!-- <script src="{{ path }}js/ekko-lightbox.min.js"></script> -->
+    <script src="{{ path }}js/lightbox.min.js"></script>
     {% include "portfolio_footer.html" %}
+    <script>
+        lightbox.option({
+            "resizeDuration": 100,
+            "fadeDuration": 250,
+        });
+    </script>
     </body>
 </html>

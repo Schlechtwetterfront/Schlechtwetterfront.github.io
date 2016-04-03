@@ -9,11 +9,12 @@ LINK_VIDEO = 'LINK_VIDEO'
 MARKDOWN_EXTENSIONS = ['markdown.extensions.extra', 'markdown.extensions.fenced_code', 'markdown.extensions.tables']
 
 class Link(object):
-    def __init__(self, title='LinkTitle', address='google.com', link_type=LINK_NORMAL, link_class='rectangle-button rectangle-button-semi'):
+    def __init__(self, title='LinkTitle', address='google.com', link_type=LINK_NORMAL, link_class='rectangle-button rectangle-button-semi', link_name=''):
         self.title = title
         self.address = address
         self.link_type = link_type
         self.link_class = link_class
+        self.link_name = link_name
 
         self.link_type = LINK_NORMAL
 

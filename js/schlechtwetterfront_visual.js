@@ -20,7 +20,7 @@ var colors = [
 ];
 
 
-window.addEventListener("load", function() {
+$( document ).ready(function() {
 
     // Choose random hover color for all elments.
     var box_hover_color = colors[Math.floor(Math.random() * colors.length)];
