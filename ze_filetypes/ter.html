@@ -161,12 +161,7 @@
 <td>RGBA colors for the terrain grid.</td>
 </tr>
 <tr>
-<td>Color Block ?</td>
-<td><strong>size * size</strong> * 4</td>
-<td>RGBA colors for the terrain grid.</td>
-</tr>
-<tr>
-<td>Color Block ?</td>
+<td>Color Block</td>
 <td><strong>size * size</strong> * 4</td>
 <td>RGBA colors for the terrain grid.</td>
 </tr>
@@ -177,23 +172,18 @@
 </tr>
 <tr>
 <td>?</td>
-<td><strong>size * size</strong> * ?</td>
+<td><strong>size * size</strong> / 2</td>
 <td>Maybe Water/Foliage.</td>
 </tr>
 <tr>
 <td>?</td>
-<td><strong>size * size</strong> * ?</td>
+<td><strong>size * size</strong> / 2</td>
 <td>Probably Water.</td>
 </tr>
 <tr>
 <td>?</td>
-<td>?</td>
-<td>?</td>
-</tr>
-<tr>
-<td>?</td>
 <td>Variable</td>
-<td></td>
+<td>Not sure what this contains but it seems that this block is not required.</td>
 </tr>
 </tbody>
 </table>
@@ -261,7 +251,7 @@
 <tr>
 <td class="red">float </td>
 <td>4</td>
-<td>Map scale multiplier.</td>
+<td>Map height multiplier.</td>
 </tr>
 <tr>
 <td class="red">float</td>
@@ -321,7 +311,7 @@
 	 -->
 				<!-- </div> -->
 				<div id="terrain_blocks_content" class="section-content">
-				<p>The Terrain Header is always 2821 bytes in length.</p>
+				<p>The Terrain Header is 2820 (SWBF) or 2821 (SWBFII) bytes in length.</p>
 <table>
 <thead>
 <tr>
@@ -343,33 +333,23 @@
 </tr>
 <tr>
 <td><strong>Color</strong></td>
-<td class="red">float [4]</td>
+<td class="orange">byte [4]</td>
 <td><strong>Full map size * Full map size</strong> * 4</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
-<td>Color values for every point on the grid. 4 floats (from 0.0 to 1.0) corresponding to the RGBA channels.</td>
+<td>Color values for every point on the grid. 4 bytes (from 0 to 255) corresponding to the RGBA channels.</td>
 </tr>
 <tr>
 <td><strong>Color 2</strong></td>
-<td class="red">float [4]</td>
+<td class="orange">byte [4]</td>
 <td><strong>Full map size * Full map size</strong> * 4</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
-<td>Color values for every point on the grid. 4 floats (from 0.0 to 1.0) corresponding to the RGBA channels.</td>
-</tr>
-<tr>
-<td><strong>Color 3</strong></td>
-<td class="red">float [4]</td>
-<td><strong>Full map size * Full map size</strong> * 4</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Color values for every point on the grid. 4 floats (from 0.0 to 1.0) corresponding to the RGBA channels.</td>
+<td>Color values for every point on the grid. 4 bytes (from 0 to 255) corresponding to the RGBA channels.</td>
 </tr>
 <tr>
 <td><strong>Texture</strong></td>
@@ -379,7 +359,7 @@
 <tr>
 <td></td>
 <td></td>
-<td>One byte (0-255) for each texture layer indicating the transparency of its texture layer.</td>
+<td>One byte (0-255) for each texture layer indicating the transparency of the corresponding texture layer.</td>
 </tr>
 <tr>
 <td><strong>Water</strong></td>
@@ -395,6 +375,16 @@
 <td><strong>Foliage</strong></td>
 <td class="orange">byte</td>
 <td><strong>Full map size * Full map size</strong> / 2</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Structure unknown.</td>
+</tr>
+<tr>
+<td><strong>Unknwon</strong></td>
+<td class="orange">byte</td>
+<td>Variable</td>
 </tr>
 <tr>
 <td></td>

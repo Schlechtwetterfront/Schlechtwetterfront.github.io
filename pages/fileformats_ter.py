@@ -32,13 +32,11 @@ Name                | Size (bytes)          | Description
 Terrain Header      | 2820/2821 (v21/22)    | Header storing general information about the terrain.
 Height Block        | **size * size** * 2   | Height grid data.
 Color Block         | **size * size** * 4   | RGBA colors for the terrain grid.
-Color Block ?       | **size * size** * 4   | RGBA colors for the terrain grid.
-Color Block ?       | **size * size** * 4   | RGBA colors for the terrain grid.
+Color Block         | **size * size** * 4   | RGBA colors for the terrain grid.
 Texture Block       | **size * size** * 16  | Texture layer opacity for the terrain grid.
-?                   | **size * size** * ?   | Maybe Water/Foliage.
-?                   | **size * size** * ?   | Probably Water.
-?                   | ?                     | ?
-?                   | Variable              | 
+?                   | **size * size** / 2   | Maybe Water/Foliage.
+?                   | **size * size** / 2   | Probably Water.
+?                   | Variable              | Not sure what this contains but it seems that this block is not required.
 
 '''),
         Section('Terrain Header', 'terrain_header', True, False, False, '''
@@ -53,7 +51,7 @@ long int{: .red}    | 4             | ? (ie. 164)
 float [16]{: .red}  | 64            | Tile-range for each texture layer. _0.031 (1/32): the texture spans 32 meters. This is stored as 1/X of the value in ZeroEditor.
 byte [16]{: .orange}| 16            | Mapping for each texture-layer. 0 is normal.
 byte [64]{: .orange}| 64            | Unknown. Possibly 16 floats for texture-layer rotations.
-float {: .red}      | 4             | Map scale multiplier.
+float {: .red}      | 4             | Map height multiplier.
 float{: .red}       | 4             | Grid-scale. Distance between points.
 long int{: .red}    | 4             | ? (1)
 long int{: .red}    | 4             | Full map size stored in the .TER file. The same or bigger than the map extents.
@@ -64,23 +62,23 @@ WaterLayer [16]     | 1086          | Water layers (see below).
 byte [524]{: .orange}| 524          | Unknown.
 '''),
         Section('Terrain Blocks', 'terrain_blocks', True, False, False, '''
-The Terrain Header is always 2821 bytes in length.
+The Terrain Header is 2820 (SWBF) or 2821 (SWBFII) bytes in length.
 
 Name            | Data Type             | Size
 ------------    |---------------        |-------------
 **Height**      | signed short{: .red}  | **Full map size * Full map size** * 2 
                 | | Height value for every point on the grid. This value will be multiplied with the map scale multiplier.
-**Color**       | float [4]{: .red}     | **Full map size * Full map size** * 4
-                | | Color values for every point on the grid. 4 floats (from 0.0 to 1.0) corresponding to the RGBA channels.
-**Color 2**     | float [4]{: .red}     | **Full map size * Full map size** * 4
-                | | Color values for every point on the grid. 4 floats (from 0.0 to 1.0) corresponding to the RGBA channels.
-**Color 3**     | float [4]{: .red}     | **Full map size * Full map size** * 4
-                | | Color values for every point on the grid. 4 floats (from 0.0 to 1.0) corresponding to the RGBA channels.
+**Color**       | byte [4]{: .orange}     | **Full map size * Full map size** * 4
+                | | Color values for every point on the grid. 4 bytes (from 0 to 255) corresponding to the RGBA channels.
+**Color 2**     | byte [4]{: .orange}     | **Full map size * Full map size** * 4
+                | | Color values for every point on the grid. 4 bytes (from 0 to 255) corresponding to the RGBA channels.
 **Texture**     | byte [16]{: .orange}  | **Full map size * Full map size** * 16
-                | | One byte (0-255) for each texture layer indicating the transparency of its texture layer.
+                | | One byte (0-255) for each texture layer indicating the transparency of the corresponding texture layer.
 **Water**       | byte{: .orange}       | **Full map size * Full map size** / 2 
                 | | Structure unknown.
 **Foliage**     | byte{: .orange}       | **Full map size * Full map size** / 2 
+                | | Structure unknown.
+**Unknwon**     | byte{: .orange}       | Variable
                 | | Structure unknown.
 
 '''),
