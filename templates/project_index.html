@@ -11,5 +11,13 @@
     		{% endblock content %}
             </div>
 		</div>
+        <script src="{{ path }}js/lightbox.min.js"></script>
+        {% include "portfolio_footer.html" %}
+        <script>
+            lightbox.option({
+                "resizeDuration": 100,
+                "fadeDuration": 250,
+            });
+        </script>
 	</body>
 </html>
