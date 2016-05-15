@@ -74,20 +74,17 @@ If python and pywin32 was installed correctly it should look something like
 [releases]: https://github.com/Schlechtwetterfront/xsizetools/releases "Releases"
 '''),
 		Section('Contributors', 'contributors', True, True, False, '''
-**ME (ANDEWEGET/Ande)**  
-All programming | Graphics/UI | Main .msh file research
+* **Schlechtwetterfront/ANDEWEGET:** Programming, Graphics/UI, most .msh file research.
+
+* **AceMastermind (gametoast.com):** Created most templates, provided example .msh files, additional .msh research.
   
-**AceMastermind (gametoast.com)**  
-Created most templates | Provided example .msh files | Additional .msh research
-  
-**DarthD.U.C.K (gametoast.com)**  
-Created some templates | Provided example .msh files | Additional .msh research
-  
-**tirpider (gametoast.com, swbfgamers.com)**  
-Additional .msh research | MSH Info Tool greatly helped with debugging | Interesting discussions
-  
-**FragMe! (gametoast.com)**  
-Provided a tool/material for some additional research
+* **DarthD.U.C.K (gametoast.com):** Created some templates, provided example .msh files, additional .msh research.
+
+* **tirpider (gametoast.com, swbfgamers.com):** Additional .msh research, MSH Info Tool greatly helped with debugging, interesting discussions.
+
+* **FragMe! (gametoast.com):** Provided a tool/material for some additional research.
+
+* All the modders using this tool and reporting bugs.
 
 '''),
 		Section('Export Guidelines', 'export-guidelines', True, False, False, '''
