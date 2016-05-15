@@ -49,27 +49,29 @@ If you encounter bugs or have problems, feel free to post on the [Gametoast foru
 [releases]: https://github.com/Schlechtwetterfront/xsizetools/releases "Releases"
 '''),
 			Section('Download & Installation', 'download_installation', True, False, False, '''
-The main chunk of the project is hosted on GitHub.
-The source for the Geometry Accessor Wrappers can be found on the sidebar (the source is outdated though as I lost the code used for the current DLLs.
-Check the sidebar for a link to the releases page on GitHub.
-    
-To install ZETools, unzip the downloaded archive into
-```C:/users/%user%/Autodesk/Softimage_%version%/Addons/```
-OR
-```C:/users/%user%/Softimage/Softimage_%version%/Addons/```.
-Make sure you use this path and not the factory addon path.  
 
-If you have any Softimage version up to (and including) 2010 you need to install
-[python](http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi)
-and
+To use XSIZETools you need the following:
+
+1. Choose one of the [releases from here][releases] and download it.
+
+1. If you **don't** have a Softimage version of 2011 or higher,
+download and install [python](http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi) and 
 [pywin32](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20217/pywin32-217.win32-py2.6.exe/download).
+
+1. Download and install the [Visual C++ 2015 Redistributable](https://www.visualstudio.com/downloads/download-visual-studio-vs#d-visual-c).
+Download both versions by selecting the format and activating the _Download_ button.
+If the page doesn't automatically navigate to the Visual C++ 2015 redist select _Tools for Visual Studio 2015_ on the left and then choose _Microsoft Visual C++ 2015 Redistributable_.
+
+1. Unzip the downloaded archive into
+```C:/users/%user%/Autodesk/Softimage_%version%/Addons/``` or ```C:/users/%user%/Softimage/Softimage_%version%/Addons/```.
+In the end, the directory including ``README.md``, ``xsizet.ver``, etc should be ``C:/Users/%user%/Autodesk/Softimage_2015/Addons/xsizetools/``.
+
 If python and pywin32 was installed correctly it should look something like
 [this](installed_python.jpg).  
 
-The low-level geometry functions are written in C++, so the Visual C++ 2010 redist is required.
-[x86](http://www.microsoft.com/download/en/details.aspx?id=5555)
-|
-[x64](http://www.microsoft.com/downloads/de-de/details.aspx?FamilyID=bd512d9e-43c8-4655-81bf-9350143d5867) (only if x86 didn't work).
+[homepage]: http://schlechtwetterfront.github.io/xsizetools/ "XSIZETools Homepage"
+[gametoast]: http://gametoast.com/viewtopic.php?f=36&t=26664 "Gametoast Thread"
+[releases]: https://github.com/Schlechtwetterfront/xsizetools/releases "Releases"
 '''),
 		Section('Contributors', 'contributors', True, True, False, '''
 **ME (ANDEWEGET/Ande)**  
