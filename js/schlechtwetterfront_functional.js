@@ -51,7 +51,7 @@ function calculateSidebarListHeight() {
 
 	var total_height_children = 0;
 	var total_height_sidebar = $(".affix").height();
-	var sidebar_padding_bottom = parseInt($(".sidebar").css("padding"));
+	var sidebar_padding_bottom = parseInt($(".sidebar").css("padding")) | 10;
 	var scrollable = null;
 	var scrollable_min_height = 100; // Min height for any scrollable list inside the sidebar.
 
