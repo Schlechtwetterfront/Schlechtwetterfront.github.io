@@ -19,7 +19,7 @@
 
 		var stopButton = document.querySelector('.stop-countdown')
 		stopButton.onclick = function() {
-			counterIsActive = false
+			counterIsActive = !counterIsActive
 		}
 
 		currentCounter = timeToRedirect
