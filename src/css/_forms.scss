@@ -1,0 +1,88 @@
+//
+// # Forms & Inputs
+//
+
+input, select {
+    padding: .15rem .93rem .15rem .333rem;
+    font-size: 1rem;
+    font-family: $font-stack;
+    line-height: 1;
+    margin: 0;
+
+    border: none;
+    background: rgba(0, 0, 0, .066);
+
+    &:active, &:focus {
+        outline: 0;
+    }
+
+    &:focus {
+        background: rgba(0, 0, 0, .1);
+    }
+
+    &[type=checkbox] {
+        // vertical-align: middle;
+
+        cursor: pointer;
+
+        -webkit-appearance: none;
+        appearance: none;
+
+        background: $hr-color;
+        border-radius: .15em;
+        padding: .333em;
+
+        &:checked {
+            background: rgba(0, 0, 0, 1);
+        }
+
+    }
+
+    &:not([type=checkbox]) {
+
+    }
+
+    &[type=number] {
+        padding-right: 0;
+    }
+}
+
+select {
+    option {
+        &:hover {
+            background: rgba(0, 0, 0, .3);
+        }
+    }
+}
+
+label {
+    font-weight: bold;
+    padding: 0;
+    cursor: pointer;
+
+    > input {
+        margin: 0 .5rem;
+    }
+}
+
+button {
+    font-size: 1rem;
+    font-family: $font-stack;
+
+    padding: .333rem .666rem;
+    margin: .1rem .15rem;
+    background: rgba(0, 0, 0, .1);
+
+    border-radius: .15rem;
+    border: none;
+
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(0, 0, 0, .13);
+    }
+
+    &:active {
+        background: rgba(0, 0, 0, .2);
+    }
+}

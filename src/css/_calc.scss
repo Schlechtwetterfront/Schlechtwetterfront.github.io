@@ -1,0 +1,73 @@
+//
+// # Calculator
+//
+
+
+.calculator {
+
+    input, select {
+        font-family: Monaco, Consolas, monospace;
+        text-align: right;
+    }
+
+    .flags {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+        .flag {
+            flex: 0 0 25%;
+        }
+    }
+
+    .flag-values {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        input {
+            max-width: 4em;
+        }
+    }
+
+    .col.two {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        > * {
+            flex: 0 0 50%;
+        }
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        > * {
+            width: 100%;
+        }
+
+        label {
+            width: 30%;
+            display: inline-block;
+        }
+
+        input, select {
+            width: 60%;
+        }
+    }
+
+    .chunk {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        #chunk {
+            text-align: center;
+        }
+    }
+}

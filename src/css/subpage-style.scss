@@ -1,0 +1,146 @@
+//
+// # Style
+//
+
+@import 'config';
+@import 'typography';
+@import 'mixins';
+@import 'shared';
+@import 'page';
+@import 'overrides';
+@import 'forms';
+@import 'calc';
+
+
+// ## General Tags
+//
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $font-stack;
+	color: $font-color;
+	font-size: $font-size;
+
+	line-height: 1.65;
+
+	margin: 0;
+
+	// Always show scroll bar so all sites have the same content width.
+	overflow-y: scroll;
+
+	background: white;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+// ### <hr> and variations
+//
+
+hr {
+	width: 100%;
+	border-color: $hr-color;
+	border-style: dashed;
+
+	margin: .399em 0 .6em;
+}
+
+.theme-dark hr, .footer-theme-dark hr {
+	border-color: $hr-color-light;
+}
+
+.solid {
+	border-style: solid;
+}
+
+.side-hr {
+	flex: 1;
+	border-top: 1px solid $hr-color;
+	border-bottom: 1px solid $hr-color;
+}
+
+.side-hr:first-child {
+	margin-right: 1em;
+}
+
+.side-hr:last-child {
+	margin-left: 1em;
+}
+
+.side-hr.bright {
+	border-color: rgba(0, 0, 0, .05)
+}
+
+.side-hr.bright {
+	border-color: rgba(255, 255, 255, .1);
+}
+
+
+// ### Links
+//
+
+a:not(.button) {
+	color: $accent;
+	// font-weight: 500;
+	// text-transform: lowercase;
+	padding-bottom: .1em;
+	border-bottom: 1px dotted $accent;
+
+	// transition: color $transition-time, border $transition-time;
+
+	&:hover {
+		// color: $accent-full;
+		border-bottom-style: solid;
+	}
+}
+
+a, a:hover, a:focus, button, button:hover, button:focus {
+	text-decoration: none;
+	outline: 0;
+}
+
+a.no-style, a.no-style:hover {
+	border: none;
+	padding: 0;
+	margin: 0;
+	text-transform: none;
+	display: block;
+	width: 100%;
+	color: initial;
+}
+
+.theme-dark {
+	a:not(.no-style) {
+		color: $link-color-light;
+		border-bottom: 1px dotted $link-color-light;
+
+		&:hover {
+			border-bottom: 1px solid $link-color-hover-light;
+		}
+	}
+}
+
+
+// ### Selection
+//
+
+*::selection {
+	background-color: #222;
+	color: #f0f0f0;
+}
+
+*::-moz-selection {
+	background-color: #222;
+	color: #f0f0f0;
+}
+
+.no-select {
+	@include no-select();
+	cursor: default;
+}

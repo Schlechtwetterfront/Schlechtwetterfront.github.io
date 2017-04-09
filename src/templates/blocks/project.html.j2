@@ -1,0 +1,38 @@
+<section class="project">
+	<h3 id="{{ cblock.key }}">{{ cblock.options.title }}</h3>
+	<hr>
+	{# TODO tags #}
+	<section class="body">
+		{% block content %}
+		<div class="content">
+			{% filter markdown %}{% include cblock.options.description %}{% endfilter %}
+		</div>
+		{% endblock content %}
+
+		{% block sidebar %}
+		<aside class="meta">
+			{% if cblock.options.links %}
+				<h5>Links</h5>
+				<ul class="links">
+				{% for link in cblock.options.links -%}
+					<li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
+				{%- endfor %}
+				</ul>
+			{% endif %}
+			{% if cblock.options.tags -%}
+				<ul class="tags collapsed">
+				{% for tag in cblock.options.tags -%}
+					<li><span class="tag">{{ tag }}</span></li>
+				{%- endfor %}
+				</ul>
+			{%- endif %}
+		</aside>
+		{% endblock sidebar %}
+	</section>
+
+	{% if cblock.options.images -%}
+	{% block images %}
+	{% endblock images %}
+	{%- endif %}
+
+</section>

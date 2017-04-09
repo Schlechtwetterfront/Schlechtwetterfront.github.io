@@ -1,0 +1,60 @@
+title: SoftCry
+fancy_title:
+  - text: >
+      <span>S</span>
+      <span>o</span>
+      <span>f</span>
+      <span>t</span>
+  - text: >
+      <span>C</span>
+      <span>r</span>
+      <span>y</span>
+out: ../softcry/index.html
+root_path: ../
+template: default.html.j2
+body_classes: page-softcry
+navigation:
+  - title: Navigation
+    links: [{title: Overview, href: \#overview}, {title: Download & Installation, href: \#installation}]
+  - title: Downloads
+    links: [{title: Releases, href: 'https://github.com/Schlechtwetterfront/softcry/releases'}]
+  - title: Other Resources
+    links:
+      - title: View on Github
+        href: https://github.com/Schlechtwetterfront/softcry
+      - title: View Thread on CRYDEV
+        href: http://www.cryengine.com/community/viewtopic.php?f=315&t=102978
+      - title: Hardbody Animations (Video)
+        href: http://www.youtube.com/watch?v=2Rt3B8h5EvE
+blocks:
+  - key: overview
+    title: Overview
+    template: blocks/default.html.j2
+    text: |
+      CryENGINE 3 exporter for Softimage.  
+
+      * Intuitive workflow for exporting.
+      * No special setup required for a basic export.
+      * CryEngine specific material properties directly interface with Softimage materials,
+      so there is no restriction on the type of shaders/materials you can use in XSI.
+      * Batch export.
+      * Support for different grid-units (1 unit = 1cm or 1m).
+      * Animation export + straight forward animation clip editor.
+  - key: installation
+    title: Download & Installation
+    template: blocks/default.html.j2
+    text: |
+      Check the sidebar for a link to the releases page on GitHub.
+          
+      To install SoftCry, unzip the downloaded archive into
+      `C:/users/%user%/Autodesk/Softimage_%version%/Addons/`
+      OR
+      `C:/users/%user%/Softimage/Softimage_%version%/Addons/`.
+      Make sure you use this path and not the factory addon path.  
+
+      If you have any Softimage version up to (and including) 2010 you need to install
+      [python](http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi)
+      and
+      [pywin32](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20217/pywin32-217.win32-py2.6.exe/download).
+      If python and pywin32 was installed correctly it should look something like
+      [this](installed_python.jpg).  

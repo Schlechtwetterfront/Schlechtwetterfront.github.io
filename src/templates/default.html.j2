@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		{% block title %}
+		<title>{{ title }}</title>
+		{% endblock %}
+
+		<meta name="description" content="{{ meta_desc }}">
+		<meta name="keywords" content="programming, code">
+
+		<link rel="shortcut icon" type="image/png" href="{{ root_path }}images/personal_logo_small.png"/>
+		<link rel="stylesheet" href="{{ root_path }}css/subpage-style.css" type="text/css" />
+	</head>
+	<body class="{{ body_classes }}">
+
+		<div class="container">
+
+			{% block header %}
+				{% include 'header.html.j2' %}
+			{% endblock header %}
+
+			{% block content %}
+			<div class="content">
+				{% block content_header %}
+				{% endblock content_header %}
+
+				{% block content_body %}
+						{% for cblock in blocks %}
+							{% include cblock['template'] %}
+						{% endfor %}
+				{% endblock content_body %}
+			</div>
+			{% endblock content %}
+
+			{% block footer %}
+				{% include 'footer.html.j2' %}
+			{% endblock footer %}
+
+		</div>
+
+	</body>
+</html>

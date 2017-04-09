@@ -1,0 +1,35 @@
+<section class="gallery">
+	{% for piece in gallery.pieces %}
+		<section class="piece">
+			<div class="image-wrapper">
+				{% if get_ratio(piece.src) < 2 %}
+					{% set width = 'style="max-height: 800px"' %}
+				{% else %}
+					{% set width = 'width="100%"' %}
+				{% endif %}
+				<img src="{{ piece.src }}" alt="{{ piece.title }}" {{ width }}>
+			</div>
+			<div class="meta">
+				<h4 class="title">{{ piece.title }}</h4>
+				<p class="description">{{ piece.description }}</p>
+				{% if piece.date %}
+					<time>{{ piece.date.strftime('%B %Y') }}</time>
+				{% endif %}
+				{% if not loop.last %}
+					<div class="divider">
+						<span class="side-hr bright"></span>
+						{# <span class="no-select divider-center"> &#x2B9F; </span> #}
+						<span class="no-select divider-center"> &#x2B23; </span>
+						<span class="side-hr bright"></span>
+					</div>
+				{% else %}
+					<div class="divider">
+						<span class="side-hr bright"></span>
+						<span class="no-select divider-center"> &#x2B9D; </span>
+						<span class="side-hr bright"></span>
+					</div>
+				{% endif %}
+			</div>
+		</section>
+	{% endfor %}
+</section>

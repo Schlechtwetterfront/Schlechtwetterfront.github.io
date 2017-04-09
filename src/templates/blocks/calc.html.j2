@@ -1,0 +1,110 @@
+<section class="block">
+
+<h2 id="{{ cblock.key }}">{{ cblock.title }}</h2>
+
+{{ cblock.text|markdown }}
+
+<div class="calculator">
+    <h5>Flags</h5>
+    <div class="flags">
+        <label class="flag"><input type="checkbox" id="emissive" data-val="1">Emissive</label>
+        <label class="flag"><input type="checkbox" id="glow" data-val="2">Glow</label>
+        <label class="flag"><input type="checkbox" id="single" data-val="4">Single-sided Transparency</label>
+        <label class="flag"><input type="checkbox" id="double" data-val="8">Double-sided Transparency</label>
+        <label class="flag"><input type="checkbox" id="hard" data-val="16">Hard-edged Transparency</label>
+        <label class="flag"><input type="checkbox" id="ppl" data-val="32">Per-Pixel Lighting</label>
+        <label class="flag"><input type="checkbox" id="additive" data-val="64">Additive</label>
+        <label class="flag"><input type="checkbox" id="spec" data-val="128">Specular</label>
+    </div>
+
+    <h5>Flag Values</h5>
+    <div class="flag-values">
+        <label>Integer Value<input type="number" max="256" min="0" id="flag" value="0"></label>
+        <label>Hex Value<input type="text" maxlength="2" id="flag-hex" value="00"></label>
+        <button type="button" id="values-to-flags">&uarr; Values to Flags</button>
+        <button type="button" id="flags-to-values">&darr; Flags to Values</button>
+    </div>
+
+    <div class="col two">
+        <div class="render-type">
+            <h5>Render Type</h5>
+            <div class="inputs">
+                <div>
+                    <label for="render-type">Render Type</label>
+                    <select id="render-type">
+                        <option value="0">00 - Normal</option>
+                        <option value="1">01 - Glow</option>
+                        <option value="2">02 - Lightmap</option>
+                        <option value="3">03 - Scrolling</option>
+                        <option value="4">04 - Specular</option>
+                        <option value="5">05 - Glossmap</option>
+                        <option value="6">06 - Chrome</option>
+                        <option value="7">07 - Animated</option>
+                        <option value="8">08 - Ice</option>
+                        <option value="9">09 - Sky</option>
+                        <option value="10">10 - Water</option>
+                        <option value="11">11 - Detail</option>
+                        <option value="12">12 - 2 Scroll</option>
+                        <option value="13">13 - Rotate</option>
+                        <option value="14">14 - Glow Rotate</option>
+                        <option value="15">15 - Planar Reflection</option>
+                        <option value="16">16 - Glow Scroll</option>
+                        <option value="17">17 - Glow 2 Scroll</option>
+                        <option value="18">18 - Curved Reflection</option>
+                        <option value="19">19 - Normalmap Fade</option>
+                        <option value="20">20 - Normalmap Inv Fade</option>
+                        <option value="21">21 - Ice Reflection</option>
+                        <option value="22">22 - Ice Refraction</option>
+                        <option value="23">23 - Emboss</option>
+                        <option value="24">24 - Wireframe</option>
+                        <option value="25">25 - Energy</option>
+                        <option value="26">26 - Afterburner</option>
+                        <option value="27">27 - Bumpmap</option>
+                        <option value="28">28 - Bumpmap + Glossmap</option>
+                        <option value="29">29 - Teleportal</option>
+                        <option value="30">30 - Multistate</option>
+                        <option value="31">31 - Shield</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="render-type-hex">Hex Value</label>
+                    <input type="text" maxlength="3" id="render-type-hex" value="00">
+                </div>
+            </div>
+        </div>
+        <div class="data-values">
+            <h5>Data Values</h5>
+            <div class="inputs">
+                <div>
+                    <label for="data0">Data0 Integer Value</label>
+                    <input type="number" max="256" min="0" id="data0" value="0">
+                </div>
+                <div>
+                    <label for="data0-hex">Data0 Hex Value</label>
+                    <input type="text" maxlength="3" id="data0-hex" value="00">
+                </div>
+                <div>
+                    <label for="data1">Data1 Integer Value</label>
+                    <input type="number" max="256" min="0" id="data1" value="0">
+                </div>
+                <div>
+                    <label for="data1-hex">Data1 Hex Value</label>
+                    <input type="text" maxlength="3" id="data1-hex" value="00">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5>Chunk</h5>
+    <div class="chunk">
+        <input type="text" id="chunk" maxlength="35" size="37" value="415452420400000000000000">
+        <label><input type="checkbox" id="build-with-spaces">Build with spaces</label>
+        <button type="button" id="build">&darr; Build ATRB Chunk</button>
+        <button type="button" id="from-chunk">&uarr; Calculate from ATRB Chunk</button>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ root_path }}js/calc.js"></script>
+
+</section>

@@ -1,0 +1,2 @@
+# Ignore art, these can be really big and don't need to be versioned.
+images/art/
