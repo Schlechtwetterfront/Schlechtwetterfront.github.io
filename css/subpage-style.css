@@ -196,13 +196,16 @@ table {
       text-align: justify;
       font-size: 3.333rem;
       font-weight: 700;
+      text-align: center;
+      max-width: 220px;
       margin: 0 auto;
       width: 100%;
-      max-width: 220px;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none; }
+      .container .menu .page-title.not-fancy {
+        max-width: 100%; }
       .container .menu .page-title .line {
         display: flex;
         justify-content: space-between; }
@@ -265,13 +268,118 @@ body.page-fileformats .page-title.page-title {
   color: #f8a509;
   font-weight: 400; }
 
+input, textarea, select, option {
+  color: #444; }
+
+input, select {
+  padding: .15rem .93rem .15rem .333rem;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1;
+  margin: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.066); }
+  input:active, input:focus, select:active, select:focus {
+    outline: 0; }
+  input:focus, select:focus {
+    background: rgba(0, 0, 0, 0.1); }
+  input[type=checkbox], select[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: .15em;
+    padding: .333em; }
+    input[type=checkbox]:checked:before, select[type=checkbox]:checked:before {
+      display: inline-block;
+      position: absolute;
+      top: -.333rem;
+      left: -.063rem;
+      content: '\002714';
+      color: black;
+      font-weight: bold;
+      font-size: 1.1rem; }
+  input[type=number], select[type=number] {
+    padding-right: 0; }
+
+select option:hover {
+  background: rgba(0, 0, 0, 0.3); }
+
+label {
+  font-weight: bold;
+  padding: 0;
+  cursor: pointer; }
+  label > input {
+    margin: 0 .5rem; }
+
+button {
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  padding: .333rem .666rem;
+  margin: .1rem .15rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: .15rem;
+  border: none;
+  cursor: pointer; }
+  button:hover {
+    background: rgba(0, 0, 0, 0.13); }
+  button:active {
+    background: rgba(0, 0, 0, 0.2); }
+
+.calculator input, .calculator select {
+  font-family: Monaco, Consolas, monospace;
+  text-align: right; }
+
+.calculator .flags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .calculator .flags .flag {
+    flex: 0 0 25%; }
+
+.calculator .flag-values {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; }
+  .calculator .flag-values input {
+    max-width: 4em; }
+
+.calculator .col.two {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .calculator .col.two > * {
+    flex: 0 0 50%; }
+
+.calculator .inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%; }
+  .calculator .inputs > * {
+    width: 100%; }
+  .calculator .inputs label {
+    width: 30%;
+    display: inline-block; }
+  .calculator .inputs input, .calculator .inputs select {
+    width: 60%; }
+
+.calculator .chunk {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .calculator .chunk #chunk {
+    text-align: center; }
+
 * {
   box-sizing: border-box; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: #444;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.65;
   margin: 0;
   overflow-y: scroll;
