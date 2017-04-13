@@ -1,0 +1,71 @@
+{% extends 'default.html.j2' %}
+
+{% block header %}
+	{% include 'pages/msh-header.html.j2' %}
+{% endblock %}
+
+{% block content_body %}
+	{{ super() }}
+	{% for id, chunk in chunks.items() %}
+		<section class="chunk block">
+			<h2 class="title" id="{{ id }}">{{ chunk.name }}</h2>
+			{# <h4 class="desc-title">Description</h4> #}
+			<p class="description">{{ chunk.description }}</p>
+			<table class="hierarchy">
+				<thead>
+					<tr>
+						<th>Parent</th>
+						<th>Children</th>
+						<th>Appearances</th>
+					</tr>
+				</thead>
+				<tr>
+					<td>
+						{% if chunk.parent %}<a href="#{{ chunk.parent }}" alt="{{ chunk.parent }}">{{ chunk.parent }}</a>{% else %}-{% endif %}
+					</td>
+					<td>
+					{% for child in chunk.children %}
+						<a href="#{{ child }}" alt="{{ child }}">{{ child }}</a>
+					{% endfor %}
+					</td>
+					<td>
+						{{ chunk.necessity }}
+					</td>
+				</tr>
+			</table>
+			<p class="see-also">
+				See also:
+				{% for link in chunk.links %}
+					<a href="{{ link.link }}" alt="{{ link.name }}">{{ link.name }}</a>
+				{% endfor %}
+			</p>
+			{% if chunk.structure %}
+			<h4 class="structure-title">Structure</h4>
+			<table class="structure">
+				<thead>
+					<tr>
+						<th>Data Type</th><th>Size (bytes)</th><th>Description</th>
+					</tr>
+				</thead>
+				{% for part in chunk.structure %}
+				<tr>
+					<td
+						{% if 'byte' in part[0] -%}class="byte"
+						{%- elif 'long' in part[0] -%}class="long"
+						{%- elif 'string' in part[0] -%}class="string"
+						{%- elif 'float' in part[0] -%}class="float"
+						{%- elif 'short' in part[0] -%}class="short"
+						{%- elif 'CRC' in part[0] -%}class="crc"
+						{%- endif %}
+					>
+						{{- part[0] -}}
+					</td>
+					<td>{{ part[1] }}</td>
+					<td>{{ part[2] }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+			{% endif %}
+		</section>
+	{% endfor %}
+{% endblock %}

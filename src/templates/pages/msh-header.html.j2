@@ -1,0 +1,12 @@
+{% extends 'header.html.j2' %}
+
+{% block after_nav %}
+{% set last_cat = { 'v': '' } %}
+{% for id, chunk in chunks.items() %}
+	{% if last_cat.v != chunk.category %}
+		<li class="category"><h6 class="category-title">{{ chunk.category }}</h6></li>
+		{% if last_cat.update({'v': chunk.category}) %}{% endif %}
+	{% endif %}
+	<li class="link"><a href="#{{ id }}" alt="{{ chunk.name }}">{{ chunk.name }}</a></li>
+{% endfor %}
+{% endblock %}

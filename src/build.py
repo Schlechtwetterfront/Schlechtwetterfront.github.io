@@ -3,11 +3,11 @@
 '''
 
 import os
+from collections import OrderedDict
 from sassutils import builder
 from glob import glob
 from markdown import markdown
 from jinja2 import Environment, FileSystemLoader
-from PIL import Image
 from yaml import load as lyaml
 try:
     from yaml import CLoader as Loader
@@ -49,10 +49,22 @@ def build_html():
         with open(page_path, 'r') as stream:
             page = lyaml(stream, Loader=Loader)
 
+        if page.get('resources'):
+            for res in page['resources']:
+                fn = None
+                if res['type'] == 'json':
+                    from json import load as fn
+                elif res['type'] == 'yaml':
+                    def fn(stream):
+                        return lyaml(f, Loader=Loader)
+
+                with open(res['path']) as f:
+                    page[res['key']] = fn(f, object_pairs_hook=OrderedDict)
+
         page['global'] = global_config
         template = env.get_template(page.get('template', DEFAULT_TEMPLATE))
         out_path = os.path.join(os.getcwd(), page.get('out'))
-        output = template.render(get_ratio=get_ratio, **page)
+        output = template.render(**page)
         with open(out_path, 'w') as stream:
             stream.write(output)
 
@@ -73,12 +85,6 @@ def register_filters(env):
 
 def markdown_filter(s):
     return markdown(s, extensions=MARKDOWN_EXTRAS)
-
-
-def get_ratio(image_path):
-    image = Image.open('../' + image_path)
-    width, height = image.size
-    return width / height
 
 
 if __name__ == '__main__':

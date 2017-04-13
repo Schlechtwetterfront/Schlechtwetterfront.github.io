@@ -1,0 +1,30 @@
+title: .msh Format
+out: ../ze_filetypes/msh.html
+root_path: ../
+template: pages/msh.html.j2
+body_classes: page-fileformats
+navigation:
+  - title: Navigation
+    links:
+      - title: Overview
+        href: \#overview
+      - title: Back
+        href: index.html
+resources:
+  - key: chunks
+    path: mshformat.json
+    type: json
+blocks:
+  - key: overview
+    title: Overview
+    template: blocks/default.html.j2
+    text: |
+      This page lists all .MSH file chunks.
+      In the .MSH file these chunks are organized in a hierarchy with [HEDR](#hedr)
+      (header) being the first chunk and branching out from there
+      (as visualized in the sidebar navigation).
+
+      Some of these chunks are exclusive to certain versions of the engine
+      (Star Wars: The Clone Wars and before, Star Wars: Battlefront and Star Wars: Battlefront II)
+      or deprecated completely. Most notably Cloth Simulation ([CLTH](#clth) and children)
+      being limited to Star Wars: Battlefront II.

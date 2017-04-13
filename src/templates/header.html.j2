@@ -13,11 +13,15 @@
 	</a>
 	<span class="no-select hr">&middot; &middot; &middot;</span>
 	<ul class="navigation blocks">
+		{% block before_nav %}
+		{% endblock %}
 		{% for category in navigation %}
 			<li class="category"><h6 class="category-title">{{ category.title }}</h6></li>
 			{% for link in category.links %}
 			<li class="link"><a href="{{ link.href }}">{{ link.title }}</a></li>
 			{% endfor %}
 		{% endfor %}
+		{% block after_nav %}
+		{% endblock %}
 	</ul>
 </aside>
