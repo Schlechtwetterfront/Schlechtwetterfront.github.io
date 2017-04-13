@@ -17,7 +17,7 @@ $font-stack-heading:    -apple-system, BlinkMacSystemFont,
 $font-color:            #444;
 $font-color-heading:    #222;
 
-$font-size:             17px;
+$font-size:             15px;
 
 
 // ## Styles
@@ -64,14 +64,6 @@ h5, .heading-5 {
 h6, .heading-6 {
     font-size: 1.166666rem;
     margin-bottom: 0.707070rem;
-}
-
-section, article {
-    > h1, > h2, > h3, > h4, > h5, > h6 {
-        &.title {
-            margin-bottom: 0;
-        }
-    }
 }
 
 h2, h5, h6 {

@@ -31,9 +31,6 @@ h6, .heading-6 {
   font-size: 1.166666rem;
   margin-bottom: 0.707070rem; }
 
-section > h1.title, section > h2.title, section > h3.title, section > h4.title, section > h5.title, section > h6.title, article > h1.title, article > h2.title, article > h3.title, article > h4.title, article > h5.title, article > h6.title {
-  margin-bottom: 0; }
-
 h2, h5, h6 {
   border-bottom: 2px solid rgba(0, 0, 0, 0.15); }
 
@@ -268,6 +265,9 @@ body.page-fileformats .page-title.page-title {
   color: #f8a509;
   font-weight: 400; }
 
+input, textarea, select, option {
+  color: #444; }
+
 input, select {
   padding: .15rem .93rem .15rem .333rem;
   font-size: 1rem;
@@ -281,14 +281,22 @@ input, select {
   input:focus, select:focus {
     background: rgba(0, 0, 0, 0.1); }
   input[type=checkbox], select[type=checkbox] {
+    position: relative;
     cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
     background: rgba(0, 0, 0, 0.15);
     border-radius: .15em;
     padding: .333em; }
-    input[type=checkbox]:checked, select[type=checkbox]:checked {
-      background: black; }
+    input[type=checkbox]:checked:before, select[type=checkbox]:checked:before {
+      display: inline-block;
+      position: absolute;
+      top: -.333rem;
+      left: -.063rem;
+      content: '\002714';
+      color: black;
+      font-weight: bold;
+      font-size: 1.1rem; }
   input[type=number], select[type=number] {
     padding-right: 0; }
 
@@ -368,7 +376,7 @@ button {
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: #444;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.65;
   margin: 0;
   overflow-y: scroll;
