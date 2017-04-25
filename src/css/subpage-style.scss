@@ -90,13 +90,14 @@ a:not(.button) {
 	// font-weight: 500;
 	// text-transform: lowercase;
 	padding-bottom: .1em;
-	border-bottom: 1px dotted $accent;
+	// border-bottom: 1px dotted $accent;
 
 	// transition: color $transition-time, border $transition-time;
 
 	&:hover {
 		// color: $accent-full;
-		border-bottom-style: solid;
+		color: darken($accent, 20%);
+		// border-bottom-style: solid;
 	}
 }
 
@@ -115,13 +116,23 @@ a.no-style, a.no-style:hover {
 	color: initial;
 }
 
-.theme-dark {
-	a:not(.no-style) {
-		color: $link-color-light;
-		border-bottom: 1px dotted $link-color-light;
+a.chunk {
+	border-bottom: 0;
+	padding: .066rem .3rem;
+	background: rgba(0, 0, 0, .05);
+
+	&:hover {
+	background: rgba(0, 0, 0, .075);
+	}
+}
+
+nav, .navigation {
+	a {
+		display: block;
+		padding: .066rem .333rem;
 
 		&:hover {
-			border-bottom: 1px solid $link-color-hover-light;
+			background: rgba(0, 0, 0, .066);
 		}
 	}
 }
@@ -143,4 +154,37 @@ a.no-style, a.no-style:hover {
 .no-select {
 	@include no-select();
 	cursor: default;
+}
+
+
+// ### Types
+//
+
+.long, .float, .short, .byte, .string, .crc {
+	font-weight: bold;
+	font-family: $font-stack-mono;
+}
+
+.long, .short, .float {
+	color: red;
+}
+
+.string {
+	color: green;
+}
+
+.byte {
+	color: orange;
+}
+
+.crc {
+	color: orange;
+}
+
+
+// ### Structure table
+//
+
+table.structure tr td:first-child {
+	white-space: nowrap;
 }

@@ -20,11 +20,11 @@ blocks:
     template: blocks/default.html.j2
     text: |
       This page lists all .MSH file chunks.
-      In the .MSH file these chunks are organized in a hierarchy with [HEDR](#hedr)
+      In the .MSH file these chunks are organized in a hierarchy with [HEDR](#hedr){: .chunk}
       (header) being the first chunk and branching out from there
       (as visualized in the sidebar navigation).
 
       Some of these chunks are exclusive to certain versions of the engine
       (Star Wars: The Clone Wars and before, Star Wars: Battlefront and Star Wars: Battlefront II)
-      or deprecated completely. Most notably Cloth Simulation ([CLTH](#clth) and children)
+      or deprecated completely. Most notably Cloth Simulation ([CLTH](#clth){: .chunk} and children)
       being limited to Star Wars: Battlefront II.

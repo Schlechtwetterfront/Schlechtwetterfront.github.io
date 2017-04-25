@@ -469,13 +469,13 @@
 
         ],
         "necessity": "Optional.",
-        "description": "List of indices into [MODL](#MODL){{: .bordered}. This model is enveloped to those indices' models.",
+        "description": "List of indices into [MODL](#MODL){: .chunk}. This model is enveloped to those indices' models.",
         "links": [
 
         ],
         "structure": [
-            ["long int", 4, "Number of indices into [MODL](#MODL){{: .bordered}."],
-            ["long int []", "4 each", "Index into [MODL](#MODL){{: .bordered}."]
+            ["long int", 4, "Number of indices into [MODL](#MODL){: .chunk}."],
+            ["long int []", "4 each", "Index into [MODL](#MODL){: .chunk}."]
         ],
         "category": "Geometry"
     },
@@ -644,7 +644,7 @@
         "structure": [
             ["long int", 4, "Number of bone weights stored in this list."],
             ["", "", "The following appears 4 times per vertex (to allow for soft weighting)."],
-            ["long int", 4, "Index into [ENVL](#ENVL){{: .bordered} (which then indexes into [MODL](#MODL){{: .bordered})."],
+            ["long int", 4, "Index into [ENVL](#ENVL){: .chunk} (which then indexes into [MODL](#MODL){: .chunk})."],
             ["float", 4, "Weight value (0-1)."]
         ],
         "category": "Geometry"
@@ -697,8 +697,8 @@
 
         ],
         "structure": [
-            ["long int", 4, "Number of indices into [POSL](#POSL){{: .bordered}."],
-            ["short int []", "2 each", "Index into [POSL](#POSL){{: .bordered}. The indices will form polygons."]
+            ["long int", 4, "Number of indices into [POSL](#POSL){: .chunk}."],
+            ["short int []", "2 each", "Index into [POSL](#POSL){: .chunk}. The indices will form polygons."]
         ],
         "category": "Geometry"
     },
@@ -752,7 +752,7 @@
             "CTEXT", "CPOS", "CUV0", "FIDX", "FWGT", "CMSH", "SPRS", "CPRS", "BPRS", "COLL"
         ],
         "necessity": "Optional.",
-        "description": "Cloth header. Replaces [SEGM](#SEGM){{: .bordered}.",
+        "description": "Cloth header. Replaces [SEGM](#SEGM){: .chunk}.",
         "links": [
 
         ],
@@ -831,7 +831,7 @@
         ],
         "structure": [
             ["long int", 4, "Number of points."],
-            ["long int ]", "4 each", "Index into [CPOS](#CPOS){{: .bordered}."]
+            ["long int ]", "4 each", "Index into [CPOS](#CPOS){: .chunk}."]
         ],
         "category": "Cloth"
     },
@@ -844,13 +844,13 @@
 
         ],
         "necessity": "Optional?",
-        "description": "Index of [FIDX](#FIDX){{: .bordered} weighted to a bone by name.",
+        "description": "Index of [FIDX](#FIDX){: .chunk} weighted to a bone by name.",
         "links": [
 
         ],
         "structure": [
             ["long int", 4, "Number of points."],
-            ["ASCII string", "~", "Name of the bone the corresponding [FIDX](#FIDX){{: .bordered} is moving with."]
+            ["ASCII string", "~", "Name of the bone the corresponding [FIDX](#FIDX){: .chunk} is moving with."]
         ],
         "category": "Cloth"
     },
@@ -1094,7 +1094,7 @@
 
         ],
         "necessity": "Once.",
-        "description": "Bounding box. [SINF](#SINF){{: .bordered}'s BBox will determine the blue/green selection box in ZeroEdit.",
+        "description": "Bounding box. [SINF](#SINF){: .chunk}'s BBox will determine the blue/green selection box in ZeroEdit.",
         "links": [
 
         ],

@@ -21,11 +21,11 @@
 				</thead>
 				<tr>
 					<td>
-						{% if chunk.parent %}<a href="#{{ chunk.parent }}" alt="{{ chunk.parent }}">{{ chunk.parent }}</a>{% else %}-{% endif %}
+						{% if chunk.parent %}<a href="#{{ chunk.parent }}" alt="{{ chunk.parent }}" class="chunk">{{ chunk.parent }}</a>{% else %}-{% endif %}
 					</td>
 					<td>
 					{% for child in chunk.children %}
-						<a href="#{{ child }}" alt="{{ child }}">{{ child }}</a>
+						<a href="#{{ child }}" alt="{{ child }}" class="chunk">{{ child }}</a>
 					{% endfor %}
 					</td>
 					<td>
@@ -33,12 +33,15 @@
 					</td>
 				</tr>
 			</table>
+			{% if chunk.links %}
 			<p class="see-also">
 				See also:
-				{% for link in chunk.links %}
+				{% for link in chunk.links -%}
 					<a href="{{ link.link }}" alt="{{ link.name }}">{{ link.name }}</a>
-				{% endfor %}
+					{%- if not loop.last %}<span>, </span>{% endif -%}
+				{%- endfor %}
 			</p>
+			{% endif %}
 			{% if chunk.structure %}
 			<h4 class="structure-title">Structure</h4>
 			<table class="structure">
@@ -61,7 +64,7 @@
 						{{- part[0] -}}
 					</td>
 					<td>{{ part[1] }}</td>
-					<td>{{ part[2] }}</td>
+					<td>{{ part[2]|markdown }}</td>
 				</tr>
 				{% endfor %}
 			</table>

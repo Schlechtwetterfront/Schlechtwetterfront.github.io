@@ -5,7 +5,7 @@
 // ## Content widths
 //
 
-$width-large:	1400px;
+$width-large:	1200px;
 $width-medium:	992px;
 $width-small:	768px;
 $width-xsmall:	576px;
@@ -21,13 +21,15 @@ $main-content-padding-top: 	8px;
 
 $heading-area-height: 		100px;
 
+$flow-margin-bottom:        1rem;
+
 
 // ## Colors
 //
 
 $accent-light:				rgba(255, 50, 50, 0.5);
-$accent:					#00aeef;
-$accent-full:				#0e7196;
+$accent:					#0070d4;
+$accent-full:				#0061c7;
 
 $hr-color:					rgba(0, 0, 0, .15);
 $hr-color-light:			rgba(255, 255, 255, .1);
