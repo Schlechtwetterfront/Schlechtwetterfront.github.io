@@ -19,12 +19,7 @@ DEFAULT_TEMPLATE = 'default.html.j2'
 
 MARKDOWN_EXTRAS = [
     'markdown.extensions.extra',
-    # 'markdown.extensions.def_list',
-    # 'markdown.extensions.fenced_code',
-    # 'markdown.extensions.tables',
 ]
-
-# MARKDOWN_EXTRAS = ['fenced-code-blocks', 'markdown-in-html']
 
 
 def build():
@@ -53,13 +48,16 @@ def build_html():
             for res in page['resources']:
                 fn = None
                 if res['type'] == 'json':
-                    from json import load as fn
+                    from json import load
+
+                    def fn(stream):
+                        return load(stream, object_pairs_hook=OrderedDict)
                 elif res['type'] == 'yaml':
                     def fn(stream):
                         return lyaml(f, Loader=Loader)
 
                 with open(res['path']) as f:
-                    page[res['key']] = fn(f, object_pairs_hook=OrderedDict)
+                    page[res['key']] = fn(f)
 
         page['global'] = global_config
         template = env.get_template(page.get('template', DEFAULT_TEMPLATE))

@@ -1,0 +1,43 @@
+{% extends 'default.html.j2' %}
+
+{% block header %}
+    {% include 'pages/rendertypes-header.html.j2' %}
+{% endblock %}
+
+{% block content_body %}
+    {{ super() }}
+    {% for rendertype in rendertypes %}
+        <section class="render-type block">
+            <h2 class="title" id="{{ rendertype.key }}">{{ rendertype.name }}</h2>
+
+            <table class="render-type">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Hex</th>
+                        <th>Data0</th>
+                        <th>Data1</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ chr(loop.index) }}</td>
+                    <td>{{ rendertype.data0|markdown }}</td>
+                    <td>{{ rendertype.data1|markdown }}</td>
+                </tr>
+            </table>
+
+            {{ rendertype.description|markdown }}
+
+            {% if rendertype.links %}
+            <p class="see-also">
+                See also:
+                {% for link in rendertype.links %}
+                    <a href="{{ link.url }}" alt="{{ link.name }}">{{ link.name }}</a>
+                    {%- if not loop.last %}<span>, </span>{% endif -%}
+                {% endfor %}
+            </p>
+            {% endif %}
+        </section>
+    {% endfor %}
+{% endblock %}

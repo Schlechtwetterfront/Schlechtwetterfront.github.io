@@ -1,0 +1,14 @@
+- name: Glow
+  key: glow
+  description: Glow amount is defined by material color and diffuse texture.
+  links: []
+  data0:
+  data1:
+- name: Lightmap
+  key: lightmap
+  description: |
+    Basically a glow map. Requires an additional texture. The texture's alpha channel determines glow strength, rgb glow color and intensity.
+    May actually be [Detail](#detail).
+  links: [{title: Lightmap discussion on GT, url: 'http://www.gametoast.com/viewtopic.php?p=323899#p323899'}]
+  data0: Scrolling along U (horizontal) 
+  data1: Scrolling along V (vertical)

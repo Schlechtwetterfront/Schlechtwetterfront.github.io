@@ -1,0 +1,25 @@
+title: .msh Format
+out: ../ze_filetypes/rendertypes.html
+root_path: ../
+template: pages/rendertypes.html.j2
+body_classes: page-fileformats
+navigation:
+  - title: Navigation
+    links:
+      - title: Overview
+        href: \#overview
+      - title: Back
+        href: index.html
+resources:
+  - key: rendertypes
+    path: render-types.yaml
+    type: yaml
+blocks:
+  - key: overview
+    title: Overview
+    template: blocks/default.html.j2
+    text: |
+      Render Types are stored as 1-byte integers in the ATRB chunk of materials.
+
+      See also: [Inside Edit Flags](http://www.gametoast.com/viewtopic.php?p=279620#p279620),
+      [Analysis of both ModTools' .msh files](http://schlechtwetterfront.github.io/ze_filetypes/mshwalker.log)

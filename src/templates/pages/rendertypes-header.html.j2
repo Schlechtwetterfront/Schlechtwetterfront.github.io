@@ -1,0 +1,7 @@
+{% extends 'header.html.j2' %}
+
+{% block after_nav %}
+    {% for rendertype in rendertypes %}
+        <li class="link"><a href="#{{ rendertype.key }}" alt="{{ rendertype.name }}">{{ rendertype.name }}</a></li>
+    {% endfor %}
+{% endblock %}
