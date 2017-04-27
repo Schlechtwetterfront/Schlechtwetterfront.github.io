@@ -21,7 +21,7 @@
                 </thead>
                 <tr>
                     <td>{{ loop.index }}</td>
-                    <td>{{ chr(loop.index) }}</td>
+                    <td>{{ '{:0>2X}'.format(loop.index) }}</td>
                     <td>{{ rendertype.data0|markdown }}</td>
                     <td>{{ rendertype.data1|markdown }}</td>
                 </tr>
@@ -33,7 +33,7 @@
             <p class="see-also">
                 See also:
                 {% for link in rendertype.links %}
-                    <a href="{{ link.url }}" alt="{{ link.name }}">{{ link.name }}</a>
+                    <a href="{{ link.url }}" alt="{{ link.title }}">{{ link.title }}</a>
                     {%- if not loop.last %}<span>, </span>{% endif -%}
                 {% endfor %}
             </p>

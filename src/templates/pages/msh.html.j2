@@ -10,13 +10,13 @@
 		<section class="chunk block">
 			<h2 class="title" id="{{ id }}">{{ chunk.name }}</h2>
 			{# <h4 class="desc-title">Description</h4> #}
-			<p class="description">{{ chunk.description }}</p>
+			{{ chunk.description|markdown }}
 			<table class="hierarchy">
 				<thead>
 					<tr>
 						<th>Parent</th>
 						<th>Children</th>
-						<th>Appearances</th>
+						<th>Appearance</th>
 					</tr>
 				</thead>
 				<tr>
@@ -43,11 +43,12 @@
 			</p>
 			{% endif %}
 			{% if chunk.structure %}
-			<h4 class="structure-title">Structure</h4>
+			{# <h4 class="structure-title">Structure</h4> #}
 			<table class="structure">
 				<thead>
+					<tr class="title"><th>Structure</th></tr>
 					<tr>
-						<th>Data Type</th><th>Size (bytes)</th><th>Description</th>
+						<th>Data Type</th><th>Size</th><th>Description</th>
 					</tr>
 				</thead>
 				{% for part in chunk.structure %}

@@ -148,11 +148,7 @@
 		}
 
 		.block {
-			margin-bottom: 1.65rem;
-
-			> h3, h4, h5, h6 {
-				margin-top: 1.65rem;
-			}
+			margin-bottom: $flow-margin-bottom * 3;
 		}
 	}
 }

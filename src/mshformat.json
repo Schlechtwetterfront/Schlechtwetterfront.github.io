@@ -28,7 +28,9 @@
             ["long int", "4", "Length indicator. Stores the length in bytes _excluding_ the header and the size indicator. Every chunk has this indicator."],
             ["", "~", "The rest of the data."]
         ],
-        "_structure": "A list of lists where each sub-list is a row in a table."
+        "_structure": "A list of lists where each sub-list is a row in a table.",
+
+        "category": "Example"
     },
     "HEDR": {
         "name": "HEDR",

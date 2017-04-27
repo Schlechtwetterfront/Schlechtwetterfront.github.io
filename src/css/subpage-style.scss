@@ -117,6 +117,7 @@ a.no-style, a.no-style:hover {
 }
 
 a.chunk {
+	font-family: $font-stack-mono;
 	border-bottom: 0;
 	padding: .066rem .3rem;
 	background: rgba(0, 0, 0, .05);
@@ -170,7 +171,7 @@ nav, .navigation {
 }
 
 .string {
-	color: green;
+	color: lightgreen;
 }
 
 .byte {
@@ -185,6 +186,63 @@ nav, .navigation {
 // ### Structure table
 //
 
-table.structure tr td:first-child {
-	white-space: nowrap;
+table.structure {
+
+	tr {
+		td:first-child {
+			white-space: nowrap;
+		}
+
+		td:nth-child(2) {
+			font-family: $font-stack-mono;
+			white-space: nowrap;
+			// text-align: right;
+		}
+
+		td:nth-child(1), th:nth-child(1) {
+			width: 16%;
+		}
+
+		td:nth-child(2), th:nth-child(2) {
+			width: 8%;
+		}
+	}
+}
+
+table.hierarchy {
+	tr {
+		td:nth-child(1), th:nth-child(1) {
+			width: 15%;
+		}
+
+		td:nth-child(2), th:nth-child(2) {
+			width: 50%;
+		}
+
+		td:nth-child(3), th:nth-child(3) {
+			width: 35%;
+		}
+	}
+}
+
+table.render-type {
+	tr {
+		td:first-child, td:nth-child(2) {
+			font-family: $font-stack-mono;
+			text-align: right;
+		}
+
+		td:first-child, th:first-child,
+		td:nth-child(2), th:nth-child(2) {
+			width: 5%;
+		}
+
+		td:nth-child(3), th:nth-child(3) {
+			width: 45%;
+		}
+
+		td:nth-child(4), th:nth-child(4) {
+			width: 45%;
+		}
+	}
 }

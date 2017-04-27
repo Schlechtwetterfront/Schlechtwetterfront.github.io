@@ -1,5 +1,5 @@
-title: .msh Format
-out: ../ze_filetypes/rendertypes.html
+title: Render Types
+out: ../ze_filetypes/render-types.html
 root_path: ../
 template: pages/rendertypes.html.j2
 body_classes: page-fileformats

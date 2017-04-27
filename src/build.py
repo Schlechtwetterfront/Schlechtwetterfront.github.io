@@ -82,7 +82,7 @@ def register_filters(env):
 
 
 def markdown_filter(s):
-    return markdown(s, extensions=MARKDOWN_EXTRAS)
+    return markdown(s, extensions=MARKDOWN_EXTRAS) if s else ''
 
 
 if __name__ == '__main__':
