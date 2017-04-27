@@ -235,16 +235,6 @@ table {
     .container .content .block {
       margin-bottom: 3rem; }
 
-body.page-softcry a {
-  color: #00aeef;
-  border-color: #00aeef; }
-
-body.page-softcry .page-title.page-title {
-  padding: .666rem;
-  color: #00aeef;
-  text-transform: uppercase;
-  font-weight: 400; }
-
 input, textarea, select, option {
   color: #444; }
 

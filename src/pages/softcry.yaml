@@ -1,14 +1,4 @@
 title: SoftCry
-fancy_title:
-  - text: >
-      <span>S</span>
-      <span>o</span>
-      <span>f</span>
-      <span>t</span>
-  - text: >
-      <span>C</span>
-      <span>r</span>
-      <span>y</span>
 out: ../softcry/index.html
 root_path: ../
 template: default.html.j2
