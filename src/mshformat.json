@@ -751,7 +751,7 @@
         "brief_description": "Cloth root",
         "parent": "GEOM",
         "children": [
-            "CTEXT", "CPOS", "CUV0", "FIDX", "FWGT", "CMSH", "SPRS", "CPRS", "BPRS", "COLL"
+            "CTEX", "CPOS", "CUV0", "FIDX", "FWGT", "CMSH", "SPRS", "CPRS", "BPRS", "COLL"
         ],
         "necessity": "Optional.",
         "description": "Cloth header. Replaces [SEGM](#SEGM){: .chunk}.",
@@ -1068,6 +1068,23 @@
             [">> float [4][]", 16, "Quaternion rotation in XYZW."]
         ],
         "category": "Animation"
+    },
+    "CL1L": {
+        "name": "CL1L",
+        "hierarchy_level": 0,
+        "brief_description": "Closing chunk",
+        "parent": "",
+        "children": [
+
+        ],
+        "necessity": "Once.",
+        "description": "Closing chunk, indicates the end of the .msh file.",
+        "links": [
+
+        ],
+        "structure": [
+        ],
+        "category": "Other"
     },
     "NAME": {
         "name": "NAME",

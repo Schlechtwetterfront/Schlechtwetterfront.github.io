@@ -122,8 +122,15 @@ a.chunk {
 	background: rgba(0, 0, 0, .05);
 
 	&:hover {
-	background: rgba(0, 0, 0, .075);
+		background: rgba(0, 0, 0, .075);
 	}
+}
+
+span.chunk {
+	font-family: $font-stack-mono;
+	border-bottom: 0;
+	padding: .066rem .3rem;
+	background: rgba(0, 0, 0, .05);
 }
 
 nav, .navigation {
@@ -243,5 +250,19 @@ table.render-type {
 		td:nth-child(4), th:nth-child(4) {
 			width: 45%;
 		}
+	}
+}
+
+.hierarchy {
+	.children {
+		padding-left: 1rem;
+		border-left: 1px dotted $hr-color;
+
+		.title {
+		}
+	}
+
+	header:not(.has-children) {
+		display: inline-block;
 	}
 }

@@ -14,6 +14,9 @@ resources:
   - key: chunks
     path: mshformat.json
     type: json
+  - key: hierarchy
+    path: mshhierarchy.json
+    type: json
 blocks:
   - key: overview
     title: Overview

@@ -6,6 +6,33 @@
 
 {% block content_body %}
 	{{ super() }}
+
+	<section class="block">
+		<h2 class="title" id="chunk-hierarchy">Chunk Hierarchy</h2>
+		<div class="hierarchy">
+		{% for id, chunk in hierarchy.items() recursive %}
+			<header class="{% if chunk.all_children %}has-children{% endif %}">
+				<a href="#{{ id }}" alt="{{ chunk.name }}" class="title chunk">{{ id }}</a>
+			</header>
+			{% if chunk.all_children %}
+			<div class="children">
+				{% if chunk.has_containers %}
+					{{ loop(chunk.all_children.items()) }}
+				{% else %}
+					{% for child_id, child in chunk.all_children.items() %}
+						{% if child.no_link %}
+							<span class="chunk">{{ child_id }}</span>
+						{% else %}
+							<a href="#{{ child_id }}" alt="{{ child.name }}" class="chunk">{{ child_id }}</a>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+			</div>
+			{% endif %}
+		{% endfor %}
+		</div>
+	</section>
+
 	{% for id, chunk in chunks.items() %}
 		<section class="chunk block">
 			<h2 class="title" id="{{ id }}">{{ chunk.name }}</h2>
