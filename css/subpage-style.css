@@ -104,7 +104,7 @@ pre, code {
 
 pre,
 :not(pre) > code {
-  background: rgba(0, 0, 0, 0.1); }
+  background: rgba(0, 0, 0, 0.066); }
 
 pre {
   border-radius: .333em;
@@ -270,8 +270,10 @@ input, select {
   input[type=number], select[type=number] {
     padding-right: 0; }
 
-select option:hover {
-  background: rgba(0, 0, 0, 0.3); }
+select option {
+  border: none; }
+  select option:hover {
+    background: rgba(0, 0, 0, 0.3); }
 
 label {
   font-weight: bold;
@@ -317,35 +319,27 @@ button {
 
 .calculator .inputs {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
+  flex-wrap: wrap;
   margin-bottom: 1rem;
   width: 100%; }
   .calculator .inputs > * {
-    width: 100%; }
-
-.calculator .render-type label {
-  width: 33%;
-  display: inline-block; }
-
-.calculator .render-type input, .calculator .render-type select {
-  width: 66%; }
-
-.calculator .data-values .inputs > * {
-  width: 45%; }
-
-.calculator .data-values label {
-  width: 33%;
-  display: inline-block; }
-
-.calculator .data-values input, .calculator .data-values select {
-  width: 66%; }
+    flex: 50%; }
+  .calculator .inputs label {
+    width: 33%;
+    display: inline-block; }
+  .calculator .inputs input, .calculator .inputs select {
+    width: 63%;
+    margin-left: 1%; }
 
 .calculator .chunk {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   width: 100%; }
+  .calculator .chunk > div {
+    flex: 100%; }
   .calculator .chunk #chunk {
     text-align: center; }
 
