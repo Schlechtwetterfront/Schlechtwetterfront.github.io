@@ -254,8 +254,10 @@ table.render-type {
 }
 
 .hierarchy {
+	// margin-left: 2rem;
+
 	.children {
-		padding-left: 1rem;
+		padding-left: 3rem;
 		border-left: 1px dotted $hr-color;
 
 		.title {

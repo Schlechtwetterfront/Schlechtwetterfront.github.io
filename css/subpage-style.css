@@ -104,7 +104,7 @@ pre, code {
 
 pre,
 :not(pre) > code {
-  background: rgba(0, 0, 0, 0.1); }
+  background: rgba(0, 0, 0, 0.066); }
 
 pre {
   border-radius: .333em;
@@ -270,8 +270,10 @@ input, select {
   input[type=number], select[type=number] {
     padding-right: 0; }
 
-select option:hover {
-  background: rgba(0, 0, 0, 0.3); }
+select option {
+  border: none; }
+  select option:hover {
+    background: rgba(0, 0, 0, 0.3); }
 
 label {
   font-weight: bold;
@@ -301,42 +303,43 @@ button {
 .calculator .flags {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-bottom: 1rem; }
   .calculator .flags .flag {
-    flex: 0 0 25%; }
+    flex: 0 0 50%; }
 
 .calculator .flag-values {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-bottom: 1rem; }
   .calculator .flag-values input {
     max-width: 4em; }
 
-.calculator .col.two {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
-  .calculator .col.two > * {
-    flex: 0 0 50%; }
-
 .calculator .inputs {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
   width: 100%; }
   .calculator .inputs > * {
-    width: 100%; }
+    flex: 50%; }
   .calculator .inputs label {
-    width: 30%;
+    width: 33%;
     display: inline-block; }
   .calculator .inputs input, .calculator .inputs select {
-    width: 60%; }
+    width: 63%;
+    margin-left: 1%; }
 
 .calculator .chunk {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center; }
+  width: 100%; }
+  .calculator .chunk > div {
+    flex: 100%; }
   .calculator .chunk #chunk {
     text-align: center; }
 
@@ -412,6 +415,12 @@ a.chunk {
   a.chunk:hover {
     background: rgba(0, 0, 0, 0.075); }
 
+span.chunk {
+  font-family: Monaco, Consolas, monospace;
+  border-bottom: 0;
+  padding: .066rem .3rem;
+  background: rgba(0, 0, 0, 0.05); }
+
 nav a, .navigation a {
   display: block;
   padding: .066rem .333rem; }
@@ -484,3 +493,10 @@ table.render-type tr td:nth-child(3), table.render-type tr th:nth-child(3) {
 
 table.render-type tr td:nth-child(4), table.render-type tr th:nth-child(4) {
   width: 45%; }
+
+.hierarchy .children {
+  padding-left: 3rem;
+  border-left: 1px dotted rgba(0, 0, 0, 0.15); }
+
+.hierarchy header:not(.has-children) {
+  display: inline-block; }

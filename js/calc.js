@@ -96,6 +96,10 @@
             $data1Hex.val(data1).change()
             $('#values-to-flags').click()
         })
+
+        $buildWithSpaces.on('change', function() {
+            $('#build').click();
+        })
     })
 
     function bind($intProvider, $hexProvider) {
