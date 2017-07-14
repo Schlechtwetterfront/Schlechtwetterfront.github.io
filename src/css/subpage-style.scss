@@ -86,17 +86,10 @@ hr {
 
 a:not(.button) {
 	color: $accent;
-	// font-weight: 500;
-	// text-transform: lowercase;
 	padding-bottom: .1em;
-	// border-bottom: 1px dotted $accent;
-
-	// transition: color $transition-time, border $transition-time;
 
 	&:hover {
-		// color: $accent-full;
 		color: darken($accent, 20%);
-		// border-bottom-style: solid;
 	}
 }
 
@@ -202,7 +195,6 @@ table.structure {
 		td:nth-child(2) {
 			font-family: $font-stack-mono;
 			white-space: nowrap;
-			// text-align: right;
 		}
 
 		td:nth-child(1), th:nth-child(1) {
@@ -210,6 +202,7 @@ table.structure {
 		}
 
 		td:nth-child(2), th:nth-child(2) {
+			text-align: right;
 			width: 8%;
 		}
 	}
@@ -235,11 +228,11 @@ table.render-type {
 	tr {
 		td:first-child, td:nth-child(2) {
 			font-family: $font-stack-mono;
-			text-align: right;
 		}
 
 		td:first-child, th:first-child,
 		td:nth-child(2), th:nth-child(2) {
+			text-align: right;
 			width: 5%;
 		}
 

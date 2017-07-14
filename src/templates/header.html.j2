@@ -1,5 +1,5 @@
 <aside class="menu">
-	<a href="/" class="no-style home">
+	<a href="{% if root %}{{ root }}{% else %}/{% endif %}" class="no-style home">
 		{# <img src="{{ root_path }}/{{ global.logo }}" class="logo"> #}
 		<h1 class="page-title{% if not fancy_title %} not-fancy{% endif %}">
 		{% if fancy_title %}

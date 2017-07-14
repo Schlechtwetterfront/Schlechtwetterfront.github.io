@@ -1,5 +1,6 @@
 title: ZeroEngine File Formats
 out: ../ze_filetypes/index.html
+root: /ze_filetypes/
 root_path: ../
 template: default.html.j2
 body_classes: page-fileformats
@@ -7,11 +8,11 @@ navigation:
   - title: Navigation
     links:
       - title: Overview
-        href: \#overview
+        href: '#overview'
       - title: Zero CRC
-        href: \#zero-crc
+        href: '#zero-crc'
       - title: ATRB Calculator
-        href: \#atrb-calculator
+        href: '#atrb-calculator'
   - title: File Formats
     links:
       - title: .MSH (Models & Animation)

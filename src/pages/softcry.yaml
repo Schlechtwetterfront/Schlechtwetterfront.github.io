@@ -1,11 +1,12 @@
 title: SoftCry
 out: ../softcry/index.html
+root: /softcry/
 root_path: ../
 template: default.html.j2
 body_classes: page-softcry
 navigation:
   - title: Navigation
-    links: [{title: Overview, href: \#overview}, {title: Download & Installation, href: \#installation}]
+    links: [{title: Overview, href: '#overview'}, {title: Download & Installation, href: '#installation'}]
   - title: Downloads
     links: [{title: Releases, href: 'https://github.com/Schlechtwetterfront/softcry/releases'}]
   - title: Other Resources

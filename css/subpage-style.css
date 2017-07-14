@@ -49,6 +49,15 @@ small {
 h1, h2, h3, h4, h5, h6, p {
   hyphens: auto; }
 
+.anchor {
+  font-size: 50%;
+  padding-right: .3em;
+  padding-left: .3em;
+  display: none; }
+
+h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor {
+  display: inline; }
+
 ul, ol {
   margin: 0 0 1rem; }
   ul li, ol li {
@@ -107,7 +116,7 @@ pre,
   background: rgba(0, 0, 0, 0.066); }
 
 pre {
-  border-radius: .333em;
+  border-radius: .199em;
   margin: .5em 0;
   padding: 1em; }
 
@@ -191,7 +200,7 @@ table {
       align-self: center; }
     .container .menu .page-title {
       text-align: justify;
-      font-size: 3.333rem;
+      font-size: 2.666rem;
       font-weight: 700;
       text-align: center;
       max-width: 220px;
@@ -295,10 +304,15 @@ button {
     background: rgba(0, 0, 0, 0.13); }
   button:active {
     background: rgba(0, 0, 0, 0.2); }
+  button:first-child {
+    margin-left: 0; }
 
 .calculator input, .calculator select {
   font-family: Monaco, Consolas, monospace;
   text-align: right; }
+
+.calculator > * {
+  margin-bottom: 1rem; }
 
 .calculator .flags {
   display: flex;
@@ -307,6 +321,9 @@ button {
   margin-bottom: 1rem; }
   .calculator .flags .flag {
     flex: 0 0 50%; }
+    @media screen and (max-width: 767px) {
+      .calculator .flags .flag {
+        flex: 100%; } }
 
 .calculator .flag-values {
   display: flex;
@@ -317,29 +334,59 @@ button {
   .calculator .flag-values input {
     max-width: 4em; }
 
+.calculator .render-type label {
+  flex: 1;
+  display: inline-block; }
+  @media screen and (max-width: 767px) {
+    .calculator .render-type label {
+      flex: 100%; } }
+
+.calculator .render-type input {
+  flex: 0 0 4em;
+  align-self: flex-end;
+  margin-right: .666rem; }
+
+.calculator .render-type select {
+  flex: 1;
+  align-self: flex-end;
+  margin-right: .666rem; }
+
+.calculator .data-values label {
+  flex: 1;
+  display: inline-block; }
+  @media screen and (max-width: 767px) {
+    .calculator .data-values label {
+      flex: 100%; } }
+
+.calculator .data-values input, .calculator .data-values select {
+  flex: 0 0 4em;
+  align-self: flex-end;
+  margin-right: .666rem; }
+
 .calculator .inputs {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
   width: 100%; }
   .calculator .inputs > * {
-    flex: 50%; }
-  .calculator .inputs label {
-    width: 33%;
-    display: inline-block; }
-  .calculator .inputs input, .calculator .inputs select {
-    width: 63%;
-    margin-left: 1%; }
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: .1rem; }
+    @media screen and (max-width: 767px) {
+      .calculator .inputs > * {
+        flex: 100%; } }
 
 .calculator .chunk {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-between;
-  width: 100%; }
-  .calculator .chunk > div {
-    flex: 100%; }
+  align-items: stretch; }
+  .calculator .chunk > * {
+    display: flex;
+    align-items: center; }
   .calculator .chunk #chunk {
     text-align: center; }
 
@@ -469,6 +516,7 @@ table.structure tr td:nth-child(1), table.structure tr th:nth-child(1) {
   width: 16%; }
 
 table.structure tr td:nth-child(2), table.structure tr th:nth-child(2) {
+  text-align: right;
   width: 8%; }
 
 table.hierarchy tr td:nth-child(1), table.hierarchy tr th:nth-child(1) {
@@ -481,11 +529,11 @@ table.hierarchy tr td:nth-child(3), table.hierarchy tr th:nth-child(3) {
   width: 35%; }
 
 table.render-type tr td:first-child, table.render-type tr td:nth-child(2) {
-  font-family: Monaco, Consolas, monospace;
-  text-align: right; }
+  font-family: Monaco, Consolas, monospace; }
 
 table.render-type tr td:first-child, table.render-type tr th:first-child,
 table.render-type tr td:nth-child(2), table.render-type tr th:nth-child(2) {
+  text-align: right;
   width: 5%; }
 
 table.render-type tr td:nth-child(3), table.render-type tr th:nth-child(3) {

@@ -102,6 +102,19 @@ h1, h2, h3, h4, h5, h6, p {
     hyphens: auto;
 }
 
+.anchor {
+    font-size: 50%;
+    padding-right: .3em;
+    padding-left: .3em;
+    display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    &:hover .anchor {
+        display: inline;
+    }
+}
+
 
 // ### Lists
 //
@@ -192,7 +205,7 @@ pre,
 }
 
 pre {
-    border-radius: .333em;
+    border-radius: .199em;
     margin: .5em 0;
     padding: 1em;
 }

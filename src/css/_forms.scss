@@ -99,4 +99,8 @@ button {
     &:active {
         background: rgba(0, 0, 0, .2);
     }
+
+    &:first-child {
+        margin-left: 0;
+    }
 }

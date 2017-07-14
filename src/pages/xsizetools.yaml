@@ -12,6 +12,7 @@ fancy_title:
       <span>o</span>
       <span>l</span>
       <span>s</span>
+root: /xsizetools/
 out: ../xsizetools/index.html
 root_path: ../
 template: default.html.j2
@@ -20,11 +21,11 @@ navigation:
   - title: Navigation
     links:
       - title: Overview
-        href: \#overview
+        href: '#overview'
       - title: Download & Installation
-        href: \#installation
+        href: '#installation'
       - title: Contributors
-        href: \#contributors
+        href: '#contributors'
   - title: Downloads
     links:
       - title: Releases
@@ -32,25 +33,25 @@ navigation:
   - title: Guidelines
     links:
       - title: Export
-        href: \#export-guidelines
+        href: '#export-guidelines'
       - title: Import
-        href: \#import-guidelines
+        href: '#import-guidelines'
       - title: Cloth
-        href: \#cloth-guidelines
+        href: '#cloth-guidelines'
   - title: Documentation
     links:
       - title: Scripts
-        href: \#scripts
+        href: '#scripts'
       - title: .msh Export
-        href: \#export-docs
+        href: '#export-docs'
       - title: .msh Import
-        href: \#import-docs
+        href: '#import-docs'
       - title: Material Manager
-        href: \#material-docs
+        href: '#material-docs'
       - title: msh2txt
-        href: \#msh2txt
+        href: '#msh2txt'
       - title: Animation Export
-        href: \#animation-export
+        href: '#animation-export'
   - title: Other Resources
     links:
       - title: View on Github
