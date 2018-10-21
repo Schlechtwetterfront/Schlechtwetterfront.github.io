@@ -193,13 +193,12 @@ table {
     justify-content: center;
     flex-wrap: wrap; }
   .menu__category {
-    padding: .666rem 0 .222rem;
-    margin-top: .333rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+    padding: .666rem 0 .222rem 1rem;
+    margin-top: .333rem; }
     .menu__category .category-title {
       margin-bottom: 0;
-      text-align: center;
-      font-weight: 700;
+      text-transform: uppercase;
+      color: #666;
       border: none; }
 
 .container {
@@ -475,7 +474,7 @@ span.chunk {
 
 nav a, .navigation a {
   display: block;
-  padding: .099rem .666rem; }
+  padding: .066rem 0 .066rem 1.666rem; }
   nav a:hover, .navigation a:hover {
     background: rgba(0, 0, 0, 0.033);
     text-decoration: none !important; }
