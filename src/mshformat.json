@@ -884,7 +884,7 @@
 
         ],
         "necessity": "Optional?",
-        "description": "Stretch constraint data. Keeps cloth size by storing relations between points (like edges around a quad).",
+        "description": "Stretch constraint data. Keeps cloth size by storing relations between points (like edges around a quad). Relations between two fixed points are _not_ stored",
         "links": [
             {"name": "Constraint discussion (GT)", "link": "http://www.gametoast.com/viewtopic.php?p=472300#p472300"}
         ],
@@ -903,7 +903,7 @@
 
         ],
         "necessity": "Optional?",
-        "description": "Cross constraint data. Keeps individual pieces of the cloth from shearing (cross relations between points). Think of the edges as sticky tape, glueing the points together.",
+        "description": "Cross constraint data. Keeps individual pieces of the cloth from shearing (cross relations between points). Think of the edges as sticky tape, glueing the points together. Relations between two fixed points are _not_ stored",
         "links": [
             {"name": "Constraint discussion (GT)", "link": "http://www.gametoast.com/viewtopic.php?p=472300#p472300"}
         ],
@@ -922,7 +922,7 @@
 
         ],
         "necessity": "Optional?",
-        "description": "Bend constraint data. Keeps the cloth's shape (relations between border-points of the cloth mesh, disables bending along those edges).",
+        "description": "Bend constraint data. Keeps the cloth's shape (relations between border-points of the cloth mesh, disables bending along those edges). Relations between two fixed points are _not_ stored",
         "links": [
             {"name": "Constraint discussion (GT)", "link": "http://www.gametoast.com/viewtopic.php?p=472300#p472300"}
         ],
