@@ -2,153 +2,129 @@
 // # Standard page styles
 //
 
+.page-title {
+  margin: 0;
+}
 
 // ## Block
 //
 
 .container {
-	margin: $page-padding-top auto 0;
+  &.padded {
+    margin: $page-padding-top auto 2rem;
+  }
 
-	display: flex;
-	flex-direction: row;
+  margin: 0 auto;
 
-	@media screen and (min-width: $width-large) {
-		width: $width-large - 40;
-	}
-	
-	@media screen and (max-width: $width-large - 1) {
-		width: $width-medium - 40;
-	}
-	
-	@media screen and (max-width: $width-medium - 1) {
-		// width: $width-small - 40;
-		width: 85%;
-		flex-direction: column;
-	}
+  display: flex;
+  flex-direction: row;
 
-	@media screen and (max-width: $width-small - 1) {
-		width: 90%;
-		flex-direction: column;
-	}
+  @media screen and (min-width: $width-large) {
+    width: $width-large - 40;
+  }
 
-	@media screen and (max-width: $width-medium - 1) {
-		flex-direction: column;
-		margin-top: 2rem;
-	}
+  @media screen and (max-width: $width-large - 1) {
+    width: $width-medium - 40;
+  }
 
+  @media screen and (max-width: $width-medium - 1) {
+    // width: $width-small - 40;
+    width: 85%;
+    flex-direction: column;
+  }
 
-	// ### Nav/sidebar
-	//
+  @media screen and (max-width: $width-small - 1) {
+    width: 90%;
+    flex-direction: column;
+  }
 
-	.menu {
-		flex: 0 0 280px;
+  @media screen and (max-width: $width-medium - 1) {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
 
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: stretch;
+  // ### Nav/sidebar
+  //
 
+  .menu {
+    flex: 0 0 280px;
 
-		@media screen and (min-width: $width-small) {
-			padding: 0 .66rem 0 0;
-		}
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
 
-		@media screen and (max-width: $width-medium - 1) {
-			flex: 1 1 auto;
-		}
+    @media screen and (min-width: $width-small) {
+      padding: 0 0.66rem 0 0;
+    }
 
-		a.home {
-			display: flex;
-			flex-direction: column;
-			align-items: stretch;
-		}
+    @media screen and (max-width: $width-medium - 1) {
+      flex: 1 1 auto;
+    }
 
-		.logo {
-			max-width: $heading-area-height;
-			height: auto;
+    a.home {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
 
-			align-self: center;
+    .logo {
+      max-width: $heading-area-height;
+      height: auto;
 
-		}
+      align-self: center;
+    }
 
-		.page-title {
-			text-align: justify;
-			font-size: 2.666rem;
-			font-weight: 700;
-			text-align: center;
-			// text-transform: uppercase;
+    .hr {
+      text-align: center;
+    }
 
-			max-width: 220px;
-			margin: 0 auto;
-			width: 100%;
+    .navigation {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
 
-			@include no-select();
+      .link {
+        margin-left: 1rem;
+      }
 
-			&.not-fancy {
-				max-width: 100%;
-			}
+      .category {
+        &:not(:first-child) {
+          margin-top: 1.25rem;
+        }
 
-			.line {
-				display: flex;
-				justify-content: space-between;
-			}
-		}
+        .category-title {
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
 
-		.hr {
-			text-align: center;
-		}
+  // ### Content
+  //
 
-		.navigation {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			flex-wrap: wrap;
+  .content {
+    flex: 5;
 
-			.link {
-				// margin-left: 1rem;
-			}
+    padding-top: $main-content-padding-top;
 
-			.category {
-				padding: .666rem 0 .222rem;
-				margin-top: .333rem;
+    @media screen and (min-width: $width-small) {
+      padding-left: 1rem;
+    }
 
-				border-bottom: 2px solid $hr-color;
+    .content-header {
+      height: $heading-area-height - $main-content-padding-top;
 
-				.category-title {
-					margin-bottom: 0;
-					text-align: center;
-					font-weight: 700;
+      .content-title {
+        // font-size: 2.666666rem;
+        margin-bottom: 0;
+      }
+    }
 
-					border: none;
-				}
-			}
-		}
-	}
-
-
-	// ### Content
-	//
-
-	.content {
-		flex: 5;
-
-		padding-top: $main-content-padding-top;
-
-		@media screen and (min-width: $width-small) {
-			padding-left: 1rem;
-		}
-
-		.content-header {
-			height: $heading-area-height - $main-content-padding-top;
-
-			.content-title {
-				// font-size: 2.666666rem;
-				margin-bottom: 0;
-			}
-		}
-
-		.block {
-			margin-bottom: $flow-margin-bottom * 3;
-		}
-	}
+    .block {
+      margin-bottom: $flow-margin-bottom * 3;
+    }
+  }
 }

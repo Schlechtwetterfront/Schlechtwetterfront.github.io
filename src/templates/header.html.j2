@@ -1,22 +1,9 @@
 <aside class="menu">
-	<a href="{% if root %}{{ root }}{% else %}/{% endif %}" class="no-style home">
-		{# <img src="{{ root_path }}/{{ global.logo }}" class="logo"> #}
-		<h1 class="page-title{% if not fancy_title %} not-fancy{% endif %}">
-		{% if fancy_title %}
-			{% for line in fancy_title %}
-				<span class="line">{{ line.text }}</span>
-			{% endfor %}
-		{% else %}
-			{{ title }}
-		{% endif %}
-		</h1>
-	</a>
-	<span class="no-select hr">&middot; &middot; &middot;</span>
 	<ul class="navigation blocks">
 		{% block before_nav %}
 		{% endblock %}
 		{% for category in navigation %}
-			<li class="category"><h6 class="category-title">{{ category.title }}</h6></li>
+			<li class="category"><span class="category-title">{{ category.title }}</span></li>
 			{% for link in category.links %}
 			<li class="link"><a href="{{ link.href }}">{{ link.title }}</a></li>
 			{% endfor %}

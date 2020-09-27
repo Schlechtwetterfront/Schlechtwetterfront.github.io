@@ -1,5 +1,15 @@
-h1, h2, h3, h4, h5, h6,
-.heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.heading-5,
+.heading-6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: #222;
   margin-top: 0;
@@ -7,36 +17,44 @@ h1, h2, h3, h4, h5, h6,
   text-rendering: optimizeLegibility;
   line-height: 1; }
 
-h1, .heading-1 {
-  font-size: 4rem;
-  margin-bottom: 2.424242rem; }
+h1,
+.heading-1 {
+  font-size: 3rem;
+  margin-bottom: 2.25rem; }
 
-h2, .heading-2 {
-  font-size: 3.33333rem;
-  margin-bottom: 2.020202rem; }
+h2,
+.heading-2 {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem; }
 
-h3, .heading-3 {
-  font-size: 2.666666rem;
-  margin-bottom: 1.616161rem; }
+h3,
+.heading-3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem; }
 
-h4, .heading-4 {
-  font-size: 2rem;
-  margin-bottom: 1.212121rem; }
+h4,
+.heading-4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem; }
 
-h5, .heading-5 {
-  font-size: 1.333333rem;
-  margin-bottom: 0.808080rem; }
+h5,
+.heading-5 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem; }
 
-h6, .heading-6 {
-  font-size: 1.166666rem;
-  margin-bottom: 0.707070rem; }
+h6,
+.heading-6 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem; }
 
-h2, h5, h6 {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.15); }
+h2,
+h5,
+h6 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
 
 h2 {
   margin-bottom: 1rem;
-  padding-bottom: .616161rem; }
+  padding-bottom: 0.5rem; }
 
 p {
   text-align: justify;
@@ -46,23 +64,37 @@ p {
 small {
   font-size: 65%; }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   hyphens: auto; }
 
 .anchor {
   font-size: 50%;
-  padding-right: .3em;
-  padding-left: .3em;
+  padding-right: 0.3em;
+  padding-left: 0.3em;
   display: none; }
 
-h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor {
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
   display: inline; }
 
-ul, ol {
+ul,
+ol {
   margin: 0 0 1rem; }
-  ul li, ol li {
+  ul li,
+  ol li {
     text-align: justify; }
-    ul li p, ol li p {
+    ul li p,
+    ol li p {
       margin-bottom: 0; }
 
 ul {
@@ -88,7 +120,7 @@ ol {
       display: inline-block;
       text-align: right;
       width: 1.3rem;
-      padding-right: .3rem;
+      padding-right: 0.3rem;
       font-weight: bold; }
     ol > li.fancy-block:before {
       background: black;
@@ -100,11 +132,13 @@ ul.collapsed {
   ul.collapsed li {
     display: inline-block; }
 
-ul.blocks, ol.blocks {
+ul.blocks,
+ol.blocks {
   list-style: none;
   padding: 0; }
 
-pre, code {
+pre,
+code {
   font-family: Monaco, Consolas, monospace;
   text-align: left;
   white-space: pre;
@@ -116,15 +150,20 @@ pre,
   background: rgba(0, 0, 0, 0.066); }
 
 pre {
-  border-radius: .199em;
-  margin: .5em 0;
+  border-radius: 0.199em;
+  margin: 0.5em 0;
   padding: 1em; }
 
 :not(pre) > code {
-  padding: .15em .2em .05em;
-  border-radius: .333em; }
+  padding: 0.15em 0.2em 0.05em;
+  border-radius: 0.333em; }
 
-h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, h6 > code {
+h1 > code,
+h2 > code,
+h3 > code,
+h4 > code,
+h5 > code,
+h6 > code {
   background: none; }
 
 table {
@@ -137,12 +176,13 @@ table {
       text-transform: uppercase; }
   table tbody tr:nth-child(odd) {
     background: rgba(0, 0, 0, 0.033); }
-  table td, table th {
-    padding: .1rem .666rem;
-    min-width: 20%;
+  table td,
+  table th {
+    padding: 0.1rem 0.666rem;
     text-align: left;
     vertical-align: top; }
-    table td p, table th p {
+    table td p,
+    table th p {
       margin: 0; }
 
 .tags {
@@ -151,15 +191,20 @@ table {
   flex-direction: row-reverse;
   flex-wrap: wrap; }
   .tags .tag {
-    padding: .33em .66em;
+    padding: 0.33em 0.66em;
     background: rgba(0, 0, 0, 0.1);
-    border-radius: .3333em;
+    border-radius: 0.3333em;
     font-size: 65%; }
 
+.page-title {
+  margin: 0; }
+
 .container {
-  margin: 10vh auto 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: row; }
+  .container.padded {
+    margin: 3vh auto 2rem; }
   @media screen and (min-width: 1200px) {
     .container {
       width: 1160px; } }
@@ -186,7 +231,7 @@ table {
     align-items: stretch; }
     @media screen and (min-width: 768px) {
       .container .menu {
-        padding: 0 .66rem 0 0; } }
+        padding: 0 0.66rem 0 0; } }
     @media screen and (max-width: 991px) {
       .container .menu {
         flex: 1 1 auto; } }
@@ -198,23 +243,6 @@ table {
       max-width: 100px;
       height: auto;
       align-self: center; }
-    .container .menu .page-title {
-      text-align: justify;
-      font-size: 2.666rem;
-      font-weight: 700;
-      text-align: center;
-      max-width: 220px;
-      margin: 0 auto;
-      width: 100%;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none; }
-      .container .menu .page-title.not-fancy {
-        max-width: 100%; }
-      .container .menu .page-title .line {
-        display: flex;
-        justify-content: space-between; }
     .container .menu .hr {
       text-align: center; }
     .container .menu .navigation {
@@ -222,15 +250,13 @@ table {
       flex-direction: column;
       justify-content: center;
       flex-wrap: wrap; }
-      .container .menu .navigation .category {
-        padding: .666rem 0 .222rem;
-        margin-top: .333rem;
-        border-bottom: 2px solid rgba(0, 0, 0, 0.15); }
-        .container .menu .navigation .category .category-title {
-          margin-bottom: 0;
-          text-align: center;
-          font-weight: 700;
-          border: none; }
+      .container .menu .navigation .link {
+        margin-left: 1rem; }
+      .container .menu .navigation .category:not(:first-child) {
+        margin-top: 1.25rem; }
+      .container .menu .navigation .category .category-title {
+        text-transform: uppercase;
+        letter-spacing: 1px; }
   .container .content {
     flex: 5;
     padding-top: 8px; }
@@ -244,39 +270,48 @@ table {
     .container .content .block {
       margin-bottom: 3rem; }
 
-input, textarea, select, option {
+input,
+textarea,
+select,
+option {
   color: #444; }
 
-input, select {
-  padding: .15rem .93rem .15rem .333rem;
+input,
+select {
+  padding: 0.15rem 0.93rem 0.15rem 0.333rem;
   font-size: 1rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1;
   margin: 0;
-  border: none;
-  background: rgba(0, 0, 0, 0.066); }
-  input:active, input:focus, select:active, select:focus {
-    outline: 0; }
-  input:focus, select:focus {
-    background: rgba(0, 0, 0, 0.1); }
-  input[type=checkbox], select[type=checkbox] {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem; }
+  input:hover,
+  select:hover {
+    border-color: rgba(0, 0, 0, 0.3); }
+  input:focus,
+  select:focus {
+    border-color: #0070d4; }
+  input[type="checkbox"],
+  select[type="checkbox"] {
     position: relative;
     cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
     background: rgba(0, 0, 0, 0.15);
-    border-radius: .15em;
-    padding: .333em; }
-    input[type=checkbox]:checked:before, select[type=checkbox]:checked:before {
+    border-radius: 0.15em;
+    padding: 0.333em; }
+    input[type="checkbox"]:checked:before,
+    select[type="checkbox"]:checked:before {
       display: inline-block;
       position: absolute;
-      top: -.333rem;
-      left: -.063rem;
-      content: '\002714';
+      top: -0.333rem;
+      left: -0.063rem;
+      content: "\002714";
       color: black;
       font-weight: bold;
       font-size: 1.1rem; }
-  input[type=number], select[type=number] {
+  input[type="number"],
+  select[type="number"] {
     padding-right: 0; }
 
 select option {
@@ -285,29 +320,31 @@ select option {
     background: rgba(0, 0, 0, 0.3); }
 
 label {
-  font-weight: bold;
   padding: 0;
+  color: black;
   cursor: pointer; }
   label > input {
-    margin: 0 .5rem; }
+    margin: 0 0.5rem; }
 
 button {
   font-size: 1rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  padding: .333rem .666rem;
-  margin: .1rem .15rem;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: .15rem;
-  border: none;
+  padding: 0.333rem 0.666rem;
+  margin: 0.1rem 0.15rem;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   cursor: pointer; }
   button:hover {
-    background: rgba(0, 0, 0, 0.13); }
+    border-color: #0070d4; }
   button:active {
-    background: rgba(0, 0, 0, 0.2); }
+    background: #0070d4;
+    color: white; }
   button:first-child {
     margin-left: 0; }
 
-.calculator input, .calculator select {
+.calculator input,
+.calculator select {
   font-family: Monaco, Consolas, monospace;
   text-align: right; }
 
@@ -344,12 +381,12 @@ button {
 .calculator .render-type input {
   flex: 0 0 4em;
   align-self: flex-end;
-  margin-right: .666rem; }
+  margin-right: 0.666rem; }
 
 .calculator .render-type select {
   flex: 1;
   align-self: flex-end;
-  margin-right: .666rem; }
+  margin-right: 0.666rem; }
 
 .calculator .data-values label {
   flex: 1;
@@ -358,10 +395,11 @@ button {
     .calculator .data-values label {
       flex: 100%; } }
 
-.calculator .data-values input, .calculator .data-values select {
+.calculator .data-values input,
+.calculator .data-values select {
   flex: 0 0 4em;
   align-self: flex-end;
-  margin-right: .666rem; }
+  margin-right: 0.666rem; }
 
 .calculator .inputs {
   display: flex;
@@ -374,7 +412,7 @@ button {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: .1rem; }
+    margin-bottom: 0.1rem; }
     @media screen and (max-width: 767px) {
       .calculator .inputs > * {
         flex: 100%; } }
@@ -396,7 +434,7 @@ button {
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: #444;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   margin: 0;
   overflow-y: scroll;
@@ -410,54 +448,18 @@ hr {
   width: 100%;
   border-color: rgba(0, 0, 0, 0.15);
   border-style: dashed;
-  margin: .399em 0 .6em; }
-
-.theme-dark hr, .footer-theme-dark hr {
-  border-color: rgba(255, 255, 255, 0.1); }
-
-.solid {
-  border-style: solid; }
-
-.side-hr {
-  flex: 1;
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
-
-.side-hr:first-child {
-  margin-right: 1em; }
-
-.side-hr:last-child {
-  margin-left: 1em; }
-
-.side-hr.bright {
-  border-color: rgba(0, 0, 0, 0.05); }
-
-.side-hr.bright {
-  border-color: rgba(255, 255, 255, 0.1); }
+  margin: 0.399em 0 0.6em; }
 
 a:not(.button) {
   color: #0070d4;
-  padding-bottom: .1em; }
+  padding-bottom: 0.1em;
+  text-decoration: none; }
   a:not(.button):hover {
-    color: #003a6e; }
-
-a, a:hover, a:focus, button, button:hover, button:focus {
-  text-decoration: none;
-  outline: 0; }
-
-a.no-style, a.no-style:hover {
-  border: none;
-  padding: 0;
-  margin: 0;
-  text-transform: none;
-  display: block;
-  width: 100%;
-  color: initial; }
+    text-decoration: underline; }
 
 a.chunk {
   font-family: Monaco, Consolas, monospace;
-  border-bottom: 0;
-  padding: .066rem .3rem;
+  padding: 0.066rem 0.3rem;
   background: rgba(0, 0, 0, 0.05); }
   a.chunk:hover {
     background: rgba(0, 0, 0, 0.075); }
@@ -465,22 +467,8 @@ a.chunk {
 span.chunk {
   font-family: Monaco, Consolas, monospace;
   border-bottom: 0;
-  padding: .066rem .3rem;
+  padding: 0.066rem 0.3rem;
   background: rgba(0, 0, 0, 0.05); }
-
-nav a, .navigation a {
-  display: block;
-  padding: .066rem .333rem; }
-  nav a:hover, .navigation a:hover {
-    background: rgba(0, 0, 0, 0.066); }
-
-*::selection {
-  background-color: #222;
-  color: #f0f0f0; }
-
-*::-moz-selection {
-  background-color: #222;
-  color: #f0f0f0; }
 
 .no-select {
   -webkit-user-select: none;
@@ -489,11 +477,17 @@ nav a, .navigation a {
   user-select: none;
   cursor: default; }
 
-.long, .float, .short, .byte, .string, .crc {
-  font-weight: bold;
+.long,
+.float,
+.short,
+.byte,
+.string,
+.crc {
   font-family: Monaco, Consolas, monospace; }
 
-.long, .short, .float {
+.long,
+.short,
+.float {
   color: red; }
 
 .string {
@@ -505,41 +499,51 @@ nav a, .navigation a {
 .crc {
   color: orange; }
 
-table.structure tr td:first-child {
+table.structure tr td:nth-child(1) {
   white-space: nowrap; }
+
+table.structure tr td:nth-child(1),
+table.structure tr th:nth-child(1) {
+  width: 16%; }
 
 table.structure tr td:nth-child(2) {
   font-family: Monaco, Consolas, monospace;
   white-space: nowrap; }
 
-table.structure tr td:nth-child(1), table.structure tr th:nth-child(1) {
-  width: 16%; }
-
-table.structure tr td:nth-child(2), table.structure tr th:nth-child(2) {
+table.structure tr td:nth-child(2),
+table.structure tr th:nth-child(2) {
   text-align: right;
   width: 8%; }
 
-table.hierarchy tr td:nth-child(1), table.hierarchy tr th:nth-child(1) {
+table.hierarchy tr td:nth-child(1),
+table.hierarchy tr th:nth-child(1) {
   width: 15%; }
 
-table.hierarchy tr td:nth-child(2), table.hierarchy tr th:nth-child(2) {
+table.hierarchy tr td:nth-child(2),
+table.hierarchy tr th:nth-child(2) {
   width: 50%; }
 
-table.hierarchy tr td:nth-child(3), table.hierarchy tr th:nth-child(3) {
+table.hierarchy tr td:nth-child(3),
+table.hierarchy tr th:nth-child(3) {
   width: 35%; }
 
-table.render-type tr td:first-child, table.render-type tr td:nth-child(2) {
+table.render-type tr td:first-child,
+table.render-type tr td:nth-child(2) {
   font-family: Monaco, Consolas, monospace; }
 
-table.render-type tr td:first-child, table.render-type tr th:first-child,
-table.render-type tr td:nth-child(2), table.render-type tr th:nth-child(2) {
+table.render-type tr td:first-child,
+table.render-type tr th:first-child,
+table.render-type tr td:nth-child(2),
+table.render-type tr th:nth-child(2) {
   text-align: right;
   width: 5%; }
 
-table.render-type tr td:nth-child(3), table.render-type tr th:nth-child(3) {
+table.render-type tr td:nth-child(3),
+table.render-type tr th:nth-child(3) {
   width: 45%; }
 
-table.render-type tr td:nth-child(4), table.render-type tr th:nth-child(4) {
+table.render-type tr td:nth-child(4),
+table.render-type tr th:nth-child(4) {
   width: 45%; }
 
 .hierarchy .children {

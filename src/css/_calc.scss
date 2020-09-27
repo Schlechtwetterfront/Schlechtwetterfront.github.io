@@ -2,132 +2,127 @@
 // # Calculator
 //
 
-
 .calculator {
+  input,
+  select {
+    font-family: Monaco, Consolas, monospace;
+    text-align: right;
+  }
 
-    input, select {
-        font-family: Monaco, Consolas, monospace;
-        text-align: right;
+  > * {
+    margin-bottom: $flow-margin-bottom;
+  }
+
+  .flags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: $flow-margin-bottom;
+
+    .flag {
+      flex: 0 0 50%;
+
+      @media screen and (max-width: $width-small - 1) {
+        flex: 100%;
+      }
     }
+  }
+
+  .flag-values {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: $flow-margin-bottom;
+
+    input {
+      max-width: 4em;
+    }
+  }
+
+  .render-type {
+    label {
+      flex: 1;
+      display: inline-block;
+
+      @media screen and (max-width: $width-small - 1) {
+        flex: 100%;
+      }
+    }
+
+    input {
+      flex: 0 0 4em;
+      align-self: flex-end;
+      margin-right: 0.666rem;
+    }
+
+    select {
+      flex: 1;
+      align-self: flex-end;
+      margin-right: 0.666rem;
+    }
+  }
+
+  .data-values {
+    label {
+      flex: 1;
+      display: inline-block;
+
+      @media screen and (max-width: $width-small - 1) {
+        flex: 100%;
+      }
+    }
+
+    input,
+    select {
+      flex: 0 0 4em;
+      align-self: flex-end;
+      margin-right: 0.666rem;
+    }
+  }
+
+  .inputs {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
 
     > * {
-        margin-bottom: $flow-margin-bottom;
+      flex: 0 0 50%;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      margin-bottom: 0.1rem;
+
+      @media screen and (max-width: $width-small - 1) {
+        flex: 100%;
+      }
+    }
+  }
+
+  .render-type {
+  }
+
+  .data-values {
+  }
+
+  .chunk {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+
+    > * {
+      display: flex;
+      // justify-content: space-around;
+      align-items: center;
     }
 
-    .flags {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-bottom: $flow-margin-bottom;
-        
-        .flag {
-            flex: 0 0 50%;
-
-            @media screen and (max-width: $width-small - 1) {
-                flex: 100%;
-            }
-        }
+    #chunk {
+      text-align: center;
     }
-
-    .flag-values {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-bottom: $flow-margin-bottom;
-
-        input {
-            max-width: 4em;
-        }
-    }
-
-    .render-type {
-        label {
-            flex: 1;
-            display: inline-block;
-
-            @media screen and (max-width: $width-small - 1) {
-                flex: 100%;
-            }
-        }
-
-        input {
-            flex: 0 0 4em;
-            align-self: flex-end;
-            margin-right: .666rem;
-        }
-
-        select {
-            flex: 1;
-            align-self: flex-end;
-            margin-right: .666rem;
-        }
-    }
-
-    .data-values {
-        label {
-            flex: 1;
-            display: inline-block;
-
-            @media screen and (max-width: $width-small - 1) {
-                flex: 100%;
-            }
-        }
-        
-        input, select {
-            flex: 0 0 4em;
-            align-self: flex-end;
-            margin-right: .666rem;
-        }
-    }
-
-    .inputs {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        width: 100%;
-
-        > * {
-            flex: 0 0 50%;
-
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-
-            margin-bottom: .1rem;
-
-            @media screen and (max-width: $width-small - 1) {
-                flex: 100%;
-            }
-        }
-    }
-
-    .render-type {
-
-    }
-
-    .data-values {
-
-    }
-
-    .chunk {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: stretch;
-
-        > * {
-            display: flex;
-            // justify-content: space-around;
-            align-items: center;
-
-            > * {
-            }
-        }
-
-        #chunk {
-            text-align: center;
-        }
-    }
+  }
 }

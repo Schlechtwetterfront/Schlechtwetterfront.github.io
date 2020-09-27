@@ -2,262 +2,199 @@
 // # Style
 //
 
-@import 'config';
-@import 'typography';
-@import 'mixins';
-@import 'shared';
-@import 'page';
-@import 'forms';
-@import 'calc';
-
+@import "config";
+@import "typography";
+@import "mixins";
+@import "shared";
+@import "page";
+@import "forms";
+@import "calc";
 
 // ## General Tags
 //
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	font-family: $font-stack;
-	color: $font-color;
-	font-size: $font-size;
+  font-family: $font-stack;
+  color: $font-color;
+  font-size: $font-size;
 
-	line-height: 1.65;
+  line-height: 1.65;
 
-	margin: 0;
+  margin: 0;
 
-	// Always show scroll bar so all sites have the same content width.
-	overflow-y: scroll;
+  // Always show scroll bar so all sites have the same content width.
+  overflow-y: scroll;
 
-	background: white;
+  background: white;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
-
 
 // ### <hr> and variations
 //
 
 hr {
-	width: 100%;
-	border-color: $hr-color;
-	border-style: dashed;
+  width: 100%;
+  border-color: $hr-color;
+  border-style: dashed;
 
-	margin: .399em 0 .6em;
+  margin: 0.399em 0 0.6em;
 }
-
-.theme-dark hr, .footer-theme-dark hr {
-	border-color: $hr-color-light;
-}
-
-.solid {
-	border-style: solid;
-}
-
-.side-hr {
-	flex: 1;
-	border-top: 1px solid $hr-color;
-	border-bottom: 1px solid $hr-color;
-}
-
-.side-hr:first-child {
-	margin-right: 1em;
-}
-
-.side-hr:last-child {
-	margin-left: 1em;
-}
-
-.side-hr.bright {
-	border-color: rgba(0, 0, 0, .05)
-}
-
-.side-hr.bright {
-	border-color: rgba(255, 255, 255, .1);
-}
-
 
 // ### Links
 //
 
 a:not(.button) {
-	color: $accent;
-	padding-bottom: .1em;
+  color: $accent;
+  padding-bottom: 0.1em;
+  text-decoration: none;
 
-	&:hover {
-		color: darken($accent, 20%);
-	}
-}
-
-a, a:hover, a:focus, button, button:hover, button:focus {
-	text-decoration: none;
-	outline: 0;
-}
-
-a.no-style, a.no-style:hover {
-	border: none;
-	padding: 0;
-	margin: 0;
-	text-transform: none;
-	display: block;
-	width: 100%;
-	color: initial;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 a.chunk {
-	font-family: $font-stack-mono;
-	border-bottom: 0;
-	padding: .066rem .3rem;
-	background: rgba(0, 0, 0, .05);
+  font-family: $font-stack-mono;
+  padding: 0.066rem 0.3rem;
+  background: rgba(0, 0, 0, 0.05);
 
-	&:hover {
-		background: rgba(0, 0, 0, .075);
-	}
+  &:hover {
+    background: rgba(0, 0, 0, 0.075);
+  }
 }
 
 span.chunk {
-	font-family: $font-stack-mono;
-	border-bottom: 0;
-	padding: .066rem .3rem;
-	background: rgba(0, 0, 0, .05);
+  font-family: $font-stack-mono;
+  border-bottom: 0;
+  padding: 0.066rem 0.3rem;
+  background: rgba(0, 0, 0, 0.05);
 }
-
-nav, .navigation {
-	a {
-		display: block;
-		padding: .066rem .333rem;
-
-		&:hover {
-			background: rgba(0, 0, 0, .066);
-		}
-	}
-}
-
 
 // ### Selection
 //
 
-*::selection {
-	background-color: #222;
-	color: #f0f0f0;
-}
-
-*::-moz-selection {
-	background-color: #222;
-	color: #f0f0f0;
-}
-
 .no-select {
-	@include no-select();
-	cursor: default;
+  @include no-select();
+  cursor: default;
 }
-
 
 // ### Types
 //
 
-.long, .float, .short, .byte, .string, .crc {
-	font-weight: bold;
-	font-family: $font-stack-mono;
+.long,
+.float,
+.short,
+.byte,
+.string,
+.crc {
+  font-family: $font-stack-mono;
 }
 
-.long, .short, .float {
-	color: red;
+.long,
+.short,
+.float {
+  color: red;
 }
 
 .string {
-	color: lightgreen;
+  color: lightgreen;
 }
 
 .byte {
-	color: orange;
+  color: orange;
 }
 
 .crc {
-	color: orange;
+  color: orange;
 }
-
 
 // ### Structure table
 //
 
 table.structure {
+  tr {
+    td:nth-child(1) {
+      white-space: nowrap;
+    }
 
-	tr {
-		td:first-child {
-			white-space: nowrap;
-		}
+    td:nth-child(1),
+    th:nth-child(1) {
+      width: 16%;
+    }
 
-		td:nth-child(2) {
-			font-family: $font-stack-mono;
-			white-space: nowrap;
-		}
-
-		td:nth-child(1), th:nth-child(1) {
-			width: 16%;
-		}
-
-		td:nth-child(2), th:nth-child(2) {
-			text-align: right;
-			width: 8%;
-		}
-	}
+    td:nth-child(2) {
+      font-family: $font-stack-mono;
+      white-space: nowrap;
+    }
+    td:nth-child(2),
+    th:nth-child(2) {
+      text-align: right;
+      width: 8%;
+    }
+  }
 }
 
 table.hierarchy {
-	tr {
-		td:nth-child(1), th:nth-child(1) {
-			width: 15%;
-		}
+  tr {
+    td:nth-child(1),
+    th:nth-child(1) {
+      width: 15%;
+    }
 
-		td:nth-child(2), th:nth-child(2) {
-			width: 50%;
-		}
+    td:nth-child(2),
+    th:nth-child(2) {
+      width: 50%;
+    }
 
-		td:nth-child(3), th:nth-child(3) {
-			width: 35%;
-		}
-	}
+    td:nth-child(3),
+    th:nth-child(3) {
+      width: 35%;
+    }
+  }
 }
 
 table.render-type {
-	tr {
-		td:first-child, td:nth-child(2) {
-			font-family: $font-stack-mono;
-		}
+  tr {
+    td:first-child,
+    td:nth-child(2) {
+      font-family: $font-stack-mono;
+    }
 
-		td:first-child, th:first-child,
-		td:nth-child(2), th:nth-child(2) {
-			text-align: right;
-			width: 5%;
-		}
+    td:first-child,
+    th:first-child,
+    td:nth-child(2),
+    th:nth-child(2) {
+      text-align: right;
+      width: 5%;
+    }
 
-		td:nth-child(3), th:nth-child(3) {
-			width: 45%;
-		}
+    td:nth-child(3),
+    th:nth-child(3) {
+      width: 45%;
+    }
 
-		td:nth-child(4), th:nth-child(4) {
-			width: 45%;
-		}
-	}
+    td:nth-child(4),
+    th:nth-child(4) {
+      width: 45%;
+    }
+  }
 }
 
 .hierarchy {
-	// margin-left: 2rem;
+  .children {
+    padding-left: 3rem;
+    border-left: 1px dotted $hr-color;
+  }
 
-	.children {
-		padding-left: 3rem;
-		border-left: 1px dotted $hr-color;
-
-		.title {
-		}
-	}
-
-	header:not(.has-children) {
-		display: inline-block;
-	}
+  header:not(.has-children) {
+    display: inline-block;
+  }
 }

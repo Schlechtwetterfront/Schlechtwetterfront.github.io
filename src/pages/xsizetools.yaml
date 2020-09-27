@@ -1,17 +1,4 @@
 title: XSIZETools
-fancy_title:
-  - text: >
-      <span>X</span>
-      <span>S</span>
-      <span>I</span>
-      <span>Z</span>
-      <span>E</span>
-  - text: >
-      <span>T</span>
-      <span>o</span>
-      <span>o</span>
-      <span>l</span>
-      <span>s</span>
 root: /xsizetools/
 out: ../xsizetools/index.html
 root_path: ../
@@ -21,37 +8,37 @@ navigation:
   - title: Navigation
     links:
       - title: Overview
-        href: '#overview'
+        href: "#overview"
       - title: Download & Installation
-        href: '#installation'
+        href: "#installation"
       - title: Contributors
-        href: '#contributors'
+        href: "#contributors"
   - title: Downloads
     links:
       - title: Releases
-        href: 'https://github.com/Schlechtwetterfront/xsizetools/releases'
+        href: "https://github.com/Schlechtwetterfront/xsizetools/releases"
   - title: Guidelines
     links:
       - title: Export
-        href: '#export-guidelines'
+        href: "#export-guidelines"
       - title: Import
-        href: '#import-guidelines'
+        href: "#import-guidelines"
       - title: Cloth
-        href: '#cloth-guidelines'
+        href: "#cloth-guidelines"
   - title: Documentation
     links:
       - title: Scripts
-        href: '#scripts'
+        href: "#scripts"
       - title: .msh Export
-        href: '#export-docs'
+        href: "#export-docs"
       - title: .msh Import
-        href: '#import-docs'
+        href: "#import-docs"
       - title: Material Manager
-        href: '#material-docs'
+        href: "#material-docs"
       - title: msh2txt
-        href: '#msh2txt'
+        href: "#msh2txt"
       - title: Animation Export
-        href: '#animation-export'
+        href: "#animation-export"
   - title: Other Resources
     links:
       - title: View on Github
@@ -67,7 +54,6 @@ blocks:
 
       In general, important updates will be gathered into a [release][releases], so choosing the latest release should give you the latest working features. Alternatively you can download the most recent commit directly with the "Download ZIP" button.
 
-      For more information on usage go to the [XSIZETools homepage][homepage].
       If you encounter bugs or have problems, feel free to post on the [Gametoast forums][gametoast] (you might need to use a proxy from some countries)
       or send me a mail via Github.
 
@@ -82,21 +68,35 @@ blocks:
 
       1. Choose one of the [releases from here][releases] and download it.
       1. If you **don't** have a Softimage version of 2011 or higher,
-          download and install [python](http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi) and 
-          [pywin32](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20217/pywin32-217.win32-py2.6.exe/download).
-      1. Download and install the [Visual C++ 2015 Redistributable](https://www.visualstudio.com/downloads/download-visual-studio-vs#d-visual-c).
-          Download both versions by selecting the format and activating the _Download_ button.
-          If the page doesn't automatically navigate to the Visual C++ 2015 redist select _Tools for Visual Studio 2015_ on the left and then choose _Microsoft Visual C++ 2015 Redistributable_.
+        download and install [python][python27] and
+        [pywin32][pywin27]. You can also choose your own combination from [python downloads][python] and [pywin downloads][pywin].
+      1. Download and install the [Visual C++ 2015 Redistributable](redist15).
+        Download both versions by selecting the format and activating the _Download_ button.
+        If the page doesn't automatically navigate to the Visual C++ 2015 redist select _Tools for Visual Studio 2015_ on the left and then choose _Microsoft Visual C++ 2015 Redistributable_.
       1. Unzip the downloaded archive into
-          `C:/users/%user%/Autodesk/Softimage_%version%/Addons/`.
-          In the end, the directory including ``README.md``, ``xsizet.ver``, etc should be ``C:/Users/%user%/Autodesk/Softimage_2015/Addons/xsizetools/``.
+        `C:/users/%user%/Autodesk/Softimage_%version%/Addons/` or `C:/users/%user%/Softimage/Softimage_%version%/Addons/`.
+        In the end, the directory including `README.md`, `xsizet.ver`, etc should be `C:/Users/%user%/Autodesk/Softimage_2015/Addons/xsizetools/`.
 
       If python and pywin32 was installed correctly it should look something like
-      [this](installed_python.jpg).  
+      [this](installed_python.jpg).
+
+      - [XSIZETools Homepage][homepage]
+      - [Gametoast Thread][gametoast]
+      - [Python Downloads][python]
+      - [Pywin Downloads][pywin]
+      - [Python 2.7][python27] + [Pywin][pywin27]
+      - [Visual C++ 2015 redist][redist15]
 
       [homepage]: http://schlechtwetterfront.github.io/xsizetools/ "XSIZETools Homepage"
       [gametoast]: http://gametoast.com/viewtopic.php?f=36&t=26664 "Gametoast Thread"
-      [releases]: https://github.com/Schlechtwetterfront/xsizetools/releases "Releases" 
+      [releases]: https://github.com/Schlechtwetterfront/xsizetools/releases "Releases"
+      [python]: https://www.python.org/downloads/ "Python Download"
+      [python27]: https://www.python.org/ftp/python/2.7.18/python-2.7.18.msi "Python 2.7"
+      [pywin27]: https://github.com/mhammond/pywin32/releases/download/b228/pywin32-228.win32-py2.7.exe "Pywin for 2.7"
+      [pywin]: https://github.com/mhammond/pywin32/releases "Pywin Download"
+      [redist15]: https://www.visualstudio.com/downloads/download-visual-studio-vs#d-visual-c "C++ 2015 redist"
+      [redist86]: http://www.microsoft.com/download/en/details.aspx?id=5555 "C++ 2010 redist Download"
+      [redist64]: http://www.microsoft.com/downloads/de-de/details.aspx?FamilyID=bd512d9e-43c8-4655-81bf-9350143d5867 "C++ 2010 redist Download"
   - key: contributors
     title: Contributors
     template: blocks/default.html.j2
@@ -144,7 +144,7 @@ blocks:
 
       Animation
       : It's not important how you animate bones (FK or IK etc), the exporter will go through all frames one-by-one and get the current local transforms of every bone.
-      
+
       Weighting
       : Only weight to objects with bone in their name(NOT: root, eff).
       : Always apply the envelope to ALL bones. This might slow your workflow down but it ensures the points are weighted to the correct bone after export.
@@ -152,7 +152,7 @@ blocks:
 
       No Materials
       : You should have at least one material named Scene_Material when exporting. If you have at least one material you don't need Scene_Material.
-      
+
       Material/Render flags are applied per material
       : You can apply them by opening the ZETools Material Manager, selecting a material and then clicking "ZE-ify".
             This will add all the ZeroEngine material flags to the material.
@@ -202,16 +202,16 @@ blocks:
 
       Use root model name for .msh file name
       : Will use the name of the topmost object in the currently selected hierarchy as the .msh file name. Has to be enabled when Batch Exporting.
-      
+
       Batch Export
       : Exports all children of the currently selected object as a full hierarchy.
-      
+
       Export Animation
       : Exports animation for the current frame range.
-      
+
       Current Frame as Basepose
       : Exports only the currently selected and following frame to minimize file size.
-      
+
       Check Sel
       : Loops through all objects in the currently selected hierarchy and analyzes it for problems which could cause a bad export.  
       : 
@@ -533,4 +533,4 @@ blocks:
       string  | name      | Collision name.
       string  | parent      | Parent of the collision object.
       int | unknown_long      | Unknown purpose.
-      float[3]  | collision_primitive       | [value 0, value 1, value 2]. 
+      float[3]  | collision_primitive       | [value 0, value 1, value 2].

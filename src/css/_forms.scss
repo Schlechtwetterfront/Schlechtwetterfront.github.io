@@ -2,105 +2,105 @@
 // # Forms & Inputs
 //
 
-input, textarea, select, option {
-    color: $font-color;
+input,
+textarea,
+select,
+option {
+  color: $font-color;
 }
 
-input, select {
-    padding: .15rem .93rem .15rem .333rem;
-    font-size: 1rem;
-    font-family: $font-stack;
-    line-height: 1;
-    margin: 0;
+input,
+select {
+  padding: 0.15rem 0.93rem 0.15rem 0.333rem;
+  font-size: 1rem;
+  font-family: $font-stack;
+  line-height: 1;
+  margin: 0;
 
-    border: none;
-    background: rgba(0, 0, 0, .066);
+  border: 1px solid $hr-color;
+  border-radius: 0.25rem;
 
-    &:active, &:focus {
-        outline: 0;
+  &:hover {
+    border-color: $hr-color-dark;
+  }
+
+  &:focus {
+    border-color: $accent;
+  }
+
+  &[type="checkbox"] {
+    position: relative;
+
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    appearance: none;
+
+    background: $hr-color;
+    border-radius: 0.15em;
+    padding: 0.333em;
+
+    &:checked {
+      &:before {
+        display: inline-block;
+        position: absolute;
+        top: -0.333rem;
+        left: -0.063rem;
+        content: "\002714";
+        color: black;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
     }
+  }
 
-    &:focus {
-        background: rgba(0, 0, 0, .1);
-    }
-
-    &[type=checkbox] {
-        position: relative;
-
-        cursor: pointer;
-
-        -webkit-appearance: none;
-        appearance: none;
-
-        background: $hr-color;
-        border-radius: .15em;
-        padding: .333em;
-
-        &:checked {
-            &:before {
-                display: inline-block;
-                position: absolute;
-                top: -.333rem;
-                left: -.063rem;
-                content: '\002714';
-                color: black;
-                font-weight: bold;
-                font-size: 1.1rem;
-            }
-        }
-
-    }
-
-    &:not([type=checkbox]) {
-
-    }
-
-    &[type=number] {
-        padding-right: 0;
-    }
+  &[type="number"] {
+    padding-right: 0;
+  }
 }
 
 select {
-    option {
-        border: none;
-        &:hover {
-            background: rgba(0, 0, 0, .3);
-        }
+  option {
+    border: none;
+    &:hover {
+      background: rgba(0, 0, 0, 0.3);
     }
+  }
 }
 
 label {
-    font-weight: bold;
-    padding: 0;
-    cursor: pointer;
+  padding: 0;
+  color: black;
+  cursor: pointer;
 
-    > input {
-        margin: 0 .5rem;
-    }
+  > input {
+    margin: 0 0.5rem;
+  }
 }
 
 button {
-    font-size: 1rem;
-    font-family: $font-stack;
+  font-size: 1rem;
+  font-family: $font-stack;
 
-    padding: .333rem .666rem;
-    margin: .1rem .15rem;
-    background: rgba(0, 0, 0, .1);
+  padding: 0.333rem 0.666rem;
+  margin: 0.1rem 0.15rem;
+  background: $hr-color;
 
-    border-radius: .15rem;
-    border: none;
+  border-radius: 0.25rem;
+  border: 1px solid $hr-color;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    &:hover {
-        background: rgba(0, 0, 0, .13);
-    }
+  &:hover {
+    border-color: $accent;
+  }
 
-    &:active {
-        background: rgba(0, 0, 0, .2);
-    }
+  &:active {
+    background: $accent;
+    color: white;
+  }
 
-    &:first-child {
-        margin-left: 0;
-    }
+  &:first-child {
+    margin-left: 0;
+  }
 }

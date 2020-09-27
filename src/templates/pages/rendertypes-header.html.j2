@@ -1,7 +1,7 @@
 {% extends 'header.html.j2' %}
 
 {% block after_nav %}
-    <li class="category"><h6 class="category-title">Render Types</h6></li>
+    <li class="category"><span class="category-title">Render Types</span></li>
     {% for rendertype in rendertypes -%}
         <li class="link">
             <a href="#{{ rendertype.key }}" alt="{{ rendertype.name }}">

@@ -5,42 +5,40 @@
 // ## Content widths
 //
 
-$width-large:	1200px;
-$width-medium:	992px;
-$width-small:	768px;
-$width-xsmall:	576px;
-$width-xxsmall:	400px;
-
+$width-large: 1200px;
+$width-medium: 992px;
+$width-small: 768px;
+$width-xsmall: 576px;
+$width-xxsmall: 400px;
 
 // ## Layout
 //
 
-$page-padding-top:			10vh;
+$page-padding-top: 3vh;
 
-$main-content-padding-top: 	8px;
+$main-content-padding-top: 8px;
 
-$heading-area-height: 		100px;
+$heading-area-height: 100px;
 
-$flow-margin-bottom:        1rem;
-
+$flow-margin-bottom: 1rem;
 
 // ## Colors
 //
 
-$accent-light:				rgba(255, 50, 50, 0.5);
-$accent:					#0070d4;
-$accent-full:				#0061c7;
+$accent-light: rgba(255, 50, 50, 0.5);
+$accent: #0070d4;
+$accent-full: #0061c7;
 
-$hr-color:					rgba(0, 0, 0, .15);
-$hr-color-light:			rgba(255, 255, 255, .1);
+$hr-color: rgba(0, 0, 0, 0.15);
+$hr-color-light: rgba(255, 255, 255, 0.1);
+$hr-color-dark: rgba(0, 0, 0, 0.3);
 
-$gallery-background:		#111;
+$gallery-background: #111;
 
-$link-color-light:			#666;
-$link-color-hover-light:	#bbb;
-
+$link-color-light: #666;
+$link-color-hover-light: #bbb;
 
 // ## Other
 //
 
-$transition-time:	.15s;
+$transition-time: 0.15s;

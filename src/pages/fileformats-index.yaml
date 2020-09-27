@@ -8,11 +8,11 @@ navigation:
   - title: Navigation
     links:
       - title: Overview
-        href: '#overview'
+        href: "#overview"
       - title: Zero CRC
-        href: '#zero-crc'
+        href: "#zero-crc"
       - title: ATRB Calculator
-        href: '#atrb-calculator'
+        href: "#atrb-calculator"
   - title: File Formats
     links:
       - title: .MSH (Models & Animation)
@@ -47,7 +47,7 @@ blocks:
       Use this to calculate flag values, convert render type and data values to hex and convert from and to the .msh ATRB hex chunk.
 
       Note that Single-sided and Double-sided Transparency are exclusive, so selecting both might not have the desired/any effect.
-      Check out the [ATRB](msh.html#ATRB) chunk for more information on each flag.
+      Check out the [ATRB](msh.html#ATRB){: .chunk} chunk for more information on each flag.
 
       ### Calculator
 

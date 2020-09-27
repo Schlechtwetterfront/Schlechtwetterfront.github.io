@@ -2,88 +2,100 @@
 // # Typography
 //
 
-
 // ## Variables
 //
 
-$font-stack:            -apple-system, BlinkMacSystemFont,
-                        'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-                        'Helvetica Neue', sans-serif;
+$font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
+  Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
-$font-stack-heading:    -apple-system, BlinkMacSystemFont,
-                        'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-                        'Helvetica Neue', sans-serif;
+$font-stack-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
-$font-stack-mono:       Monaco, Consolas, monospace;
+$font-stack-mono: Monaco, Consolas, monospace;
 
-$font-color:            #444;
-$font-color-heading:    #222;
+$font-color: #444;
+$font-color-heading: #222;
 
-$font-size:             15px;
-
+$font-size: 16px;
 
 // ## Styles
 //
 
-
 // ### Headings
 
-h1, h2, h3, h4, h5, h6,
-.heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
-    font-family: $font-stack-heading;
-    color: $font-color-heading;
-    margin-top: 0;
-    font-weight: 400;
-    text-rendering: optimizeLegibility;
-    line-height: 1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.heading-5,
+.heading-6 {
+  font-family: $font-stack-heading;
+  color: $font-color-heading;
+  margin-top: 0;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  line-height: 1;
 }
 
-h1, .heading-1 {
-    font-size: 4rem;
-    margin-bottom: 2.424242rem;
+h1,
+.heading-1 {
+  font-size: 3rem;
+  margin-bottom: 2.25rem;
 }
 
-h2, .heading-2 {
-    font-size: 3.33333rem;
-    margin-bottom: 2.020202rem;
+h2,
+.heading-2 {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
 }
 
-h3, .heading-3 {
-    font-size: 2.666666rem;
-    margin-bottom: 1.616161rem;
+h3,
+.heading-3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
-h4, .heading-4 {
-    font-size: 2rem;
-    margin-bottom: 1.212121rem;
+h4,
+.heading-4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-h5, .heading-5 {
-    font-size: 1.333333rem;
-    margin-bottom: 0.808080rem;
+h5,
+.heading-5 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
-h6, .heading-6 {
-    font-size: 1.166666rem;
-    margin-bottom: 0.707070rem;
+h6,
+.heading-6 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-h2, h5, h6 {
-    border-bottom: 2px solid $hr-color;
+h2,
+h5,
+h6 {
+  border-bottom: 1px solid $hr-color;
 }
 
 h2 {
-    margin-bottom: 1rem;
-    padding-bottom: .616161rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
-
 
 // ### Text
 
 p {
-    text-align: justify;
-    margin-bottom: $flow-margin-bottom;
-    margin-top: 0;
+  text-align: justify;
+  margin-bottom: $flow-margin-bottom;
+  margin-top: 0;
 }
 
 // p + p {
@@ -91,167 +103,182 @@ p {
 //     text-indent: 1.5em;
 // }
 
-
 // ### Misc
 
 small {
-    font-size: 65%;
+  font-size: 65%;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-    hyphens: auto;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  hyphens: auto;
 }
 
 .anchor {
-    font-size: 50%;
-    padding-right: .3em;
-    padding-left: .3em;
-    display: none;
+  font-size: 50%;
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+  display: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    &:hover .anchor {
-        display: inline;
-    }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:hover .anchor {
+    display: inline;
+  }
 }
-
 
 // ### Lists
 //
 
-ul, ol {
-    margin: 0 0 $flow-margin-bottom;
+ul,
+ol {
+  margin: 0 0 $flow-margin-bottom;
 
-    li {
-        text-align: justify;
+  li {
+    text-align: justify;
 
-        p {
-            margin-bottom: 0;
-        }
+    p {
+      margin-bottom: 0;
     }
+  }
 }
 
 ul {
-    padding-left: 1.6rem;
+  padding-left: 1.6rem;
 }
 
 dl {
-    margin: 0;
+  margin: 0;
 
-    dt {
-        font-weight: bold;
-    }
+  dt {
+    font-weight: bold;
+  }
 
-    dd {
-        margin-left: 1.6rem;
-    }
+  dd {
+    margin-left: 1.6rem;
+  }
 }
 
 ol {
-    counter-reset: item;
-    padding: 0;
+  counter-reset: item;
+  padding: 0;
 
-    > li {
-        counter-increment: item;
-        list-style-type: none;
-        text-indent: -1.6rem;
-        padding-left: 1.6rem;
+  > li {
+    counter-increment: item;
+    list-style-type: none;
+    text-indent: -1.6rem;
+    padding-left: 1.6rem;
 
-        &:before {
-            content: counter(item) '.';
-            display: inline-block;
-            text-align: right;
-            width: 1.3rem;
-            padding-right: .3rem;
-            font-weight: bold;
-        }
-
-        &.fancy-block:before {
-            background: black;
-            color: white;
-        }
+    &:before {
+      content: counter(item) ".";
+      display: inline-block;
+      text-align: right;
+      width: 1.3rem;
+      padding-right: 0.3rem;
+      font-weight: bold;
     }
+
+    &.fancy-block:before {
+      background: black;
+      color: white;
+    }
+  }
 }
 
 ul.collapsed {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 
-    li {
-        display: inline-block;  
-    }
+  li {
+    display: inline-block;
+  }
 }
 
-ul.blocks, ol.blocks {
-    list-style: none;
-    padding: 0;
+ul.blocks,
+ol.blocks {
+  list-style: none;
+  padding: 0;
 }
-
 
 // ### Code
 //
 
-pre, code {
-    font-family: Monaco, Consolas, monospace;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    tab-size: 4;
+pre,
+code {
+  font-family: Monaco, Consolas, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  tab-size: 4;
 }
 
 pre,
 :not(pre) > code {
-    background: rgba(0, 0, 0, .066);
+  background: rgba(0, 0, 0, 0.066);
 }
 
 pre {
-    border-radius: .199em;
-    margin: .5em 0;
-    padding: 1em;
+  border-radius: 0.199em;
+  margin: 0.5em 0;
+  padding: 1em;
 }
 
 :not(pre) > code {
-    padding: .15em .2em .05em;
-    border-radius: .333em;
+  padding: 0.15em 0.2em 0.05em;
+  border-radius: 0.333em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    > code {
-        background: none;
-    }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  > code {
+    background: none;
+  }
 }
-
 
 // ### Tables
 //
 
 table {
-    width: 100%;
-    margin-bottom: $flow-margin-bottom;
-    border-collapse: collapse;
+  width: 100%;
+  margin-bottom: $flow-margin-bottom;
+  border-collapse: collapse;
 
-    thead {
-        border-bottom: 2px solid $hr-color;
+  thead {
+    border-bottom: 2px solid $hr-color;
 
-        .title {
-            text-transform: uppercase;
-        }
+    .title {
+      text-transform: uppercase;
     }
+  }
 
-    tbody {
-        tr:nth-child(odd) {
-            background: rgba(0, 0, 0, .033);
-        }
+  tbody {
+    tr:nth-child(odd) {
+      background: rgba(0, 0, 0, 0.033);
     }
+  }
 
-    td, th {
-        padding: .1rem .666rem;
-        min-width: 20%;
-        text-align: left;
-        vertical-align: top;
+  td,
+  th {
+    padding: 0.1rem 0.666rem;
+    text-align: left;
+    vertical-align: top;
 
-        p {
-            margin: 0;
-        }
+    p {
+      margin: 0;
     }
+  }
 }

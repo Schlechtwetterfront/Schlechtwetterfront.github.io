@@ -1,1237 +1,1101 @@
 {
-    "ExampleChunk": {
-        "name": "ExampleChunk",
-        "_name": "The chunk name.",
-
-        "hierarchy_level": 0,
-
-        "parent": "PARENT CHUNK", 
-        "_parent": "The name of the parent chunk.",
-
-        "children": [
-            "ALL", "POSSIBLE", "CHILDREN"
-        ],
-        "_children": "A list of children chunk names.",
-
-        "necessity": "Number of appearances or if it's optional.",
-        "_necessity": "Number of appearances or if it's optional.",
-
-        "description": "This is an example chunk.",
-
-        "links": [
-            {"name": "A list of links for further reading.", "link": "#"}
-        ],
-        "_links": "A list of links for further reading.",
-
-        "structure": [
-            ["byte[4]", "4", "Header/chunk name. Every chunk has this."],
-            ["long int", "4", "Length indicator. Stores the length in bytes _excluding_ the header and the size indicator. Every chunk has this indicator."],
-            ["", "~", "The rest of the data."]
-        ],
-        "_structure": "A list of lists where each sub-list is a row in a table.",
-
-        "category": "Example"
-    },
-    "HEDR": {
-        "name": "HEDR",
-        "hierarchy_level": 0,
-        "brief_description": ".msh root",
-        "parent": null,
-        "children": [
-            "SHVO", "MSH2", "BLN2", "SKL2", "ANM2", "CL1L"
-        ],
-        "necessity": "Once.",
-        "description": ".msh file header.",
-        "links": [
-
-        ],
-        "structure": [
-
-        ],
-        "category": "General Chunks"
-    },
-    "SHVO": {
-        "name": "SHVO",
-        "hierarchy_level": 1,
-        "brief_description": "Shadow volume indicator",
-        "parent": "HEDR",
-        "children": [
-
-        ],
-        "necessity": "Optional.", 
-        "description": "Indicates a shadow volume.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "0 or 1 (if .msh has a shadow volume)."]
-        ],
-        "category": "General Chunks"
-    },
-    "MSH2": {
-        "name": "MSH2",
-        "hierarchy_level": 1,
-        "brief_description": "Mesh root",
-        "parent": "HEDR",
-        "children": [
-            "SINF", "CAMR", "MATL", "MODL"
-        ],
-        "necessity": "Once",
-        "description": ".msh file mesh header.",
-        "links": [
-
-        ],
-        "structure": [
-
-        ],
-        "category": "General Chunks"
-    },
-    "FINF": {
-        "name": "FINF",
-        "hierarchy_level": 2,
-        "brief_description": "File information (unused)",
-        "parent": "MSH2",
-        "children": [
-            "PROJ", "USER", "TIME"
-        ],
-        "necessity": "Once.",
-        "description": "Possibly deprecated. File information. PROJ: project name. USER: user name. TIME: time.",
-        "links": [
-
-        ],
-        "structure": [
-            ["ASCII string", "4 * X", "File information."]
-        ],
-        "category": "General Chunks"
-    },
-    "SINF": {
-        "name": "SINF",
-        "hierarchy_level": 2,
-        "brief_description": "Scene information",
-        "parent": "MSH2",
-        "children": [
-            "NAME", "FRAM", "BBOX"
-        ],
-        "necessity": "Optional.",
-        "description": "Scene information header.",
-        "links": [
-
-        ],
-        "structure": [
-
-        ],
-        "category": "General Chunks"
-    },
-    "FRAM": {
-        "name": "FRAM",
-        "hierarchy_level": 3,
-        "brief_description": "Frame data",
-        "parent": "SINF",
-        "children": [
-
-        ],
-        "necessity": "Optional.",
-        "description": "Scene frame information.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Start of frame range."],
-            ["long int", 4, "End of frame range."],
-            ["float", 4, "Frames per second (usually ~30)."]
-        ],
-        "category": "General Chunks"
-    },
-    "CAMR": {
-        "name": "CAMR",
-        "hierarchy_level": 2,
-        "brief_description": "Camera data",
-        "parent": "MSH2",
-        "children": [
-            "NAME", "DATA"
-        ],
-        "necessity": "Optional.",
-        "description": "Scene camera header.",
-        "links": [
-
-        ],
-        "structure": [
-
-        ],
-        "category": "General Chunks"
-    },
-    "MATL": {
-        "name": "MATL (Materials)",
-        "hierarchy_level": 2,
-        "brief_description": "Materials",
-        "parent": "MSH2",
-        "children": [
-            "MATD"
-        ],
-        "necessity": "Once.",
-        "description": "Material list header.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Count of materials (MATD) in this list."]
-        ],
-        "category": "Materials"
-    },
-    "MATD": {
-        "name": "MATD (Material)",
-        "hierarchy_level": 3,
-        "brief_description": "Material",
-        "parent": "MATL",
-        "children": [
-            "NAME", "MATD.DATA", "ATRB", "TX0D"
-        ],
-        "necessity": "One or more.",
-        "description": "Material header.",
-        "links": [
-
-        ],
-        "structure": [
-
-        ],
-        "category": "Materials"
-    },
-    "MATD.DATA": {
-        "name": "MATD.DATA",
-        "hierarchy_level": 4,
-        "brief_description": "Material data",
-        "parent": "MATD",
-        "children": [
-        ],
-        "necessity": "Once.",
-        "description": "Material colors and specular sharpness (gloss). Colors are stored in 0-1 range.",
-        "links": [
-
-        ],
-        "structure": [
-            ["float [4]", 16, "Diffuse RGBA color."],
-            ["float [4]", 16, "Specular RGBA color."],
-            ["float [4]", 16, "Ambient RGBA color."],
-            ["float", 4, "Specular sharpness (gloss)."]
-        ],
-        "category": "Materials"
-    },
-    "ATRB": {
-        "name": "ATRB",
-        "hierarchy_level": 4,
-        "brief_description": "Material attributes",
-        "parent": "MATD",
-        "children": [
-        ],
-        "necessity": "Once.",
-        "description": "Material flags (glow and other special rendertypes).",
-        "links": [
-            {"name": "ZeroEngine Render Types", "link": "render_types.html"},
-            {"name": "Inside Edit Flags (GT)", "link": "http://www.gametoast.com/viewtopic.php?p=279620#p279620"},
-            {"name": "GameToast ATRB discussion", "link": "http://gametoast.com/viewtopic.php?t=24851&f=27&start=31"},
-            {"name": "Flag Calculator", "link": "index.html#atrb-calculator"}
-        ],
-        "additional_tables": [
-            {
-                "name": "Flags",
-                "table": [
-                    ["Value", "Flag", "Description"],
-                    ["1", "Emissive", "Emissive material (unlit)."],
-                    ["2", "Glow", "Simple glow."],
-                    ["4", "Single-sided Transparency", "Can't be used with Double-sided Transparency."],
-                    ["8", "Double-sided Transparency", "Can't be used with Single-sided Transparency."],
-                    ["16", "Hard-edged Transparency", "Pixels are either opaque (>128/50%) or transparent (<129)."],
-                    ["32", "Per-Pixel Lighting", "More expensive and better looking lighting method (default is Per-Vertex Lighting)."],
-                    ["64", "Additive Transparency", "Performs an Add instead of a Blend when multiple transparent surfaces overlap."],
-                    ["128", "Specular", "Controlled by specular color and decay (gloss) in the material. Optional alpha channel in the diffuse texture acts as gloss map."]
-                ]
-            }
-        ],
-        "structure": [
-            ["byte", 1, "Sum of all flag values."],
-            ["byte", 1, "Render Type number."],
-            ["byte", 1, "Data0 Value. Range: 0-255"],
-            ["byte", 1, "Data1 Value. Range: 0-255"]
-        ],
-        "category": "Materials"
-    },
-    "TX0D": {
-        "name": "TX0D",
-        "hierarchy_level": 4,
-        "brief_description": "Texture",
-        "parent": "MATD",
-        "children": [
-        ],
-        "necessity": "Optional.",
-        "description": "Texture name with extension (not full path). For multiple textures the name of the chunk will change to TX1D, TX2D, TX3D.",
-        "links": [
-
-        ],
-        "structure": [
-            ["ASCII string", "~", "Texture name."]
-        ],
-        "category": "Materials"
-    },
-    "PRFX": {
-        "name": "PRFX",
-        "hierarchy_level": 4,
-        "brief_description": "Material prefix (unused)",
-        "parent": "MATD",
-        "children": [
-
-        ],
-        "necessity": "Once.",
-        "description": "Possibly deprecated. Material prefix.",
-        "links": [
-
-        ],
-        "structure": [
-            ["ASCII string", "4 * X", "Prefix."]
-        ],
-        "category": "Materials"
-    },
-    "MODL": {
-        "name": "MODL (Model)",
-        "hierarchy_level": 2,
-        "brief_description": "Model",
-        "parent": "MSH2",
-        "children": [
-            "NAME", "MTYP", "MNDX", "PRNT", "FLGS", "TRAN", "GEOM", "SWCI"
-        ],
-        "necessity": "One or more.",
-        "description": "Model header.",
-        "links": [
-
-        ],
-        "structure": [
-
-        ],
-        "category": "Models"
-    },
-    "MTYP": {
-        "name": "MTYP",
-        "hierarchy_level": 3,
-        "brief_description": "Model type",
-        "parent": "MODL",
-        "children": [
-        ],
-        "necessity": "Once.",
-        "description": "Model type.",
-        "links": [
-
-        ],
-        "additional_tables": [
-            {
-                "name": "Model Types",
-                "table": [
-                    ["Value", "Type"],
-                    ["0", "Null."],
-                    ["1", "Dynamic mesh (weighted/enveloped)."],
-                    ["2", "Cloth."],
-                    ["3", "Bone."],
-                    ["4", "Static mesh."],
-                    ["6", "Shadow mesh."]
-                ]
-            }
-        ],
-        "structure": [
-            ["long int", 4, "Model type."]
-        ],
-        "category": "Models"
-    },
-    "MNDX": {
-        "name": "MNDX",
-        "hierarchy_level": 3,
-        "brief_description": "Model index",
-        "parent": "MODL",
-        "children": [
-        ],
-        "necessity": "Once.",
-        "description": "0-based Model index.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Model index."]
-        ],
-        "category": "Models"
-    },
-    "PRNT": {
-        "name": "PRNT",
-        "hierarchy_level": 3,
-        "brief_description": "Model parent",
-        "parent": "MODL",
-        "children": [
-        ],
-        "necessity": "Optional.",
-        "description": "Name of the parent model, padded with 00's to fill up to a multiple-of-4 size.",
-        "links": [
-
-        ],
-        "structure": [
-            ["ASCII string", "~", "Parent model name."]
-        ],
-        "category": "Models"
-    },
-    "FLGS": {
-        "name": "FLGS",
-        "hierarchy_level": 3,
-        "brief_description": "Model display flags",
-        "parent": "MODL",
-        "children": [
-        ],
-        "necessity": "Once.",
-        "description": "Model display flags.",
-        "links": [
-
-        ],
-        "additional_tables": [
-            {
-                "name": "Render Flags",
-                "table": [
-                    ["Value", "Flag"],
-                    ["1", "Hidden."],
-                    ["2", "Dynamically lit."],
-                    ["4", "Retain normals."],
-                    ["8", "Render after shadows."],
-                    ["16", "Don't flatten geometry."],
-                    ["32", "PS2 optimize."]
-                ]
-            }
-        ],
-        "structure": [
-            ["long int", 4, "Render Flags."]
-        ],
-        "category": "Models"
-    },
-    "TRAN": {
-        "name": "TRAN",
-        "hierarchy_level": 3,
-        "brief_description": "Transform",
-        "parent": "MODL",
-        "children": [
-        ],
-        "necessity": "Once.",
-        "description": "Matrix transform. Scale can get ignored in-game.",
-        "links": [
-
-        ],
-        "structure": [
-            ["float [3]", 12, "Scale factor in XYZ."],
-            ["float [4]", 16, "Quaternion Rotation in XYZW."],
-            ["float [3]", 12, "Translation in XYZ."]
-        ],
-        "category": "Models"
-    },
-    "SWCI": {
-        "name": "SWCI",
-        "hierarchy_level": 3,
-        "brief_description": "Collision primitive",
-        "parent": "MODL",
-        "children": [
-
-        ],
-        "necessity": "Optional.",
-        "description": "Collision primitive.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Primitive type (0: sphere, 1: sphere, 2: cylinder, 4: cube)."],
-            ["float", 4, "Data (sphere: radius, cylinder: radius, cube: x_length."],
-            ["float", 4, "Data (sphere: -, cylinder: height, cube: y_length."],
-            ["float", 4, "Data (sphere: -, cylinder: -, cube: z_length."]
-        ],
-        "category": "Models"
-    },
-    "GEOM": {
-        "name": "GEOM (Geometry)",
-        "hierarchy_level": 3,
-        "brief_description": "Model geometry",
-        "parent": "MODL",
-        "children": [
-            "BBOX", "SEGM", "CLTH", "ENVL"
-        ],
-        "necessity": "Optional (depends on model type).",
-        "description": "Geometry header. Will be used for static/dynamic geometry and shadow volumes.",
-        "links": [
-
-        ],
-        "structure": [
-
-        ],
-        "category": "Geometry"
-    },
-    "ENVL": {
-        "name": "ENVL (Envelope)",
-        "hierarchy_level": 4,
-        "brief_description": "Envelope",
-        "parent": "GEOM",
-        "children": [
-
-        ],
-        "necessity": "Optional.",
-        "description": "List of indices into [MODL](#MODL){: .chunk}. This model is enveloped to those indices' models.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of indices into [MODL](#MODL){: .chunk}."],
-            ["long int []", "4 each", "Index into [MODL](#MODL){: .chunk}."]
-        ],
-        "category": "Geometry"
-    },
-    "SEGM": {
-        "name": "SEGM",
-        "hierarchy_level": 4,
-        "brief_description": "Model geometry segment",
-        "parent": "GEOM",
-        "children": [
-            "SHDW", "MATI", "POSL", "CLRL", "CLRB", "WGHT", "NRML", "UV0L", "NDXL", "NDXT", "STRP"
-        ],
-        "necessity": "One or more.",
-        "description": "Geometry segment header.",
-        "links": [
-
-        ],
-        "structure": [
-
-        ],
-        "category": "Geometry"
-    },
-    "SHDW": {
-        "name": "SHDW",
-        "hierarchy_level": 5,
-        "brief_description": "Shadow geometry",
-        "parent": "SEGM",
-        "children": [
-        ],
-        "necessity": "If the model is a shadow mesh, once.",
-        "description": "Shadow mesh geometry.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of vertex positions."],
-            ["float [3][]", "12 each", "Vertex positions (XYZ)."],
-            ["long int", 4, "Number of edges."],
-            ["short int [4][]", "8 each", "Edge. The following 4 entries form one edge."],
-            ["> short int", 2, "Vertex index of this edge entry. Refers to the vertex list above."],
-            ["> short int", 2, "Reference into an edge. Defines the target vertex (the local edge vertex of the referenced edge) to which the edge should be dran from the local vertex."],
-            ["> short int", 2, "Second reference into an edge. In all example .msh files I've seen this always refers to the same vertex as the first edge reference."],
-            ["> short int", 2, "MAX_VALUE of short integers (65535). Indicates the end of this edge."]
-        ],
-        "category": "Geometry"
-    },
-    "MATI": {
-        "name": "MATI",
-        "hierarchy_level": 5,
-        "brief_description": "Segment material index",
-        "parent": "SEGM",
-        "children": [
-
-        ],
-        "necessity": "Once?",
-        "description": "Material index (index into MATL).",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Material index."]
-        ],
-        "category": "Geometry"
-    },
-    "POSL": {
-        "name": "POSL",
-        "hierarchy_level": 5,
-        "brief_description": "Vertices",
-        "parent": "SEGM",
-        "children": [
-
-        ],
-        "necessity": "Once (unless shadow mesh).",
-        "description": "List of vertex coordinates.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of coordinates stored in this list."],
-            ["float [3][]", "12 each", "XYZ coordinates for each vertex."]
-        ],
-        "category": "Geometry"
-    },
-    "NRML": {
-        "name": "NRML",
-        "hierarchy_level": 5,
-        "brief_description": "Normals",
-        "parent": "SEGM",
-        "children": [
-        ],
-        "necessity": "Once (unless shadow mesh).",
-        "description": "List of normals.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of normal vectors stored in this list."],
-            ["float [3][]", "12 each", "UVW vector for each vertex."]
-        ],
-        "category": "Geometry"
-    },
-    "UV0L": {
-        "name": "UV0L",
-        "hierarchy_level": 5,
-        "brief_description": "UV coordinates",
-        "parent": "SEGM",
-        "children": [
-        ],
-        "necessity": "Optional.",
-        "description": "List of UV coordinates.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of UV coordinates stored in this list."],
-            ["float [2][]", "8 each", "UV coordinate for each vertex."]
-        ],
-        "category": "Geometry"
-    },
-    "CLRL": {
-        "name": "CLRL",
-        "hierarchy_level": 5,
-        "brief_description": "Vertex colors",
-        "parent": "SEGM",
-        "children": [
-        ],
-        "necessity": "Optional.",
-        "description": "List of vertex colors.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of colors stored in this list."],
-            ["byte [4][]", "4 each", "RGBA color (0-255)."]
-        ],
-        "category": "Geometry"
-    },
-    "CLRB": {
-        "name": "CLRB",
-        "hierarchy_level": 5,
-        "brief_description": "Vertex color",
-        "parent": "SEGM",
-        "children": [
-        ],
-        "necessity": "Optional.",
-        "description": "One vertex color for the whole segment.",
-        "links": [
-
-        ],
-        "structure": [
-            ["byte [4]", 4, "RGBA color (0-255)."]
-        ],
-        "category": "Geometry"
-    },
-    "WGHT": {
-        "name": "WGHT",
-        "hierarchy_level": 5,
-        "brief_description": "Vertex weights",
-        "parent": "SEGM",
-        "children": [
-        ],
-        "necessity": "Optional.",
-        "description": "List of bone-weight percentage pairs. Always 4 pairs per vertex.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of bone weights stored in this list."],
-            ["", "", "The following appears 4 times per vertex (to allow for soft weighting)."],
-            ["long int", 4, "Index into [ENVL](#ENVL){: .chunk} (which then indexes into [MODL](#MODL){: .chunk})."],
-            ["float", 4, "Weight value (0-1)."]
-        ],
-        "category": "Geometry"
-    },
-    "NDXL": {
-        "name": "NDXL",
-        "hierarchy_level": 5,
-        "brief_description": "Polygons (possibly deprecated)",
-        "parent": "SEGM",
-        "children": [
-        ],
-        "necessity": "Optional/deprecated.",
-        "description": "Polygons.",
-        "links": [
-
-        ],
-        "structure": [
-
-        ],
-        "category": "Geometry"
-    },
-    "NDXT": {
-        "name": "NDXT",
-        "hierarchy_level": 5,
-        "brief_description": "Triangles (possibly deprecated)",
-        "parent": "SEGM",
-        "children": [
-        ],
-        "necessity": "Optional/deprecated.",
-        "description": "Triangles.",
-        "links": [
-
-        ],
-        "structure": [
-
-        ],
-        "category": "Geometry"
-    },
-    "STRP": {
-        "name": "STRP",
-        "hierarchy_level": 5,
-        "brief_description": "Triangle strips",
-        "parent": "SEGM",
-        "children": [
-            "NAME", "FRAM", "BBOX"
-        ],
-        "necessity": "Once (unless shadow mesh).",
-        "description": "List of triangles strips. The start of a strip is indicated by 2 entries with a high bit set (0x8000 or 32768 added). Triangles are listed CW, CCW, CW, CCW... NOTE: In some meshes this chunk has a trailing short which is not calculated into the length/size of this chunk or the # of indices. This short can be ignored. If added to the last polygon it will break it as it always seems to be 0.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of indices into [POSL](#POSL){: .chunk}."],
-            ["short int []", "2 each", "Index into [POSL](#POSL){: .chunk}. The indices will form polygons."]
-        ],
-        "category": "Geometry"
-    },
-    "VLTB": {
-        "name": "VLTB",
-        "hierarchy_level": 5,
-        "brief_description": "Baked vertex light (unused, possibly deprecated)",
-        "parent": "SEGM",
-        "children": [
-        ],
-        "necessity": "Optional.",
-        "description": "Possibly deprecated. Baked vertex light.",
-        "links": [
-
-        ],
-        "structure": [
-            ["byte", 1, "Red."],
-            ["byte", 1, "Green."],
-            ["byte", 1, "Blue."],
-            ["byte", 1, "Alpha."]
-        ],
-        "category": "Geometry"
-    },
-    "VLTL": {
-        "name": "VLTL",
-        "hierarchy_level": 5,
-        "brief_description": "Baked vertex lights (unused, possibly deprecated)",
-        "parent": "SEGM",
-        "children": [
-        ],
-        "necessity": "Optional.",
-        "description": "Possibly deprecated. Unique baked vertex lights for vertices.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of colors to come."],
-            ["byte", 1, "Red."],
-            ["byte", 1, "Green."],
-            ["byte", 1, "Blue."],
-            ["byte", 1, "Alpha."]
-        ],
-        "category": "Geometry"
-    },
-    "CLTH": {
-        "name": "CLTH (Cloth)",
-        "hierarchy_level": 4,
-        "brief_description": "Cloth root",
-        "parent": "GEOM",
-        "children": [
-            "CTEX", "CPOS", "CUV0", "FIDX", "FWGT", "CMSH", "SPRS", "CPRS", "BPRS", "COLL"
-        ],
-        "necessity": "Optional.",
-        "description": "Cloth header. Replaces [SEGM](#SEGM){: .chunk}.",
-        "links": [
-
-        ],
-        "structure": [
-        ],
-        "category": "Cloth"
-    },
-    "CTEX": {
-        "name": "CTEX",
-        "hierarchy_level": 5,
-        "brief_description": "Cloth texture",
-        "parent": "CLTH",
-        "children": [
-
-        ],
-        "necessity": "Once.",
-        "description": "Texture name with extension.",
-        "links": [
-
-        ],
-        "structure": [
-            ["ASCII string", "~", "Texture name."]
-        ],
-        "category": "Cloth"
-    },
-    "CPOS": {
-        "name": "CPOS",
-        "hierarchy_level": 5,
-        "brief_description": "Cloth vertices",
-        "parent": "CLTH",
-        "children": [
-
-        ],
-        "necessity": "Once.",
-        "description": "List of vertex coordinates.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of vertex positions."],
-            ["float [3][]", "12 each", "XYZ coordinates."]
-        ],
-        "category": "Cloth"
-    },
-    "CUV0": {
-        "name": "CUV0",
-        "hierarchy_level": 5,
-        "brief_description": "Cloth UV coordinates",
-        "parent": "CLTH",
-        "children": [
-
-        ],
-        "necessity": "Optional?",
-        "description": "List of UV coordinates.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of UV coordinates."],
-            ["float [2][]", "8 each", "UV coordinate."]
-        ],
-        "category": "Cloth"
-    },
-    "FIDX": {
-        "name": "FIDX",
-        "hierarchy_level": 5,
-        "brief_description": "Cloth fixed points",
-        "parent": "CLTH",
-        "children": [
-
-        ],
-        "necessity": "Optional?",
-        "description": "List of fixed points.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of points."],
-            ["long int ]", "4 each", "Index into [CPOS](#CPOS){: .chunk}."]
-        ],
-        "category": "Cloth"
-    },
-    "FWGT": {
-        "name": "FWGT",
-        "hierarchy_level": 5,
-        "brief_description": "Cloth vertex weights",
-        "parent": "CLTH",
-        "children": [
-
-        ],
-        "necessity": "Optional?",
-        "description": "Index of [FIDX](#FIDX){: .chunk} weighted to a bone by name.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of points."],
-            ["ASCII string", "~", "Name of the bone the corresponding [FIDX](#FIDX){: .chunk} is moving with."]
-        ],
-        "category": "Cloth"
-    },
-    "CMSH": {
-        "name": "CMSH",
-        "hierarchy_level": 5,
-        "brief_description": "Cloth triangles",
-        "parent": "CLTH",
-        "children": [
-
-        ],
-        "necessity": "Once.",
-        "description": "Cloth triangles.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of points."],
-            ["long int [3][]", "16 each", "Triangle points defined CCW."]
-        ],
-        "category": "Cloth"
-    },
-    "SPRS": {
-        "name": "SPRS",
-        "hierarchy_level": 5,
-        "brief_description": "Cloth stretch constraints",
-        "parent": "CLTH",
-        "children": [
-
-        ],
-        "necessity": "Optional?",
-        "description": "Stretch constraint data. Keeps cloth size by storing relations between points (like edges around a quad). Relations between two fixed points are _not_ stored",
-        "links": [
-            {"name": "Constraint discussion (GT)", "link": "http://www.gametoast.com/viewtopic.php?p=472300#p472300"}
-        ],
-        "structure": [
-            ["long int", 4, "Number of items."],
-            ["short int [2][]", "4 each", "Two points sharing an edge."]
-        ],
-        "category": "Cloth"
-    },
-    "CPRS": {
-        "name": "CPRS",
-        "hierarchy_level": 5,
-        "brief_description": "Cloth cross constraints",
-        "parent": "CLTH",
-        "children": [
-
-        ],
-        "necessity": "Optional?",
-        "description": "Cross constraint data. Keeps individual pieces of the cloth from shearing (cross relations between points). Think of the edges as sticky tape, glueing the points together. Relations between two fixed points are _not_ stored",
-        "links": [
-            {"name": "Constraint discussion (GT)", "link": "http://www.gametoast.com/viewtopic.php?p=472300#p472300"}
-        ],
-        "structure": [
-            ["long int", 4, "Number of items."],
-            ["short int [2][]", "4 each", "Two points sharing a quad."]
-        ],
-        "category": "Cloth"
-    },
-    "BPRS": {
-        "name": "BPRS",
-        "hierarchy_level": 5,
-        "brief_description": "Cloth bend constraints",
-        "parent": "CLTH",
-        "children": [
-
-        ],
-        "necessity": "Optional?",
-        "description": "Bend constraint data. Keeps the cloth's shape (relations between border-points of the cloth mesh, disables bending along those edges). Relations between two fixed points are _not_ stored",
-        "links": [
-            {"name": "Constraint discussion (GT)", "link": "http://www.gametoast.com/viewtopic.php?p=472300#p472300"}
-        ],
-        "structure": [
-            ["long int", 4, "Number of items."],
-            ["short int [2][]", "4 each", "Two border-points sharing a 'straight' edge over the complete cloth."]
-        ],
-        "category": "Cloth"
-    },
-    "COLL": {
-        "name": "COLL",
-        "hierarchy_level": 5,
-        "brief_description": "Cloth collision",
-        "parent": "CLTH",
-        "children": [
-
-        ],
-        "necessity": "Optional?",
-        "description": "Cloth collision. Note that this chunk is padded with 00's until it has a multiple of 4 chunk size.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of collisions."],
-            ["ASCII string", "~", "Collision object name."],
-            ["ASCII string", "~", "Object name this collision moves with."],
-            ["long int", 4, "Primitive type (0: sphere, 1: cylinder, 2: cube)."],
-            ["float", 4, "Data (sphere: radius, cylinder: radius, cube: x_length / 2)."],
-            ["float", 4, "Data (sphere: radius, cylinder: height, cube: y_length / 2)."],
-            ["float", 4, "Data (sphere: radius, cylinder: -, cube: z_length / 2)."]
-        ],
-        "category": "Cloth"
-    },
-    "SKL2": {
-        "name": "SKL2 (Skeleton)",
-        "hierarchy_level": 1,
-        "brief_description": "Skeleton",
-        "parent": "HEDR",
-        "children": [
-
-        ],
-        "necessity": "Optional.",
-        "description": "Skeleton/chain. Lists some bone properties for every item in the chain. The values don't seem to make a big difference.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of bones in this skeleton."],
-            ["CRC checksum", 4, "[CRC checksum](index.html) of the bone."],
-            ["long int", 4, "Type (bone?). Usual value: 0."],
-            ["float", 4, "Constrain. Usual value: -1 or 1."],
-            ["float", 4, "Bone length 1. Usual value: 0."],
-            ["float", 4, "Bone length 2. Usual value: 0."]
-        ],
-        "category": "Animation"
-    },
-    "BLN2": {
-        "name": "BLN2",
-        "hierarchy_level": 1,
-        "brief_description": "Blend factors",
-        "parent": "HEDR",
-        "children": [
-
-        ],
-        "necessity": "Optional.",
-        "description": "Blend factors for the chain items (bones). Purpose unknown. Blend factor usually is 0/nothing (if float). ",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of bones."],
-            ["CRC checksum", 4, "[CRC checksum](index.html) of the bone."],
-            ["?", 4, "Blend factor. Usual value: 0."]
-        ],
-        "category": "Animation"
-    },
-    "ANM2": {
-        "name": "ANM2 (Animation)",
-        "hierarchy_level": 1,
-        "brief_description": "Animations",
-        "parent": "HEDR",
-        "children": [
-            "CYCL", "KFR3"
-        ],
-        "necessity": "Optional.",
-        "description": "Animation header.",
-        "links": [
-
-        ],
-        "structure": [
-        ],
-        "category": "Animation"
-    },
-    "CYCL": {
-        "name": "CYCL",
-        "hierarchy_level": 2,
-        "brief_description": "Animation cycles",
-        "parent": "ANM2",
-        "children": [
-
-        ],
-        "necessity": "Once.",
-        "description": "Animation cycles. Can contain multiple animations.",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of animations."],
-            ["", "", "The following can appear multiple times."],
-            ["ASCII string", "64", "Aimation name."],
-            ["float", 4, "Frame rate."],
-            ["long int", 4, "Play Style."],
-            ["long int", 4, "First frame."],
-            ["long int", 4, "Last frame."]
-        ],
-        "category": "Animation"
-    },
-    "KFR3": {
-        "name": "KFR3",
-        "hierarchy_level": 2,
-        "brief_description": "Keyframes",
-        "parent": "ANM2",
-        "children": [
-
-        ],
-        "necessity": "Once.",
-        "description": "All the frames and their local translation and rotation. Frame indices don't have to be consecutive. They can skip frames (like keyframes).",
-        "links": [
-
-        ],
-        "structure": [
-            ["long int", 4, "Number of bones in this animation."],
-            ["", "", "The following will appear once per chain item."],
-            ["> CRC checksum", 4, "[CRC checksum](index.html)."],
-            ["> long int", 4, "Keyframe type."],
-            ["> long int", 4, "Number of translation frames."],
-            ["> long int", 4, "Number of rotation frames."],
-            ["", "", "Translation frames will be listed first."],
-            [">> long int", 4, "Translation frame index."],
-            [">> float [3][]", 12, "Translation in XYZ."],
-            ["", "", "Rotation frames will be listed second."],
-            [">> long int", 4, "Rotation frame index."],
-            [">> float [4][]", 16, "Quaternion rotation in XYZW."]
-        ],
-        "category": "Animation"
-    },
-    "CL1L": {
-        "name": "CL1L",
-        "hierarchy_level": 0,
-        "brief_description": "Closing chunk",
-        "parent": "",
-        "children": [
-
-        ],
-        "necessity": "Once.",
-        "description": "Closing chunk, indicates the end of the .msh file.",
-        "links": [
-
-        ],
-        "structure": [
-        ],
-        "category": "Other"
-    },
-    "NAME": {
-        "name": "NAME",
-        "hierarchy_level": 0,
-        "brief_description": "Name",
-        "parent": "",
-        "children": [
-
-        ],
-        "necessity": "Once.",
-        "description": "Name, padded with 00's to fill up a multiple-of-4 size.",
-        "links": [
-
-        ],
-        "structure": [
-            ["ASCII string", "4 * X", "Name."]
-        ],
-        "category": "Other"
-    },
-    "BBOX": {
-        "name": "BBOX",
-        "hierarchy_level": 0,
-        "brief_description": "Bounding box",
-        "parent": "",
-        "children": [
-
-        ],
-        "necessity": "Once.",
-        "description": "Bounding box. [SINF](#SINF){: .chunk}'s BBox will determine the blue/green selection box in ZeroEdit.",
-        "links": [
-
-        ],
-        "structure": [
-            ["float [4]", 16, "Quaternion Rotation in XYZW."],
-            ["float [3]", 12, "Center of the BBox."],
-            ["float [3]", 12, "Extents of the BBox (width/2, height/2, depth/2)."],
-            ["float", 4, "Bounding sphere radius."]
-        ],
-        "category": "Other"
-    },
-    "LGTP": {
-        "name": "LGTP",
-        "hierarchy_level": 0,
-        "brief_description": "Point light (unused, possibly deprecated)",
-        "parent": "",
-        "children": [
-            "PRFX", "NAME", "DATA"
-        ],
-        "necessity": "Optional.",
-        "description": "Possibly deprecated. Point Light.",
-        "links": [
-
-        ],
-        "structure": [
-            ["float", 4, "Red."],
-            ["float", 4, "Green."],
-            ["float", 4, "Blue."],
-            ["float", 4, "Alpha."],
-            ["float", 4, "X."],
-            ["float", 4, "Y."],
-            ["float", 4, "Z."],
-            ["float", 4, "Falloff start."],
-            ["float", 4, "Falloff end."],
-            ["long int", 4, "Flags (1: CastShadows)."]
-        ],
-        "category": "Deprecated"
-    },
-    "LGTI": {
-        "name": "LGTI",
-        "hierarchy_level": 0,
-        "brief_description": "Infinite light (unused, possibly deprecated)",
-        "parent": "",
-        "children": [
-            "PRFX", "NAME", "DATA"
-        ],
-        "necessity": "Optional.",
-        "description": "Possibly deprecated. Infinite Light.",
-        "links": [
-
-        ],
-        "structure": [
-            ["float", 4, "Red."],
-            ["float", 4, "Green."],
-            ["float", 4, "Blue."],
-            ["float", 4, "Alpha."],
-            ["float", 4, "X."],
-            ["float", 4, "Y."],
-            ["float", 4, "Z."],
-            ["float", 4, "Falloff start."],
-            ["float", 4, "Falloff end."],
-            ["long int", 4, "Flags (1: CastShadows)."]
-        ],
-        "category": "Deprecated"
-    },
-    "LGTS": {
-        "name": "LGTS",
-        "hierarchy_level": 0,
-        "brief_description": "Spot light (unused, possibly deprecated)",
-        "parent": "",
-        "children": [
-            "PRFX", "NAME", "DATA"
-        ],
-        "necessity": "Optional.",
-        "description": "Possibly deprecated. Spot Light.",
-        "links": [
-
-        ],
-        "structure": [
-            ["float", 4, "Red."],
-            ["float", 4, "Green."],
-            ["float", 4, "Blue."],
-            ["float", 4, "Alpha."],
-            ["float", 4, "X."],
-            ["float", 4, "Y."],
-            ["float", 4, "Z."],
-            ["float", 4, "Interest X."],
-            ["float", 4, "Interest Y."],
-            ["float", 4, "Interest Z."],
-            ["float", 4, "Falloff start."],
-            ["float", 4, "Falloff end."],
-            ["float", 4, "Cone Angle."],
-            ["float", 4, "Spread Angle."],
-            ["long int", 4, "Flags (1: CastShadows)."]
-        ],
-        "category": "Deprecated"
-    },
-    "FOGD": {
-        "name": "FOGD",
-        "hierarchy_level": 0,
-        "brief_description": "Fog data (unused, possibly deprecated)",
-        "parent": "",
-        "children": [
-        ],
-        "necessity": "Optional.",
-        "description": "Possibly deprecated. Fog data.",
-        "links": [
-
-        ],
-        "structure": [
-            ["float", 4, "Red."],
-            ["float", 4, "Green."],
-            ["float", 4, "Blue."],
-            ["float", 4, "Alpha."],
-            ["float", 4, "Near plane."],
-            ["float", 4, "Far plane."]
-        ],
-        "category": "Deprecated"
-    }
+  "ExampleChunk": {
+    "name": "ExampleChunk",
+    "_name": "The chunk name.",
+
+    "hierarchy_level": 0,
+
+    "parent": "PARENT CHUNK",
+    "_parent": "The name of the parent chunk.",
+
+    "children": ["ALL", "POSSIBLE", "CHILDREN"],
+    "_children": "A list of children chunk names.",
+
+    "necessity": "Number of appearances or if it's optional.",
+    "_necessity": "Number of appearances or if it's optional.",
+
+    "description": "This is an example chunk.",
+
+    "links": [{ "name": "A list of links for further reading.", "link": "#" }],
+    "_links": "A list of links for further reading.",
+
+    "structure": [
+      ["byte[4]", "4", "Header/chunk name. Every chunk has this."],
+      [
+        "long int",
+        "4",
+        "Length indicator. Stores the length in bytes _excluding_ the header and the size indicator. Every chunk has this indicator."
+      ],
+      ["", "~", "The rest of the data."]
+    ],
+    "_structure": "A list of lists where each sub-list is a row in a table.",
+
+    "category": "Example"
+  },
+  "HEDR": {
+    "name": "HEDR",
+    "hierarchy_level": 0,
+    "brief_description": ".msh root",
+    "parent": null,
+    "children": ["SHVO", "MSH2", "BLN2", "SKL2", "ANM2", "CL1L"],
+    "necessity": "Once.",
+    "description": ".msh file header.",
+    "links": [],
+    "structure": [],
+    "category": "General Chunks"
+  },
+  "SHVO": {
+    "name": "SHVO",
+    "hierarchy_level": 1,
+    "brief_description": "Shadow volume indicator",
+    "parent": "HEDR",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "Indicates a shadow volume.",
+    "links": [],
+    "structure": [["long int", 4, "0 or 1 (if .msh has a shadow volume)."]],
+    "category": "General Chunks"
+  },
+  "MSH2": {
+    "name": "MSH2",
+    "hierarchy_level": 1,
+    "brief_description": "Mesh root",
+    "parent": "HEDR",
+    "children": ["SINF", "CAMR", "MATL", "MODL"],
+    "necessity": "Once",
+    "description": ".msh file mesh header.",
+    "links": [],
+    "structure": [],
+    "category": "General Chunks"
+  },
+  "FINF": {
+    "name": "FINF",
+    "hierarchy_level": 2,
+    "brief_description": "File information (unused)",
+    "parent": "MSH2",
+    "children": ["PROJ", "USER", "TIME"],
+    "necessity": "Once.",
+    "description": "Possibly deprecated. File information. PROJ: project name. USER: user name. TIME: time.",
+    "links": [],
+    "structure": [["ASCII string", "4 * X", "File information."]],
+    "category": "General Chunks"
+  },
+  "SINF": {
+    "name": "SINF",
+    "hierarchy_level": 2,
+    "brief_description": "Scene information",
+    "parent": "MSH2",
+    "children": ["NAME", "FRAM", "BBOX"],
+    "necessity": "Optional.",
+    "description": "Scene information header.",
+    "links": [],
+    "structure": [],
+    "category": "General Chunks"
+  },
+  "FRAM": {
+    "name": "FRAM",
+    "hierarchy_level": 3,
+    "brief_description": "Frame data",
+    "parent": "SINF",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "Scene frame information.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Start of frame range."],
+      ["long int", 4, "End of frame range."],
+      ["float", 4, "Frames per second (usually ~30)."]
+    ],
+    "category": "General Chunks"
+  },
+  "CAMR": {
+    "name": "CAMR",
+    "hierarchy_level": 2,
+    "brief_description": "Camera data",
+    "parent": "MSH2",
+    "children": ["NAME", "DATA"],
+    "necessity": "Optional.",
+    "description": "Scene camera header.",
+    "links": [],
+    "structure": [],
+    "category": "General Chunks"
+  },
+  "MATL": {
+    "name": "MATL (Materials)",
+    "hierarchy_level": 2,
+    "brief_description": "Materials",
+    "parent": "MSH2",
+    "children": ["MATD"],
+    "necessity": "Once.",
+    "description": "Material list header.",
+    "links": [],
+    "structure": [["long int", 4, "Count of materials (MATD) in this list."]],
+    "category": "Materials"
+  },
+  "MATD": {
+    "name": "MATD (Material)",
+    "hierarchy_level": 3,
+    "brief_description": "Material",
+    "parent": "MATL",
+    "children": ["NAME", "MATD.DATA", "ATRB", "TX0D"],
+    "necessity": "One or more.",
+    "description": "Material header.",
+    "links": [],
+    "structure": [],
+    "category": "Materials"
+  },
+  "MATD.DATA": {
+    "name": "MATD.DATA",
+    "hierarchy_level": 4,
+    "brief_description": "Material data",
+    "parent": "MATD",
+    "children": [],
+    "necessity": "Once.",
+    "description": "Material colors and specular sharpness (gloss). Colors are stored in 0-1 range.",
+    "links": [],
+    "structure": [
+      ["float [4]", 16, "Diffuse RGBA color."],
+      ["float [4]", 16, "Specular RGBA color."],
+      ["float [4]", 16, "Ambient RGBA color."],
+      ["float", 4, "Specular sharpness (gloss)."]
+    ],
+    "category": "Materials"
+  },
+  "ATRB": {
+    "name": "ATRB",
+    "hierarchy_level": 4,
+    "brief_description": "Material attributes",
+    "parent": "MATD",
+    "children": [],
+    "necessity": "Once.",
+    "description": "Material flags (glow and other special rendertypes).",
+    "links": [
+      { "name": "ZeroEngine Render Types", "link": "render_types.html" },
+      {
+        "name": "Inside Edit Flags (GT)",
+        "link": "http://www.gametoast.com/viewtopic.php?p=279620#p279620"
+      },
+      {
+        "name": "GameToast ATRB discussion",
+        "link": "http://gametoast.com/viewtopic.php?t=24851&f=27&start=31"
+      },
+      { "name": "Flag Calculator", "link": "index.html#atrb-calculator" }
+    ],
+    "additional_tables": [
+      {
+        "name": "Flags",
+        "table": [
+          ["Value", "Flag", "Description"],
+          ["1", "Emissive", "Emissive material (unlit)."],
+          ["2", "Glow", "Simple glow."],
+          [
+            "4",
+            "Single-sided Transparency",
+            "Can't be used with Double-sided Transparency."
+          ],
+          [
+            "8",
+            "Double-sided Transparency",
+            "Can't be used with Single-sided Transparency."
+          ],
+          [
+            "16",
+            "Hard-edged Transparency",
+            "Pixels are either opaque (>128/50%) or transparent (<129)."
+          ],
+          [
+            "32",
+            "Per-Pixel Lighting",
+            "More expensive and better looking lighting method (default is Per-Vertex Lighting)."
+          ],
+          [
+            "64",
+            "Additive Transparency",
+            "Performs an Add instead of a Blend when multiple transparent surfaces overlap."
+          ],
+          [
+            "128",
+            "Specular",
+            "Controlled by specular color and decay (gloss) in the material. Optional alpha channel in the diffuse texture acts as gloss map."
+          ]
+        ]
+      }
+    ],
+    "structure": [
+      ["byte", 1, "Sum of all flag values."],
+      ["byte", 1, "Render Type number."],
+      ["byte", 1, "Data0 Value. Range: 0-255"],
+      ["byte", 1, "Data1 Value. Range: 0-255"]
+    ],
+    "category": "Materials"
+  },
+  "TX0D": {
+    "name": "TX0D",
+    "hierarchy_level": 4,
+    "brief_description": "Texture",
+    "parent": "MATD",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "Texture name with extension (not full path). For multiple textures the name of the chunk will change to TX1D, TX2D, TX3D.",
+    "links": [],
+    "structure": [["ASCII string", "~", "Texture name."]],
+    "category": "Materials"
+  },
+  "PRFX": {
+    "name": "PRFX",
+    "hierarchy_level": 4,
+    "brief_description": "Material prefix (unused)",
+    "parent": "MATD",
+    "children": [],
+    "necessity": "Once.",
+    "description": "Possibly deprecated. Material prefix.",
+    "links": [],
+    "structure": [["ASCII string", "4 * X", "Prefix."]],
+    "category": "Materials"
+  },
+  "MODL": {
+    "name": "MODL (Model)",
+    "hierarchy_level": 2,
+    "brief_description": "Model",
+    "parent": "MSH2",
+    "children": [
+      "NAME",
+      "MTYP",
+      "MNDX",
+      "PRNT",
+      "FLGS",
+      "TRAN",
+      "GEOM",
+      "SWCI"
+    ],
+    "necessity": "One or more.",
+    "description": "Model header.",
+    "links": [],
+    "structure": [],
+    "category": "Models"
+  },
+  "MTYP": {
+    "name": "MTYP",
+    "hierarchy_level": 3,
+    "brief_description": "Model type",
+    "parent": "MODL",
+    "children": [],
+    "necessity": "Once.",
+    "description": "Model type.",
+    "links": [],
+    "additional_tables": [
+      {
+        "name": "Model Types",
+        "table": [
+          ["Value", "Type"],
+          ["0", "Null."],
+          ["1", "Dynamic mesh (weighted/enveloped)."],
+          ["2", "Cloth."],
+          ["3", "Bone."],
+          ["4", "Static mesh."],
+          ["6", "Shadow mesh."]
+        ]
+      }
+    ],
+    "structure": [["long int", 4, "Model type."]],
+    "category": "Models"
+  },
+  "MNDX": {
+    "name": "MNDX",
+    "hierarchy_level": 3,
+    "brief_description": "Model index",
+    "parent": "MODL",
+    "children": [],
+    "necessity": "Once.",
+    "description": "0-based Model index.",
+    "links": [],
+    "structure": [["long int", 4, "Model index."]],
+    "category": "Models"
+  },
+  "PRNT": {
+    "name": "PRNT",
+    "hierarchy_level": 3,
+    "brief_description": "Model parent",
+    "parent": "MODL",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "Name of the parent model, padded with 00's to fill up to a multiple-of-4 size.",
+    "links": [],
+    "structure": [["ASCII string", "~", "Parent model name."]],
+    "category": "Models"
+  },
+  "FLGS": {
+    "name": "FLGS",
+    "hierarchy_level": 3,
+    "brief_description": "Model display flags",
+    "parent": "MODL",
+    "children": [],
+    "necessity": "Once.",
+    "description": "Model display flags.",
+    "links": [],
+    "additional_tables": [
+      {
+        "name": "Render Flags",
+        "table": [
+          ["Value", "Flag"],
+          ["1", "Hidden."],
+          ["2", "Dynamically lit."],
+          ["4", "Retain normals."],
+          ["8", "Render after shadows."],
+          ["16", "Don't flatten geometry."],
+          ["32", "PS2 optimize."]
+        ]
+      }
+    ],
+    "structure": [["long int", 4, "Render Flags."]],
+    "category": "Models"
+  },
+  "TRAN": {
+    "name": "TRAN",
+    "hierarchy_level": 3,
+    "brief_description": "Transform",
+    "parent": "MODL",
+    "children": [],
+    "necessity": "Once.",
+    "description": "Matrix transform. Scale can get ignored in-game.",
+    "links": [],
+    "structure": [
+      ["float [3]", 12, "Scale factor in XYZ."],
+      ["float [4]", 16, "Quaternion Rotation in XYZW."],
+      ["float [3]", 12, "Translation in XYZ."]
+    ],
+    "category": "Models"
+  },
+  "SWCI": {
+    "name": "SWCI",
+    "hierarchy_level": 3,
+    "brief_description": "Collision primitive",
+    "parent": "MODL",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "Collision primitive.",
+    "links": [],
+    "structure": [
+      [
+        "long int",
+        4,
+        "Primitive type (0: sphere, 1: sphere, 2: cylinder, 4: cube)."
+      ],
+      ["float", 4, "Data (sphere: radius, cylinder: radius, cube: x_length."],
+      ["float", 4, "Data (sphere: -, cylinder: height, cube: y_length."],
+      ["float", 4, "Data (sphere: -, cylinder: -, cube: z_length."]
+    ],
+    "category": "Models"
+  },
+  "GEOM": {
+    "name": "GEOM (Geometry)",
+    "hierarchy_level": 3,
+    "brief_description": "Model geometry",
+    "parent": "MODL",
+    "children": ["BBOX", "SEGM", "CLTH", "ENVL"],
+    "necessity": "Optional (depends on model type).",
+    "description": "Geometry header. Will be used for static/dynamic geometry and shadow volumes.",
+    "links": [],
+    "structure": [],
+    "category": "Geometry"
+  },
+  "ENVL": {
+    "name": "ENVL (Envelope)",
+    "hierarchy_level": 4,
+    "brief_description": "Envelope",
+    "parent": "GEOM",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "List of indices into [MODL](#MODL){: .chunk}. This model is enveloped to those indices' models.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of indices into [MODL](#MODL){: .chunk}."],
+      ["long int []", "4 each", "Index into [MODL](#MODL){: .chunk}."]
+    ],
+    "category": "Geometry"
+  },
+  "SEGM": {
+    "name": "SEGM",
+    "hierarchy_level": 4,
+    "brief_description": "Model geometry segment",
+    "parent": "GEOM",
+    "children": [
+      "SHDW",
+      "MATI",
+      "POSL",
+      "CLRL",
+      "CLRB",
+      "WGHT",
+      "NRML",
+      "UV0L",
+      "NDXL",
+      "NDXT",
+      "STRP"
+    ],
+    "necessity": "One or more.",
+    "description": "Geometry segment header.",
+    "links": [],
+    "structure": [],
+    "category": "Geometry"
+  },
+  "SHDW": {
+    "name": "SHDW",
+    "hierarchy_level": 5,
+    "brief_description": "Shadow geometry",
+    "parent": "SEGM",
+    "children": [],
+    "necessity": "If the model is a shadow mesh, once.",
+    "description": "Shadow mesh geometry.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of vertex positions."],
+      ["float [3][]", "12 each", "Vertex positions (XYZ)."],
+      ["long int", 4, "Number of edges."],
+      [
+        "short int [4][]",
+        "8 each",
+        "Edge. The following 4 entries form one edge."
+      ],
+      [
+        "> short int",
+        2,
+        "Vertex index of this edge entry. Refers to the vertex list above."
+      ],
+      [
+        "> short int",
+        2,
+        "Reference into an edge. Defines the target vertex (the local edge vertex of the referenced edge) to which the edge should be dran from the local vertex."
+      ],
+      [
+        "> short int",
+        2,
+        "Second reference into an edge. In all example .msh files I've seen this always refers to the same vertex as the first edge reference."
+      ],
+      [
+        "> short int",
+        2,
+        "MAX_VALUE of short integers (65535). Indicates the end of this edge."
+      ]
+    ],
+    "category": "Geometry"
+  },
+  "MATI": {
+    "name": "MATI",
+    "hierarchy_level": 5,
+    "brief_description": "Segment material index",
+    "parent": "SEGM",
+    "children": [],
+    "necessity": "Once?",
+    "description": "Material index (index into MATL).",
+    "links": [],
+    "structure": [["long int", 4, "Material index."]],
+    "category": "Geometry"
+  },
+  "POSL": {
+    "name": "POSL",
+    "hierarchy_level": 5,
+    "brief_description": "Vertices",
+    "parent": "SEGM",
+    "children": [],
+    "necessity": "Once (unless shadow mesh).",
+    "description": "List of vertex coordinates.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of coordinates stored in this list."],
+      ["float [3][]", "12 each", "XYZ coordinates for each vertex."]
+    ],
+    "category": "Geometry"
+  },
+  "NRML": {
+    "name": "NRML",
+    "hierarchy_level": 5,
+    "brief_description": "Normals",
+    "parent": "SEGM",
+    "children": [],
+    "necessity": "Once (unless shadow mesh).",
+    "description": "List of normals.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of normal vectors stored in this list."],
+      ["float [3][]", "12 each", "UVW vector for each vertex."]
+    ],
+    "category": "Geometry"
+  },
+  "UV0L": {
+    "name": "UV0L",
+    "hierarchy_level": 5,
+    "brief_description": "UV coordinates",
+    "parent": "SEGM",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "List of UV coordinates.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of UV coordinates stored in this list."],
+      ["float [2][]", "8 each", "UV coordinate for each vertex."]
+    ],
+    "category": "Geometry"
+  },
+  "CLRL": {
+    "name": "CLRL",
+    "hierarchy_level": 5,
+    "brief_description": "Vertex colors",
+    "parent": "SEGM",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "List of vertex colors.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of colors stored in this list."],
+      ["byte [4][]", "4 each", "RGBA color (0-255)."]
+    ],
+    "category": "Geometry"
+  },
+  "CLRB": {
+    "name": "CLRB",
+    "hierarchy_level": 5,
+    "brief_description": "Vertex color",
+    "parent": "SEGM",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "One vertex color for the whole segment.",
+    "links": [],
+    "structure": [["byte [4]", 4, "RGBA color (0-255)."]],
+    "category": "Geometry"
+  },
+  "WGHT": {
+    "name": "WGHT",
+    "hierarchy_level": 5,
+    "brief_description": "Vertex weights",
+    "parent": "SEGM",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "List of bone-weight percentage pairs. Always 4 pairs per vertex.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of bone weights stored in this list."],
+      [
+        "",
+        "",
+        "The following appears 4 times per vertex (to allow for soft weighting)."
+      ],
+      [
+        "long int",
+        4,
+        "Index into [ENVL](#ENVL){: .chunk} (which then indexes into [MODL](#MODL){: .chunk})."
+      ],
+      ["float", 4, "Weight value (0-1)."]
+    ],
+    "category": "Geometry"
+  },
+  "NDXL": {
+    "name": "NDXL",
+    "hierarchy_level": 5,
+    "brief_description": "Polygons (possibly deprecated)",
+    "parent": "SEGM",
+    "children": [],
+    "necessity": "Optional/deprecated.",
+    "description": "Polygons.",
+    "links": [],
+    "structure": [],
+    "category": "Geometry"
+  },
+  "NDXT": {
+    "name": "NDXT",
+    "hierarchy_level": 5,
+    "brief_description": "Triangles (possibly deprecated)",
+    "parent": "SEGM",
+    "children": [],
+    "necessity": "Optional/deprecated.",
+    "description": "Triangles.",
+    "links": [],
+    "structure": [],
+    "category": "Geometry"
+  },
+  "STRP": {
+    "name": "STRP",
+    "hierarchy_level": 5,
+    "brief_description": "Triangle strips",
+    "parent": "SEGM",
+    "children": ["NAME", "FRAM", "BBOX"],
+    "necessity": "Once (unless shadow mesh).",
+    "description": "List of triangles strips. The start of a strip is indicated by 2 entries with a high bit set (0x8000 or 32768 added). Triangles are listed CW, CCW, CW, CCW...\n\n NOTE: In some meshes this chunk has a trailing short which is not calculated into the length/size of this chunk or the # of indices. This short can be ignored. If added to the last polygon it will break it as it always seems to be 0.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of indices into [POSL](#POSL){: .chunk}."],
+      [
+        "short int []",
+        "2 each",
+        "Index into [POSL](#POSL){: .chunk}. The indices will form polygons."
+      ]
+    ],
+    "category": "Geometry"
+  },
+  "VLTB": {
+    "name": "VLTB",
+    "hierarchy_level": 5,
+    "brief_description": "Baked vertex light (unused, possibly deprecated)",
+    "parent": "SEGM",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "Possibly deprecated. Baked vertex light.",
+    "links": [],
+    "structure": [
+      ["byte", 1, "Red."],
+      ["byte", 1, "Green."],
+      ["byte", 1, "Blue."],
+      ["byte", 1, "Alpha."]
+    ],
+    "category": "Geometry"
+  },
+  "VLTL": {
+    "name": "VLTL",
+    "hierarchy_level": 5,
+    "brief_description": "Baked vertex lights (unused, possibly deprecated)",
+    "parent": "SEGM",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "Possibly deprecated. Unique baked vertex lights for vertices.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of colors to come."],
+      ["byte", 1, "Red."],
+      ["byte", 1, "Green."],
+      ["byte", 1, "Blue."],
+      ["byte", 1, "Alpha."]
+    ],
+    "category": "Geometry"
+  },
+  "CLTH": {
+    "name": "CLTH (Cloth)",
+    "hierarchy_level": 4,
+    "brief_description": "Cloth root",
+    "parent": "GEOM",
+    "children": [
+      "CTEX",
+      "CPOS",
+      "CUV0",
+      "FIDX",
+      "FWGT",
+      "CMSH",
+      "SPRS",
+      "CPRS",
+      "BPRS",
+      "COLL"
+    ],
+    "necessity": "Optional.",
+    "description": "Cloth header. Replaces [SEGM](#SEGM){: .chunk}.",
+    "links": [],
+    "structure": [],
+    "category": "Cloth"
+  },
+  "CTEX": {
+    "name": "CTEX",
+    "hierarchy_level": 5,
+    "brief_description": "Cloth texture",
+    "parent": "CLTH",
+    "children": [],
+    "necessity": "Once.",
+    "description": "Texture name with extension.",
+    "links": [],
+    "structure": [["ASCII string", "~", "Texture name."]],
+    "category": "Cloth"
+  },
+  "CPOS": {
+    "name": "CPOS",
+    "hierarchy_level": 5,
+    "brief_description": "Cloth vertices",
+    "parent": "CLTH",
+    "children": [],
+    "necessity": "Once.",
+    "description": "List of vertex coordinates.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of vertex positions."],
+      ["float [3][]", "12 each", "XYZ coordinates."]
+    ],
+    "category": "Cloth"
+  },
+  "CUV0": {
+    "name": "CUV0",
+    "hierarchy_level": 5,
+    "brief_description": "Cloth UV coordinates",
+    "parent": "CLTH",
+    "children": [],
+    "necessity": "Optional?",
+    "description": "List of UV coordinates.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of UV coordinates."],
+      ["float [2][]", "8 each", "UV coordinate."]
+    ],
+    "category": "Cloth"
+  },
+  "FIDX": {
+    "name": "FIDX",
+    "hierarchy_level": 5,
+    "brief_description": "Cloth fixed points",
+    "parent": "CLTH",
+    "children": [],
+    "necessity": "Optional?",
+    "description": "List of fixed points.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of points."],
+      ["long int ]", "4 each", "Index into [CPOS](#CPOS){: .chunk}."]
+    ],
+    "category": "Cloth"
+  },
+  "FWGT": {
+    "name": "FWGT",
+    "hierarchy_level": 5,
+    "brief_description": "Cloth vertex weights",
+    "parent": "CLTH",
+    "children": [],
+    "necessity": "Optional?",
+    "description": "Index of [FIDX](#FIDX){: .chunk} weighted to a bone by name.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of points."],
+      [
+        "ASCII string",
+        "~",
+        "Name of the bone the corresponding [FIDX](#FIDX){: .chunk} is moving with."
+      ]
+    ],
+    "category": "Cloth"
+  },
+  "CMSH": {
+    "name": "CMSH",
+    "hierarchy_level": 5,
+    "brief_description": "Cloth triangles",
+    "parent": "CLTH",
+    "children": [],
+    "necessity": "Once.",
+    "description": "Cloth triangles.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of points."],
+      ["long int [3][]", "16 each", "Triangle points defined CCW."]
+    ],
+    "category": "Cloth"
+  },
+  "SPRS": {
+    "name": "SPRS",
+    "hierarchy_level": 5,
+    "brief_description": "Cloth stretch constraints",
+    "parent": "CLTH",
+    "children": [],
+    "necessity": "Optional?",
+    "description": "Stretch constraint data. Keeps cloth size by storing relations between points (like edges around a quad). Relations between two fixed points are _not_ stored",
+    "links": [
+      {
+        "name": "Constraint discussion (GT)",
+        "link": "http://www.gametoast.com/viewtopic.php?p=472300#p472300"
+      }
+    ],
+    "structure": [
+      ["long int", 4, "Number of items."],
+      ["short int [2][]", "4 each", "Two points sharing an edge."]
+    ],
+    "category": "Cloth"
+  },
+  "CPRS": {
+    "name": "CPRS",
+    "hierarchy_level": 5,
+    "brief_description": "Cloth cross constraints",
+    "parent": "CLTH",
+    "children": [],
+    "necessity": "Optional?",
+    "description": "Cross constraint data. Keeps individual pieces of the cloth from shearing (cross relations between points). Think of the edges as sticky tape, glueing the points together. Relations between two fixed points are _not_ stored",
+    "links": [
+      {
+        "name": "Constraint discussion (GT)",
+        "link": "http://www.gametoast.com/viewtopic.php?p=472300#p472300"
+      }
+    ],
+    "structure": [
+      ["long int", 4, "Number of items."],
+      ["short int [2][]", "4 each", "Two points sharing a quad."]
+    ],
+    "category": "Cloth"
+  },
+  "BPRS": {
+    "name": "BPRS",
+    "hierarchy_level": 5,
+    "brief_description": "Cloth bend constraints",
+    "parent": "CLTH",
+    "children": [],
+    "necessity": "Optional?",
+    "description": "Bend constraint data. Keeps the cloth's shape (relations between border-points of the cloth mesh, disables bending along those edges). Relations between two fixed points are _not_ stored",
+    "links": [
+      {
+        "name": "Constraint discussion (GT)",
+        "link": "http://www.gametoast.com/viewtopic.php?p=472300#p472300"
+      }
+    ],
+    "structure": [
+      ["long int", 4, "Number of items."],
+      [
+        "short int [2][]",
+        "4 each",
+        "Two border-points sharing a 'straight' edge over the complete cloth."
+      ]
+    ],
+    "category": "Cloth"
+  },
+  "COLL": {
+    "name": "COLL",
+    "hierarchy_level": 5,
+    "brief_description": "Cloth collision",
+    "parent": "CLTH",
+    "children": [],
+    "necessity": "Optional?",
+    "description": "Cloth collision. Note that this chunk is padded with 00's until it has a multiple of 4 chunk size.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of collisions."],
+      ["ASCII string", "~", "Collision object name."],
+      ["ASCII string", "~", "Object name this collision moves with."],
+      ["long int", 4, "Primitive type (0: sphere, 1: cylinder, 2: cube)."],
+      [
+        "float",
+        4,
+        "Data (sphere: radius, cylinder: radius, cube: x_length / 2)."
+      ],
+      [
+        "float",
+        4,
+        "Data (sphere: radius, cylinder: height, cube: y_length / 2)."
+      ],
+      ["float", 4, "Data (sphere: radius, cylinder: -, cube: z_length / 2)."]
+    ],
+    "category": "Cloth"
+  },
+  "SKL2": {
+    "name": "SKL2 (Skeleton)",
+    "hierarchy_level": 1,
+    "brief_description": "Skeleton",
+    "parent": "HEDR",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "Skeleton/chain. Lists some bone properties for every item in the chain. The values don't seem to make a big difference.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of bones in this skeleton."],
+      ["CRC checksum", 4, "[CRC checksum](index.html) of the bone."],
+      ["long int", 4, "Type (bone?). Usual value: 0."],
+      ["float", 4, "Constrain. Usual value: -1 or 1."],
+      ["float", 4, "Bone length 1. Usual value: 0."],
+      ["float", 4, "Bone length 2. Usual value: 0."]
+    ],
+    "category": "Animation"
+  },
+  "BLN2": {
+    "name": "BLN2",
+    "hierarchy_level": 1,
+    "brief_description": "Blend factors",
+    "parent": "HEDR",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "Blend factors for the chain items (bones). Purpose unknown. Blend factor usually is 0/nothing (if float). ",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of bones."],
+      ["CRC checksum", 4, "[CRC checksum](index.html) of the bone."],
+      ["?", 4, "Blend factor. Usual value: 0."]
+    ],
+    "category": "Animation"
+  },
+  "ANM2": {
+    "name": "ANM2 (Animation)",
+    "hierarchy_level": 1,
+    "brief_description": "Animations",
+    "parent": "HEDR",
+    "children": ["CYCL", "KFR3"],
+    "necessity": "Optional.",
+    "description": "Animation header.",
+    "links": [],
+    "structure": [],
+    "category": "Animation"
+  },
+  "CYCL": {
+    "name": "CYCL",
+    "hierarchy_level": 2,
+    "brief_description": "Animation cycles",
+    "parent": "ANM2",
+    "children": [],
+    "necessity": "Once.",
+    "description": "Animation cycles. Can contain multiple animations.",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of animations."],
+      ["", "", "The following can appear multiple times."],
+      ["ASCII string", "64", "Aimation name."],
+      ["float", 4, "Frame rate."],
+      ["long int", 4, "Play Style."],
+      ["long int", 4, "First frame."],
+      ["long int", 4, "Last frame."]
+    ],
+    "category": "Animation"
+  },
+  "KFR3": {
+    "name": "KFR3",
+    "hierarchy_level": 2,
+    "brief_description": "Keyframes",
+    "parent": "ANM2",
+    "children": [],
+    "necessity": "Once.",
+    "description": "All the frames and their local translation and rotation. Frame indices don't have to be consecutive. They can skip frames (like keyframes).",
+    "links": [],
+    "structure": [
+      ["long int", 4, "Number of bones in this animation."],
+      ["", "", "The following will appear once per chain item."],
+      ["> CRC checksum", 4, "[CRC checksum](index.html)."],
+      ["> long int", 4, "Keyframe type."],
+      ["> long int", 4, "Number of translation frames."],
+      ["> long int", 4, "Number of rotation frames."],
+      ["", "", "Translation frames will be listed first."],
+      [">> long int", 4, "Translation frame index."],
+      [">> float [3][]", 12, "Translation in XYZ."],
+      ["", "", "Rotation frames will be listed second."],
+      [">> long int", 4, "Rotation frame index."],
+      [">> float [4][]", 16, "Quaternion rotation in XYZW."]
+    ],
+    "category": "Animation"
+  },
+  "CL1L": {
+    "name": "CL1L",
+    "hierarchy_level": 0,
+    "brief_description": "Closing chunk",
+    "parent": "",
+    "children": [],
+    "necessity": "Once.",
+    "description": "Closing chunk, indicates the end of the .msh file.",
+    "links": [],
+    "structure": [],
+    "category": "Other"
+  },
+  "NAME": {
+    "name": "NAME",
+    "hierarchy_level": 0,
+    "brief_description": "Name",
+    "parent": "",
+    "children": [],
+    "necessity": "Once.",
+    "description": "Name, padded with 00's to fill up a multiple-of-4 size.",
+    "links": [],
+    "structure": [["ASCII string", "4 * X", "Name."]],
+    "category": "Other"
+  },
+  "BBOX": {
+    "name": "BBOX",
+    "hierarchy_level": 0,
+    "brief_description": "Bounding box",
+    "parent": "",
+    "children": [],
+    "necessity": "Once.",
+    "description": "Bounding box. [SINF](#SINF){: .chunk}'s BBox will determine the blue/green selection box in ZeroEdit.",
+    "links": [],
+    "structure": [
+      ["float [4]", 16, "Quaternion Rotation in XYZW."],
+      ["float [3]", 12, "Center of the BBox."],
+      ["float [3]", 12, "Extents of the BBox (width/2, height/2, depth/2)."],
+      ["float", 4, "Bounding sphere radius."]
+    ],
+    "category": "Other"
+  },
+  "LGTP": {
+    "name": "LGTP",
+    "hierarchy_level": 0,
+    "brief_description": "Point light (unused, possibly deprecated)",
+    "parent": "",
+    "children": ["PRFX", "NAME", "DATA"],
+    "necessity": "Optional.",
+    "description": "Possibly deprecated. Point Light.",
+    "links": [],
+    "structure": [
+      ["float", 4, "Red."],
+      ["float", 4, "Green."],
+      ["float", 4, "Blue."],
+      ["float", 4, "Alpha."],
+      ["float", 4, "X."],
+      ["float", 4, "Y."],
+      ["float", 4, "Z."],
+      ["float", 4, "Falloff start."],
+      ["float", 4, "Falloff end."],
+      ["long int", 4, "Flags (1: CastShadows)."]
+    ],
+    "category": "Deprecated"
+  },
+  "LGTI": {
+    "name": "LGTI",
+    "hierarchy_level": 0,
+    "brief_description": "Infinite light (unused, possibly deprecated)",
+    "parent": "",
+    "children": ["PRFX", "NAME", "DATA"],
+    "necessity": "Optional.",
+    "description": "Possibly deprecated. Infinite Light.",
+    "links": [],
+    "structure": [
+      ["float", 4, "Red."],
+      ["float", 4, "Green."],
+      ["float", 4, "Blue."],
+      ["float", 4, "Alpha."],
+      ["float", 4, "X."],
+      ["float", 4, "Y."],
+      ["float", 4, "Z."],
+      ["float", 4, "Falloff start."],
+      ["float", 4, "Falloff end."],
+      ["long int", 4, "Flags (1: CastShadows)."]
+    ],
+    "category": "Deprecated"
+  },
+  "LGTS": {
+    "name": "LGTS",
+    "hierarchy_level": 0,
+    "brief_description": "Spot light (unused, possibly deprecated)",
+    "parent": "",
+    "children": ["PRFX", "NAME", "DATA"],
+    "necessity": "Optional.",
+    "description": "Possibly deprecated. Spot Light.",
+    "links": [],
+    "structure": [
+      ["float", 4, "Red."],
+      ["float", 4, "Green."],
+      ["float", 4, "Blue."],
+      ["float", 4, "Alpha."],
+      ["float", 4, "X."],
+      ["float", 4, "Y."],
+      ["float", 4, "Z."],
+      ["float", 4, "Interest X."],
+      ["float", 4, "Interest Y."],
+      ["float", 4, "Interest Z."],
+      ["float", 4, "Falloff start."],
+      ["float", 4, "Falloff end."],
+      ["float", 4, "Cone Angle."],
+      ["float", 4, "Spread Angle."],
+      ["long int", 4, "Flags (1: CastShadows)."]
+    ],
+    "category": "Deprecated"
+  },
+  "FOGD": {
+    "name": "FOGD",
+    "hierarchy_level": 0,
+    "brief_description": "Fog data (unused, possibly deprecated)",
+    "parent": "",
+    "children": [],
+    "necessity": "Optional.",
+    "description": "Possibly deprecated. Fog data.",
+    "links": [],
+    "structure": [
+      ["float", 4, "Red."],
+      ["float", 4, "Green."],
+      ["float", 4, "Blue."],
+      ["float", 4, "Alpha."],
+      ["float", 4, "Near plane."],
+      ["float", 4, "Far plane."]
+    ],
+    "category": "Deprecated"
+  }
 }
-
