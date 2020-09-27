@@ -3,6 +3,8 @@
 '''
 
 import os
+from os import PathLike
+from pathlib import Path
 from collections import OrderedDict
 from sassutils import builder
 from glob import glob
@@ -23,23 +25,26 @@ MARKDOWN_EXTRAS = [
 
 
 def build():
-    build_html()
-    build_styles()
+    base_dir = Path(os.path.realpath(__file__)).parent
+
+    build_html(base_dir)
+    build_styles(base_dir)
 
 
-def build_html():
-    env = Environment(loader=FileSystemLoader('templates'))
+def build_html(base_dir: Path):
+    env = Environment(loader=FileSystemLoader(str(base_dir / 'templates')))
     register_filters(env)
     # Pages are stored in yaml docs. Go through all of them and compile them
     # into html.
     global_config = None
-    with open('pages/global.yaml') as stream:
+    with open(base_dir / 'pages/global.yaml') as stream:
         global_config = lyaml(stream, Loader=Loader)
 
-    page_paths = glob('pages/*.yaml')
+    page_paths = base_dir.glob('pages/*.yaml')
     for page_path in page_paths:
-        if 'global' in page_path:
+        if 'global.yaml' in page_path.parts:
             continue
+
         page = None
         with open(page_path, 'r') as stream:
             page = lyaml(stream, Loader=Loader)
@@ -56,24 +61,30 @@ def build_html():
                     def fn(stream):
                         return lyaml(f, Loader=Loader)
 
-                with open(res['path']) as f:
+                with open(base_dir / res['path']) as f:
                     page[res['key']] = fn(f)
 
         page['global'] = global_config
+
         template = env.get_template(page.get('template', DEFAULT_TEMPLATE))
-        out_path = os.path.join(os.getcwd(), page.get('out'))
+        out_path = base_dir / page.get('out')
         output = template.render(**page)
+
         with open(out_path, 'w') as stream:
             stream.write(output)
 
 
-def build_styles():
-    builder.build_directory('css/', '../css/')
-    for filepath in glob('../css/*.scss.css'):
-        full_path = os.path.join(os.getcwd(), filepath)
-        stripped_path = full_path.replace('.scss.', '.')
+def build_styles(base_dir: Path):
+    out_dir = base_dir.parent / 'css'
+    builder.build_directory(str(base_dir / 'css'), str(out_dir))
+
+    for filepath in out_dir.glob('*.scss.css'):
+        full_path = out_dir / filepath
+        stripped_path = str(full_path).replace('.scss.', '.')
+
         if os.path.isfile(stripped_path):
             os.remove(stripped_path)
+
         os.rename(full_path, stripped_path)
 
 
