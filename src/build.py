@@ -70,6 +70,8 @@ def build_html(base_dir: Path):
         out_path = base_dir / page.get('out')
         output = template.render(**page)
 
+        os.makedirs(out_path.resolve().parent, exist_ok=True)
+
         with open(out_path, 'w') as stream:
             stream.write(output)
 
